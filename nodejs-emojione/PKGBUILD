@@ -3,7 +3,7 @@
 
 _npmname=emojione
 pkgname=nodejs-$_npmname
-pkgver=3.1.4
+pkgver=4.5.0
 pkgrel=1
 pkgdesc="A complete set of emojis designed for the web"
 arch=('any')
@@ -13,11 +13,10 @@ depends=('nodejs')
 makedepends=('npm')
 source=("https://registry.npmjs.org/$_npmname/-/$_npmname-$pkgver.tgz")
 noextract=($_npmname-$pkgver.tgz)
-sha256sums=('96819d029b577086ec825bc7f69d0cf3bf1b96746e84f5a5037812f1a8db004c')
+sha256sums=('2d67aad66249ccaf89316cb653cb9f411962ba99203c095d9e581014de957e73')
 
 package() {
   npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/$_npmname-$pkgver.tgz
-  rm -r "$pkgdir"/usr/etc
   mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
   ln -s "../../../lib/node_modules/$_npmname/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/"
 
