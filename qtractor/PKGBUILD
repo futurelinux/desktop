@@ -1,17 +1,16 @@
 pkgname=qtractor
-pkgver=0.9.4
+pkgver=0.9.5
 pkgrel=1
 pkgdesc="Audio/MIDI multitrack sequencer"
 arch=('x86_64')
-url="http://qtractor.sourceforge.net/"
-screenshot=("http://kde-apps.org/CONTENT/content-pre1/56325-1.png")
+url="https://qtractor.sourceforge.io/"
 license=('GPL')
 depends=('qt5-base' 'qt5-x11extras' 'jack' 'libmad' 'libsamplerate' 'rubberband' 'liblo' 'suil'
 	 'lilv' 'rubberband' 'shared-mime-info' 'desktop-file-utils' 'hicolor-icon-theme')
 makedepends=('ladspa' 'dssi' 'qt5-tools')
 categories=('multimedia')
 source=("https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz")
-sha256sums=('eff57161c199449d6912a996ba0009895ee35de158fe75177c35858548feb917')
+sha256sums=('42b028bfd581c851c7462eae450fe81d8ecf59a5f89a35bae0f0f722319c51ff')
 
 build() {
   cd $pkgname-$pkgver
