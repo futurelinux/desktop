@@ -1,22 +1,20 @@
 pkgbase=octopi
 pkgname=('octopi' 'octopi-notifier')
-pkgver=0.8.1.90
-pkgrel=3
+pkgver=0.9.0
+pkgrel=1
 url="https://octopiproject.wordpress.com/"
 arch=('x86_64')
 license=('GPL2')
-makedepends=('pacman' 'pacmanlogviewer' 'gist' 'qt5-quickcontrols' 'chaser' 'alpm_octopi_utils' 'knotifications')
+makedepends=('pacman' 'pacman-contrib' 'pacmanlogviewer' 'gist' 'qt5-quickcontrols' 'chaser'
+             'alpm_octopi_utils' 'knotifications' 'kdesu')
 categories=('system') 
-screenshot=('http://octopiproject.files.wordpress.com/2014/01/octopi_in_kaos.png')
-
-gitsha=3e3c6ae
-source=("$pkgname"::"git://github.com/aarnt/${pkgname}.git#commit=${gitsha}"
+source=("https://github.com/aarnt/octopi/archive/v${pkgver}.tar.gz"
         '0001-remove-qtermwidget.patch')
-md5sums=('SKIP'
+md5sums=('180c7f29a04343c486d6767549e6e9be'
          '5b56cd3d5d6e25a62c94055b2384aff3')
 
 prepare(){
-    cd "${srcdir}/${pkgbase}"
+    cd "${srcdir}/${pkgbase}-${pkgver}"
 
     # disable lxqt qtermwidget
     patch -Np1 -i ../0001-remove-qtermwidget.patch
@@ -33,7 +31,7 @@ prepare(){
 
 build() {
    export QTERMWIDGET=off
-   cd "${srcdir}/${pkgbase}"
+   cd "${srcdir}/${pkgbase}-${pkgver}"
    /usr/lib/qt5/bin/qmake
    make
 
@@ -64,10 +62,10 @@ build() {
 
 package_octopi() {
    pkgdesc="Octopi, a powerful Pacman frontend using Qt libs"
-   depends=('qt5-quickcontrols' 'qt5-declarative' 'pacman' 'pacmanlogviewer' 'gist' 'chaser' 'alpm_octopi_utils')
+   depends=('qt5-quickcontrols' 'qt5-declarative' 'pacman' 'pacmanlogviewer' 'gist' 'chaser' 'alpm_octopi_utils' 'kdesu')
 
    # start package
-   cd ${srcdir}/${pkgbase}
+   cd ${srcdir}/${pkgbase}-${pkgver}
 
    install -Dm 755 bin/octopi ${pkgdir}/usr/bin/octopi
    install -Dm 755 repoeditor/bin/octopi-repoeditor ${pkgdir}/usr/bin/octopi-repoeditor
@@ -85,7 +83,7 @@ package_octopi-notifier() {
    depends=('qt5-declarative' 'knotifications')
 
    # main application
-   cd "${srcdir}/${pkgbase}"
+   cd "${srcdir}/${pkgbase}-${pkgver}"
    install -Dm755 notifier/bin/octopi-notifier ${pkgdir}/usr/bin/${pkgname}
    install -Dm644 notifier/octopi-notifier/octopi-notifier.desktop ${pkgdir}/usr/share/applications/octopi-notifier.desktop
    install -Dm644 resources/images/octopi_red.png ${pkgdir}/usr/share/pixmaps/${pkgname}.png
