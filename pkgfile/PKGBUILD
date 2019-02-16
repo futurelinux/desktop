@@ -1,14 +1,12 @@
-# Maintainer: abveritas@chakra-project.org
-# Contributor: Dave Reisner <dreisner@archlinux.org>
-
 pkgname=pkgfile
-pkgver=8
+pkgver=19
 pkgrel=1
 pkgdesc="a pacman .files metadata explorer"
 arch=('x86_64')
 url="http://github.com/falconindy/pkgfile"
 license=('MIT')
 depends=('libarchive' 'curl' 'pcre' 'pacman')
+makedepends=('meson')
 options=(!strip)
 source=("http://code.falconindy.com/archive/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
 install=pkgfile.install
@@ -16,18 +14,14 @@ md5sums=('772d02872ddf112c5e24d6ad40e5623d'
          '712c546c0291975e646a1d2170034e10')
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd "$pkgname"
 
-  ./configure
-  make
-
-  # generate a license file
-  sed '/\*\//q' src/pkgfile.c >LICENSE
+  chakra-meson build
+  ninja -v -C build
 }
 
 package() {
-  cd "$pkgname-$pkgver"
+  cd "$pkgname"
 
-  make DESTDIR="$pkgdir" install
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  DESTDIR=$pkgdir ninja -C build install
 }
