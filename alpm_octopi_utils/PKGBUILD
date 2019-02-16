@@ -1,6 +1,6 @@
 pkgname=alpm_octopi_utils
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Alpm utils for Octopi"
 url="https://octopiproject.wordpress.com/"
 arch=('x86_64')
