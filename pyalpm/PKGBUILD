@@ -22,12 +22,12 @@ prepare() {
 }
 
 build() {
-  cd $pkgname-$pkgver
+  cd ${srcdir}/${pkgname}
 
   python3 setup.py build
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd ${srcdir}/${pkgname}
   python3 setup.py install --root=$pkgdir
 }
