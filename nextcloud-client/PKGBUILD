@@ -3,7 +3,7 @@
 # Contributor: Konstantin Shalygin <k0ste@k0ste.ru>
 
 pkgname=nextcloud-client
-pkgver=2.5.0
+pkgver=2.5.1
 pkgrel=1
 pkgdesc='Nextcloud desktop client'
 arch=('x86_64')
@@ -15,15 +15,15 @@ optdepends=('kio: Resource and network access abstraction (KDE)')
 conflicts=('owncloud-client')
 replaces=('owncloud-client')
 source=("https://github.com/nextcloud/desktop/archive/v${pkgver}.tar.gz")
-sha256sums=('4d639f43e49fd4367cd1b99bf21aecb2eac3bd89a7b0d96c7d2a0975baad6528')
+
 backup=('etc/Nextcloud/sync-exclude.lst')
 
 prepare() {
-  mkdir -p "${srcdir}/desktop-${pkgver}/build"
+  mkdir -p desktop-$pkgver/build
 }
 
 build() {
-  cd "${srcdir}/desktop-${pkgver}/build"
+  cd desktop-$pkgver/build
 
   cmake .. \
     -DCMAKE_BUILD_TYPE=Release \
@@ -35,6 +35,7 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/desktop-${pkgver}/build"
-  make DESTDIR="${pkgdir}" install
+  cd desktop-$pkgver/build
+  make DESTDIR=$pkgdir install
 }
+md5sums=('acc9e8b49f778d2588f911e483496e07')
