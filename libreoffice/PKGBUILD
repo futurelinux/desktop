@@ -22,7 +22,7 @@ pkgname=('libreoffice-common'
 	'libreoffice-extension-nlpsolver')
 _LOver=6.2.0.3
 pkgver=6.2.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('LGPL3')
 url="http://www.libreoffice.org/"
@@ -263,12 +263,13 @@ build() {
                 --enable-gio\
                 --disable-epm \
                 --disable-gtk \
+                --enable-qt5 \
                 --enable-gtk3 \
+                --enable-gtk3-kde5 \
+                --enable-kde5 \
                 --disable-dconf \
                 --disable-mergelibs \
                 --enable-introspection \
-                --enable-qt5 \
-                --enable-gtk3-kde5 \
                 --disable-gstreamer-0-10 \
                 --enable-openssl \
                 --enable-odk \
