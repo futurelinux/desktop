@@ -1,5 +1,5 @@
 pkgname=nodejs
-pkgver=10.15.0
+pkgver=10.15.1
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript'
 arch=('x86_64')
@@ -9,7 +9,7 @@ makedepends=('python2' 'procps-ng')
 optdepends=('npm: nodejs package manager')
 checkdepends=('curl')
 source=("http://nodejs.org/dist/v$pkgver/node-v$pkgver.tar.gz")
-sha256sums=('dbe467e3dabb6854fcb0cd96e04082268cb1e313ce97a4b7100b2ed152b0a0ab')
+sha256sums=('5202f6f6bfda16554c8121ea78e4cffee52e2707e1136c88f3c40b0c2af8100f')
 
 prepare() {
   cd node-v$pkgver
