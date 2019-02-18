@@ -1,37 +1,42 @@
+# Contributor: Christian Hesse <mail@eworm.de>
+
 pkgname=yubikey-personalization
-pkgver=1.18.0
+_shortname=ykpers
+pkgver=1.19.0
 pkgrel=1
 pkgdesc='Yubico YubiKey Personalization library and tool'
 arch=('x86_64')
 url='https://github.com/Yubico/yubikey-personalization'
 license=('BSD')
-depends=('libusb' 'yubico-c-client')
+depends=('json-c' 'libusb' 'yubico-c-client')
 makedepends=('systemd' 'asciidoc')
 provides=('ykpers')
 conflicts=('ykpers')
+validpgpkeys=('0A3B0262BCA1705307D5FF06BCA00FD4B2168C0A') # Klas Lindfors <klas@yubico.com>
 install='yubikey-personalization.install'
-source=("https://github.com/Yubico/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('7cf5fa315132e4473caca509d3a0768ed490938d1068e8aa46be200fc751eff5')
+source=("https://developers.yubico.com/${pkgname}/Releases/${_shortname}-${pkgver}.tar.gz"{,.sig})
+sha512sums=('05e3447656d52a2cd4092f1df2e99e1289414515644ae10daaa1be851811996904188039e3c8362059b56a43df37cba4396928dc5c546d4506f796b20e4ceabe'
+            'SKIP')
 
 build() {
-	cd $pkgname-$pkgver
+	cd "${_shortname}-${pkgver}"
 
-	autoreconf -fi
-	./configure --prefix=/usr --with-udevrulesdir=/usr/lib/udev/rules.d/
+	./configure \
+		--prefix=/usr \
+		--with-udevrulesdir=/usr/lib/udev/rules.d/
 	make
 }
 
 check() {
-	cd $pkgname-$pkgver
+	cd "${_shortname}-${pkgver}"
 
 	make check
 }
 
 package() {
-	cd $pkgname-$pkgver
+	cd "${_shortname}-${pkgver}"
 
-	install -D -m0644 COPYING $pkgdir/usr/share/licenses/yubikey-personalization/COPYING
-	install -D -m0644 README $pkgdir/usr/share/doc/yubikey-personalization/README
-	make DESTDIR=$pkgdir install
+	install -D -m0644 COPYING "${pkgdir}/usr/share/licenses/yubikey-personalization/COPYING"
+	install -D -m0644 README "${pkgdir}/usr/share/doc/yubikey-personalization/README"
+	make DESTDIR="${pkgdir}/" install
 }
-
