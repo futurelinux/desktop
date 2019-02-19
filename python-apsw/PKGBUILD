@@ -1,0 +1,42 @@
+# Contributions from Arch:
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: Brendan MacDonell <macdonellba at gmail dot com>
+# Contributor: Linmiao Xu <linmiao.xu@gmail.com>
+# Contributor: Juan Miguel Cejuela <juanmi@jmcejuela.net>
+
+pkgbase=python-apsw
+pkgname=('python3-apsw' 'python2-apsw')
+pkgver=3.26.0
+pkgrel=1
+arch=('x86_64')
+url="https://github.com/rogerbinns/apsw"
+license=('MIT')
+depends=('sqlite')
+makedepends=('python3' 'python2')
+source=("apsw-$pkgver-r1.tar.gz::https://github.com/rogerbinns/apsw/archive/$pkgver-r1.tar.gz")
+sha256sums=('77e5722dbc169f9e1191cab4b108977bb9e927a4cd512332dde20b1196e70b36')
+
+build() {
+  cd apsw-${pkgver}-r1
+
+  python3 setup.py build --enable=load_extension
+  python2 setup.py build --enable=load_extension
+}
+
+package_python3-apsw() {
+depends+=('python3')
+pkgdesc="Python3 wrapper for SQLite"
+  cd "$srcdir"/apsw-${pkgver}-r1
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+package_python2-apsw() {
+depends+=('python2')
+pkgdesc="Python2 wrapper for SQLite"
+  cd "$srcdir"/apsw-${pkgver}-r1
+  python2 setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
