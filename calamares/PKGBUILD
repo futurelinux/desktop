@@ -1,5 +1,5 @@
 pkgname=calamares
-pkgver=3.2.3
+pkgver=3.2.4
 pkgrel=1
 _releaseName="Hawking"
 _releaseYear="2019"
@@ -16,7 +16,7 @@ source+=("$pkgname-$pkgver.tar.gz::https://github.com/calamares/calamares/releas
 #_gitsha="6cb4291b4d142462f8cc0e61fc4f10880cd25546"
 #source+=("$pkgname-$pkgver.tar.gz::https://github.com/calamares/calamares/archive/${_gitsha}.zip"
          "calamares-chakra::git+https://code.chakralinux.org/tools/calamares-chakra.git")
-md5sums=('12bb2459be2aab5a1af08d3d84ebbbb8'
+md5sums=('c3daa141538a0a7abafdf3f12295460f'
          'SKIP')
 
 prepare() {
