@@ -1,6 +1,6 @@
 pkgname='falkon'
 pkgver=3.0.1
-pkgrel=5
+pkgrel=6
 pkgdesc="Cross-platform QtWebEngine browser"
 url="https://github.com/KDE/falkon"
 arch=('x86_64')
@@ -17,12 +17,9 @@ source=("https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.x
         'start-white.png'
         falkon-pyside2.patch::"https://cgit.kde.org/falkon.git/patch/?id=4c83ba3d"
         falkon-pyside2-5.12.patch
-        falkon-webinspector.patch::"https://cgit.kde.org/falkon.git/patch/?id=48ca42d6")
-sha1sums=('1c3b75b8c156b4f28ebb3c30e60e72c57233d47c'
-          '6ec67993bda3054d4210cc08177b124f873774e3'
-          'e1cf4433e58c0daa08f75a1dbb74bd9fc105bd31'
-          'b7318862e8e43efd158fdd1bd1225024bc1b52ae'
-          'c318adf83653cad781c452e3a2b26dd9ec450f8e')
+        falkon-webinspector.patch::"https://cgit.kde.org/falkon.git/patch/?id=48ca42d6"
+        0001-branded-speeddial.patch)
+
 
 prepare() {
   msg 'Applying browserUI patch...'
@@ -34,6 +31,7 @@ prepare() {
   sed -e 's|"background", QString()|"file:///usr/share/pixmaps/start-white.png", QString()|' \
       -e 's|"backsize", "auto"|"backsize", "contain"|' -i speeddial.cpp
   cd $srcdir/$pkgname-$pkgver
+  patch -Np1 -i ../0001-branded-speeddial.patch
   
   msg 'Applying preference patch'
   cd src/lib/preferences/
@@ -71,3 +69,10 @@ package() {
   install -Dm644 linux/completion/_$pkgname \
     $pkgdir/usr/share/zsh/site-functions/_$pkgname
 } 
+
+md5sums=('c6fb6433ac0f228667e2f763c02317c5'
+         'fc705d7aba952361a626a2c79726bbfa'
+         '43fa1a8cdc917590396caab8bb41b7ca'
+         '3aab035a2f223e01e55bfbc527386390'
+         '431da9f255176d0b24662578d77099f4'
+         'b1848d49f320719b944d00f28ca153a9')

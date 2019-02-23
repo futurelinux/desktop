@@ -1,0 +1,46 @@
+From c504c6f3490588f984722f2ec2dfd9f718861a16 Mon Sep 17 00:00:00 2001
+From: BrLi <rainman59118@gmail.com>
+Date: Sun, 24 Feb 2019 00:16:04 +0800
+Subject: [PATCH] branded speeddial
+
+---
+ src/lib/plugins/speeddial.cpp | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/src/lib/plugins/speeddial.cpp b/src/lib/plugins/speeddial.cpp
+index b82c654b..3d14c85a 100644
+--- a/src/lib/plugins/speeddial.cpp
++++ b/src/lib/plugins/speeddial.cpp
+@@ -63,6 +63,18 @@ void SpeedDial::loadSettings()
+     m_sdcentered = settings.value("sdcenter", false).toBool();
+     settings.endGroup();
+ 
++    if (allPages.isEmpty()) {
++        allPages = "url:\"https:/kde.org\"|title:\"KDE Community Home\";"
++                   "url:\"https://phabricator.kde.org/source/falkon/\"|title:\"Falkon Git\";"
++                   "url:\"https://bugs.kde.org/describecomponents.cgi?product=Falkon\"|title:\"Falkon Bug Tracker\";"
++                   "url:\"https://www.chakralinux.org\"|title:\"The Chakra Project\";"
++                   "url:\"https://community.chakralinux.org\"|title:\"Forums\";"
++                   "url:\"https://code.chakralinux.org/chakra/packages\"|title:\"Chakra Bug Tracker\";"
++                   "url:\"https://webchat.freenode.net/?channels=chakra\"|title:\"IRC\";"
++                   "url:\"http://www.youtube.com/html5\"|title:\"YouTube-html5\";"
++                   "url:\"https://duckduckgo.com/?t=chakra\"|title:\"DuckDuckGo\";";
++    }
++
+     changed(allPages);
+ 
+     m_thumbnailsDir = DataPaths::currentProfilePath() + "/thumbnails/";
+@@ -229,6 +241,10 @@ QString SpeedDial::initialScript()
+ 
+ void SpeedDial::changed(const QString &allPages)
+ {
++    if (allPages.isEmpty()) {
++        return;
++    }
++
+     const QStringList entries = allPages.split(QLatin1String("\";"), QString::SkipEmptyParts);
+     m_pages.clear();
+ 
+-- 
+2.20.1
+
