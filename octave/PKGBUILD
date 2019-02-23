@@ -1,6 +1,6 @@
 pkgname=octave
 pkgver=4.4.1
-pkgrel=5
+pkgrel=6
 pkgdesc="A high-level language, primarily intended for numerical computations."
 arch=('x86_64')
 url="http://www.octave.org"
@@ -16,6 +16,14 @@ optdepends=('texinfo: for help-support in octave'
 source=(ftp://ftp.gnu.org/gnu/octave/octave-$pkgver.tar.gz)
 options=('!emptydirs')
 sha1sums=('693fe46fdf49c62dec9f81100050ba2d2c1e4067')
+
+source+=(readonlydoc.patch::https://savannah.gnu.org/file/readonlydoc.patch?file_id=46245)
+sha1sums+=('172fda9eace4b13d8dc7e5ee874158c9490664f5')
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -i $srcdir/readonlydoc.patch
+}
 
 build() {
   cd $pkgname-$pkgver
