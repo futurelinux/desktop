@@ -5,7 +5,7 @@
      log.set_level('debug')
  
 +
-+log.error("HPLIP upgrade is disabled by Chakra for security reasons, if you like to upgrade HPLIP, use the Chakra software package manager pacman or open a bugreport on http://chakraos.org/bugtracker")
++log.error("HPLIP upgrade is disabled by Chakra for security reasons, if you like to upgrade HPLIP, use the Chakra software package manager pacman or open a bugreport on https://code.chakralinux.org")
 +clean_exit(1)
 +
 +
