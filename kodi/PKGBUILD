@@ -13,7 +13,7 @@ pkgdesc="A software media player and entertainment hub for digital media"
 depends=('python2-pillow' 'python2-simplejson' 'mesa-demos' 'bluez-libs' 'fribidi' 'glew' 'hicolor-icon-theme'
          'libcdio' 'libjpeg-turbo' 'libmariadbclient' 'libmicrohttpd' 'libpulse' 'libssh' 'libva' 'libxrandr'
          'libxslt' 'lirc' 'lzo' 'smbclient' 'taglib' 'tinyxml' 'yajl' 'libusb' 'nettle' 'dcadec' 'libbluray'
-         'crossguid-git' 'curl' 'libcec' 'lsb-release' 'libnfs' 'xorg-utils')
+         'curl' 'libcec' 'lsb-release' 'libnfs' 'xorg-utils')
 optdepends=(
     'bluez: Blutooth support'
     'libnfs: NFS shares support'
@@ -36,16 +36,40 @@ makedepends=(
 provides=('xbmc')
 conflicts=('xbmc')
 replaces=('xbmc')
-source=("$pkgname-$pkgver-$_codename.tar.gz::https://github.com/xbmc/xbmc/archive/$pkgver-$_codename.tar.gz")
+source=(
+  "$pkgbase-$pkgver-$_codename.tar.gz::https://github.com/xbmc/xbmc/archive/$pkgver-$_codename.tar.gz"
+  "$pkgbase-libdvdcss-$_libdvdcss_version.tar.gz::https://github.com/xbmc/libdvdcss/archive/$_libdvdcss_version.tar.gz"
+  "$pkgbase-libdvdnav-$_libdvdnav_version.tar.gz::https://github.com/xbmc/libdvdnav/archive/$_libdvdnav_version.tar.gz"
+  "$pkgbase-libdvdread-$_libdvdread_version.tar.gz::https://github.com/xbmc/libdvdread/archive/$_libdvdread_version.tar.gz"
+  "$pkgbase-ffmpeg-$_ffmpeg_version.tar.gz::https://github.com/xbmc/FFmpeg/archive/$_ffmpeg_version.tar.gz"
+  "$pkgbase-fmt-$_fmt_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fmt-$_fmt_version.tar.gz"
+  "$pkgbase-crossguid-$_crossguid_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/crossguid-$_crossguid_version.tar.gz"
+  "$pkgbase-fstrcmp-$_fstrcmp_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fstrcmp-$_fstrcmp_version.tar.gz"
+  "$pkgbase-flatbuffers-$_flatbuffers_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/flatbuffers-$_flatbuffers_version.tar.gz"
+)
+noextract=(
+  "$pkgbase-libdvdcss-$_libdvdcss_commit.tar.gz"
+  "$pkgbase-libdvdnav-$_libdvdnav_commit.tar.gz"
+  "$pkgbase-libdvdread-$_libdvdread_commit.tar.gz"
+  "$pkgbase-ffmpeg-$_ffmpeg_version.tar.gz"
+  "$pkgbase-fmt-$_fmt_version.tar.gz"
+  "$pkgbase-crossguid-$_crossguid_version.tar.gz"
+  "$pkgbase-fstrcmp-$_fstrcmp_version.tar.gz"
+  "$pkgbase-flatbuffers-$_flatbuffers_version.tar.gz"
+)
 sha256sums=('bc1ef0e271d0b6ce2e1be7546ad4f7d330930d7631cc19a9bbc5f75ddc586166')
+
+_libdvdcss_version="1.4.2-$_codename-Beta-5"
+_libdvdnav_version="6.0.0-$_codename-Alpha-3"
+_libdvdread_version="6.0.0-$_codename-Alpha-3"
+_ffmpeg_version="4.0.3-$_codename-RC5"
+_fmt_version="5.1.0"
+_crossguid_version="8f399e8bd4"
+_fstrcmp_version="0.7.D001"
+_flatbuffers_version="1.9.0"
 
 prepare() {
   cd "$srcdir/xbmc-$pkgver-$_codename"
-
-  find -type f -name *.py -exec sed 's|^#!.*python$|#!/usr/bin/python2|' -i "{}" +
-  sed 's|^#!.*python$|#!/usr/bin/python2|' -i tools/depends/native/rpl-native/rpl
-	sed 's/python/python2/' -i tools/Linux/kodi.sh.in
-  sed 's/shell python/shell python2/' -i tools/EventClients/Makefile.in
 
   mkdir -p build
 }
@@ -56,6 +80,20 @@ build() {
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=/usr/lib \
         -DLIRC_DEVICE=/run/lirc/lircd \
+        -DENABLE_EVENTCLIENTS=ON \
+        -DENABLE_INTERNAL_FFMPEG=ON \
+        -DENABLE_INTERNAL_FMT=ON \
+        -DENABLE_INTERNAL_CROSSGUID=ON \
+        -DENABLE_INTERNAL_FSTRCMP=ON \
+        -DENABLE_INTERNAL_FLATBUFFERS=ON \
+        -Dlibdvdcss_URL="$srcdir/$pkgbase-libdvdcss-$_libdvdcss_version.tar.gz" \
+        -Dlibdvdnav_URL="$srcdir/$pkgbase-libdvdnav-$_libdvdnav_version.tar.gz" \
+        -Dlibdvdread_URL="$srcdir/$pkgbase-libdvdread-$_libdvdread_version.tar.gz" \
+        -DFFMPEG_URL="$srcdir/$pkgbase-ffmpeg-$_ffmpeg_version.tar.gz" \
+        -DFMT_URL="$srcdir/$pkgbase-fmt-$_fmt_version.tar.gz" \
+        -DCROSSGUID_URL="$srcdir/$pkgbase-crossguid-$_crossguid_version.tar.gz" \
+        -DFSTRCMP_URL="$srcdir/$pkgbase-fstrcmp-$_fstrcmp_version.tar.gz" \
+        -DFLATBUFFERS_URL="$srcdir/$pkgbase-flatbuffers-$_flatbuffers_version.tar.gz" \
         ../project/cmake
   make
   make preinstall
@@ -63,6 +101,10 @@ build() {
 
 package() {
   cd "$srcdir/xbmc-$pkgver-$_codename"/build
-  # Running make install
+
   make DESTDIR="$pkgdir" install
+
+  # python2 is being used
+  cd "$pkgdir"
+  grep -lR '#!.*python' * | while read file; do sed -s 's/\(#!.*python\)/\12/g' -i "$file"; done
 }
