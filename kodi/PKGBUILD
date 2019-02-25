@@ -48,25 +48,25 @@ _fstrcmp_version="0.7.D001"
 _flatbuffers_version="1.9.0"
 
 source=(
-  "$pkgbase-$pkgver-$_codename.tar.gz::https://github.com/xbmc/xbmc/archive/$pkgver-$_codename.tar.gz"
-  "$pkgbase-libdvdcss-$_libdvdcss_version.tar.gz::https://github.com/xbmc/libdvdcss/archive/$_libdvdcss_version.tar.gz"
-  "$pkgbase-libdvdnav-$_libdvdnav_version.tar.gz::https://github.com/xbmc/libdvdnav/archive/$_libdvdnav_version.tar.gz"
-  "$pkgbase-libdvdread-$_libdvdread_version.tar.gz::https://github.com/xbmc/libdvdread/archive/$_libdvdread_version.tar.gz"
-  "$pkgbase-ffmpeg-$_ffmpeg_version.tar.gz::https://github.com/xbmc/FFmpeg/archive/$_ffmpeg_version.tar.gz"
-  "$pkgbase-fmt-$_fmt_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fmt-$_fmt_version.tar.gz"
-  "$pkgbase-crossguid-$_crossguid_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/crossguid-$_crossguid_version.tar.gz"
-  "$pkgbase-fstrcmp-$_fstrcmp_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fstrcmp-$_fstrcmp_version.tar.gz"
-  "$pkgbase-flatbuffers-$_flatbuffers_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/flatbuffers-$_flatbuffers_version.tar.gz"
+  "$pkgname-$pkgver-$_codename.tar.gz::https://github.com/xbmc/xbmc/archive/$pkgver-$_codename.tar.gz"
+  "$pkgname-libdvdcss-$_libdvdcss_version.tar.gz::https://github.com/xbmc/libdvdcss/archive/$_libdvdcss_version.tar.gz"
+  "$pkgname-libdvdnav-$_libdvdnav_version.tar.gz::https://github.com/xbmc/libdvdnav/archive/$_libdvdnav_version.tar.gz"
+  "$pkgname-libdvdread-$_libdvdread_version.tar.gz::https://github.com/xbmc/libdvdread/archive/$_libdvdread_version.tar.gz"
+  "$pkgname-ffmpeg-$_ffmpeg_version.tar.gz::https://github.com/xbmc/FFmpeg/archive/$_ffmpeg_version.tar.gz"
+  "$pkgname-fmt-$_fmt_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fmt-$_fmt_version.tar.gz"
+  "$pkgname-crossguid-$_crossguid_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/crossguid-$_crossguid_version.tar.gz"
+  "$pkgname-fstrcmp-$_fstrcmp_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fstrcmp-$_fstrcmp_version.tar.gz"
+  "$pkgname-flatbuffers-$_flatbuffers_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/flatbuffers-$_flatbuffers_version.tar.gz"
 )
 noextract=(
-  "$pkgbase-libdvdcss-$_libdvdcss_commit.tar.gz"
-  "$pkgbase-libdvdnav-$_libdvdnav_commit.tar.gz"
-  "$pkgbase-libdvdread-$_libdvdread_commit.tar.gz"
-  "$pkgbase-ffmpeg-$_ffmpeg_version.tar.gz"
-  "$pkgbase-fmt-$_fmt_version.tar.gz"
-  "$pkgbase-crossguid-$_crossguid_version.tar.gz"
-  "$pkgbase-fstrcmp-$_fstrcmp_version.tar.gz"
-  "$pkgbase-flatbuffers-$_flatbuffers_version.tar.gz"
+  "$pkgname-libdvdcss-$_libdvdcss_commit.tar.gz"
+  "$pkgname-libdvdnav-$_libdvdnav_commit.tar.gz"
+  "$pkgname-libdvdread-$_libdvdread_commit.tar.gz"
+  "$pkgname-ffmpeg-$_ffmpeg_version.tar.gz"
+  "$pkgname-fmt-$_fmt_version.tar.gz"
+  "$pkgname-crossguid-$_crossguid_version.tar.gz"
+  "$pkgname-fstrcmp-$_fstrcmp_version.tar.gz"
+  "$pkgname-flatbuffers-$_flatbuffers_version.tar.gz"
 )
 sha256sums=('bc1ef0e271d0b6ce2e1be7546ad4f7d330930d7631cc19a9bbc5f75ddc586166'
             '38816f8373e243bc5950449b4f3b18938c4e1c59348e3411e23f31db4072e40d'
@@ -96,14 +96,14 @@ build() {
         -DENABLE_INTERNAL_CROSSGUID=ON \
         -DENABLE_INTERNAL_FSTRCMP=ON \
         -DENABLE_INTERNAL_FLATBUFFERS=ON \
-        -Dlibdvdcss_URL="$srcdir/$pkgbase-libdvdcss-$_libdvdcss_version.tar.gz" \
-        -Dlibdvdnav_URL="$srcdir/$pkgbase-libdvdnav-$_libdvdnav_version.tar.gz" \
-        -Dlibdvdread_URL="$srcdir/$pkgbase-libdvdread-$_libdvdread_version.tar.gz" \
-        -DFFMPEG_URL="$srcdir/$pkgbase-ffmpeg-$_ffmpeg_version.tar.gz" \
-        -DFMT_URL="$srcdir/$pkgbase-fmt-$_fmt_version.tar.gz" \
-        -DCROSSGUID_URL="$srcdir/$pkgbase-crossguid-$_crossguid_version.tar.gz" \
-        -DFSTRCMP_URL="$srcdir/$pkgbase-fstrcmp-$_fstrcmp_version.tar.gz" \
-        -DFLATBUFFERS_URL="$srcdir/$pkgbase-flatbuffers-$_flatbuffers_version.tar.gz" \
+        -Dlibdvdcss_URL="$srcdir/$pkgname-libdvdcss-$_libdvdcss_version.tar.gz" \
+        -Dlibdvdnav_URL="$srcdir/$pkgname-libdvdnav-$_libdvdnav_version.tar.gz" \
+        -Dlibdvdread_URL="$srcdir/$pkgname-libdvdread-$_libdvdread_version.tar.gz" \
+        -DFFMPEG_URL="$srcdir/$pkgname-ffmpeg-$_ffmpeg_version.tar.gz" \
+        -DFMT_URL="$srcdir/$pkgname-fmt-$_fmt_version.tar.gz" \
+        -DCROSSGUID_URL="$srcdir/$pkgname-crossguid-$_crossguid_version.tar.gz" \
+        -DFSTRCMP_URL="$srcdir/$pkgname-fstrcmp-$_fstrcmp_version.tar.gz" \
+        -DFLATBUFFERS_URL="$srcdir/$pkgname-flatbuffers-$_flatbuffers_version.tar.gz" \
         ../project/cmake
   make
   make preinstall
