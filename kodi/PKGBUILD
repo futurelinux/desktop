@@ -90,7 +90,6 @@ build() {
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=/usr/lib \
         -DLIRC_DEVICE=/run/lirc/lircd \
-        -DENABLE_EVENTCLIENTS=ON \
         -DENABLE_INTERNAL_FFMPEG=ON \
         -DENABLE_INTERNAL_FMT=ON \
         -DENABLE_INTERNAL_CROSSGUID=ON \
@@ -104,7 +103,7 @@ build() {
         -DCROSSGUID_URL="$srcdir/$pkgname-crossguid-$_crossguid_version.tar.gz" \
         -DFSTRCMP_URL="$srcdir/$pkgname-fstrcmp-$_fstrcmp_version.tar.gz" \
         -DFLATBUFFERS_URL="$srcdir/$pkgname-flatbuffers-$_flatbuffers_version.tar.gz" \
-        ../"xbmc-$pkgver-$_codename"
+        ..
   make
   make preinstall
 }
