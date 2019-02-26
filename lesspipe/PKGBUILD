@@ -1,20 +1,14 @@
-#
-# Apps Packages for Chakra, part of chakra-project.org
-#
-# Maintainer: Samir Benmendil <samir.benmendil[at]gmail[dot]com>
-# Contributer: aur2ccr (http://ddg.gg/?q=!ccr+aur2ccr)
-# Contributer: Angel 'angvp' Velasquez <angvp[at]archlinux.com.ve>
+# Contributions from Arch:
+# Maintainer: Angel 'angvp' Velasquez <angvp[at]archlinux.com.ve>
 # Contributor: solsTiCe d'Hiver <solstice.dhiver@gmail.com>
 
 pkgname=lesspipe
-pkgver=1.82
-pkgrel=2
+pkgver=1.83
+pkgrel=1
 pkgdesc='an input filter for the pager less'
-url="http://www-zeuthen.desy.de/~friebel/unix/lesspipe.html"
 depends=('less')
-arch=('x86_64')
+arch=('any')
 license=('GPL')
-install="lesspipe.install"
 optdepends=('perl'
 	    'rpmextract: support for rpm files'
 	    'fastjar: support for jar files'
@@ -24,23 +18,22 @@ optdepends=('perl'
 	    'cabextract: support for cab files'
 	    'cdrkit: support for iso files'
 	    'html2text: support for html files'
-	    'antiword: support for word file'
-	    'unrtf: support for rtf file'
-	    'imagemagick: support for some image file')
-source=(http://www-zeuthen.desy.de/~friebel/unix/less/$pkgname-$pkgver.tar.gz
+	    'imagemagick: support for some image files')
+url="http://www-zeuthen.desy.de/~friebel/unix/lesspipe.html"
+source=("http://downloads.sourceforge.net/project/lesspipe/lesspipe/$pkgver/lesspipe-$pkgver.tar.gz"
 	lesspipe.sh)
-md5sums=('dd6f7bc9b9f9afaf04c9aa0cdbe9fe56'
-         '675b56f560c600f43108adfd98222251')
+sha256sums=('d616f0d51852e60fb0d0801eec9c31b10e0acc6fdfdc62ec46ef7bfd60ce675e'
+            '522a4893b640ed95e39fd4ca83a5d5ec79207542fec03710fa5e73fe201ed057')
 
 build() {
-  cd $srcdir/$pkgname-$pkgver
+  cd "$srcdir"/$pkgname-$pkgver
   ./configure --prefix=/usr --yes
   make
 }
 
 package() {
-  cd $srcdir/$pkgname-$pkgver
-  mkdir -p $pkgdir/usr/share/man/man1
-  make install PREFIX=$pkgdir/usr
-  install -D $srcdir/lesspipe.sh $pkgdir/etc/profile.d/lesspipe.sh
+  cd "$srcdir"/$pkgname-$pkgver
+  mkdir -p "$pkgdir"/usr/share/man/man1
+  make install PREFIX="$pkgdir"/usr
+  install -D "$srcdir"/lesspipe.sh "$pkgdir"/etc/profile.d/lesspipe.sh
 }
