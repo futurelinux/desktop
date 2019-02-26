@@ -59,9 +59,9 @@ source=(
   "$pkgname-flatbuffers-$_flatbuffers_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/flatbuffers-$_flatbuffers_version.tar.gz"
 )
 noextract=(
-  "$pkgname-libdvdcss-$_libdvdcss_commit.tar.gz"
-  "$pkgname-libdvdnav-$_libdvdnav_commit.tar.gz"
-  "$pkgname-libdvdread-$_libdvdread_commit.tar.gz"
+  "$pkgname-libdvdcss-$_libdvdcss_version.tar.gz"
+  "$pkgname-libdvdnav-$_libdvdnav_version.tar.gz"
+  "$pkgname-libdvdread-$_libdvdread_version.tar.gz"
   "$pkgname-ffmpeg-$_ffmpeg_version.tar.gz"
   "$pkgname-fmt-$_fmt_version.tar.gz"
   "$pkgname-crossguid-$_crossguid_version.tar.gz"
@@ -104,7 +104,7 @@ build() {
         -DCROSSGUID_URL="$srcdir/$pkgname-crossguid-$_crossguid_version.tar.gz" \
         -DFSTRCMP_URL="$srcdir/$pkgname-fstrcmp-$_fstrcmp_version.tar.gz" \
         -DFLATBUFFERS_URL="$srcdir/$pkgname-flatbuffers-$_flatbuffers_version.tar.gz" \
-        ../project/cmake
+        ../"xbmc-$pkgver-$_codename"
   make
   make preinstall
 }
