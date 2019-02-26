@@ -17,6 +17,7 @@ optdepends=(
     'bluez: Blutooth support'
     'libnfs: NFS shares support'
     'libplist: AirPlay support'
+    'shairplay: AirPlay support'
     'pulseaudio: PulseAudio support'
     'udisks: Automount external drives'
     'unrar: Archives support'
@@ -30,7 +31,7 @@ makedepends=(
   'libmodplug' 'libmpeg2' 'libnfs' 'libplist' 'libpulse' 'libssh' 'libva'
   'libvdpau' 'libxrandr' 'libxslt' 'lzo' 'nasm' 'nss-mdns' 'python2-pillow'
   'python2-simplejson' 'rtmpdump' 'smbclient' 'swig' 'taglib' 'tinyxml'
-  'unzip' 'upower' 'yajl' 'zip' 'rapidjson' 'ghostscript'
+  'unzip' 'upower' 'yajl' 'zip' 'rapidjson' 'ghostscript' 'shairplay' 'ccache'
 )
 provides=('xbmc')
 conflicts=('xbmc')
@@ -89,7 +90,7 @@ build() {
 
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-        -DLIRC_DEVICE=/run/lirc/lircd \
+        -DENABLE_EVENTCLIENTS=ON \
         -DENABLE_INTERNAL_FFMPEG=ON \
         -DENABLE_INTERNAL_FMT=ON \
         -DENABLE_INTERNAL_CROSSGUID=ON \
