@@ -16,7 +16,8 @@ optdepends=('texinfo: for help-support in octave'
 source=(ftp://ftp.gnu.org/gnu/octave/octave-$pkgver.tar.gz
         octave-sundials4.patch)
 options=('!emptydirs')
-sha1sums=('693fe46fdf49c62dec9f81100050ba2d2c1e4067')
+sha1sums=('75a5ec450473e4c39290fdab9feade4a5739e465'
+          '221ceb1a7b449ee4a3579b49af705e05c2e66b3d')
 
 prepare() {
   cd $pkgname-$pkgver
