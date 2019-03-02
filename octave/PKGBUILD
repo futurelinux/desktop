@@ -1,28 +1,27 @@
 pkgname=octave
-pkgver=4.4.1
-pkgrel=7
+pkgver=5.1.0
+pkgrel=1
 pkgdesc="A high-level language, primarily intended for numerical computations."
 arch=('x86_64')
-url="http://www.octave.org"
+url="https://www.gnu.org/software/octave/"
 license=('GPL')
 depends=('readline' 'glu' 'fftw' 'curl' 'graphicsmagick' 'glpk' 'hdf5' 'qhull'
-         'suitesparse' 'arpack' 'pcre' 'qt5-base' 'fontconfig' 'zlib' 'portaudio' 'qrupdate' 'freetype2' 'gl2ps'
+         'sundials' 'arpack' 'pcre' 'qt5-base' 'fontconfig' 'zlib' 'portaudio' 'qrupdate' 'freetype2' 'gl2ps'
          'qscintilla-qt5' 'libsndfile')
 makedepends=('texlive-core' 'gcc-fortran' 'texinfo' 'gnuplot' 'openjdk' 'fltk')
 optdepends=('texinfo: for help-support in octave'
 	    'gnuplot: alternative plotting'
 	    'openjdk: to call Java functions'
             'fltk: FLTK GUI')
-source=(ftp://ftp.gnu.org/gnu/octave/octave-$pkgver.tar.gz)
+source=(ftp://ftp.gnu.org/gnu/octave/octave-$pkgver.tar.gz
+        octave-sundials4.patch)
 options=('!emptydirs')
 sha1sums=('693fe46fdf49c62dec9f81100050ba2d2c1e4067')
 
-source+=(readonlydoc.patch::https://savannah.gnu.org/file/readonlydoc.patch?file_id=46245)
-sha1sums+=('172fda9eace4b13d8dc7e5ee874158c9490664f5')
-
 prepare() {
   cd $pkgname-$pkgver
-  patch -Np1 -i $srcdir/readonlydoc.patch
+  patch -p1 -i ../octave-sundials4.patch # Fix sundials support https://savannah.gnu.org/bugs/?52475
+  autoreconf -vif
 }
 
 build() {
@@ -33,10 +32,9 @@ build() {
               --enable-shared \
               --disable-static \
               --with-quantum-depth=16 \
-              --with-umfpack="-lumfpack -lsuitesparseconfig" 
-  MOC=moc UIC=uic
+              --with-sundials_ida="-lsundials_ida -lsundials_sunlinsolklu"
   
-  LANG=C make
+  make
 }
 
 package(){
