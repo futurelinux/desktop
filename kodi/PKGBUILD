@@ -1,5 +1,6 @@
 pkgname=kodi
 pkgver=18.1
+_codename=Leia
 pkgrel=1
 arch=('x86_64')
 url="https://kodi.tv"
@@ -36,48 +37,8 @@ makedepends=(
 provides=('xbmc')
 conflicts=('xbmc')
 replaces=('xbmc')
-
-_codename=Leia
-
-_libdvdcss_version="1.4.2-$_codename-Beta-5"
-_libdvdnav_version="6.0.0-$_codename-Alpha-3"
-_libdvdread_version="6.0.0-$_codename-Alpha-3"
-_ffmpeg_version="4.0.3-$_codename-RC5"
-_fmt_version="5.1.0"
-_crossguid_version="8f399e8bd4"
-_fstrcmp_version="0.7.D001"
-_flatbuffers_version="1.9.0"
-
-source=(
-  "$pkgname-$pkgver-$_codename.tar.gz::https://github.com/xbmc/xbmc/archive/$pkgver-$_codename.tar.gz"
-  "$pkgname-libdvdcss-$_libdvdcss_version.tar.gz::https://github.com/xbmc/libdvdcss/archive/$_libdvdcss_version.tar.gz"
-  "$pkgname-libdvdnav-$_libdvdnav_version.tar.gz::https://github.com/xbmc/libdvdnav/archive/$_libdvdnav_version.tar.gz"
-  "$pkgname-libdvdread-$_libdvdread_version.tar.gz::https://github.com/xbmc/libdvdread/archive/$_libdvdread_version.tar.gz"
-  "$pkgname-ffmpeg-$_ffmpeg_version.tar.gz::https://github.com/xbmc/FFmpeg/archive/$_ffmpeg_version.tar.gz"
-  "$pkgname-fmt-$_fmt_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fmt-$_fmt_version.tar.gz"
-  "$pkgname-crossguid-$_crossguid_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/crossguid-$_crossguid_version.tar.gz"
-  "$pkgname-fstrcmp-$_fstrcmp_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/fstrcmp-$_fstrcmp_version.tar.gz"
-  "$pkgname-flatbuffers-$_flatbuffers_version.tar.gz::http://mirrors.kodi.tv/build-deps/sources/flatbuffers-$_flatbuffers_version.tar.gz"
-)
-noextract=(
-  "$pkgname-libdvdcss-$_libdvdcss_version.tar.gz"
-  "$pkgname-libdvdnav-$_libdvdnav_version.tar.gz"
-  "$pkgname-libdvdread-$_libdvdread_version.tar.gz"
-  "$pkgname-ffmpeg-$_ffmpeg_version.tar.gz"
-  "$pkgname-fmt-$_fmt_version.tar.gz"
-  "$pkgname-crossguid-$_crossguid_version.tar.gz"
-  "$pkgname-fstrcmp-$_fstrcmp_version.tar.gz"
-  "$pkgname-flatbuffers-$_flatbuffers_version.tar.gz"
-)
-sha256sums=('bc1ef0e271d0b6ce2e1be7546ad4f7d330930d7631cc19a9bbc5f75ddc586166'
-            '38816f8373e243bc5950449b4f3b18938c4e1c59348e3411e23f31db4072e40d'
-            '071e414e61b795f2ff9015b21a85fc009dde967f27780d23092643916538a57a'
-            'a30b6aa0aad0f2c505bc77948af2d5531a80b6e68112addb4c123fca24d5d3bf'
-            '9a971662e44353c120f2ccf87655571998956e699a2dd800ec708b8b928a53c8'
-            '73d4cab4fa8a3482643d8703de4d9522d7a56981c938eca42d929106ff474b44'
-            '3d77d09a5df0de510aeeb940df4cb534787ddff3bb1828779753f5dfa1229d10'
-            'e4018e850f80700acee8da296e56e15b1eef711ab15157e542e7d7e1237c3476'
-            '5ca5491e4260cacae30f1a5786d109230db3f3a6e5a0eb45d0d0608293d247e3')
+source=("$pkgname-$pkgver-$_codename.tar.gz::https://github.com/xbmc/xbmc/archive/$pkgver-$_codename.tar.gz")
+sha256sums=('bc1ef0e271d0b6ce2e1be7546ad4f7d330930d7631cc19a9bbc5f75ddc586166')
 
 prepare() {
   mkdir kodi-build
@@ -96,14 +57,6 @@ build() {
         -DENABLE_INTERNAL_CROSSGUID=ON \
         -DENABLE_INTERNAL_FSTRCMP=ON \
         -DENABLE_INTERNAL_FLATBUFFERS=ON \
-        -Dlibdvdcss_URL="$srcdir/$pkgname-libdvdcss-$_libdvdcss_version.tar.gz" \
-        -Dlibdvdnav_URL="$srcdir/$pkgname-libdvdnav-$_libdvdnav_version.tar.gz" \
-        -Dlibdvdread_URL="$srcdir/$pkgname-libdvdread-$_libdvdread_version.tar.gz" \
-        -DFFMPEG_URL="$srcdir/$pkgname-ffmpeg-$_ffmpeg_version.tar.gz" \
-        -DFMT_URL="$srcdir/$pkgname-fmt-$_fmt_version.tar.gz" \
-        -DCROSSGUID_URL="$srcdir/$pkgname-crossguid-$_crossguid_version.tar.gz" \
-        -DFSTRCMP_URL="$srcdir/$pkgname-fstrcmp-$_fstrcmp_version.tar.gz" \
-        -DFLATBUFFERS_URL="$srcdir/$pkgname-flatbuffers-$_flatbuffers_version.tar.gz" \
         ../"xbmc-$pkgver-$_codename"
   make
   make preinstall
