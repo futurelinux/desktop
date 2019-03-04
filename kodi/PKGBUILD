@@ -25,7 +25,7 @@ optdepends=(
     'unzip: Archives support'
     'upower: Display battery level')
 makedepends=(
-  'autoconf' 'automake' 'libusb' 'cmake'
+  'autoconf' 'automake' 'libusb' 'cmake' 'groff'
   'bluez-libs' 'boost' 'cmake' 'curl' 'doxygen' 'git' 'glew'
   'gperf' 'hicolor-icon-theme' 'jasper' 'java-runtime' 'libass' 'libaacs'
   'libbluray' 'libcdio' 'libcec' 'libgl' 'libmariadbclient' 'libmicrohttpd'
