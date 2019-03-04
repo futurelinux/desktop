@@ -49,8 +49,6 @@ prepare() {
 build() {
   cd kodi-build
 
-  export MAKEFLAGS="-j1"
-
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=/usr/lib \
         -DENABLE_EVENTCLIENTS=ON \
@@ -65,7 +63,7 @@ build() {
 }
 
 package() {
-  cd "$srcdir/xbmc-$pkgver-$_codename"/build
+  cd kodi-build
 
   make DESTDIR="$pkgdir" install
 
