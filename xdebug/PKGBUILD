@@ -1,18 +1,18 @@
 pkgname=xdebug
-pkgver=2.6.0
+pkgver=2.7.0
 pkgrel=1
 pkgdesc="PHP debugging extension"
 arch=('x86_64')
-url="http://www.xdebug.org"
+url="https://xdebug.org/"
 license=('GPL')
 depends=('php' 're2c')
 install="${pkgname}.install"
 backup=('etc/php/conf.d/xdebug.ini')
 categories=('programming')
-source=(http://www.xdebug.org/files/$pkgname-$pkgver.tgz
-	xdebug.ini)
-sha512sums=('e81f771478eb45cdae5814037ac1b86bcb8c5616d22dcac436482c350187c53d3cc6d54be740a49dca6d38c58c086db6e4a68eb3004a0152d6215c97512538a2'
-            '3b667dd97486df407662b80dfbef2a69a4eba964161ee9831556b9fa87823fa235323a5a3663fdfb08f649a9d98a5b5cae3de514f68a340158285abb4b50a4d4')
+source=("https://xdebug.org/files/$pkgname-${pkgver/rc/RC}.tgz"
+	'xdebug.ini')
+sha256sums=('e896da91ce0373f5fd8f4ca392c68da8593932ad51b2ec5eb3ee032b50d4b2d6'
+            '4f8a29e379a16d68a29745c05f4ec5e3624492407482a9b8923ca91c1e6272e1')
 
 build() {
   local PHPVER=`php -r 'echo phpversion();'`
@@ -29,11 +29,9 @@ build() {
 
 package() {
   cd $srcdir/$pkgname-$pkgver/debugclient
-  make DESTDIR=$pkgdir install
+  install -D -m 755 debugclient "$pkgdir"/usr/bin/debugclient
 
   cd $srcdir/$pkgname-$pkgver
   make INSTALL_ROOT=$pkgdir install
-
-  install -D -m 744 modules/xdebug.so $pkgdir/usr/lib/php/modules/xdebug.so
   install -D -m 644 $srcdir/xdebug.ini $pkgdir/etc/php/conf.d/xdebug.ini
 }
