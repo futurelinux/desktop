@@ -1,6 +1,6 @@
 pkgbase=mkvtoolnix
 pkgname=('mkvtoolnix-cli' 'mkvtoolnix-gui')
-pkgver=31.0.0
+pkgver=32.0.0
 pkgrel=1
 pkgdesc="Set of tools to create, edit and inspect Matroska files."
 arch=('x86_64')
@@ -16,7 +16,7 @@ makedepends=('flac' 'libmatroska' 'libogg' 'libvorbis' 'qt5-base' 'xdg-utils' 'l
              'qt5-multimedia' 'libebml' 'cmark')
 categories=('multimedia')
 source=("http://www.bunkus.org/videotools/${pkgbase}/sources/$pkgbase-$pkgver.tar.xz")
-sha256sums=('f98a8c3a00e48ceb9a56ec5cb1f89b7663bbc5ace88713f9f087fdaaa2501b35')
+sha256sums=('4bddae1f92360ac350283178353f92564dfa8570e09f17e46036a8a43b90953d')
 
 prepare() {
   cd $pkgbase-$pkgver
