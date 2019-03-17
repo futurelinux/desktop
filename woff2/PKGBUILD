@@ -1,0 +1,31 @@
+# Contributiosns from Arch:
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=woff2
+pkgver=1.0.2
+pkgrel=1
+pkgdesc="Web Open Font Format 2 reference implementation"
+url="https://github.com/google/woff2"
+arch=(x86_64)
+license=(custom:MIT)
+depends=(brotli)
+makedepends=(cmake ninja)
+source=(https://github.com/google/${pkgname}/archive/v${pkgver}.tar.gz)
+md5sums=('793c8844845351cb80730a74937e411b')
+
+prepare() {
+  cd $pkgname-$pkgver
+  sed -i 's/NOT BUILD_SHARED_LIBS/TRUE/' CMakeLists.txt
+}
+
+build() {
+  cd $pkgname-$pkgver
+  cmake -G Ninja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib .
+  ninja
+}
+
+package() {
+  cd $pkgname-$pkgver
+  DESTDIR="$pkgdir" ninja install
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 LICENSE
+}
