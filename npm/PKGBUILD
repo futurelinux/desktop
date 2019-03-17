@@ -1,6 +1,6 @@
 pkgname=npm
 _pkgname=cli
-pkgver=6.8.0
+pkgver=6.9.0
 pkgrel=1
 pkgdesc='A package manager for javascript'
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('nodejs' 'node-gyp' 'semver')
 makedepends=('procps-ng' 'marked-man')
 options=('!emptydirs')
 source=("$pkgname-$pkgver::https://github.com/$pkgname/$_pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('dcf93dfd81f64674bbfcd6a5240d4e4f7f4474f357597e7199d29e6f168e5e8f')
+sha256sums=('97610878321c85042d9721dcb0d523f9c37fa08377a74a6955e0133b98bbca61')
 
 prepare() {
   cd $_pkgname-$pkgver
