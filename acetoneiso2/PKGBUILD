@@ -1,12 +1,12 @@
 
 pkgname=acetoneiso2
 pkgver=2.3
-pkgrel=3
+pkgrel=4
 pkgdesc="An all in one ISO tool (bin mdf nrg img daa dmg cdi b5i bwi pdi iso)"
 arch=('x86_64')
 url="http://chakra.sourceforge.net"
 license=('GPL3')
-depends=('qt5-webkit' 'fuseiso' 'cdrdao' 'cdrkit' 'gnupg2' 'pinentry' 'mplayer' 'phonon-qt5')
+depends=('qt5-webkit' 'fuseiso' 'cdrdao' 'cdrkit' 'gnupg' 'pinentry' 'mplayer' 'phonon-qt5')
 optdepends=("p7zip: for ISO compress/decompress support"
             "dvd+rw-tools: for dvd ISO creation")
 conflicts=('acetoneiso')
