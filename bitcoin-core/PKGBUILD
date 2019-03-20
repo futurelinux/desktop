@@ -1,29 +1,29 @@
 pkgname=bitcoin-core
-pkgver=0.16.2
+pkgver=0.17.1
 pkgrel=1
 pkgdesc="Bitcoin is a peer-to-peer network based digital currency"
 arch=('x86_64')
 url="https://www.bitcoin.org/"
-depends=('boost' 'zeromq' 'miniupnpc' 'libevent' 'qt5-base' 'qrencode' 'protobuf')
-makedepends=('qt5-tools')
+depends=('boost-libs' 'zeromq' 'miniupnpc' 'libevent' 'qt5-base' 'qrencode' 'protobuf' 'openssl')
+makedepends=('boost' 'qt5-tools')
 license=('MIT')
 conflicts=('bitcoin-daemon' 'bitcoin-cli' 'bitcoin-qt' 'bitcoin')
 replaces=('bitcoin-daemon' 'bitcoin-cli' 'bitcoin-qt' 'bitcoin')
 provides=('bitcoin-daemon' 'bitcoin-cli' 'bitcoin-qt' 'bitcoin')
-source=("https://github.com/bitcoin/bitcoin/archive/v$pkgver.tar.gz"
+source=("bitcoin-$pkgver.tar.gz::https://github.com/bitcoin/bitcoin/archive/v$pkgver.tar.gz"
 	"bitcoin.sysusers"
         "bitcoin.tmpfiles")
-sha256sums=('0d99c4be777943954c4fea1aff0c405dbd5e30d87bcb9a939f26fa19ccb76f93'
+sha256sums=('d51bae80fc0a460ce752d04097c4a1271a66b55260d53165d82313488117d290'
             '6f70b0d3d5e4a3f78b15d8f49515cd33cbf0c9d2ac22f94f0d3fabb3f620e458'
             'b769c977b193680f2f549997fd8e07f6aa507071dfd519d59255ab4c687ebfcd')
 
 prepare() {
-  cd ${pkgname%-core}-$pkgver
+  cd bitcoin-$pkgver
   autoreconf -fi
 }
           
 build() {
-  cd ${pkgname%-core}-$pkgver
+  cd bitcoin-$pkgver
 
   ./configure \
     --prefix=/usr \
@@ -33,19 +33,16 @@ build() {
     --sharedstatedir=/usr/share/bitcoin \
     --localstatedir=/var/lib/bitcoin \
     --with-incompatible-bdb \
-    --enable-hardening \
     --with-gui=qt5
   make
 }
 
 package() {
-  cd ${pkgname%-core}-$pkgver
+  cd bitcoin-$pkgver
 
   install -Dm755 src/qt/bitcoin-qt "$pkgdir"/usr/bin/bitcoin-qt
   install -Dm644 doc/man/bitcoin-qt.1 \
     "$pkgdir"/usr/share/man/man1/bitcoin-qt.1
-  install -Dm644 contrib/debian/bitcoin-qt.desktop \
-    "$pkgdir"/usr/share/applications/bitcoin.desktop
   install -Dm644 share/pixmaps/bitcoin128.png \
     "$pkgdir"/usr/share/pixmaps/bitcoin128.png
 
@@ -54,8 +51,6 @@ package() {
     "$pkgdir"/usr/share/bash-completion/completions/bitcoind
   install -Dm644 doc/man/bitcoind.1 \
     "$pkgdir"/usr/share/man/man1/bitcoind.1
-  install -Dm644 contrib/debian/examples/bitcoin.conf \
-    "$pkgdir/usr/share/doc/$pkgname/examples/bitcoin.conf"
   install -Dm644 contrib/init/bitcoind.service \
     "$pkgdir/usr/lib/systemd/system/bitcoind.service"
   install -Dm644 "$srcdir/bitcoin.sysusers" \
