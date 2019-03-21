@@ -1,64 +1,56 @@
 pkgname=wireshark
-pkgver=2.6.7
+pkgver=3.0.0
 pkgrel=1
 pkgdesc='A free network protocol analyzer for Unix/Linux and Windows'
 arch=('x86_64')
 license=('GPL2')
-depends=('libpcap' 'libcap' 'krb5' 'glib2' 'desktop-file-utils' 'hicolor-icon-theme' 'libssh'
-         'lua52' 'libgcrypt' 'qt5-base' 'qt5-multimedia' 'harfbuzz' 'portaudio' 'bash' 'gnutls' 'geoip')
-makedepends=('bison' 'flex' 'qt5-tools' 'python2')
+depends=('c-ares' 'libmaxminddb' 'krb5' 'libgcrypt' 'libcap' 'libpcap'
+         'gnutls' 'glib2' 'lua52' 'libssh' 'libxml2' 'libnghttp2' 'snappy'
+         'lz4' 'spandsp' 'sbc' 'bcg729' 'desktop-file-utils' 'qt5-multimedia' 'qt5-svg'
+         'shared-mime-info' 'hicolor-icon-theme' 'xdg-utils')
+makedepends=('cmake' 'ninja' 'bison' 'flex' 'qt5-tools' 'python3')
 url='https://www.wireshark.org/'
-screenshot='https://blog.wireshark.org/wp-content/uploads/2015/11/Main-window-2.0.0rc2.png'
 install=${pkgname}.install
 source=(https://www.wireshark.org/download/src/${pkgname}-${pkgver}.tar.xz
-        wireshark.sysusers
-        do_not_use_svn_version.patch)
-sha256sums=('747b3e7a37414942959f76f198be49dcbcca936bda538c4408942ce71bfd2b71'
-            'df07748152443c7d727bd51cd57af950c345b7141986b4f0e476cd6aa3623ac4'
-            '3981bb46f592e319f9c679c5e215ae0af828044a3b64d49d2cf0305ecacf4691')
+        wireshark.sysusers)
+sha256sums=('bc4f30f5b2e94f3a696fef9de44673cdf402db90aac5299966da647f708f009e'
+            'df07748152443c7d727bd51cd57af950c345b7141986b4f0e476cd6aa3623ac4')
 
 prepare() {
   cd ${pkgname}-${pkgver}
-
-  # Avoid ugly "svn rev unknown from unknown" version string
-  patch -p1 < "${srcdir}/do_not_use_svn_version.patch"
+  sed 's| Rev Unknown from unknown||' -i tools/make-version.pl
 }
 
 build() {
   cd ${pkgname}-${pkgver}
-  
-  ./autogen.sh 
-  ./configure \
-      --prefix=/usr \
-      --with-qt=5 \
-      --with-ssl \
-      --with-pcap \
-      --with-libcap \
-      --with-zlib \
-      --with-lua \
-      --with-krb5 \
-      --with-portaudio \
-      --with-geoip
-  make all
+  cmake . -GNinja \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_RPATH= \
+    -DCMAKE_SKIP_RPATH=ON
+  ninja
 }
 
 package() {
   cd ${pkgname}-${pkgver}
 
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="${pkgdir}" ninja install
 
   # wireshark uid group is 150
   install -Dm644 "${srcdir}/wireshark.sysusers" "${pkgdir}/usr/lib/sysusers.d/wireshark.conf"
   chgrp 150 "${pkgdir}/usr/bin/dumpcap"
   chmod 754 "${pkgdir}/usr/bin/dumpcap"
 
-  # headers
-  install -Dm 644 *.h -t "${pkgdir}/usr/include/${pkgname}"
-  for d in epan epan/crypt epan/dfilter epan/dissectors epan/ftypes epan/wmem wiretap wsutil; do
-    install -Dm 644 ${d}/*.h -t "${pkgdir}/usr/include/${pkgname}/${d}"
-  done
+  cd ${pkgname}-${pkgver}
 
-  install -Dm 755 .libs/wireshark "${pkgdir}/usr/bin/wireshark"
-  install -Dm 644 wireshark.desktop -t "${pkgdir}/usr/share/applications"
-  rm "${pkgdir}/usr/share/applications/wireshark-gtk.desktop"
+  install -d "${srcdir}/staging"
+  DESTDIR="${srcdir}/staging" ninja install
+
+  install -Dm755 run/wireshark -t "${pkgdir}/usr/bin"
+  install -Dm644 wireshark.desktop -t "${pkgdir}/usr/share/applications"
+  install -Dm644 doc/wireshark.1 -t "${pkgdir}/usr/share/man1"
+  install -Dm644 wireshark.appdata.xml -t "${pkgdir}/usr/share/appdata"
+  install -Dm644 wireshark-mime-package.xml "${pkgdir}/usr/share/mime/packages/wireshark.xml"
+  mv "${srcdir}/staging/usr/share/icons" "${pkgdir}/usr/share/icons"
 }
