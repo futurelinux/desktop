@@ -20,8 +20,8 @@ pkgname=('libreoffice-common'
 	'libreoffice-postgresql-connector'
 	'libreoffice-extension-wiki-publisher'
 	'libreoffice-extension-nlpsolver')
-_LOver=6.2.1.2
-pkgver=6.2.1
+_LOver=6.2.2.2
+pkgver=6.2.2
 pkgrel=1
 arch=('x86_64')
 license=('LGPL3')
@@ -99,11 +99,11 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
         ${_additional_source_url2}/49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf
         make-pyuno-work-with-system-wide-module-install.diff)
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha1sums=('98bf67f77fb351d227e27e43396bb902ab8f31a8'
+sha1sums=('3457782270320c6db41e55748107570a51dc4d94'
           'SKIP'
-          '3e1f9f9db54c2e06df5a7378b7596b73668bd616'
+          '0b59ee8e896a52fa3f459139054b7955835895be'
           'SKIP'
-          '7b0e954f85a6dce9391f2b79a72af327d217903f'
+          '41ba2aae0dc54a53a3e15212ddab6b7d8b88e4ba'
           'SKIP'
           '11a3329bd6b0b910c5d60d4562e3a152588942f8'
           '1acea86fd399ed7817879d36370d3d1f8b109050'
