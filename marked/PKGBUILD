@@ -16,7 +16,6 @@ sha512sums=('f87d0bde26dc5a1019134d9228caa6bd8b04acba38100549c6ee61ddb1c1043bef8
 
 package() {
   npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/$pkgname-$pkgver.tgz
-  rm -r "$pkgdir"/usr/etc
   install -d "$pkgdir"/usr/share/licenses/$pkgname
   ln -s ../../../lib/node_modules/marked/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
