@@ -3,7 +3,7 @@
 
 pkgname=marked-man
 pkgver=0.4.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Wrapper adding manpage output to 'marked', inspired by 'ronn'"
 arch=('x86_64')
 url='https://github.com/kapouer/marked-man'
@@ -16,14 +16,6 @@ sha512sums=('e0032079edb3ca3ce0c9b6e83018c07c34356549c11439b14ca95def1b8473d379b
 
 package() {
   npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/$pkgname-$pkgver.tgz
-  rm -r "$pkgdir"/usr/etc
   install -d "$pkgdir"/usr/share/licenses/$pkgname
   ln -s ../../../lib/node_modules/marked-man/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
-
-  # Experimental dedup
-  cd "$pkgdir"/usr/lib/node_modules/$pkgname/node_modules
-  for dep in marked; do
-    rm -r $dep;
-    npm link $dep;
-  done
 }
