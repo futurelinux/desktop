@@ -1,12 +1,12 @@
 pkgname=keepassxc
 pkgver=2.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc="KeePassXC is a cross platform community driven port of the windows application Keepass Password Safe"
 arch=('x86_64')
 url="https://keepassxc.org/"
 license=('GPL2')
 screenshot="http://i1-win.softpedia-static.com/screenshots/KeePassXC_1.png"
-depends=('hicolor-icon-theme' 'libxtst' 'qt5-x11extras' 'libgcrypt' 'curl' 'libsodium>=1.0.12' 'yubikey-personalization' 'argon2')
+depends=('hicolor-icon-theme' 'libxtst' 'qt5-x11extras' 'libgcrypt' 'curl' 'libsodium>=1.0.12' 'yubikey-personalization' 'argon2' 'qt5-svg' 'qrencode') 
 makedepends=('cmake' 'qt5-tools')
 provides=('keepassx' 'keepassx-reboot')
 conflicts=('keepassx-reboot')
@@ -31,6 +31,7 @@ build() {
         -DWITH_XC_HTTP=ON \
         -DWITH_XC_BROWSER=ON \
         -DWITH_XC_YUBIKEY=ON \
+        -DWITH_XC_KEESHARE=ON \
         -DCMAKE_BUILD_TYPE=Release ..
     make
 }
