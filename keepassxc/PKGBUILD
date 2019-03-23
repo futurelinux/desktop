@@ -1,5 +1,5 @@
 pkgname=keepassxc
-pkgver=2.3.4
+pkgver=2.4.0
 pkgrel=1
 pkgdesc="KeePassXC is a cross platform community driven port of the windows application Keepass Password Safe"
 arch=('x86_64')
@@ -12,7 +12,7 @@ provides=('keepassx' 'keepassx-reboot')
 conflicts=('keepassx-reboot')
 replaces=('keepassx-reboot')
 source=("https://github.com/keepassxreboot/$pkgname/releases/download/$pkgver/$pkgname-$pkgver-src.tar.xz")
-sha256sums=('0c24a78895185b9b6b098f08a15b332c600f80aa570d608940fcc2a38e02780a')
+sha256sums=('081ff1a34da8e0e8db951b5d70824d7a2b3d299ed4ae54e6ddc1e3ac176b95a8')
 
 prepare() {
     cd $pkgname-$pkgver
