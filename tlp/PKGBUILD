@@ -1,13 +1,13 @@
 pkgbase=tlp
 pkgname=('tlp' 'tlp-rdw')
-pkgver=1.1
+pkgver=1.2.1
 pkgrel=1
 arch=('x86_64')
 url='http://linrunner.de/en/tlp/tlp.html'
 license=('GPL2' 'GPL3')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/linrunner/TLP/archive/$pkgver.tar.gz"
 'default')
-sha256sums=('76e1a091eed1055f7af75f49621be51ed41b1e8f872eeb9506c0749060fd1019'
+sha256sums=('0fa43c2be7d42223646c6271eb823174076a92c9cea5740c24b5e9e8404c9765'
             '7f86f31ee86235eac6a57e4d647d6f41489b3eaa10037cca1460eb3ff091b567')
 
 package_tlp() {
