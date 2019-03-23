@@ -1,6 +1,6 @@
 
 pkgname=libsecret
-pkgver=0.18.5+14+g9980655
+pkgver=0.18.8
 pkgrel=1
 pkgdesc="Library for storing and retrieving passwords and other secrets"
 arch=(x86_64)
@@ -8,7 +8,7 @@ license=(LGPL)
 url="https://wiki.gnome.org/Projects/Libsecret"
 depends=(glib2)
 makedepends=(intltool docbook-xsl gobject-introspection vala git gtk-doc)
-_commit=998065599c66055dcffa1ef1ddebb947ccd68248  # master
+_commit=b5442654d483e959ac9ecd3a3fb9eebc8d9d8399  # tags/0.18.8^0
 source=("git+https://git.gnome.org/browse/libsecret#commit=$_commit")
 sha256sums=('SKIP')
 
