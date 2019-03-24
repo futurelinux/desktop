@@ -3,7 +3,7 @@
 
 pkgbase=sagemath
 pkgname=('sagemath' 'sagemath-doc' 'sagemath-src')
-pkgver=8.5
+pkgver=8.7
 pkgrel=1
 pkgdesc="Open Source Mathematics Software, free alternative to Magma, Maple, Mathematica, and Matlab - includes Sage-Notebook"
 arch=('x86_64')
@@ -24,7 +24,7 @@ source=("$pkgbase-$pkgver.tar.gz::http://mirror.koddos.net/sagemath/src/sage-${p
         'sage.service'
         'sage-notebook.desktop'
         'sage-notebook.svg')
-sha1sums=('d63b583176794232e525207b3671a26cfb8c1e3e'
+sha1sums=('8e2d79647dbe4be957c8c97223568c8fae8e6bf2'
           '5196c3b61b1006dc13c3c1fce8b985758e76b0fc'
           'd28dbdb3a48d924709593b6ecbac30cdd50517fd'
           '51fb7257c69240f4266f6e69045156907e721771')
