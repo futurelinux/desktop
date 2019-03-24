@@ -18,8 +18,7 @@ build() {
               --sysconfdir=/etc \
               --enable-color \
               --enable-nanorc \
-	      --enable-multibuffer \
-	      --disable-wrapping-as-root
+	      --enable-multibuffer
   make
 }
 
