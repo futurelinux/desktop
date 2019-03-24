@@ -22,7 +22,7 @@ pkgname=('libreoffice-common'
 	'libreoffice-extension-nlpsolver')
 _LOver=6.2.2.2
 pkgver=6.2.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('LGPL3')
 url="http://www.libreoffice.org/"
@@ -256,6 +256,7 @@ build() {
                 --prefix=/usr --exec-prefix=/usr --sysconfdir=/etc \
                 --libdir=/usr/lib --mandir=/usr/share/man \
                 --with-lang="" \
+                --with-help=html \
                 --enable-avahi \
                 --enable-dbus \
                 --disable-evolution2 \
