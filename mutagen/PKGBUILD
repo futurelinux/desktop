@@ -2,7 +2,7 @@
 
 pkgbase=mutagen
 pkgname=('mutagen' 'python3-mutagen')
-pkgver=1.41.0
+pkgver=1.42.0
 pkgrel=1
 arch=('any')
 url="https://github.com/quodlibet/mutagen"
@@ -14,7 +14,7 @@ checkdepends=(python2-pytest      python3-pytest
 	      python2-pycodestyle python3-pycodestyle)
 source=(https://github.com/quodlibet/mutagen/releases/download/release-${pkgver}/${pkgbase}-${pkgver}.tar.gz{,.sig})
 validgpgkeys=(0EBF782C5D53F7E5FB02A66746BD761F7A49B0EC)
-sha1sums=('b80793da7b23742faf0616d0b301eff2e4a579d7'
+sha1sums=('9aa12d92300a7727936ca2f379bc4c77a0daf8fd'
           'SKIP')
 
 prepare() {
