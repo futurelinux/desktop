@@ -2,7 +2,7 @@
 
 pkgname=kioslaves
 _pkgname=kdesdk-kioslaves
-pkgver=18.12.2
+pkgver=18.12.3
 pkgrel=1
 pkgdesc='KDE SDK KIO-Slaves'
 url='https://www.kde.org/'
@@ -15,7 +15,7 @@ replaces=(kdesdk-kioslaves)
 conflicts=(kdesdk-kioslaves)
 provides=(kdesdk-kioslaves)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$_pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('b8a18e67690a62a6620b1b5b950367adb09f7b1285035879f63df07462188cec'
+sha256sums=('1f1951eca1c4081277782e80ef6b7c6768b2bb5a7d1830d69954f2fec27462ad'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

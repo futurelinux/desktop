@@ -1,7 +1,7 @@
 # Contributions from Arch: https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/khangman
 
 pkgname=khangman
-pkgver=18.12.2
+pkgver=18.12.3
 pkgrel=1
 pkgdesc="Hangman game"
 url="http://kde.org/applications/education/khangman/"
@@ -16,7 +16,7 @@ replaces=('kdeedu-khangman')
 groups=("kde" "kdeedu" "kde-uninstall")
 categories=('education')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('3404cd207df785643ece4798f212d2b0187d166c3f6057fb460da1476ca3533c'
+sha256sums=('1a7cdd27abf229603965ff6b3392bd7935f7f5a2d6418b23f802cfae45f74013'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
