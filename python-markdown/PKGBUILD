@@ -8,16 +8,15 @@
 pkgbase=python-markdown
 pkgname=('python3-markdown' 'python2-markdown')
 _pkgbasename=Markdown
-pkgver=3.0
+pkgver=3.1
 pkgrel=1
 pkgdesc="Python implementation of John Gruber's Markdown."
 arch=('any')
-url='http://pypi.python.org/pypi/Markdown'
+url='https://pypi.org/project/Markdown/'
 license=('BSD')
-depends=('python')
 makedepends=('python3' 'python2' 'python3-setuptools' 'python2-setuptools')
 source=("https://files.pythonhosted.org/packages/source/M/$_pkgbasename/$_pkgbasename-$pkgver.tar.gz")
-md5sums=('87279adf59c7c72550fdc38fa84d5e31')
+md5sums=('ef00dbf71b44d60a8e75b0315eaf6944')
 
 build() {
   # bug in 2.4, some DOS line endings slipped in
