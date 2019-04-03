@@ -1,16 +1,25 @@
 pkgname=nano
 pkgver=4.0
 _mainver=4
-pkgrel=1
+pkgrel=2
 pkgdesc="Pico editor clone with enhancements"
 arch=('x86_64')
 license=('GPL')
 url="https://www.nano-editor.org"
 groups=('base')
 depends=('file' 'ncurses' 'sh')
-source=(https://www.nano-editor.org/dist/v${_mainver}/nano-${pkgver}.tar.xz)
+source=(https://www.nano-editor.org/dist/v${_mainver}/${pkgname}-${pkgver}.tar.xz
+        0001-files-initialize-a-variable-before-referencing-it.patch)
 backup=(etc/nanorc)
-md5sums=('2de3e8a60ecf09649e316e89be2aac65')
+sha256sums=('1e2fcfea35784624a7d86785768b772d58bb3995d1aec9176a27a113b1e9bac3'
+            'f1dce36d1932d925ae3491ab19d3032263fe7c675d0f9d69f30adece6441da96')
+
+prepare() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  # correct a possible non-working ^S keystroke on some systems
+  # http://lists.gnu.org/archive/html/nano-devel/2019-04/msg00000.html
+  patch -Np1 -i ../0001-files-initialize-a-variable-before-referencing-it.patch
+}
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}
