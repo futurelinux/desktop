@@ -1,14 +1,14 @@
 pkgname=openttd-opengfx
 _pkgname=opengfx
-pkgver=0.5.4
+pkgver=0.5.5
 pkgrel=1
 pkgdesc='Graphics set for OpenTTD.'
 arch=('any')
-url='http://dev.openttdcoop.org/projects/opengfx'
+url='https://dev.openttdcoop.org/projects/opengfx'
 license=('GPL2')
 categories=('games')
 source=("http://bundles.openttdcoop.org/${_pkgname}/releases/${pkgver}/${_pkgname}-${pkgver}.zip")
-md5sums=('4f4a6465cd5b84964b7ceecd1c06d686')
+md5sums=('cf41c942797a874e3fb411ddaa123fe3')
 
 package() {
   cd "${srcdir}"
