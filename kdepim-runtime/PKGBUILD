@@ -9,7 +9,7 @@ url='https://projects.kde.org/projects/kde/kdepim-runtime'
 license=('GPL' 'LGPL' 'FDL')
 depends=(hicolor-icon-theme libkgapi libkolab akonadi-socialutils akonadi-calendar
          knotifyconfig kross kalarmcal kmbox kimap qt5-speech syndication kdav pimcommon)
-makedepends=(extra-cmake-modules kdoctools boost)
+makedepends=(extra-cmake-modules kdoctools boost qca qt5-networkauth)
 options=('debug')
 provides=('kio-pim') # the libkdepim pkg was splitted during the 16.08 release
 replaces=('kio-pim') # kio is now part of multiple packages (kmailtransport, kldap, kdepim-runtime)
