@@ -1,0 +1,33 @@
+
+pkgname=strawberry
+pkgver=0.5.3
+pkgrel=1
+pkgdesc="A music player aimed at audio enthusiasts and music collectors"
+arch=(x86_64)
+url="http://www.strawbs.org/"
+license=(GPL3)
+depends=(chromaprint protobuf gst-plugins-base gst-plugins-good qt5-x11extras udisks2 libcdio libgpod libmtp desktop-file-utils)
+makedepends=(cmake boost qt5-tools)
+optdepends=('gst-libav: additional codecs'
+            'gst-plugins-bad: additional codecs'
+            'gst-plugins-ugly: additional codecs')
+source=("https://github.com/jonaski/strawberry/releases/download/$pkgver/$pkgname-$pkgver.tar.xz")
+sha256sums=('4cd57ff73ad0ec047ea8b7901e749de7722ab3d5a9be35f4bf1ef5af1cc5bdd5')
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../$pkgname-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_SYSTEM_TAGLIB=ON \
+    -DENABLE_DEEZER=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}
