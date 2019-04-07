@@ -1,78 +1,54 @@
 pkgbase=python-pillow
 pkgname=(python3-pillow python2-pillow)
-pkgver=4.3.0
+pkgver=6.0.0
 pkgrel=1
-# consider splitting out sane if this gets weird enough
-_sanever=2.8.3
 _appname=Pillow
 _py2basever=2.7
 _py3basever=3.6m
 pkgdesc="Python Imaging Library (PIL) fork. Python3 version."
 arch=('x86_64')
-url="http://python-pillow.github.io/"
+url="https://python-pillow.org/"
 license=('BSD')
-makedepends=('python3-setuptools' 'python3' 'python2-setuptools' 'python2' 'lcms' 'libwebp' 'tk' 'sane')
-source=("https://files.pythonhosted.org/packages/source/P/$_appname/$_appname-$pkgver.tar.gz"
-        "Sane-$_sanever.tar.gz::https://github.com/python-pillow/Sane/archive/v$_sanever.tar.gz")
-md5sums=('ac8904e17922c8a699ff7d6cb0cf89cd'
-         '96877da43524fdab2c367541da547d2b')
+depends=('lcms2' 'libtiff' 'openjpeg2' 'libimagequant')
+optdepends=('freetype2: for the ImageFont module'
+            'libraqm: for complex text scripts'
+            'libwebp: for webp images'
+            'tk: for the ImageTK module')
+makedepends=('python3-setuptools' 'python2-setuptools' 'python3' 'python2' 'freetype2' 'libraqm' 'libwebp' 'tk')
+source=("https://files.pythonhosted.org/packages/source/P/$_appname/$_appname-$pkgver.tar.gz")
+md5sums=('9da5d2db0d7604ba553ece1ab7ca53a3')
 
 prepare() {
-  cd "$srcdir"
-  # allow sane to build
-  sed -i "s|os.path.join|'../libImaging', &|" "$srcdir/Sane-$_sanever/setup.py"
-  cp -r "$srcdir/Sane-$_sanever" "$srcdir/$_appname-$pkgver/Sane"
-  # py2 and py3
-  cp -r "$srcdir/$_appname-$pkgver" "$srcdir/${_appname}2-$pkgver"
-}  
+  cd "$srcdir/${_appname}-$pkgver"
+}
+
+build() {
+  cd "$srcdir/${_appname}-$pkgver"
+  python3 setup.py build
+  python2 setup.py build
+}
 
 package_python3-pillow() {
-  depends=('python3' 'lcms' 'libwebp')
-  optdepends=('tk: for the ImageTK module'
-              'sane: for the Sane module'
-              'python-pyqt4: for the ImageQt module')
-  cd ${_appname}-${pkgver}
-  python3 setup.py install --root="${pkgdir}/" --optimize=0
-  pushd Sane
-    python3 setup.py install --root="${pkgdir}/" --optimize=0
-  popd
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  depends+=('python3')
+  optdepends+=('python3-pyqt5: for the ImageQt module')
+  cd "$srcdir/$_appname-$pkgver"
+  python3 setup.py install --root="$pkgdir/" --optimize=1
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
-  install -dm755 "${pkgdir}/usr/include/python${_py3basever}/"
-  install -m644 -t "${pkgdir}/usr/include/python${_py3basever}/" libImaging/*.h
-
-  # clean up bins
-  cd "${pkgdir}/usr/bin"
-  for f in *.py; do
-    mv "$f" "${f%.py}"
-  done
+  install -dm755 "$pkgdir/usr/include/python$_py3basever/"
+  install -m644 -t "$pkgdir/usr/include/python$_py3basever/" src/libImaging/*.h
 }
 
 package_python2-pillow() {
   pkgdesc="Python Imaging Library (PIL) fork. Python2 version."
-  depends=('python2' 'lcms' 'libwebp')
-  optdepends=('tk: for the ImageTK module'
-              'sane: for the Sane module'
-              'python2-pyqt4: for the ImageQt module')
+  depends+=('python2')
+  optdepends+=('python2-pyqt5: for the ImageQt module')
   provides=('python-imaging' 'python2-imaging')
   conflicts=('python-imaging' 'python2-imaging')
-  replaces=('python2-imaging')
-  cd ${_appname}2-${pkgver}
-  sed -i 's|/usr/local/bin/python$|/usr/bin/env python2|' PIL/OleFileIO.py
-  python2 setup.py install --root="${pkgdir}/" --optimize=0
-  pushd Sane
-    python2 setup.py install --root="${pkgdir}/" --optimize=0
-  popd
+  cd "$srcdir/${_appname}-$pkgver"
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
-
-  install -dm755 "${pkgdir}/usr/include/python${_py2basever}/"
-  install -m644 -t "${pkgdir}/usr/include/python${_py2basever}/" libImaging/*.h
-
-  # clean up bins
-  cd "${pkgdir}/usr/bin"
-  for f in *.py; do
-    mv "$f" "${f%.py}2"
-  done
+  install -dm755 "$pkgdir/usr/include/python$_py2basever/"
+  install -m644 -t "$pkgdir/usr/include/python$_py2basever/" src/libImaging/*.h
 }
-
