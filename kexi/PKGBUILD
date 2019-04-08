@@ -2,18 +2,19 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kexi
-pkgver=3.1.0
+pkgver=3.2.0
 pkgrel=1
 pkgdesc="A visual database applications creator"
 arch=(x86_64)
 url="http://www.kexi-project.org/"
 license=(GPL2)
-depends=(kdb kreport ktexteditor marble breeze-icons qt5-webkit)
-makedepends=(extra-cmake-modules python3 qt5-tools kdoctools libmariadbclient postgresql doxygen)
+depends=(kdb kreport ktexteditor marble breeze-icons hicolor-icon-theme)
+makedepends=(extra-cmake-modules python3 qt5-tools kdoctools libmariadbclient postgresql qt5-webkit doxygen)
+optdepends=('qt5-webkit: Web browser plugin')
 conflicts=(calligra-kexi)
 replaces=(calligra-kexi)
 source=("https://download.kde.org/stable/$pkgname/src/$pkgname-$pkgver.tar.xz")
-sha1sums=('9bd27ba878de51d6f7b6f9e7973b4e69ab03c546')
+sha1sums=('ade6cb9219133ab88f700046836bbf70fff264c6')
 
 prepare() {
   mkdir -p build
