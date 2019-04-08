@@ -7,20 +7,20 @@
 
 pkgbase=gmic
 pkgname=(gmic zart gimp-plugin-gmic krita-plugin-gmic)
-pkgver=2.4.3
+pkgver=2.5.5
 pkgrel=1
 arch=(x86_64)
 url="https://gmic.eu/"
 license=(custom:CeCILL)
-makedepends=(gimp qt5-base fftw openexr opencv git)
+makedepends=(gimp qt5-base fftw openexr opencv eigen3)
 source=(https://gmic.eu/files/source/gmic_$pkgver.tar.gz)
-sha256sums=('eaa263854cb6e88ee5d2704ac97cb891191bd03fd157cea211f98aff1c96ae5a')
+sha256sums=('46246a7f37740cfba22b6ee77f509a9e874cc70b7e1169ef195dcf8bb2b98d13')
 
 prepare() {
   sed -e 's|/etc/bash_completion.d|/usr/share/bash-completion/completions|g' -i gmic-$pkgver/src/Makefile
-  sed -e 's|-Ofast|-O2 -fno-fast-math|g' -i gmic-$pkgver/gmic-qt/gmic_qt.pro
 # fix overlinking
-  sed -e 's/pkg-config opencv --libs ||//' -e 's/-lopencv_highgui/-lopencv_videoio/' -i gmic-$pkgver/src/Makefile 
+  sed -e 's/pkg-config opencv --libs ||//' -e 's/-lopencv_highgui/-lopencv_videoio/' \
+      -e 's/pkg-config opencv/pkg-config opencv4/' -i gmic-$pkgver/src/Makefile
 }
 
 build() {
@@ -36,7 +36,7 @@ build() {
   make  
 
   cd ../zart
-  qmake-qt5 GMIC_PATH=../src GMIC_DYNAMIC_LINKING=on
+  qmake-qt5 GMIC_PATH=../src GMIC_DYNAMIC_LINKING=on QMAKE_CXXFLAGS+=" -DOPENCV2_HEADERS"
   make
 }
 
