@@ -1,5 +1,5 @@
 pkgname=josm
-pkgver=14760
+pkgver=14945
 pkgrel=1
 pkgdesc="An editor for OpenStreetMap written in Java"
 arch=('x86_64')
@@ -11,7 +11,7 @@ source=("${url}/${pkgname}-tested.jar"
         "${pkgname}.desktop"
         "$pkgname.conf.d")
 noextract=($pkgname-tested.jar)
-sha256sums=('51774d689a221f5a9217faaef5f8c1035cb5668e2ca59ab1bad69f11c72f40f9'
+sha256sums=('eb6244b5566515f63509b8a8a83fa51403c73d4a65a445e99c4ebe13816dae4d'
             '970d65819cedaa3f5174044e2e2b5d8b1d923603de9844a9d4d6b94e9b106d90'
             '4d94ccc5d8e6372e9d9eb1557994c8b41d5f011bc37a7dacdbc55b649da3b969')
 
