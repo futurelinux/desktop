@@ -1,0 +1,38 @@
+# Contributions from Arch:
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-soupsieve
+pkgname=(python3-soupsieve python2-soupsieve)
+pkgver=1.9.0
+pkgrel=1
+pkgdesc="A CSS4 selector implementation for Beautiful Soup"
+url="https://github.com/facelessuser/soupsieve"
+license=('MIT')
+arch=('x86_64')
+makedepends=('python3-setuptools' 'python2-setuptools' 'python2-backports.functools_lru_cache')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/facelessuser/soupsieve/archive/$pkgver.tar.gz")
+sha512sums=('ec0c706379e1827fa43e9ecc345ecf91b3a3cb8ded8b3975e91434cd1cef2cda1701a62041c2456112b9f3822f3e84bf1870de6e84f7dc4f8c50e4c9603dc20a')
+
+build() {
+  cd soupsieve-$pkgver
+  python3 setup.py build
+  python2 setup.py build
+}
+
+package_python3-soupsieve() {
+  depends=('python3')
+
+  cd soupsieve-$pkgver
+  python3 setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
+}
+
+package_python2-soupsieve() {
+  depends=('python2-backports.functools_lru_cache')
+
+  cd soupsieve-$pkgver
+  python2 setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
+}
