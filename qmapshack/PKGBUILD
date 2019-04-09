@@ -1,5 +1,5 @@
 pkgname=qmapshack
-pkgver=1.12.3
+pkgver=1.13.0
 pkgrel=1
 pkgdesc='Plan your next outdoor trip'
 arch=('x86_64')
@@ -8,7 +8,7 @@ license=('GPL3')
 depends=('gdal' 'routino' 'qt5-declarative' 'qt5-webengine' 'proj' 'quazip')
 makedepends=('cmake' 'qt5-tools')
 source=("https://bitbucket.org/maproom/qmapshack/downloads/$pkgname-$pkgver.tar.gz")
-sha1sums=('3f1cb9fc50a2a4d813072576b1b6a173b2bfa486')
+sha1sums=('0888fbd98f5699eee237195c1184986b56a7c985')
 
 prepare() {
     cd $pkgname-$pkgver
