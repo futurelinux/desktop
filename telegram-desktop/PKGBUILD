@@ -1,7 +1,7 @@
 # Contributions from ArchLinux https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/telegram-desktop
 
 pkgname=telegram-desktop
-pkgver=1.6.1
+pkgver=1.6.3
 pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
@@ -38,7 +38,7 @@ sha512sums=('SKIP'
             'SKIP'
             'b87414ceaae19185a8a5749cea1f6d9f3fc3c69b8dd729e3db8790cde00b987c3c827cd30baf0eac579d1884e34aa2f37bb90778c3c0bc9ca211d75a82891b9d'
             'b20674f61ff6378749d1f59a6a0da194d33ccc786bd783f6ed62027924a3a8a8d27c9763bf376480432d6536896b0c7eeb8c495c5b8cefff7cf5fe84da50947e'
-            '0784a00b7dcf12d1662cd2fdc410b4e578fd80a6c6329edfc0090442e112eb9fd8a392e9f7bcbb2780d9403448898c53cd5d4d38025c40c4fbe1a8aabfd10b84'
+            '0bce3696efa20a4368d84452952e00e9160cc45a2658212554d90f413d44f78a9f8574ad6eb027ad19f8ee712a96f352e023a519a11fb61c6762ba7688851952'
             'd60694dc701aa985b0e82a12c9732b945082470441c687b33167a94f94efcf253baf43bb7280ec160ba338485ee5c62de138e4804cae05f27cc5cf4298166d39'
             '6d0bac5aa4c4992b5400a9a9318f7a4e92d5eab961917cf0b05cdd251ab66a77c52ec8fbef246e8019606a7624d7b5420b87f8153e071e9724c7d2f5c94e47c0'
             'ce6be003220267bac5483caf8302b492e1581892bc36d35a61236ebf9f9d766b8bd2159557a1c36256aa85f461797a38bfaae57b12da7a72101b21c0b17ed653'
@@ -58,7 +58,7 @@ prepare() {
     patch -Np1 -i "$srcdir/tdesktop.patch"
     patch -R -Np1 -i "$srcdir/demibold.patch"
     patch -Np1 -i "$srcdir/Use-system-wide-font.patch"
-    patch -Np1 -i $srcdir/qt5.patch
+    
     cd "Telegram/ThirdParty/libtgvoip"
     patch -Np1 -i "$srcdir/libtgvoip.patch"
 }
