@@ -1,9 +1,9 @@
 pkgname=peazip
-pkgver=6.7.1
+pkgver=6.7.2
 pkgrel=1
 pkgdesc="Free, Open Source file and archive manager. Supports 7Z, ACE, ARC, CAB, ISO, PEA, RAR, TAR, ZIP and many more archive formats."
 arch=('x86_64')
-url="http://peazip.org/"
+url="http://www.peazip.org/"
 license=('GPL')
 depends=('libxslt' 'p7zip' 'unarj' 'unzip' 'upx' 'xz' 'zip' 'fpc' 'qt4pas') # balz lpaq paq8o zpaq
 makedepends=('lazarus')
@@ -14,7 +14,7 @@ options=('debug')
 source=("https://github.com/giorgiotani/PeaZip/releases/download/${pkgver}/${pkgname}-${pkgver}.src.zip"
         "http://www.peazip.org/downloads/additional/peazip_optional_formats_plugin-1.LINUX.INST.tar.gz"
         'altconf.txt')
-sha256sums=('19675dd93418ac67f936af37c7e692e08eaab1ac656af73db0178d5b924af4cf'
+sha256sums=('884fc0bc2e2c28c6036ad2a162f558fe060cc003dc64f31e15b6a7a3d2e459bb'
             '7f3fc1ea200d482500360eadda9298c4d5900ca822d21b5a0e11ff9de4d499ff'
             '366884105c00e88f2ce2315155479bd2c38ea2181e8a7431293ced87a39a9405')
 
