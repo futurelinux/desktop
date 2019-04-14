@@ -1,8 +1,8 @@
 # Contributions from Arch: https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/mythtv
 
 pkgname=mythtv
-pkgver=29.1
-pkgrel=2
+pkgver=30.0
+pkgrel=1
 pkgdesc="A Homebrew PVR project"
 arch=('x86_64')
 url="http://www.mythtv.org/"
@@ -21,7 +21,7 @@ install='mythtv.install'
 source=("$pkgname-$pkgver.tar.gz::https://github.com/MythTV/$pkgname/archive/v$pkgver.tar.gz"
 	'mythbackend.service'
         '99-mythbackend.rules')
-sha256sums=('e40ec8111d39fd059a9ec741b10016683bcc66ee3b33c4cdaab93d60851f5d3e'
+sha256sums=('7f7ae9b8927659616f181afc12d7ddc26b0a4b0d13982e2586985f4770640b43'
             '30a301d31e2396b08eee97188619b900a834081d9792a36ae274fb0dfa65a9dc'
             'ecfd02bbbef5de9773f4de2c52e9b2b382ce8137735f249d7900270d304fd333')
 
