@@ -9,8 +9,8 @@ arch=('x86_64')
 license=('GPL')
 options=("debug")
 depends=('lensfun' 'opencv' 'akonadi-contacts' 'knotifyconfig' 'libksane' 'kfilemetadata'
-         'qtav' 'marble' 'threadweaver' 'kcalcore' 'qt5-xmlpatterns' 'imagemagick')
-makedepends=('extra-cmake-modules' 'doxygen' 'eigen3' 'boost' 'kdoctools' 'libkvkontakte')
+         'qtav' 'marble' 'threadweaver' 'kcalcore' 'qt5-xmlpatterns' 'imagemagick' 'exiv2')
+makedepends=('extra-cmake-modules' 'doxygen' 'eigen3' 'boost' 'kdoctools' 'libkvkontakte' 'jasper')
 optdepends=('qt5-imageformats: support for additional image formats (WEBP, TIFF)'
 	    'hugin: panorama tool'
             'libkvkontakte: VKontakte plugin')
