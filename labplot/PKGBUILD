@@ -1,5 +1,6 @@
 pkgname=labplot
 pkgver=2.6.0
+_pkgver=2.6
 pkgrel=1
 pkgdesc="A free software data analysis and visualization application build on top of KDE SC"
 arch=('x86_64')
@@ -15,18 +16,18 @@ source=("https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.x
 sha256sums=('4556541fb6544cda56c2625a1fc5c9c8b0ba6bc8178af076c68a792b545c5657')
 
 prepare() {
-  cd $pkgname-$pkgver
+  cd $pkgname-$_pkgver
   mkdir -p build
 }
  
 build() { 
-  cd $pkgname-$pkgver/build  
+  cd $pkgname-$_pkgver/build  
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr
   make 
 }
  
 package() {
-  cd $pkgname-$pkgver/build
+  cd $pkgname-$_pkgver/build
   make DESTDIR=$pkgdir install
   
   #fix .desktop exec line
