@@ -1,22 +1,30 @@
 pkgname=opam
-pkgver=1.2.2
+pkgver=2.0.3
 pkgrel=1
 pkgdesc="OCaml Package Manager"
 arch=('x86_64')
-url="http://opam.ocaml.org"
+url="https://opam.ocaml.org"
 license=('GPL')
-depends=('ocaml')
+depends=('bubblewrap' 'ocaml-compiler-libs' 'unzip')
+optdepends=('darcs: For downloading packages with darcs'
+            'git: For downloading packages with git'
+            'mercurial: For downloading packages with mercurial'
+            'rsync: For downloading packages with rsync')
 source=("https://github.com/ocaml/opam/releases/download/${pkgver}/opam-full-${pkgver}.tar.gz")
-sha1sums=('415ff0506378ab8dfa428fcd0aff3aa28337d93b')
+sha256sums=('0589da4da184584a5445d59385009536534f60bc0e27772245b2f49e5fa8f0e2')
 
 build() {
-  cd ${srcdir}/opam-full-${pkgver}
+  cd "opam-full-$pkgver"
   ./configure --prefix=/usr
-  make -j1 lib-ext
-  make -j1
+  make lib-ext all -j1 \
+    OCAMLC='ocamlc -unsafe-string' \
+    OCAMLOPT='ocamlopt -unsafe-string'
 }
 
 package() {
-  cd ${srcdir}/opam-full-${pkgver}
-  make DESTDIR="$pkgdir/" install
+  make -C "opam-full-$pkgver" DESTDIR="$pkgdir" install
+
+  install -d "$pkgdir/usr/share/doc"
+  mv "$pkgdir/usr/doc/opam-installer" "$pkgdir/usr/share/doc/opam"
+  rmdir "$pkgdir/usr/doc"
 }
