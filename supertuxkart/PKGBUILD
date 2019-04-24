@@ -7,7 +7,7 @@ arch=('x86_64')
 license=('GPL3' 'GPL2' 'CCPL-by' 'CCPL-by-sa' 'custom:Public Domain')
 depends=('bzip2' 'curl' 'enet' 'fribidi' 'freeglut' 'libgl' 'libjpeg' 'libogg' 'libopenglrecorder'
          'libpng' 'libvorbis' 'openal' 'wiiuse' 'bluez-libs' 'glu' 'xorg-xrandr')
-makedepends=('cmake' 'subversion' 'mesa' 'imagemagick' 'setconf')
+makedepends=('cmake' 'subversion' 'mesa' 'imagemagick' 'setconf' 'wayland')
 conflicts=('supertuxkart-svn')
 categories=('games')
 source=("https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}-src.tar.xz")
@@ -26,8 +26,6 @@ build() {
 
   cmake \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DIRRLICHT_DIR="$srcdir/irrlicht" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_CXX_FLAGS="-lpthread -lm -ldl $CXXFLAGS -std=gnu++98" \
     -DUSE_SYSTEM_WIIUSE=ON \
