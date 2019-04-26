@@ -1,12 +1,12 @@
 pkgname=r
-pkgver=3.5.3
+pkgver=3.6.0
 pkgrel=1
 pkgdesc="Language and environment for statistical computing and graphics"
 arch=('x86_64')
 license=('GPL')
 url='https://www.r-project.org/'
-depends=('openblas' 'lapack' 'bzip2'  'libpng' 'libjpeg' 'libtiff'
-         'ncurses' 'pcre' 'readline' 'zlib' 'perl' 'gcc-libs'
+depends=('blas' 'lapack' 'bzip2'  'libpng' 'libjpeg' 'libtiff'
+         'ncurses' 'pcre' 'readline' 'zlib' 'perl'
          'libxt' 'libxmu' 'pango' 'xz' 'desktop-file-utils' 'icu')
 makedepends=('openjdk' 'tk' 'gcc-fortran')
 backup=('etc/R/Makeconf' 'etc/R/Renviron' 'etc/R/ldpaths' 'etc/R/repositories' 'etc/R/javaconf')
@@ -15,7 +15,7 @@ source=("http://cran.r-project.org/src/base/R-${pkgver%%.*}/R-${pkgver}.tar.gz"
 	'r.desktop'
 	'r.png'
 	'R.conf')
-sha256sums=('2bfa37b7bd709f003d6b8a172ddfb6d03ddd2d672d6096439523039f7a8e678c'
+sha256sums=('36fcac3e452666158e62459c6fc810adc247c7109ed71c5b6c3ad5fc2bf57509'
             '9301e9bcda74f69ae7eeb818c1ad8c3b46b30533d5b6f1f7bf6320c2333ab0f9'
             '1580d06a737951f4f3c903cbd514247d9071fc6868eb9c2de94bb999cc195cb1'
             'b7833166041b06f716b6a79095d27d4abd83549816dc53193213827139eae6ef')
