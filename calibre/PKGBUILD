@@ -1,33 +1,27 @@
 pkgname=calibre
-pkgver=3.41.3
+pkgver=3.42.0
 pkgrel=1
 pkgdesc="Ebook management application"
 arch=('x86_64')
 url="https://calibre-ebook.com/"
 license=('GPL3')
-depends=('python2-six' 'python2-dateutil' 'python2-css-parser' 'python2-dukpy'
-         'python2-mechanize' 'podofo' 'libwmf' 'jxrlib'
-         'chmlib' 'python2-lxml' 'libusb' 'python2-html5-parser'
-         'python2-pillow' 'shared-mime-info' 'python2-dnspython' 'python2-msgpack'
-         'python2-pyqt5' 'python2-psutil' 'icu' 'libmtp' 'python2-dbus'
-         'python2-netifaces' 'python2-cssselect' 'python2-apsw' 'qt5-webkit'
-         'qt5-svg' 'python2-regex' 'python2-pygments' 'mtdev' 'python2-unrardll'
-         'desktop-file-utils' 'gtk-update-icon-cache' 'optipng' 'udisks2' 'python2-enum34')
+_py_deps=('apsw' 'beautifulsoup4' 'cssselect' 'css-parser' 'dateutil' 'dbus' 'dnspython' 'dukpy'
+          'html2text' 'html5-parser' 'lxml' 'markdown' 'mechanize' 'msgpack'
+          'netifaces' 'unrardll' 'pillow' 'psutil' 'pygments' 'pyqt5' 'regex' 'enum34')
+depends=('chmlib' 'icu' 'jxrlib' 'libmtp' 'libusbx' 'libwmf' 'mathjax' 'mtdev' 'optipng'
+         'podofo' "${_py_deps[@]/#/python2-}" 'qt5-svg' 'qt5-webkit' 'udisks2')
 makedepends=('qt5-x11extras' 'sip' 'xdg-utils')
 optdepends=('ipython2: to use calibre-debug'
             'poppler: required for converting pdf to html'
             'kdialog: to use native dialog')
 source=("https://download.calibre-ebook.com/${pkgver}/calibre-${pkgver}.tar.xz"
         "https://calibre-ebook.com/signatures/${pkgname}-${pkgver}.tar.xz.sig")
-sha256sums=('2aa3a819915ea2a4ef032918cf545f2cc21ea3aad84ffc9cb772d6c8c986f098'
+sha256sums=('b51194aecd452e6cea9681889cd1b2f868d379b07413b1dcb8842c363487ad7a'
             'SKIP')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
 
 prepare(){
   cd "${pkgname}-${pkgver}"
-
-  # Remove unneeded files
-  rm -rf resources/${pkgname}-portable.*
 
   # Desktop integration (e.g. enforce arch defaults)
   sed -e "/self.create_uninstaller()/,/os.rmdir(config_dir)/d" \
@@ -36,6 +30,22 @@ prepare(){
       -e "s/'ctc-posml'/'text' not in mt and 'pdf' not in mt and 'xhtml'/" \
       -e "s/^Name=calibre/Name=Calibre/g" \
       -i  src/calibre/linux.py
+
+  # cherry-picked bits of python2-backports.functools_lru_cache
+  # needed for frozen builds + beautifulsoup4
+  # see https://github.com/kovidgoyal/calibre/commit/b177f0a1096b4fdabd8772dd9edc66662a69e683#commitcomment-33169700
+  rm -r src/backports
+
+  cd resources
+
+  # Remove unneeded files
+  rm ${pkgname}-portable.* mozilla-ca-certs.pem
+
+  # tarball cache from calibre 4.x
+  rm editor.js viewer.{js,html}
+
+  # use system mathjax
+  rm -r mathjax
 }
 
 build() {
@@ -43,6 +53,8 @@ build() {
 
   LANG='en_US.UTF-8' python2 setup.py build
   LANG='en_US.UTF-8' python2 setup.py gui
+  LANG='en_US.UTF-8' python2 setup.py mathjax --path-to-mathjax /usr/share/mathjax --system-mathjax
+  LANG='en_US.UTF-8' python2 setup.py rapydscript
 }
 
 package() {
@@ -58,6 +70,9 @@ package() {
     python2 setup.py install --staging-root="${pkgdir}/usr" --prefix=/usr
 
   cp -a man-pages/ "${pkgdir}/usr/share/man"
+
+  # not needed at runtime
+  rm -r "${pkgdir}"/usr/share/calibre/rapydscript/
 
   # Compiling bytecode FS#33392
   # This is kind of ugly but removes traces of the build root.
