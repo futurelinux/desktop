@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=killbots
-pkgver=18.12.3
+pkgver=19.04.0
 pkgrel=1
 pkgdesc="A simple game of evading killer robots"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=('kdegames-killbots')
 conflicts=('kdegames-killbots')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('4efb4fcd4f34f1843b990a92e5b0309c196071f0778cdc8376eff5eef405deb9'
+sha256sums=('0cc928a1956b72bc207feed237598b445b5a7d7d26a266ec88080c1510870359'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

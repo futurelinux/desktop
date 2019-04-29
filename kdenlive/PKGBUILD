@@ -2,13 +2,13 @@
 # Include global configuration
 
 pkgname=kdenlive
-pkgver=18.12.3
+pkgver=19.04.0
 pkgrel=1
 pkgdesc="A non-linear video editor for Linux"
 arch=('x86_64')
 url="http://www.kdenlive.org/"
 license=('GPL')
-depends=('knewstuff' 'knotifyconfig' 'kplotting' 'mlt' 'glu' 'hicolor-icon-theme' 'kfilemetadata')
+depends=('knewstuff' 'knotifyconfig' 'kplotting' 'mlt' 'glu' 'hicolor-icon-theme' 'kfilemetadata' 'purpose')
 optdepends=("dvdauthor: for creating dvds"
 	    "recordmydesktop: for desktop-recordings"
 	    "dvgrab: for firewire capture"
@@ -22,7 +22,7 @@ categories=('multimedia')
 options=('debug')
 screenshot=('http://kdenlive.org/sites/default/files/kdenlive-090a_0.png')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('fcfe2474bc271e730ed95edb21ae46e93c1ce773ed036f63c9fb2db02cbc7e64'
+sha256sums=('274ae17b4376258ef83d810cb33677ca3224e205ea8b69982dd0fc4e5ee5878a'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -49,3 +49,4 @@ package() {
   cd build
   make DESTDIR=${pkgdir} install
 }
+

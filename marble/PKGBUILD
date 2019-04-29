@@ -2,7 +2,7 @@
 
 pkgbase=marble
 pkgname=(marble libastro marble-data)
-pkgver=18.12.3
+pkgver=19.04.0
 pkgrel=1
 pkgdesc="Desktop Globe"
 arch=(x86_64)
@@ -12,7 +12,7 @@ license=(GPL)
 makedepends=(extra-cmake-modules gpsd libwlocate phonon-qt5 qt5-webkit krunner kparts knewstuff qt5-tools) # quazip-qt5
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('0bfd7ae576e42ebbddadc8c83c2fec5edaf462bcf284642b1002d36d751b24ee'
+sha256sums=('7405c76970d6ec500e5dc99ea2926cc11571e69f29c2e79f025f0f3ec4048960'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

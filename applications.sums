@@ -1,215 +1,853 @@
-fca6bcdc962ceebe1d7e95650a0b67afd698104f654ff34a15494b7c526e1b9c  /chakra/_sources/akonadi-18.12.2.tar.xz
-2dc01e5fdf821ebdd537fbe7f62b973f6db5e7b8bd300e282b54d80e26451757  /chakra/_sources/akonadi-calendar-18.12.2.tar.xz
-82efc36a64a8fdf2794e106e07c7a537ab916d66f17567e4e9fef2e251c6ea0a  /chakra/_sources/akonadi-calendar-tools-18.12.2.tar.xz
-1eaa69ad10bd6b615efcd71d47ce88fbf2a40e953c513f89cfcba785b46a2347  /chakra/_sources/akonadi-contacts-18.12.2.tar.xz
-e9d26776414376c6cf5bc4e547271d9770c44c5718b1ae0bae27f68d4a817137  /chakra/_sources/akonadi-import-wizard-18.12.2.tar.xz
-251dbf09ca7972201182d69ca94649cd541d5e7972c9fd675319bb5b850efc6a  /chakra/_sources/akonadi-mime-18.12.2.tar.xz
-df9132aa0272897c4c4fb489edfe6c0fd5829a920b25254f249cea41f758c066  /chakra/_sources/akonadi-notes-18.12.2.tar.xz
-93ee34e089212694b23071f5b3297338b1c18c77c7e3b07701d8ff973608d522  /chakra/_sources/akonadi-search-18.12.2.tar.xz
-c1d3f53852c2ad61a1a3d4787bf54ac78f9f523ae5d9e3e9e8959e1f81a6e5be  /chakra/_sources/akonadiconsole-18.12.2.tar.xz
-2653bbd9498c692a191eeb8ac625e0805e5742a432d9e43ad360887ae9fce8d1  /chakra/_sources/akregator-18.12.2.tar.xz
-91a2842092d6f0166bee630433e0e3521a63bc1b1b7703d12d87041c4924e5ec  /chakra/_sources/analitza-18.12.2.tar.xz
-cbeb31893611fe52181a78761acd4e862e4ad0dd007d03ce9e78993ef143f62b  /chakra/_sources/ark-18.12.2.tar.xz
-66fea9aa63d859e14069289501a4f0522258ee6da74c5d372aa106725942f440  /chakra/_sources/artikulate-18.12.2.tar.xz
-44725b54f937b32462a4c663e3c47fcff4cc537895cad2e362ef9b560cdd6555  /chakra/_sources/audiocd-kio-18.12.2.tar.xz
-9ca599e755b293a424b3075232facc7920717adef5e15193ae652ede4102ff28  /chakra/_sources/baloo-widgets-18.12.2.tar.xz
-c05c51a0e94382c3d667cc231f00f81ec063452943280251fb837a394c7daa00  /chakra/_sources/blinken-18.12.2.tar.xz
-a5fc4e912824a629fa6fddc9e36ea29c31641e8f3581019e51719657d5f2313b  /chakra/_sources/bomber-18.12.2.tar.xz
-c2e038a27ece748d75df6f3ef7ae9803e833cc077858b1105de941580edbb950  /chakra/_sources/bovo-18.12.2.tar.xz
-5b9145e7dc54eeddf581eb3165b24f88968aa8d323d3846d29b7430d6e9e6c65  /chakra/_sources/calendarsupport-18.12.2.tar.xz
-c9bf7353d0bfbf88fc35c0868bee07214fa48caece73a1f05f20453369e9c95f  /chakra/_sources/cantor-18.12.2.tar.xz
-c0cadc3fa0e022d8d1cd075c31fc9880d268e9a9072ef542e015c80ef47593c5  /chakra/_sources/cervisia-18.12.2.tar.xz
-a5f88dc519c7d85cb542af11a5ee4f4c5e19e18eaad6087978e32a1d365d9e24  /chakra/_sources/dolphin-18.12.2.tar.xz
-14badeba012c6f4d00832a157161bab95dec1c13cdfd892f8ba6c66ae2228020  /chakra/_sources/dolphin-plugins-18.12.2.tar.xz
-627760691ade89fc9e02637b1b87f16a683f143aee32d0ea2178489567be82bb  /chakra/_sources/dragon-18.12.2.tar.xz
-c386e02e3450775580e8f522d9cefa0a28e0a46683b2725aef73c18e0c3120d6  /chakra/_sources/eventviews-18.12.2.tar.xz
-e6480f57cae4831d1b4ee555ae23782e740652dfbe0aa7f81783eb9595e904eb  /chakra/_sources/ffmpegthumbs-18.12.2.tar.xz
-7fb32a9a960cc8cdda0ef0f7d6ab7d662d1b33a80582e09a18e8864f7a486ee6  /chakra/_sources/filelight-18.12.2.tar.xz
-aa33b13e74ac5bcedbbbb68b222ba7b055b70b43ce129e50f7d0e02be073d01d  /chakra/_sources/granatier-18.12.2.tar.xz
-4be59def61b12a668af8cc6b8f4978e288e79b1abc521ef36161f787724401e4  /chakra/_sources/grantlee-editor-18.12.2.tar.xz
-7c4081724cef375481d7a8657a9010ea28bb8d82d48faedfa7ef84ca38cfc162  /chakra/_sources/grantleetheme-18.12.2.tar.xz
-d849e1488be7a832f494638d557ad77b40440461ed3c0dbac3e8a6016b2c427f  /chakra/_sources/gwenview-18.12.2.tar.xz
-7526488ff3ddcdd24eb4651f1aecca89675c04696d7e236acb876e67a4eb89a6  /chakra/_sources/incidenceeditor-18.12.2.tar.xz
-ff35d0d04c3220f8f3361e84aa4112a3e53976d6a4e1593894039e170b754be5  /chakra/_sources/juk-18.12.2.tar.xz
-0b36cdccd6628b471baa817a79fe04958724010a7b0157098d3e1f66c53678aa  /chakra/_sources/k3b-18.12.2.tar.xz
-94208c62c07f66b0b702099320b48dcd5adb76ec45ae861efb7b3b2354f099fd  /chakra/_sources/kaccounts-integration-18.12.2.tar.xz
-3b82d342ca52abcdd1f912faaf45ccd1f7de783b711228031444cb03249f2ebb  /chakra/_sources/kaccounts-providers-18.12.2.tar.xz
-9a4a7b85b8b8f15acae40e8f95265a42701599076bf2cc2069485222578041b3  /chakra/_sources/kaddressbook-18.12.2.tar.xz
-2962e7328f1556858bb73f6d7c065db517176442db869f405e96cbbd163262bf  /chakra/_sources/kajongg-18.12.2.tar.xz
-498f6dc40681b9571cc39854757a6d1d1a9a20adb756a0d45e691ee3611ca7e3  /chakra/_sources/kalarm-18.12.2.tar.xz
-f2fb28dcd9bfd0c5c3d7fde76279999f4f5863d3f21bd9a3f47f77ee0b9f110d  /chakra/_sources/kalarmcal-18.12.2.tar.xz
-6227f38b02dac50498b5488067cdbf02bd833307cd083f6be15585cb2828e5f8  /chakra/_sources/kalgebra-18.12.2.tar.xz
-f5367eceddf1f9bc5939876d62a9904b5b1ffbe5c2f4d3ad3634dab9eaa6c294  /chakra/_sources/kalzium-18.12.2.tar.xz
-926ea5475ab271619e71f187186a15f442245ad43c2f6ab02ba767aedddcc916  /chakra/_sources/kamera-18.12.2.tar.xz
-beed99d8d644927d550c54ee72f09b0f3db7a327694c0241197c41204374ae5a  /chakra/_sources/kamoso-18.12.2.tar.xz
-e1aed6d0b304d802666987989c0049328918faf826031e9c830b4b8949dd752f  /chakra/_sources/kanagram-18.12.2.tar.xz
-c04bee4944ef4369390247e4c3199796e35d8a8f260469b93016cfd4a9ee5789  /chakra/_sources/kapman-18.12.2.tar.xz
-e97ef484648fbf7c63072b9230378233f217d38356ac50f3de82cb5e14a444b8  /chakra/_sources/kapptemplate-18.12.2.tar.xz
-9056385b71ca115daa0f69c5e59c6e5261aea5f5320412de8a63bf43fe847fb1  /chakra/_sources/kate-18.12.2.tar.xz
-d25749548ee8496636e9505622537c8cec9d7c11213198f3fd190d91ee4c6f4e  /chakra/_sources/katomic-18.12.2.tar.xz
-eac8bcb2bd380f111ee06f3b1434b5a438aa96552073ba606e58cade86af1d8b  /chakra/_sources/kbackup-18.12.2.tar.xz
-9716f582ba2aea950973584a722c872762fb2b199c094ae7136f64f49cf34f85  /chakra/_sources/kblackbox-18.12.2.tar.xz
-a529e409e260b20cc49328af32aaa8f005321a9c018a9075741e652eb1989ccc  /chakra/_sources/kblocks-18.12.2.tar.xz
-04fe7908e08971839777d54e36faf2c863e4f41c8040319694144bdbfa79d831  /chakra/_sources/kblog-18.12.2.tar.xz
-57564e8ae03bb03a8840904d13beb9f2ea9b4a2b8846fbb5e67d4a5b31441091  /chakra/_sources/kbounce-18.12.2.tar.xz
-116d29f5010ccd66cf24885f6140c3bba9e7215c89add20184c251451867a124  /chakra/_sources/kbreakout-18.12.2.tar.xz
-775f0e2148c9be858d0d6219774dc0cb4c670f60e9936b455ce09426d925fe9d  /chakra/_sources/kbruch-18.12.2.tar.xz
-c21f3ac2568739b45919b13c2d77f79af9ea3beb51ec7339e700ae59b68d5fa9  /chakra/_sources/kcachegrind-18.12.2.tar.xz
-d353e3c4097e90342e8fa6acc4e65d9cde28ebc84ab607e44ed9e681d3cb11db  /chakra/_sources/kcalc-18.12.2.tar.xz
-4ca6a0bcb875961d2e05e47dda7692f66ec6637b5d9774107d15b13cc63d6179  /chakra/_sources/kcalcore-18.12.2.tar.xz
-8d8459a1fad7fc6fee5313adc196b2342532b8188827a10adb4b664b464b620d  /chakra/_sources/kcalutils-18.12.2.tar.xz
-53f97a25ac7ec472366a8a9176d1105ea7bcf566208191fdc9c30c158eed54c5  /chakra/_sources/kcharselect-18.12.2.tar.xz
-c69f2b67a419c901e4e359bb8ae1e712d7756952e690a36d6603662b1bb3b5b2  /chakra/_sources/kcolorchooser-18.12.2.tar.xz
-79a6637db19f8273bf6171fd03ba972f152e857a115d203c28a4081ea0f23aec  /chakra/_sources/kcontacts-18.12.2.tar.xz
-b5916d93135652e6812006473ebbcc694b18af2a8030c0ce0f0574a3f818d7f7  /chakra/_sources/kcron-18.12.2.tar.xz
-b47af6e301af1f991ba095320cb0109f097c7411ccdb61ed602c9b3260937cfc  /chakra/_sources/kdav-18.12.2.tar.xz
-6bde997cbad6fe4a64fae5a3838d1bf05245fbee40231bfaa60b9d9e39c17ec6  /chakra/_sources/kde-dev-scripts-18.12.2.tar.xz
-13451d91dde98f97f5a86803076c18659d5e37dff42fc3d0dde75c43b6705f47  /chakra/_sources/kde-dev-utils-18.12.2.tar.xz
-f40b565148ef123d9f0ccac24228434081d0a3caa14d7c044f08a9471aa08c7b  /chakra/_sources/kdebugsettings-18.12.2.tar.xz
-a2a3d7fd2f7fa83016d17589815317797e94c65d01884a6c5acb597bb657e55e  /chakra/_sources/kdeedu-data-18.12.2.tar.xz
-58233f44db9ab0b7f6233aced377d55f5101459b92a7e153a8ca055e75fe0c41  /chakra/_sources/kdegraphics-mobipocket-18.12.2.tar.xz
-c0f3585a1485cfbe17f2ab5e6be54bb04055c667867f1183f47a19f68fca69ff  /chakra/_sources/kdegraphics-thumbnailers-18.12.2.tar.xz
-c75c1062ceb51f0b498384e6bce1362915abb01e93e61afa51857a7b8c812daa  /chakra/_sources/kdenetwork-filesharing-18.12.2.tar.xz
-47675eca0af26b4716aa587612f05364b6e49da47eb42e9f19d2fbd8aa236d16  /chakra/_sources/kdenlive-18.12.2.tar.xz
-346d28e915c59360874120645f04c4269872ce17043901661411de36ec6dcd23  /chakra/_sources/kdepim-addons-18.12.2.tar.xz
-06e19b5878600e92be6f9184efd51bc0abc74a1582d6c77f84dc2703a00238dd  /chakra/_sources/kdepim-apps-libs-18.12.2.tar.xz
-b7d5cd9e03688f62f4b36f1867ba681a2ce8d806817d3d2be1c615f07b3f6e45  /chakra/_sources/kdepim-runtime-18.12.2.tar.xz
-b8a18e67690a62a6620b1b5b950367adb09f7b1285035879f63df07462188cec  /chakra/_sources/kdesdk-kioslaves-18.12.2.tar.xz
-3658ba562b7610afeede3d75f3f9136458f06789721e5738eca834a3f749c056  /chakra/_sources/kdesdk-thumbnailers-18.12.2.tar.xz
-8e45d58710ec974001bb93c563ed666bad705b7e36219c101ad214df5fc7a3b2  /chakra/_sources/kdf-18.12.2.tar.xz
-47d9c6ff3cf06aaeb5c94a70d995ac4dcdf7c4aa06f0656923e96d9ee1c5c342  /chakra/_sources/kdialog-18.12.2.tar.xz
-e807dc186eccd270be703fce2839cb60a0d6a3c7fd51902810513b3f986c0abb  /chakra/_sources/kdiamond-18.12.2.tar.xz
-b9a827ba9947eb3a65bacd99e1da74589461d08140b9f9082f462eee87ff77c0  /chakra/_sources/keditbookmarks-18.12.2.tar.xz
-59281180b995331bef1243e9b56a62a9a3c2702de19ccb081faf9ddf375a8600  /chakra/_sources/kfind-18.12.2.tar.xz
-0ffeab16e5a49b864438bbb6c89de6f87ae1eaa9f65bf06a03e4d5ec94ac50f3  /chakra/_sources/kfloppy-18.12.2.tar.xz
-5dc8c36cbe64bba979294e822ffc61beb40f377c42124d247657503875d44978  /chakra/_sources/kfourinline-18.12.2.tar.xz
-70ea112b14c650e3dcbe07fc67ca519586f85d382717e7c06dad9c7ee4376bba  /chakra/_sources/kgeography-18.12.2.tar.xz
-6d06d22cbef14cb935040e29750702f470bde8bce3d9d62660287c2a51189c60  /chakra/_sources/kget-18.12.2.tar.xz
-55f317fff229755d2cd7f67ca30c2880fa5d66e102392e534b9cabe412a85be8  /chakra/_sources/kgoldrunner-18.12.2.tar.xz
-80a723565d5464a2fa43c11af19f14a95676c128737f16b3537a82fc642b3716  /chakra/_sources/kgpg-18.12.2.tar.xz
-3404cd207df785643ece4798f212d2b0187d166c3f6057fb460da1476ca3533c  /chakra/_sources/khangman-18.12.2.tar.xz
-132d8429bbe1908912fa3e72ba6c4efcf8f8aef49c853ff708b4b969e61973fa  /chakra/_sources/khelpcenter-18.12.2.tar.xz
-1bfd4166a029332a6be1f711c94a1daa821ca1c0888e3d6dd1cec4603734af8f  /chakra/_sources/kidentitymanagement-18.12.2.tar.xz
-68163f19bcb703dfcfb85006f80482e782ea86e6279c9277bcc8c3337280c406  /chakra/_sources/kig-18.12.2.tar.xz
-cc032aa2d906a749bf55eaaf6a331a1104587575162e61e140bb6818f36a14ca  /chakra/_sources/kigo-18.12.2.tar.xz
-e75b845dda35a02be67f8ba9031d2db7e91721ad4e8140340b97ecf58fed3084  /chakra/_sources/killbots-18.12.2.tar.xz
-3d2029b6e7d66f3584728431e0e238c79c5f1a7c5bd3e63d0eaec8a7e6e4d0fd  /chakra/_sources/kimagemapeditor-18.12.2.tar.xz
-31ca3e3f5b87d15f637ea49b4e305b2ba6707dcfc8d52ec2b6a2024063ca9a4e  /chakra/_sources/kimap-18.12.2.tar.xz
-16f76a1130fbfe01d3b72f15b1a5be763c9341e424b253b9025f6c6aa3beab45  /chakra/_sources/kio-extras-18.12.2.tar.xz
-777b7621dbfbb4e7a995689b114e47dde19a6d061e938aeea1682d388ca99022  /chakra/_sources/kirigami-gallery-18.12.2.tar.xz
-cc16193089c6e542fee526557f76a0b2dfd7125325c4f7aca916e1da2c6cffc6  /chakra/_sources/kiriki-18.12.2.tar.xz
-189d3d692db070c5f4adcc411e01e9d06d511eb565d25aa4c51432da9afd3bf0  /chakra/_sources/kiten-18.12.2.tar.xz
-8885efa4e2042806f8999558b6f531d55a099f39632dc6398f5114b354eb58c2  /chakra/_sources/kitinerary-18.12.2.tar.xz
-a35c2de93a7fe3c1f8e3c82dd4f6cf82df00e4e69745e506a7f87e4a1b429292  /chakra/_sources/kjumpingcube-18.12.2.tar.xz
-de6f23e2bb6ac189856c0695b9468a914d486b5e2f47400562f250abcdd7e7f4  /chakra/_sources/kldap-18.12.2.tar.xz
-e847f9675fdb32c7527f172aa47f7803c2dcdf5a28ab2e8d95c2d8b7be33c648  /chakra/_sources/kleopatra-18.12.2.tar.xz
-39b6c4da5983b013b22923990648bc09b4232749a6fc2a2c6dd4039f94819917  /chakra/_sources/klettres-18.12.2.tar.xz
-fc8c8b5c4a94cc2c2defdd51d5100ff49063543cc09012670756e572b591d966  /chakra/_sources/klickety-18.12.2.tar.xz
-78962922f4aa60276f67d034d0ee6aade5bc2bdcadd795a45c0f3ec06b18bb2d  /chakra/_sources/klines-18.12.2.tar.xz
-1ee9ba0a437444351bdea290cb854237b7482b4e4419814e763b90573f98c1fc  /chakra/_sources/kmag-18.12.2.tar.xz
-30d17308d28e671d70ff7ae71a8c5b0e0f8d384e8bad7b906339c2cf66292883  /chakra/_sources/kmahjongg-18.12.2.tar.xz
-dfa2e36a37e035e6e2b710cec7946c3da11f789f32a1082129be1b6b867c5c89  /chakra/_sources/kmail-18.12.2.tar.xz
-3d288fcd7cdee5a7d2b076ea0aa1732de13f81267bfd95eaf5f530d9182f3380  /chakra/_sources/kmail-account-wizard-18.12.2.tar.xz
-02ad535689e736edcc0ed37425c270c55944e6f25c1ff930b31ff36695d90ffe  /chakra/_sources/kmailtransport-18.12.2.tar.xz
-36bcbc5f4ad9f59b865d7205847bd1a3256d69124b9ecf206284056e70053590  /chakra/_sources/kmbox-18.12.2.tar.xz
-c7c3202b0c2556b3390760d980b5cf9113561f614df7339085029f069a5d33f5  /chakra/_sources/kmime-18.12.2.tar.xz
-9c38cfa24d3a99447cadbb5fac4ee858d61b037efb63018943e11c4eae3d6ad4  /chakra/_sources/kmines-18.12.2.tar.xz
-c26049485fa42608cd39d1e5c7ba0851067ac026241c98f12f81cd2621830e6f  /chakra/_sources/kmix-18.12.2.tar.xz
-df00e368e54da50720ef7f53bc18e4e5ff5596d6b42ce2ccda40162477f709b6  /chakra/_sources/kmousetool-18.12.2.tar.xz
-c357a8b69b17f3f364d353aefd00aab8ee1f608d9abf9b1fba37e37a47b62bce  /chakra/_sources/kmouth-18.12.2.tar.xz
-abb9f627381f56da9d6879d6854833c4510b01dda048e53e678f7d8038e86fcb  /chakra/_sources/kmplot-18.12.2.tar.xz
-98f48e22f79dd24d80d724ca6f62f6ed6beabfa7179a8ffca0ba397664eb9e42  /chakra/_sources/knavalbattle-18.12.2.tar.xz
-00c9004ef13c4a66f6833ebbda79b71297dfb7df628583fc58eeac1fb77bdba7  /chakra/_sources/knetwalk-18.12.2.tar.xz
-0818b49a2ffd094cba152ade91bc4aabd129103b6ab0fe3d94f21975a7cdb319  /chakra/_sources/knights-18.12.2.tar.xz
-f10417b010b8ca951095a8ec3e68728c5b86518c5858b2e391cb8677ae82cb90  /chakra/_sources/knotes-18.12.2.tar.xz
-c6047269d56b7ad0800adbb2909e4824104711e51bf0b96fee08c9eb5ee82ea5  /chakra/_sources/kolf-18.12.2.tar.xz
-0fb2aaffaa0bf4bef6dd3610c5c54a879e12991fd2240948af570c3830d2c812  /chakra/_sources/kollision-18.12.2.tar.xz
-c9a574530f9c8868578d8c98d7c83aff7497367d396dceb0410c17fd142c2886  /chakra/_sources/kolourpaint-18.12.2.tar.xz
-39bb184ada4147081ab8859dde63565b4a1c1dc555c0e3ec2fa5f53bf49d3002  /chakra/_sources/kompare-18.12.2.tar.xz
-b1d20e0757218a2259c3fb8ef061988ca7d16586b1a79ca039fb6c51f00e2a63  /chakra/_sources/konqueror-18.12.2.tar.xz
-0e5c2d1e19d142737c7f58b8fd47ada444bef5ee784b883218df9687c94bbeb3  /chakra/_sources/konquest-18.12.2.tar.xz
-5ed541d963184b6d851660c1f0c6708708cba8832718c1a407b2480794cdab56  /chakra/_sources/konsole-18.12.2.tar.xz
-b512c1f5ae50dfa324c931853e1b5f1f64b5f3c873d3e5a93c917889d17c11be  /chakra/_sources/kontact-18.12.2.tar.xz
-0e8afef75b0adf31122b18bce64cb6aa11d23fb603d2c4e75c5943119db50f11  /chakra/_sources/kontactinterface-18.12.2.tar.xz
-48dad416ead50ac69afe822932abccca82cabc2d512c93ca3b7d5d653e38f363  /chakra/_sources/kopete-18.12.2.tar.xz
-aaff5b68a1fbacdb8f9ae50b34ff98751f21f038f619688553ff959961c2cdfe  /chakra/_sources/korganizer-18.12.2.tar.xz
-66fe916cb5b93cebdbe94a439917e6098761d62434276c389b2c399fee4c2b0a  /chakra/_sources/kpat-18.12.2.tar.xz
-7419b4bb0323ef375159d985f82274b1dcc9bb6d0c997ec79c79449952a07daf  /chakra/_sources/kpimtextedit-18.12.2.tar.xz
-0dd611334d2b48d2765b859a435e96b67928d8bb7ba3c6b2ae4c2be568e778d6  /chakra/_sources/kpkpass-18.12.2.tar.xz
-47ea3ebb302eb5be9f7ac1d3e516e4ee29689f7ba2e8de6d5ba9f2b783032b17  /chakra/_sources/kqtquickcharts-18.12.2.tar.xz
-c1fbf5610dfed6fb438a89364141dc310801c7c418abb9c7a022308beb911b4d  /chakra/_sources/krdc-18.12.2.tar.xz
-51932e7b3b66034db2e96655c4b66aae0f0f96c3acfa6a392afd6ba7e8b7da56  /chakra/_sources/kreversi-18.12.2.tar.xz
-b5e4165372afbd2c484a24d87b0905f72d9ada8bc3dfd763b3c70ce33979564a  /chakra/_sources/krfb-18.12.2.tar.xz
-7168789e5cd89c31f75290abef4cfcbd033abaec80f60cf56751f86dbd0167b0  /chakra/_sources/kross-interpreters-18.12.2.tar.xz
-b3015e543f37ab76f1d6a520cbb5ac7c8a92c76ba4f71968346d21e59ec0f632  /chakra/_sources/kruler-18.12.2.tar.xz
-475f956c9aa7f299073b9da193e2b7a2d049fea720782008a221a693894c3b33  /chakra/_sources/kshisen-18.12.2.tar.xz
-bf2ccb4b073dd066a14430f5769b574c463ecf912e2879ff167e2e137ee5d182  /chakra/_sources/ksirk-18.12.2.tar.xz
-a9245c1ae9a929ccfcf56c0dca02bd542d45d63112a56f1bf73d430f311374ff  /chakra/_sources/ksmtp-18.12.2.tar.xz
-e47f17edf2e2479e18bf054c785a769da9271dc2c0973fe7552edcec3aeeae74  /chakra/_sources/ksnakeduel-18.12.2.tar.xz
-c0495241506e09094c2dd06634d67ae82564a365ff83bc45f7c273d9386d610d  /chakra/_sources/kspaceduel-18.12.2.tar.xz
-18f952f6716b94bdb59986c001d6e85e662a901e9ac8e9638bc5d60db831161f  /chakra/_sources/ksquares-18.12.2.tar.xz
-f1b417352a2139aa3aeea10ce768af8c45861016f49702340e11dad34c82d777  /chakra/_sources/ksudoku-18.12.2.tar.xz
-52e1a8727faf30a4c149991dc2c48fdf63964bc41311995bbfecbf151201f1db  /chakra/_sources/ksystemlog-18.12.2.tar.xz
-4913ee32a6b9db90829ac7a98e15a7ed9a911f624638b39388705b282328d164  /chakra/_sources/kteatime-18.12.2.tar.xz
-17b83a930dadd46b56bc0db8224664bc725c35afefca91ee9157e9bca6e6f06f  /chakra/_sources/ktimer-18.12.2.tar.xz
-dcb2dbed1f184e057d4611c015d570d751fa0154dbe89ebdd3c26951c8390a68  /chakra/_sources/ktnef-18.12.2.tar.xz
-bdcc2b9c1682b3eddaf5d7e2259a747428dbdecb6ec76f8697815ac4cede820d  /chakra/_sources/ktouch-18.12.2.tar.xz
-9ca4d8351f1e5e9815645ef7a40876e400bb77b7e5fd4dc5463c5277a48d8468  /chakra/_sources/ktp-accounts-kcm-18.12.2.tar.xz
-2318a4adefdde7639d4f705d954281b1a618779d3a408a00f86af8e8d541435b  /chakra/_sources/ktp-approver-18.12.2.tar.xz
-8f2280bab6574b9becfd8ea732f0f0473006bf5db734303abbf10eab659b53e6  /chakra/_sources/ktp-auth-handler-18.12.2.tar.xz
-a77285cc623d1b50584259bb6b98b04a2fdf026470c6d31f124e0323b0934274  /chakra/_sources/ktp-call-ui-18.12.2.tar.xz
-52e7b5ee3306188a2f498fce306c84d15109ce9672c53788095422ba95cc0db3  /chakra/_sources/ktp-common-internals-18.12.2.tar.xz
-37de84c9bd8448916463919102a1b95c1dae521e0143afc98aaf9ec555bb87b8  /chakra/_sources/ktp-contact-list-18.12.2.tar.xz
-14d145026ffa165a1647b36dbe45d4e6a0002445b37dcbea82a7220234fabe7b  /chakra/_sources/ktp-contact-runner-18.12.2.tar.xz
-9da789ec2340bf1743beed602a390c41d553ddd7e8c72c55f95397a9b76f4cfb  /chakra/_sources/ktp-desktop-applets-18.12.2.tar.xz
-0c8779a5c2e34aa849ef1ebee683f1f85060c4eea5bf32e260c4a6e7cad764d5  /chakra/_sources/ktp-filetransfer-handler-18.12.2.tar.xz
-6c1dc139e294942b72c274a265ab560afdeac962874b3dadda91d9f027293b24  /chakra/_sources/ktp-kded-module-18.12.2.tar.xz
-2a91c2def1e07d675b2cea89f1b405a656f0300d4ba846abafbd6d3e5a0c9075  /chakra/_sources/ktp-send-file-18.12.2.tar.xz
-9464c67e95f82e32841ab394b4dee57b9a41c19859cb250acad6251606c77c60  /chakra/_sources/ktp-text-ui-18.12.2.tar.xz
-efd0dd890ee03f9ba8b9355530760e44d4d85b63fff3ef76d21670234bc9c840  /chakra/_sources/ktuberling-18.12.2.tar.xz
-1153b156c3b9999e60075bcd4edc1948d249afd522f5bed789c3abb65987e850  /chakra/_sources/kturtle-18.12.2.tar.xz
-01bc1f3bce396288e67ed82ac5628d4ceddee1350f6b329c1b2f4e2a342e1e76  /chakra/_sources/kubrick-18.12.2.tar.xz
-7128532559f309cee22e8bb5c418b1c7fc5d72910cdf0c2cc8922f93ab7b67bf  /chakra/_sources/kwalletmanager-18.12.2.tar.xz
-ff74dc160086b6d1f5b8c93ac73c35991e7c567635d093fe67ba0dd6c19b67a9  /chakra/_sources/kwave-18.12.2.tar.xz
-8c62ae077b2022f5ad52b85b1e236bad8aa288d5760b3930fa846104bc45bc16  /chakra/_sources/kwordquiz-18.12.2.tar.xz
-2c6b0073a2187a2ea120de61cefb9d8abb673650f684a2eff2fed2368a87d089  /chakra/_sources/libgravatar-18.12.2.tar.xz
-4eb3c60a099e905183a8e3a91d4c39cbd826c73c5312b3ea82f7d39bc5c17d32  /chakra/_sources/libkcddb-18.12.2.tar.xz
-b1342ab993acaccb8dbe1795546f333edb271f61671b8fa737b80e31298825f8  /chakra/_sources/libkcompactdisc-18.12.2.tar.xz
-c18d8a067849dad4414cf0faeddb40d92cffa8c851ab95789c00158e6bdf3f1f  /chakra/_sources/libkdcraw-18.12.2.tar.xz
-ec20e57eeeab9a8ee7737d0c7c8c5d6c84e060393d96a37372368d7f1a9e5843  /chakra/_sources/libkdegames-18.12.2.tar.xz
-7945f57d1ca8e8e1235f7c5107162952e8fa704833a59a3046fd744acade9592  /chakra/_sources/libkdepim-18.12.2.tar.xz
-073adeacfd1d048bc10d2447a5d72874a1fa0ddc23c58dbc67713bb89d7d5cb4  /chakra/_sources/libkeduvocdocument-18.12.2.tar.xz
-c94af99abc9fd47300576bf5677ff3b51cf174dfb9a2cba6963188c71ce568c9  /chakra/_sources/libkexiv2-18.12.2.tar.xz
-041aa032397e254d6c8f20240d5c3de072a8e06521143c5a614c78ebe04696a7  /chakra/_sources/libkgapi-18.12.2.tar.xz
-e2992c2de7577cf5c20e3c6b6b9dd522f7452552e4c9fdb86f0107ee116cd482  /chakra/_sources/libkgeomap-18.12.2.tar.xz
-49e7ccb3332438f38eb06140a529bafef1cb070c3e3dc6930553e24aaea6b2e9  /chakra/_sources/libkipi-18.12.2.tar.xz
-d88049fd5f4af3c52424ea0c4e01b41bad18cd3eb229bb6ead2a7022d104a60a  /chakra/_sources/libkleo-18.12.2.tar.xz
-071ce881b8606e48b8e28fb90a4f063b15bb1a307435603ab4c3bf4f9b07a961  /chakra/_sources/libkmahjongg-18.12.2.tar.xz
-d1b6063d72a7316bbd6f79a1ac73c68629df167e093d59fe136ea55821eb68c4  /chakra/_sources/libkomparediff2-18.12.2.tar.xz
-13001e84af522a8323c2d1c2769683958ed112a87b1d375f95d66e57a1c1f8d3  /chakra/_sources/libksane-18.12.2.tar.xz
-024b9ee3804678b3b28fd65e8e1f093cd5dca6c52185957842489ad32836be16  /chakra/_sources/libksieve-18.12.2.tar.xz
-eec398519cb4fa9829dd728365802bb458332dffac931c3bb9ad9b3db3dfd0db  /chakra/_sources/lokalize-18.12.2.tar.xz
-da3291eeed100c3de716fc4e418fcff055098c26b11bf5ee9c56417e74374272  /chakra/_sources/lskat-18.12.2.tar.xz
-95dd65f57ac8b0ad98aa73c08dc9de1cda2f30c1c051d37ea82e1ddc0d4dd800  /chakra/_sources/mailcommon-18.12.2.tar.xz
-6640d627b31516ab0ee3d805bf12a862e980fb5d6473a3b3bcfb6bff7ab20a57  /chakra/_sources/mailimporter-18.12.2.tar.xz
-3b099da5017fe505e8a8d058e323f08ecabdb8b2c6e6a49538c60ed52285e3f7  /chakra/_sources/marble-18.12.2.tar.xz
-4c994faff6b26bb5746e178e2d6bdaddf45e62f9573f85a1bc78cb4e84d41603  /chakra/_sources/mbox-importer-18.12.2.tar.xz
-03bb331642b61fe5ea1e0d625594973f10797884d24c77f8894b894ea570cbfa  /chakra/_sources/messagelib-18.12.2.tar.xz
-20a9881fcf3c567459dd3b246c364cb11333c6ad9f33f26d69f10a1e06b2845d  /chakra/_sources/minuet-18.12.2.tar.xz
-dbf7eed57536fee44a8c872dba08764759c8ef59c63ac4abd970e60155612d7f  /chakra/_sources/okular-18.12.2.tar.xz
-915b2f65aaa64bf2e4f74387be2cd2ecfd7e864db399bfe6282c6af15f220588  /chakra/_sources/palapeli-18.12.2.tar.xz
-f45e366e65c2c1487df16d767e52ccbbecdcffacf46bf43b627ee72c361130c8  /chakra/_sources/parley-18.12.2.tar.xz
-3a823af430a5e91dd19116df5d31c178f38591378057cf47ba6c84a6a3c431ba  /chakra/_sources/picmi-18.12.2.tar.xz
-fde992e3ea86ab7102d9e1e9487e158e84924421f851cfc6cc3079f15a0b470c  /chakra/_sources/pim-data-exporter-18.12.2.tar.xz
-e87fbc16dadacbeb2f3c856f14285b5555f7a49361c0f8eb04c19cdbd4c451f5  /chakra/_sources/pim-sieve-editor-18.12.2.tar.xz
-08f39c7d25195d5abdfaaccfedf71f68aa5ac568cf6de3ded3d815c445abd3e9  /chakra/_sources/pimcommon-18.12.2.tar.xz
-e9a058a7420a6081b37c723e4972fe687b8e2f9a82a34c8621cb859b584da752  /chakra/_sources/poxml-18.12.2.tar.xz
-fa5de108850fe0ba85362123fe075c25dd95538bd02fb664b897c7eee779796a  /chakra/_sources/print-manager-18.12.2.tar.xz
-da342ccdb93420b548ac046cc8d2ce5a79ad4241a49651c60857365f798d4e31  /chakra/_sources/rocs-18.12.2.tar.xz
-cfb9ea172cfe4958af1a1bc9d3afd359e6ba610c5ffca5b6b4defcdf83e11000  /chakra/_sources/signon-kwallet-extension-18.12.2.tar.xz
-e85e31de49866b0abc67604668e770fad84921ca2899375cbaab3cfc8434823c  /chakra/_sources/spectacle-18.12.2.tar.xz
-123082d84dd6b6d722101d8610acb0df75dc61bb7ff7524d83011b327d23d674  /chakra/_sources/step-18.12.2.tar.xz
-d91a2e545a7a2acb40a3bd085ff55a81f2242a87a75be0e6add686f6edc77c21  /chakra/_sources/svgpart-18.12.2.tar.xz
-98d0d013925b19c9f8c446a43a161d3a550ab64bfb62cc621e1e0295a7e52dca  /chakra/_sources/sweeper-18.12.2.tar.xz
-1a3eb0e953e0dbeafeed3aa1e97a3444441db36577bc9959a3fdea10fb149670  /chakra/_sources/umbrello-18.12.2.tar.xz
-3aa0f0df903ba2c190cf1ad99b338776a73a9c2bf86684595fd91d7ae0075720  /chakra/_sources/zeroconf-ioslave-18.12.2.tar.xz
+akonadi Applications/19.04
+257598195d09b1022ebf08cd58245cd3493f5a2e
+c0a2c4259b51293d21487cfe2295df6e8dcfb7ab50eb1a698f531dc7d3253e9a  sources/akonadi-19.04.0.tar.xz
+akonadi-calendar Applications/19.04
+69e9e7d464715203652f21131ea0dba7f6770076
+5a2897a1e96897159a3e2980f407c4c225434efd45167ad699a14aaa2ec445fd  sources/akonadi-calendar-19.04.0.tar.xz
+akonadi-calendar-tools Applications/19.04
+dd2502302057d1f9bd5da8ce24d5292e0091c9c9
+f9869574d880c53bfb87319348d75d8169ffb38bfdeb3b6066f25074409321ef  sources/akonadi-calendar-tools-19.04.0.tar.xz
+akonadiconsole Applications/19.04
+7fb51bb16ea0467364ea1f2cb73e33def464e5b4
+5118720b6e0ecdf689c7b7f005f732386d0b7a6258cc11fb44fcaac5cc9518a8  sources/akonadiconsole-19.04.0.tar.xz
+akonadi-contacts Applications/19.04
+f39ea6051efd8ddf33894f4f9655ea33ee4b6d80
+65dd20c467daf8d6107a1856c7f112eb937438b5884fe62a09a1763214a7442a  sources/akonadi-contacts-19.04.0.tar.xz
+akonadi-import-wizard Applications/19.04
+46fba0cf06f6f31a5dc9988855b756b3a163213e
+541b858278d56a5d41858bfa644656d4f04bf6e5a52ce8014d207d64812d6d22  sources/akonadi-import-wizard-19.04.0.tar.xz
+akonadi-mime Applications/19.04
+586a89aa128d8ac9b50fd95783b9c98b9aeccf0f
+b06ca4140b10548b9aecd188bd9b72405af2f4097c80e9b4e9aa3e863750b6da  sources/akonadi-mime-19.04.0.tar.xz
+akonadi-notes Applications/19.04
+181757623a211aa7fdc06c55024f27a79646f94f
+a9aa05ca2b5f846fed51e4c32907eedc6893a40ab3b9d4832e11bab118664e5f  sources/akonadi-notes-19.04.0.tar.xz
+akonadi-search Applications/19.04
+b1b727fdf770c6795b635d80f3466b83ec28a2cf
+6046a540ace526cbb8c0909762ad333426266afbf58a59ecc71cb923298e84bb  sources/akonadi-search-19.04.0.tar.xz
+akregator Applications/19.04
+286f7cda31e01c2bfa7e3d3539d1886407412b13
+5104b0b66ac3917c7cb78f4a6cca952f7e4360cfcd0aa7ce1575d0551470fcee  sources/akregator-19.04.0.tar.xz
+analitza Applications/19.04
+42a693c4a171590724988b6dafe5ff4b7d952eae
+ac8bf7d66f8a2fc7198238f23d82efd1021943ffe8bd5915808e31b800a802f6  sources/analitza-19.04.0.tar.xz
+ark Applications/19.04
+564b20bedd8680b0b742482b106e2f9306c1b9c0
+35e8e516a8554e086264d9a9a4fa66c2b47fa227eb9e512a1d0d24172cd07a84  sources/ark-19.04.0.tar.xz
+artikulate Applications/19.04
+01296de9d0daabefb4ecf86682b087172863fb9a
+527ebdb2db6eab3e05810c5e56d53611d80bd23508563457b459e4e32a68ef08  sources/artikulate-19.04.0.tar.xz
+audiocd-kio Applications/19.04
+eebe295b9381ae7701628d472d1c50d2db7c715b
+0f347be9c873eb75144d2b8f3f2e28d2e52be4c1a0f59a19be99edd867f17371  sources/audiocd-kio-19.04.0.tar.xz
+baloo-widgets Applications/19.04
+f4fa321b825941a6f81fbe19fbe8c5ee03728b71
+ab3d83bb1f2007620273d1a3eb580d821e0655aaf7e3efd2dc81087a24d1c275  sources/baloo-widgets-19.04.0.tar.xz
+blinken Applications/19.04
+19058df8b05e91f26b88d76555b3c46aab215929
+5d470c7f0d232ea01c99fbe1ed08e103291e80c3cfe74e245aba1c2009573eed  sources/blinken-19.04.0.tar.xz
+bomber Applications/19.04
+3bf327fb6fe1ff0a39f59915e9180cfc710bdf91
+4f82f3f42aff36de837f7c9ddc5986f6c73cb50de122b46320dba0a0b03f9a7d  sources/bomber-19.04.0.tar.xz
+bovo Applications/19.04
+def23434c2d2e170a00be4328a4891d786813b17
+2cfccb09087a32d8a75f6dd763168e2ef5928f55b58505a542bc36fdac8e141e  sources/bovo-19.04.0.tar.xz
+calendarsupport Applications/19.04
+dc0d872bd80c048522af4f15ff63374664fb41af
+d767f077a9d41a9c6d266c4b5fe7bedd6f4eb7b71824e7544cf3a1df11ce362f  sources/calendarsupport-19.04.0.tar.xz
+cantor Applications/19.04
+8a23e64714a94464bbcf45cb926b909110ff6999
+ef0381a65cd2f3a3bb68a7211140077fc1a9bf31ed5302fa368fd874c8441bf4  sources/cantor-19.04.0.tar.xz
+cervisia Applications/19.04
+1ae08eca37bd6b58de88bd089f53e1d9f4eed548
+011d9b38a82508ae73328dc56723af11fa8403c0dcf5b7d7703118d79f2ad8f4  sources/cervisia-19.04.0.tar.xz
+dolphin Applications/19.04
+14f0cd52f61de7539e2d9c751966594708ed0281
+f3f45b9048c283252067eebfad8c6e1efc6bc64d43fcba78b933850ea4762375  sources/dolphin-19.04.0.tar.xz
+dolphin-plugins Applications/19.04
+6128f2201164e0caefbdf1676e99165af81e125c
+c2898e0a64d5a9eab2a4bd661694b75805adfd0a925f1a21f894892264f96469  sources/dolphin-plugins-19.04.0.tar.xz
+dragon Applications/19.04
+f7700f62f46517c4ca563e1dc5c643b76f9dd487
+42bde9f6a4f3dfe7a6b2bfa35502474c2866e2649695302d602a97f00842fcf2  sources/dragon-19.04.0.tar.xz
+eventviews Applications/19.04
+395d0e73dae1dafaa25ea4a2dd3addefac30593a
+ed34f228012ad2d45b0f07da469633118f35c28b1ddc7157149f4a5ab999500c  sources/eventviews-19.04.0.tar.xz
+ffmpegthumbs Applications/19.04
+85bb58992d537cb700d4c5880a94ccb9cdb6bed1
+6b96cea0c142651cb586eb40d88792329f8da9a777d9a457ba76d0e94ddf4995  sources/ffmpegthumbs-19.04.0.tar.xz
+filelight Applications/19.04
+67a81ae98c10bcf9bf6178e43abf8fedc450fe9e
+22eaa8f0e9e69652240554687b2cecb55449e67caac6055c2d868f3089d835ad  sources/filelight-19.04.0.tar.xz
+granatier Applications/19.04
+0cba06be442608349037fffae179a3963cc77872
+d83e91a5056e4caf1e522921025cb79355c0c2d53b7f0e98444d37291d80d63a  sources/granatier-19.04.0.tar.xz
+grantlee-editor Applications/19.04
+ca2c77130167ff83ab82723bb16428137fc62dcf
+ac888f2f2ccd4b289deac1d2df4415124e14bf183db1ff1088e88fa782f9f342  sources/grantlee-editor-19.04.0.tar.xz
+grantleetheme Applications/19.04
+d7f17c4cebb395820a1f3ed44c1ec48db601e382
+6896a7e1db662bea03b6bdd9f92214b5fa50dfbebbbaa7b3156ddb87ccd55a3e  sources/grantleetheme-19.04.0.tar.xz
+gwenview Applications/19.04
+ed214691ddcd98c731a2cae1c2031909d36f73bd
+c7d422bddf031fa9d5a23459c65ea6dbb5919e964cc194178a864ee98912b46d  sources/gwenview-19.04.0.tar.xz
+incidenceeditor Applications/19.04
+159f1702ad4d14a2f861a745e1fd10f4da3b5e17
+c34fd55acd2f92705e43628fd0c9c4a550c73d45f30beba71dc75698143cbd5f  sources/incidenceeditor-19.04.0.tar.xz
+juk Applications/19.04
+181181057c3ab38278ad8cf15246f01075023c99
+952366e14526701109e83c1979c2a7b3dfdf3c054ecb86c9b5a6cf9825196f60  sources/juk-19.04.0.tar.xz
+k3b Applications/19.04
+dde986407e135021f80d7eee3bf9d003ce693c9a
+ab0293d0dab2048dcacd4fc54ee2e12d2f55adcecde7cd02e4c31ffd5917ee39  sources/k3b-19.04.0.tar.xz
+kaccounts-integration Applications/19.04
+7aa097f9108848e5fc509006f956e2463a97ef9c
+d7b257f6b7278361690b2c1d948c92bdb8b14f741ce96ef35f37c8eea3feb687  sources/kaccounts-integration-19.04.0.tar.xz
+kaccounts-providers Applications/19.04
+cf542afa89efbe2fdd7cb4bd695e159bcc7a4b05
+4eb74ef042c30ea44f5391f8798d9ceca44d46bf46480355160af61bcb6236d7  sources/kaccounts-providers-19.04.0.tar.xz
+kaddressbook Applications/19.04
+c53824dd20e2f2ca1de18a62ebfc66c58b6f52e6
+821708c0a33063de050682c7768faeb51a467de9c4314901761449c09a8a3265  sources/kaddressbook-19.04.0.tar.xz
+kajongg Applications/19.04
+f07ddd22fffb2bad5fa5ea4856ba39c046350b69
+832e76252321900f3bb3d3a96bb9f9a93235260803621c06d112b7cc48bd1555  sources/kajongg-19.04.0.tar.xz
+kalarm Applications/19.04
+e7735d1a041ebeb90b81fd25dbfbef0fe66c4650
+ed8f656e4aebb78d78f068ccde605489090ed0467452629784472b685fae331a  sources/kalarm-19.04.0.tar.xz
+kalarmcal Applications/19.04
+e742079e3b289f89e7da0a2f52f62c740d63282c
+ec0790d2b04bcd3a37a221bdbf4a10f94ff7dd8ac0228e773ce9fac14bbebf6e  sources/kalarmcal-19.04.0.tar.xz
+kalgebra Applications/19.04
+20f0b0ec6eb690e849d68a6d943bd2d09b3da8d3
+a46c4fc2b0891183d0a3b859182eef8d49206b81cbf6d2c6ed6d5448f2663a4a  sources/kalgebra-19.04.0.tar.xz
+kalzium Applications/19.04
+933b1ec5a6a4514f2ce463c451136856f721e197
+16fe2873dfad5de78b9a07a4c528e8ac747a54eced9feaa65f1c9fccc23b0d03  sources/kalzium-19.04.0.tar.xz
+kamera Applications/19.04
+743a22d9eeb7ae0fbed7470beb50bb2407d510c6
+b6b5891e886f543140d1ea6775ec1f1f4575e698d34af04fd65acbafa7e42392  sources/kamera-19.04.0.tar.xz
+kamoso Applications/19.04
+59ab9d465726d043cfbf2b06ca368ebddc3559b3
+200c805ba80a89026edcd02d4cd6d058eff1d537eb3da28807cb2162cc014765  sources/kamoso-19.04.0.tar.xz
+kanagram Applications/19.04
+c415819c7bdb76a8b3a641cd359578b2ed0aeaec
+dda3ce8211957e016521597a923de92d261e32c31ebf84faa697bd26cf16647c  sources/kanagram-19.04.0.tar.xz
+kapman Applications/19.04
+acdf78982af88cb14dc4bb8ed3b783c8f431c5bb
+f77dd3210bcdfb2d424f7a919848e25a4b4ae994d74b59111f352e41c2086324  sources/kapman-19.04.0.tar.xz
+kapptemplate Applications/19.04
+35ef0c6574a125fdeb6df6fe7ed86db073d7fef6
+7983c4576c6168731958790851d732f8bd4f4313d2cd00a8bf4dd37a4b6a4bb4  sources/kapptemplate-19.04.0.tar.xz
+kate Applications/19.04
+adefef39543387d73175a6920939afb59d8d7bdf
+64c3c312a69d45624e3619309b86de796f67d30a864433a5c24aeb4e299bacc9  sources/kate-19.04.0.tar.xz
+katomic Applications/19.04
+832583f37f1db9b734f72a633a76cd653b58d9a4
+ea6e6642e16f985653caf2cd9dd61248e7038fb0246e9af4d4daec20401537a2  sources/katomic-19.04.0.tar.xz
+kbackup Applications/19.04
+e8cb79cf591bca9e0afa4e1ce713d5738464c06d
+84b8f7b05a1812deb128a85aa2d6f1010fb7b2f8cb51aa3771077ef20fd4b4ce  sources/kbackup-19.04.0.tar.xz
+kblackbox Applications/19.04
+5cf5e585c7d710c446a8ed2c07fa1204ffa3c94d
+9363167664b6b4e54325f9691333df912eefa1e19d387c9a2780626914b813f9  sources/kblackbox-19.04.0.tar.xz
+kblocks Applications/19.04
+167e39276d88c477b58fd922640d8df6507baec4
+c70a60f3a2e4c8f7756a1f9b1e025f8f91ec83c4f54feedf0ba05eea36b0037e  sources/kblocks-19.04.0.tar.xz
+kblog Applications/19.04
+e8c68d7d2e0952a348a0ba0ca07fa04f8d8132ca
+719c6ce92c006231869dcad84b14e3db7c8b71eff60e234a94353e2ef580d577  sources/kblog-19.04.0.tar.xz
+kbounce Applications/19.04
+af10e6c1887bed2faf53a7f3caed017d2197c8f2
+cd28d777db8ff1dc1437fb6456c2fdfe8b9005c0cea3ce05337fbf425803834f  sources/kbounce-19.04.0.tar.xz
+kbreakout Applications/19.04
+bc966250e05f61b345b24aa3faf7f0839aeede71
+c4aa847def701be288e53ceb27c8c63c34aa527f8e64c91fb007d053b1119db8  sources/kbreakout-19.04.0.tar.xz
+kbruch Applications/19.04
+844a597cbb77950aed57346cf8b9c20d74d361d6
+7762c233529b75859ab264bcfd9847acc06889b0ff96183a1af63effd40f3f38  sources/kbruch-19.04.0.tar.xz
+kcachegrind Applications/19.04
+0c1a1d7bbfdab62f48665043ff841a2ccd69ee28
+7021ac1b133e86692dad92ff8de6a0467c2b488d7e5c2977ee4880c166e088ca  sources/kcachegrind-19.04.0.tar.xz
+kcalc Applications/19.04
+d291cf79b802f533783d453f3926776d0aff7b09
+0384ebf83c62e74a2412f71f648bad112f91ef3ec6aa64fe55e63fd88a156593  sources/kcalc-19.04.0.tar.xz
+kcalcore Applications/19.04
+760427db001c596aa2c3d860295218cb4ce1fcc8
+0cdcfebabb9af96650b71ba6361a4557df35144f0b1041f004bff7510c6334b2  sources/kcalcore-19.04.0.tar.xz
+kcalutils Applications/19.04
+a3d1c9ee9ca360184d4da816cf11033b643fc016
+2841291555bf5ab85390e56b1c6c231bb6f1f5c9cbd12a634491781c3cfd83c8  sources/kcalutils-19.04.0.tar.xz
+kcharselect Applications/19.04
+7e947c608e4c9460b88dbeb24536aac241bcaedb
+788e6e97bb53216b4777fb19602d823a8e62f9ea25082f545e970a561fb3a78f  sources/kcharselect-19.04.0.tar.xz
+kcolorchooser Applications/19.04
+834a7f4dea54a7a5eef8ecdf9957d77a6c8fa081
+8f338ba51349cb056f25266d884ca318d3fd3933288ec96f9f17df6c842bc839  sources/kcolorchooser-19.04.0.tar.xz
+kcontacts Applications/19.04
+8ebe50aa4ed320d80e5adc5508ea315235c116ea
+81ad5b3eada7c91b4b7ed09a0a17a146e87b3075925caa3d23b82c2a6f67f5b4  sources/kcontacts-19.04.0.tar.xz
+kcron Applications/19.04
+3b5f24c71601406285ea602c73a7ba119eabb986
+58a84503da74d7c0e26ab14c95f92f57f0a9f0c5e1ce0fa4be30276728c8be35  sources/kcron-19.04.0.tar.xz
+kdav Applications/19.04
+19cea7ec71e4331023a1b50e9f91fdef21fdf416
+dce315916a993dbff7f7748538da91944b20df3cb6fc042e0d145d53904ff5d9  sources/kdav-19.04.0.tar.xz
+kdebugsettings Applications/19.04
+f787b6248c6311b689328953ea492bfb71b75ddb
+7c06b1c5b1f14c3a67d34fda52494a8d47495b3473ecd9fe03e97cb1c88012c5  sources/kdebugsettings-19.04.0.tar.xz
+kde-dev-scripts Applications/19.04
+a27ec0a1afbdee6764c7f586eb81dc1910cb22d5
+23b777143c9402bf089cd2f84c5ac363183b74dcf81be8c08d74d5d099e898e5  sources/kde-dev-scripts-19.04.0.tar.xz
+kde-dev-utils Applications/19.04
+89499e900b20735590342be07d67d2378a4f2d61
+ec2df1ab8b73f19ffc8ec7abeba0577b42d15bc372a19b456a2a04ebb4691031  sources/kde-dev-utils-19.04.0.tar.xz
+kdeedu-data Applications/19.04
+1a86a64ef253f93de537915dc55dbb99e88bdb73
+ddba1b8f78b1614ac8b43b605a9021d611765dea6152e0997c84d4f9b17d9be6  sources/kdeedu-data-19.04.0.tar.xz
+kdegraphics-mobipocket Applications/19.04
+231c155e24c4d7d4950ded18761d325a13e217c4
+37db302ed0d70766cf75e052f27150553b875428b68c886fe4d16452edd18939  sources/kdegraphics-mobipocket-19.04.0.tar.xz
+kdegraphics-thumbnailers Applications/19.04
+01eff3537689320779f67211a26c1553ccd1010a
+7af5fb986c493649a1eec9ba881f8b9c06c5d7459f0acc59e7ee7d185bc7ee70  sources/kdegraphics-thumbnailers-19.04.0.tar.xz
+af
+1539641
+ar
+1539641
+as
+1539028
+ast
+1539641
+be
+1539641
+be@latin
+1539505
+bg
+1539641
+bn
+1539507
+bn_IN
+1539508
+br
+1539641
+bs
+1539641
+ca
+1539641
+ca@valencia
+1539641
+crh
+1399520
+cs
+1539641
+csb
+1539514
+cy
+1539641
+da
+1539641
+de
+1539647
+el
+1539641
+en_GB
+1539641
+eo
+1539641
+es
+1539641
+et
+1539641
+eu
+1539641
+fa
+1539641
+fi
+1539641
+fr
+1539641
+fy
+1539641
+ga
+1539641
+gd
+1537598
+gl
+1539641
+gu
+1539531
+ha
+1474650
+he
+1539641
+hi
+1539641
+hne
+1539641
+hr
+1539641
+hsb
+1539536
+hu
+1539641
+hy
+1537607
+ia
+1539641
+id
+1539641
+is
+1539641
+it
+1539641
+ja
+1539641
+ka
+1538989
+kk
+1539641
+km
+1539543
+kn
+1539544
+ko
+1539658
+ku
+1539641
+lb
+1537619
+lt
+1539641
+lv
+1539641
+mai
+1539641
+mk
+1539641
+ml
+1539551
+mr
+1539641
+ms
+1539641
+mt
+1537761
+nb
+1538348
+nds
+1539641
+ne
+1539641
+nl
+1539656
+nn
+1539621
+nso
+1537548
+oc
+1539641
+or
+1539558
+pa
+1539641
+pl
+1539641
+ps
+1533000
+pt
+1539641
+pt_BR
+1539641
+ro
+1539641
+ru
+1539641
+rw
+1539448
+se
+1538348
+si
+1539565
+sk
+1539641
+sl
+1539641
+sq
+1539568
+sr
+1538348
+sr@ijekavian
+1538348
+sr@ijekavianlatin
+1538348
+sr@latin
+1538348
+sv
+1539641
+ta
+1539641
+te
+1539571
+tg
+1539641
+th
+1539573
+tr
+1539641
+tt
+1399520
+ug
+1539641
+uk
+1539641
+uz
+1539641
+uz@cyrillic
+1539641
+vi
+1539579
+wa
+1539641
+xh
+1539641
+x-test
+1539642
+zh_CN
+1539641
+zh_HK
+1539403
+zh_TW
+1539641
+kdenetwork-filesharing Applications/19.04
+105896cd3f0ea314c26b7707563c455413ce6d30
+a88277659bc1dd5ddfea9dd63c3764a1f31d06235aa07c528c12a63a7605c943  sources/kdenetwork-filesharing-19.04.0.tar.xz
+kdenlive Applications/19.04
+4bc1aee3d090ac25db9b37327e0b76b30c451751
+41a0f2405a725bef78f4895a293a284b1bb20e08a46f04c1ab08d64b2c539711  sources/kdenlive-19.04.0.tar.xz
+kdepim-addons Applications/19.04
+745900db4dfc6ad8d9b21b53204ed0cc08da0d35
+778e946e74f36d368f484226ccc6f9cbd548d1cb2b0c3536e87d9374c64ddd88  sources/kdepim-addons-19.04.0.tar.xz
+kdepim-apps-libs Applications/19.04
+058d5ab9232a7d35178d12c9f4c65c6235643b4c
+f335f736d854b56bab89814db44761c7e49b35e5266dddee78d22c6465e305c1  sources/kdepim-apps-libs-19.04.0.tar.xz
+kdepim-runtime Applications/19.04
+042356eb928863d74ba0cec055806f7f779a50b4
+944e956d260ba5a735b3c94c6c075f207a9c38bf977ed19507b4dd0f3eaa4993  sources/kdepim-runtime-19.04.0.tar.xz
+kdesdk-kioslaves Applications/19.04
+c6a81597383d6be99a63cbde493405503f4bf003
+8765a03f1a6930f28f053b920839e673dbc19bd1947900d84324be963147381a  sources/kdesdk-kioslaves-19.04.0.tar.xz
+kdesdk-thumbnailers Applications/19.04
+516644462b01d69796a589df39ddf82fbb69c157
+195f539bec6e19de83e07dce117f7cd656f77199c2863a6a5738112d53843243  sources/kdesdk-thumbnailers-19.04.0.tar.xz
+kdf Applications/19.04
+793b083c2aea8ce5f0c5b5c43ec519c4e6dc3633
+f1204fddefe5492c860a77ff2c343f9b885625b321a37673763d73510dd469fd  sources/kdf-19.04.0.tar.xz
+kdialog Applications/19.04
+0bcd37fd595627af42c505050dbf269ce7e35011
+2cdd5a65046cfc09246bd1fbc8be818db486e35437f00e20e372d58988f04ace  sources/kdialog-19.04.0.tar.xz
+kdiamond Applications/19.04
+670303749b0631442454f59544baa2f1d814b0e9
+121ef36611bf7fe9a7d1d4700622a4cc8a349fe262b7c568026a4da55dfd4b26  sources/kdiamond-19.04.0.tar.xz
+keditbookmarks Applications/19.04
+eab4af53d74857d8d03ad9efafc70bc6a0662389
+23770a42aa72eb275b2b5a21f8e2f0959eec112ab048c6d89999ee156cd2ef65  sources/keditbookmarks-19.04.0.tar.xz
+kfind Applications/19.04
+c3d50600f036c1a67072a1cfaf0bd1899fbb01c3
+7eec5b096738bb28264bf870bdd85e24f97c62677be2d2a061f6c426ecfc3a47  sources/kfind-19.04.0.tar.xz
+kfloppy Applications/19.04
+edbd0cd761265a4a510ad38cab7835a02fdcff73
+fafa66fddf5fe938b5666ef94ea4a1f41487cb3cc815fa6bc65332ee7574f7e1  sources/kfloppy-19.04.0.tar.xz
+kfourinline Applications/19.04
+41e6f1ec05046a18544df7c279a5e122a72aa15d
+458bc34c169df064c8d974d6f27e18e3cc5f3e9fb069358817d00a590f2e200a  sources/kfourinline-19.04.0.tar.xz
+kgeography Applications/19.04
+d5bffff3cb38e66cb3a4677ef32e2384e28d3887
+ee126fc91ba164e0c095e7cef231a1389a4e1423256773c4e7d4b7306077eb41  sources/kgeography-19.04.0.tar.xz
+kget Applications/19.04
+ed8843e42387ec29236a2e34961c999f49209578
+e1ec10f36f8b451c2cfc02108e00c6ab3e1115719342b9fa1f1f5829746fbeb9  sources/kget-19.04.0.tar.xz
+kgoldrunner Applications/19.04
+192b0f23d5607b8815a87ee5e81809308ba16a55
+3d2eb37695328065ee5cf4c4ba4ee707ce514b4c7aab84c93cd3bef8d329b8ba  sources/kgoldrunner-19.04.0.tar.xz
+kgpg Applications/19.04
+e673e0c72ef46e92c09f991540a2b77fa0f7fcfe
+2fb47d9d08cfca94dce1c4d19bce5d2955c3cd3ceec6265a8b537de612a53128  sources/kgpg-19.04.0.tar.xz
+khangman Applications/19.04
+8b18bff7986ce34d4905b7e9cd191b1ca88fdf15
+2a7120f7a54848dc017efdb86c22a964626029d9ca300d8e1488d385f10dc61c  sources/khangman-19.04.0.tar.xz
+khelpcenter Applications/19.04
+713446f71e000f6d779600d011b58a844c940464
+5fc4f9553e8575055edf259baa3d0b0c663db5caf67dc392db9e519d6b85699f  sources/khelpcenter-19.04.0.tar.xz
+kidentitymanagement Applications/19.04
+86701529fdc982861f8ac63b833127b8fdd15310
+1ddce9330947fdfd970f07b60d6e9ff012e21a673262796ccb29e56e277b55a3  sources/kidentitymanagement-19.04.0.tar.xz
+kig Applications/19.04
+cc77d2bf7c645be436d39e46d7a8e4c6e49e5e7c
+781243a23a94d7a9882bd69ddfcd74a5b9df0ce28cd45488e62dcf54e3633234  sources/kig-19.04.0.tar.xz
+kigo Applications/19.04
+c9a2a39e3be4bfd88b6bb8f819a80155a74c3084
+30f12515ec4d22d39c6c90690545e1975a3ba9917180503ef42cba40ffbd874c  sources/kigo-19.04.0.tar.xz
+killbots Applications/19.04
+a8a504d3721853ea267238212e45cc48bf03a956
+0cc928a1956b72bc207feed237598b445b5a7d7d26a266ec88080c1510870359  sources/killbots-19.04.0.tar.xz
+kimagemapeditor Applications/19.04
+c40222dbf1f4585c7d128050e775cd707acb21f6
+8d3ff906926fe8f82b21cf19d784dbddfcda15de9513feaa9defa6e4ff3b1869  sources/kimagemapeditor-19.04.0.tar.xz
+kimap Applications/19.04
+960916059e0d909bfae9ee81cbe5051c439fe6d0
+cda62c81c47011ad2adbf78222eab4528a62116487531ce1aa98f6100706d2fd  sources/kimap-19.04.0.tar.xz
+kio-extras Applications/19.04
+1ac4247746e4bd1281588c91fb7253e99a7211f9
+0f3f2eaf40512cf4a61b09b94ca365d7d05c7b1a75f4e8afd047143a8e962d85  sources/kio-extras-19.04.0.tar.xz
+kirigami-gallery Applications/19.04
+c2978e830c8fcc75577e97a1a45c17bb046c753f
+c0ac9e9a07072d1a538d2535fd21dede86cc4ee9287c7b1ca3d6b8f8726a7155  sources/kirigami-gallery-19.04.0.tar.xz
+kiriki Applications/19.04
+598ebb29daf7fb0d747d67b2360d147d4bb9924a
+feb7b4fce0e6b1749bddd254a46a5d34bf5584a3d60aef460816380141ad630e  sources/kiriki-19.04.0.tar.xz
+kiten Applications/19.04
+707d6cee174dc5e0a3dd62b6aaf6c4af8b2d104f
+53f5e4ef48b18989084858ab5c96b7dedf357cecf4dba3b2d2a967b4b4b8a742  sources/kiten-19.04.0.tar.xz
+kitinerary Applications/19.04
+873796e5adf49620cca72a714a86c2470df428c0
+b56c93b7114cad54313471e6ab4cebde461a2b39859b47e9b8f7f146d3471889  sources/kitinerary-19.04.0.tar.xz
+kjumpingcube Applications/19.04
+6bd846d9629c091a4c800d7ff2f777352e4bea33
+28fabf01d0a2481c54018d00985254acb107579c5afa93bbec7b3795c2a3f143  sources/kjumpingcube-19.04.0.tar.xz
+kldap Applications/19.04
+792992e0ec2314b019f81b8d38e27331f964835f
+2cddadf995a10b854b28e34c18db14c32ad985c18af466edde6a1b2a9a2d8a23  sources/kldap-19.04.0.tar.xz
+kleopatra Applications/19.04
+cf61d9cc43b6a12317673488ee09f0c7028ef101
+8ad7ec0b99efabdbc270559098dfca64e39ddd30a64b13915c04988a9c8b8b70  sources/kleopatra-19.04.0.tar.xz
+klettres Applications/19.04
+fb9c9164531a3aab7668696b46b5fb479a97b910
+c8a5596638ea7bbe7e26c246c5904840bf544e632e5649430bb32159aedefd60  sources/klettres-19.04.0.tar.xz
+klickety Applications/19.04
+3f9da28f5041a8547d51942c08ed5bb64ecbed4e
+2ad160e3ea0a6f11c828f3b4bcea8f75db4121dda6d6e498fa1fc095e82e80e5  sources/klickety-19.04.0.tar.xz
+klines Applications/19.04
+0862f15d5c4927cc886bf06ac2e9587db05e9c75
+139c0a4da7186e6e57228fcbe8666aa40e52ae01f328fea4d53ed8611ed54a96  sources/klines-19.04.0.tar.xz
+kmag Applications/19.04
+12f9c6847ff5f2f098f91f29354a3778a4a9b70f
+c6725654846e83b383ff6c624683e4132538f2e812d8131cadefd6926316520e  sources/kmag-19.04.0.tar.xz
+kmahjongg Applications/19.04
+e880ae6e949a6a310f89c07047f842a402984120
+519bf6bb0bc098f74467d3ec9b49c82d22241dfd518d004163565e86dbc21a36  sources/kmahjongg-19.04.0.tar.xz
+kmail Applications/19.04
+5f4fb4a4f60cf01015895ffee1c7c323b2958323
+c191057769513d51d6604e0f51e441e54770ac07a982175a5be29b7797d6f486  sources/kmail-19.04.0.tar.xz
+kmail-account-wizard Applications/19.04
+913102dfec4be4736b30e04860b33a38695d2ecf
+640d63ceca23644e2f358c7117eb54daa0fffc669628398f7930fe273d7944a9  sources/kmail-account-wizard-19.04.0.tar.xz
+kmailtransport Applications/19.04
+c10afd3293b19ef6ac04cc9e795d892f79fd9cb9
+35104e661fd501bd5848006dfd907f8cd1dfe88609ed4f9fbc4ce599a2f20c8f  sources/kmailtransport-19.04.0.tar.xz
+kmbox Applications/19.04
+ae061cb9d3fc01461b0a6424a819a5f8e1e68630
+cd37b698e4ad12317a6d1f7df786345f5df7112ea3d21c2c23545e48a67e8544  sources/kmbox-19.04.0.tar.xz
+kmime Applications/19.04
+ceecf41638cb8380d84eece6465fc6bc5881f49c
+2081adec0e6972e513206bee69c0e165904670b7bcf34c52e7da07323537d513  sources/kmime-19.04.0.tar.xz
+kmines Applications/19.04
+441febef34ea1b882b64a81de9fa26ca47f82e5d
+56452ab18c74f2863efc99200a5facd53827382c06fc8534d095bffaca497566  sources/kmines-19.04.0.tar.xz
+kmix Applications/19.04
+b10cb47474bed2d8e4509481892d6627cd5cb775
+f372d50ccdb496a3bb7a3f68c84c921c12d3d535a792400e701ed7c640e45f2a  sources/kmix-19.04.0.tar.xz
+kmousetool Applications/19.04
+f0801c2d14832ce3dd57f9a069e7702dbec97e4b
+89e383a395ec5f1c7d25cc5fb45ecb73a3a0931919a2be533634d77c01cb3fa9  sources/kmousetool-19.04.0.tar.xz
+kmouth Applications/19.04
+5acfec4dabade69b32befc25480491d4a69f6373
+32666760ed76dd2dc816df52c990cb3b8487346ac37bf065e4b109fb6661ebc3  sources/kmouth-19.04.0.tar.xz
+kmplot Applications/19.04
+30aea31755dda86053600888b3379e7f78aff7f4
+fb981354dd6fea18e83003df957f65a9580d458b377adde88a838d4db9a97ee6  sources/kmplot-19.04.0.tar.xz
+knavalbattle Applications/19.04
+b1ad530bbf3fc78d4df328ea8adada905b0b2fd7
+1e6fbd202092230017c268cd825438debf766e3cc810244b63dc8690b5a69585  sources/knavalbattle-19.04.0.tar.xz
+knetwalk Applications/19.04
+fd847e769265e92131f883e34a90f72ffcd1d85f
+84b03a6b7c3ff6634402b016089a54ed0116ace221fdfb04ad3d2a8997f68b4b  sources/knetwalk-19.04.0.tar.xz
+knights Applications/19.04
+d3e41cd8c5cf1274083497c249a4b72b3148abd8
+53eb3214550fc104755ffe076c970cf5499c9553b543d83df42a3b5f5d8d309a  sources/knights-19.04.0.tar.xz
+knotes Applications/19.04
+49d78f2dc8331dc163a3dcd4f26ce193236e6771
+e2f98d029105d18c5c14b774782287e281e2367eebeb84d52727a5156abe4092  sources/knotes-19.04.0.tar.xz
+kolf Applications/19.04
+cad7ec602f2e671702e3ba68cdeb3d45073135a8
+431b31dc6290214be5f5df1d3c6a8eb4a910b4f72135840d4ec3fa6945319c81  sources/kolf-19.04.0.tar.xz
+kollision Applications/19.04
+2b8e2a5e8d944dacce62baa6b2fdb74c68da868c
+f218ef5691235155911b4d03cd301ee6caa0bde6eb324cd55117e722002b0927  sources/kollision-19.04.0.tar.xz
+kolourpaint Applications/19.04
+9c840ce901df4c8a49af945669d23873a472fe9d
+d6cd087ba34a1a8fec9349dea06c1b71a70f6e8455adb41d4820a376eb2ed141  sources/kolourpaint-19.04.0.tar.xz
+kompare Applications/19.04
+eb6c1f9e78ab57070ada310606ba31e7cdd5b1dd
+49453b90e21d3b2acd766aac244f579e2dc446ec8abf854ceb2faf34fc3e647f  sources/kompare-19.04.0.tar.xz
+konqueror Applications/19.04
+d9601a7da1db8c7e61c4d8b560f967722e07a765
+8da6fdd7de037bed79b6341e670a7491d371d084c59fdbefb4ffae0d2da82e4c  sources/konqueror-19.04.0.tar.xz
+konquest Applications/19.04
+54da418d41cb4a13f3b30f7898c3afe8ab4d856e
+5361a865fefc0dac19e166d282188b732cfbe4389afe095c38c8d30b56f7ff6f  sources/konquest-19.04.0.tar.xz
+konsole Applications/19.04
+eaab012b5c1923b55eb25a9894b650e7a24245ae
+62d53840f6cac4686feafa7f75d641bb56867b7dfc12e6ce95afa7e796e37cef  sources/konsole-19.04.0.tar.xz
+kontact Applications/19.04
+a9608b0a98f6fde7954f3e8bb6a52c0f2873a534
+710d72ba01afa2aea89efca61f6c25245c0db04dc675b8871f7109a42a945cca  sources/kontact-19.04.0.tar.xz
+kontactinterface Applications/19.04
+7192c28791012065ea859eb0a381acf46183f635
+268005d61e97dab34f200b0e7a461afddb32a88ccc7c553b6c967865a6915392  sources/kontactinterface-19.04.0.tar.xz
+kopete Applications/19.04
+4110bd231e90e74b9053cb4b43e5df2bea83046f
+88068ceb8735e1b7ecaac9a9e4c36d40629b53d514c987823c987cfac6dc99df  sources/kopete-19.04.0.tar.xz
+korganizer Applications/19.04
+740e0756b82855dd39153959edf371babf669d1b
+3e8c69db9f504e3ec80307d1552af21440621c0e480abf874a5a73482800bcaf  sources/korganizer-19.04.0.tar.xz
+kpat Applications/19.04
+d39860409b980768628b8b7821ce8360fffce9c9
+bcd295a3df422b5cfa8258bb3cd0be7e4405f44604681d98589f2982c44414a1  sources/kpat-19.04.0.tar.xz
+kpimtextedit Applications/19.04
+8868c4bcd4a53080f3082a0075fac8f1a49f2668
+b4c640ee8ae5c4356bc26819763721580ca87477eb39258c1eaacdffbfc5311a  sources/kpimtextedit-19.04.0.tar.xz
+kpkpass Applications/19.04
+647dd098572e44499f1834df2b7476ac6559d117
+0121e03af506451a39b34a2f0ca063228454a40f71d9706dea3cee644a4c8f28  sources/kpkpass-19.04.0.tar.xz
+kqtquickcharts Applications/19.04
+c219cb707f706e1797077689217b5718bef0015d
+c8a270932f11fc5ee9270c77205b1a93edfe73c2e629a602940acb15d853803f  sources/kqtquickcharts-19.04.0.tar.xz
+krdc Applications/19.04
+18c4a1a2d7714dc7b12cf2bd7d707af795684c2f
+2a1ac548992eaaff82cafe386eef0a611b96f06ce3887a363b25d6ca17c6eacc  sources/krdc-19.04.0.tar.xz
+kreversi Applications/19.04
+97f40f3e6501f41f815b060c4daf0c3410d35284
+a715d068eaf381a26e1f432f2d6b3f3ffffb388282b484cd8ad0833acf429d82  sources/kreversi-19.04.0.tar.xz
+krfb Applications/19.04
+827e1f12e5ed16f2b24de5a8281520e252aaa508
+321b1b296dfbd69e64048fbf991aec1a9d8c251e9f0084a396081f62287c6b40  sources/krfb-19.04.0.tar.xz
+kross-interpreters Applications/19.04
+70587b4edd10a991a71360e711eec0cdb3b72ab8
+e910e76e58603077177b7835bed2b9562b266e2fc0ab78c8b2642edc752ccd27  sources/kross-interpreters-19.04.0.tar.xz
+kruler Applications/19.04
+282fc4e1712fb0e4bb68f8570e921bc4fe39ef26
+7d29eac1d7f4e39f7d754ebb9d68aba70ab3dc12e8241007de750572ce761d73  sources/kruler-19.04.0.tar.xz
+kshisen Applications/19.04
+cdbb1b79d5d9c8a472e4c6af784eae4df548a00d
+c7d2799105c71d5d0077383c9b24a52ae85705c39977c8dc167a2594651c17eb  sources/kshisen-19.04.0.tar.xz
+ksirk Applications/19.04
+b297e951dece2a367eb69cde0dd25668a0decb10
+3dcd578050807aa37652e5e589ddff7a5aec46c82309db85aab588bd3060d5a0  sources/ksirk-19.04.0.tar.xz
+ksmtp Applications/19.04
+5ac158c5673b2a9c218462e2e22a389aaff62662
+c92b8b6b9de60bca7b9bb7befdd519041625188a955e55b63860d9de4b3e0bab  sources/ksmtp-19.04.0.tar.xz
+ksnakeduel Applications/19.04
+cecc94d8254075ce75180533d643eacedd05b550
+e9ca727c7e7cef21e9bedbb1504b2023baac9ab5ba0b624dc91e1bf716eb8335  sources/ksnakeduel-19.04.0.tar.xz
+kspaceduel Applications/19.04
+c7ba95f25f5b27620cc98b92e8c15fcfd6907892
+486b8d84f3070b7795456ec5847d7b5a9bb3c2b5d3e1c4bcdfedff18b8d735a7  sources/kspaceduel-19.04.0.tar.xz
+ksquares Applications/19.04
+ab66f0f825ce2a07bcf1f9263a6d045da6d9a0db
+c5a7dc34619f1ee4d621c3371b65bdcd46cf3433c183b4bc85c8a7586b6e85b4  sources/ksquares-19.04.0.tar.xz
+ksudoku Applications/19.04
+3ecebabf44eb1ace3859eafafe93534ab0d3f986
+4f5cff274741326bff02108fef4996f289c56ff026fd6e2921e4a2bf492a14cb  sources/ksudoku-19.04.0.tar.xz
+ksystemlog Applications/19.04
+388113f91005092171fd8257ab63960997d4b914
+6a9f389b04fac92b0e2955e86e4a45aa73494f6dd24c9a6704826b469414fb5d  sources/ksystemlog-19.04.0.tar.xz
+kteatime Applications/19.04
+4c823a3956976bb77225ed0fc95461948b8ef99c
+8672fa70912e9bf4488d5258258a14babbf65ee160dc537ab665ff2136a0c490  sources/kteatime-19.04.0.tar.xz
+ktimer Applications/19.04
+2122abb1779261a0928fef47bf6671a2ad740095
+d772292fa447aec07ff763d7bdfc351fbf2fd7d09160a574ec36ff2905ea5b79  sources/ktimer-19.04.0.tar.xz
+ktnef Applications/19.04
+e0b64253712028f918eb75a0ef7c8e2d3e4ff069
+bc3e826bc831ffac5b3b92cef14fca3f4b077d30652ce2ebdcffa07dafd58c56  sources/ktnef-19.04.0.tar.xz
+ktouch Applications/19.04
+f17e2b3c89756c78cbbeff8016cb8ca94a6c5fb5
+707fca9ee9d0d217683e2bb562f5f8f984ddbd0ed7274b022a43bdc176898390  sources/ktouch-19.04.0.tar.xz
+ktp-accounts-kcm Applications/19.04
+ab29326fffcb4b836036bd9eac2f85df8154a2d2
+e7c11f4310dd4cb119336fb569cc9799dbdd3d7f4b87af9e265f8fc4439ec7f8  sources/ktp-accounts-kcm-19.04.0.tar.xz
+ktp-approver Applications/19.04
+9df6f2086efbb96ca7484f80bcd91eed208f7530
+ec273b9eabcedd47c97fa60c68a3037115b9b06a91892d32871e8ded4c04cdfe  sources/ktp-approver-19.04.0.tar.xz
+ktp-auth-handler Applications/19.04
+bc965e70f6807c3defaf6e3628a7fcb4c02c8c17
+db459ed02c5ed37ce41ec9728d931ca1ab987c43d1b48f501d38b40e1e4f19e9  sources/ktp-auth-handler-19.04.0.tar.xz
+ktp-call-ui Applications/19.04
+84424aedaf3a24adcba9de22c4c48c1c4bdd6ea2
+b63ef1f0bcaed631f9106a355dd60e48edb6e7e39bb6bd0603b504fc33949427  sources/ktp-call-ui-19.04.0.tar.xz
+ktp-common-internals Applications/19.04
+7cf5af00cb3443a383267d7b9f0597dd762b3a7b
+12e3e0733eef78a649fa1e55f2f3d228b581fb1a0ba401e154dd57d4eb286eaa  sources/ktp-common-internals-19.04.0.tar.xz
+ktp-contact-list Applications/19.04
+9bc5f778c3e11c151d7d1a8a924330badef640ef
+745a1b403e3e1bfd0604521709f44634ab15a053b45f5c390d9a8e80fa405668  sources/ktp-contact-list-19.04.0.tar.xz
+ktp-contact-runner Applications/19.04
+39a474d5a3aae7d26ffa5a3805aa9b23513cdc78
+12d9e3cf2a230e590c9e3e17462b8e061641a70840492971434b131c15594773  sources/ktp-contact-runner-19.04.0.tar.xz
+ktp-desktop-applets Applications/19.04
+61558ab874e187555b98956e174bafb538a6f83c
+ba5d0422156e0ea38db1abeb317310266fd96b2b259a40df4233880d15037d8c  sources/ktp-desktop-applets-19.04.0.tar.xz
+ktp-filetransfer-handler Applications/19.04
+141f65bb8953152630a0051b5dc97f91e10a8648
+3088b79a79b35fc52f38ae2941e9f1ca8a80a1eed1c3bcdfd489b2e069febcfd  sources/ktp-filetransfer-handler-19.04.0.tar.xz
+ktp-kded-module Applications/19.04
+9ebe6f199205729940fc819eb9527394b819fd05
+3409e3ec270f0ba2f558b6e6a84e9948936c128cc536fc6c16c4dd5bd8a3c94b  sources/ktp-kded-module-19.04.0.tar.xz
+ktp-send-file Applications/19.04
+083ff646f9bfeaab21c54521222b775f7bfa7a2d
+f0be593d3101cbc5027e7dcc23a767d2e3e753d140afe97d5790db20eea07226  sources/ktp-send-file-19.04.0.tar.xz
+ktp-text-ui Applications/19.04
+297a1a64148df2bbb924e965284e3a3aff6dd8eb
+78ac51d23e54d6044b70083db8d2c6972643a207a7f475cde15292e08b6b6469  sources/ktp-text-ui-19.04.0.tar.xz
+ktuberling Applications/19.04
+1225e445380671ba2f434ed8c3bbcbea00fdf953
+984c29562bd20f93117e7d79aa120dd906e6d4490ae5d2b52ad03f7bbfb85ace  sources/ktuberling-19.04.0.tar.xz
+kturtle Applications/19.04
+d2697f44635cd86e932ed47e90d305aca3669f48
+89e836a2737c98caf1ceb16b7ac648262d6a6770ac5bb5b0d9fbfed4abeeda7d  sources/kturtle-19.04.0.tar.xz
+kubrick Applications/19.04
+03a5abbf981cac68961a00a53949c9f055498e8e
+72adc4e07df6062dd444c4bb9571429acf9c2ee68e273bc42c7925b1c06aad5e  sources/kubrick-19.04.0.tar.xz
+kwalletmanager Applications/19.04
+4042e049f4a0fa25c9e05e621b1b8c55d12958da
+5cc25daaa8511694b01ba4b0a7ca39f8f2eef9fce10e99411ae287013fc27734  sources/kwalletmanager-19.04.0.tar.xz
+kwave Applications/19.04
+d9cdca662aa1ad2e5d8bd01e2c30e75e0e5e97bf
+510b99740c87ade2e644b8b62ece9ac46721e636aeb83f253939d4d191d03a52  sources/kwave-19.04.0.tar.xz
+kwordquiz Applications/19.04
+0f26bc8b4fb724c2a1b08efeecfa597b64c84406
+a6433b5a2497398ed790965ef5469b53e406882f93b5a05e574d05cb193ef866  sources/kwordquiz-19.04.0.tar.xz
+libgravatar Applications/19.04
+92d51c8071dc92d3026f9361f5125691eda51834
+ee62597fffa534b45f89056028d1d9ff871c7da7093d11a128a6decfb5312d12  sources/libgravatar-19.04.0.tar.xz
+libkcddb Applications/19.04
+702eb32c6f76f0b7a514a3b99bbd5f970f30d839
+d15cef6fe986daba5ea051fda7146c784d993e83ca495faf58fad586ca370c32  sources/libkcddb-19.04.0.tar.xz
+libkcompactdisc Applications/19.04
+5a510ea08f844c3cf1115fcfbf0200132ba6a0fa
+7236af70872c7b20070d9c096a8d4da45cdf62874d6d1314b183edf8b0d701d6  sources/libkcompactdisc-19.04.0.tar.xz
+libkdcraw Applications/19.04
+7cc73de75a8cc41eb1b110323d411eefb6f6f2f4
+30df02047c0f1b97a7c90c8eb5f7a3c5d322f13e0158395d3f9798ff21ed529e  sources/libkdcraw-19.04.0.tar.xz
+libkdegames Applications/19.04
+29123149091f7dbfd16982626d51833dacbe37b9
+2965e4a313609f6408becb13e54e26bfe14b37b58e7737e051129896f6e8bcd3  sources/libkdegames-19.04.0.tar.xz
+libkdepim Applications/19.04
+c91f1fc17d493e36b118cce484d87d643c0bae24
+099c7bd90e540c6996f333393afa4831c94b6fbe65f7800bde712ebae4ba8a8e  sources/libkdepim-19.04.0.tar.xz
+libkeduvocdocument Applications/19.04
+422434b1a95730550a8287a450bbde65f5c3fcf3
+bb0300ca6a89c7174714b005032380b81e6e7bfdf3a3bab82b6f42fc0693045e  sources/libkeduvocdocument-19.04.0.tar.xz
+libkexiv2 Applications/19.04
+d1be9298c7f2b9c717cda154d41732f230ea13a6
+9fcafa932631429af1693642415d2f202ad29338b63949b5e8661135eb69dc19  sources/libkexiv2-19.04.0.tar.xz
+libkgapi Applications/19.04
+0ca3720dda421f2c6577fe0566eb5fd4b21eafa3
+014084b04ee76939a318f711259bbb540037b45fe57a25b200ed4095b74970dc  sources/libkgapi-19.04.0.tar.xz
+libkgeomap Applications/19.04
+cc65f9457c10ce1e343de41f76fdaa300f763334
+12cf73da1d406b8f6efe88c1d1bc56ecf3260bbe41759c4dec061df627e990e9  sources/libkgeomap-19.04.0.tar.xz
+libkipi Applications/19.04
+d6b427fc566031a8be42f70e94730612fbae56f1
+6fc176e72e829dafe19e17a1d97b032f464d837621989751efe38cdd03d7d285  sources/libkipi-19.04.0.tar.xz
+libkleo Applications/19.04
+28db4430d3f73625319ac0eb8ae359af25a723b9
+fbd97ae860c0361fca8bfa8a80a2d19e96779eb8d436a9a32c10cfe9767d8981  sources/libkleo-19.04.0.tar.xz
+libkmahjongg Applications/19.04
+411d8b66f562dce4534f7c3d75db54788fb2b1e0
+1ab4461ba92de0cc56bd349a859d5c647f816b20923692237e7f3098ba9dd76e  sources/libkmahjongg-19.04.0.tar.xz
+libkomparediff2 Applications/19.04
+2d86556960e4ed40e7efd1a71f1658ac323d984c
+ffb3370aa869831f86dc009353abd72a5f0c7a7d1c570d5fecf9747131247464  sources/libkomparediff2-19.04.0.tar.xz
+libksane Applications/19.04
+c18d052974affeca511e6b954ff7471e116b9bf1
+15a4f14ddb26e7e0ed54926c54941b29eebba1fabb2e75ad9f5cd48b9b673f58  sources/libksane-19.04.0.tar.xz
+libksieve Applications/19.04
+f470afe04a979cbac5a362c8e1cf4a15cde6d7a9
+451d71d6c6e8cdfe0ef540cbcca94dae57260563e1e435b41f7070ecb86f6312  sources/libksieve-19.04.0.tar.xz
+lokalize Applications/19.04
+b419f6ff2cc484f5cc7f7556d174c29b7b290e4d
+e2e8cd6f9bb0e59ffd4b88e5513b757df3b63892ce90e7000c872e896ef74266  sources/lokalize-19.04.0.tar.xz
+lskat Applications/19.04
+ca068adda1f4d8d7e7f26bfb8112e34e31ab7c46
+c3358e62eb8a0c428c32f1ac759f5ead15d4ab552b1ae5b273e6927d14bb0ad1  sources/lskat-19.04.0.tar.xz
+mailcommon Applications/19.04
+d19ac6e9ba9828595e36d896ff0dbc23d445e295
+cd599079d290f540c83919182eab7e2d236a939a3405d1f882385822fc5d3682  sources/mailcommon-19.04.0.tar.xz
+mailimporter Applications/19.04
+bf1089517d2ff57da318146a91c3dd2426bc655e
+d5649d24aca659fbb00284a70aef868e31a56a9c688a0457945ec0d31c7a22ed  sources/mailimporter-19.04.0.tar.xz
+marble Applications/19.04
+9ee9b49c61f5daa3beb367ec685345d147b2a778
+7405c76970d6ec500e5dc99ea2926cc11571e69f29c2e79f025f0f3ec4048960  sources/marble-19.04.0.tar.xz
+mbox-importer Applications/19.04
+fd6ce129aff0c36555d47ca4241642486992d6e9
+0fba78f2feee2ec7c11e64511195546b9c34695c091632494c1d77c2555eb888  sources/mbox-importer-19.04.0.tar.xz
+messagelib Applications/19.04
+656bbb59dd3882465bb3d9e7029ea13fc979d9b9
+1fb76bcd7aa9792095519c585dbb93552726e3cfe514446eb52edf5ed1517a1a  sources/messagelib-19.04.0.tar.xz
+minuet Applications/19.04
+80163d39a706514d132862cb7bbbcac0cda1833e
+3bdf5470a154b2be4bfcd97db7374ef81ca8eefba3bb12030dd6d39f1466cc78  sources/minuet-19.04.0.tar.xz
+okular Applications/19.04
+81d417d23e72e7e8bf8e59deb64618571803193b
+1947b394dfd8da9c7cc4234e308e2476ffa44dc58542d246eafc8397d8991b6e  sources/okular-19.04.0.tar.xz
+palapeli Applications/19.04
+510458fa5dab6a515c8059ec36172691cedc1fb9
+21f8b6b109d6cc61acbb0ee01aa31982bb6e27e8894e4f00407f52904d177a2b  sources/palapeli-19.04.0.tar.xz
+parley Applications/19.04
+b3429c962c2bb958e448e91dcd44c3cb9f9457ea
+243f7f1a89bb603c059b0610a9bb7f51627540d439b4026d736062b693879ed2  sources/parley-19.04.0.tar.xz
+picmi Applications/19.04
+a1b1a3362bdda2d70ac7368f10f2a54ad17c25f0
+edb10bc29d6817dffeb51762c5fa793ee8de3b3a70c2c6616012f5a043799d86  sources/picmi-19.04.0.tar.xz
+pimcommon Applications/19.04
+ad822bac80824a5b777bc90c496ae164674c6573
+b25d10571e55ab11b758ad6b1040ef2d148b4b5b913f41665c355df25bceb12e  sources/pimcommon-19.04.0.tar.xz
+pim-data-exporter Applications/19.04
+1f93440858f7500422bd76bb610e56ee67bc3982
+ae1c3bbfffebb85533b0bbf4b0f8b54c06e29fcdf7284295c89ab43d196a6ac3  sources/pim-data-exporter-19.04.0.tar.xz
+pim-sieve-editor Applications/19.04
+88f36c0737ca9058d2db140fb850540311f41284
+0843df57695ca4dc359d048a7e3bf2b6bb66bd10d861714d316baa8ecb387dd1  sources/pim-sieve-editor-19.04.0.tar.xz
+poxml Applications/19.04
+01692ff76e0c59c8f508060e494dee0890be7344
+c0a24557cc7e243790c5273fb2a4ff585a3e89cc994772a52979015d2e57a985  sources/poxml-19.04.0.tar.xz
+print-manager Applications/19.04
+25d37d35a7263dc2f9d82d93e9bd362b3cdbb9f3
+f9dfe61ba341013ae59892cd6715b7c00ee6777ca4d2e81deeda1cf2d283f6ba  sources/print-manager-19.04.0.tar.xz
+rocs Applications/19.04
+1c944fe8e676e721183d8ce0813941c7dbbe252a
+65557205a86ddc682c9f9378731b1cf0dacd170742a5bdf110eeeef8ae4b26c8  sources/rocs-19.04.0.tar.xz
+signon-kwallet-extension Applications/19.04
+5808368bea3ae4b286270285ce1b6327b531d95e
+eb93120d2acfbac4b823bc301b3724d250dc7e7041eef347c1337c7df84c0c40  sources/signon-kwallet-extension-19.04.0.tar.xz
+spectacle Applications/19.04
+0f259d9be2bd6be8e8e28b46f22e5ba7d5720273
+2c4d891d5850e13d912ad0885086170f45178ed5fb4d0ccfef7b22a9a76c35a8  sources/spectacle-19.04.0.tar.xz
+step Applications/19.04
+38aff82bb0b9d8ec65e621c89b8cd9b0df77bc0a
+c37cbd4a7179d796dd4458dbdd98e48d59c5f0278f19026a4f5cc2b50e140319  sources/step-19.04.0.tar.xz
+svgpart Applications/19.04
+562236ef27541ed6d62f74bf695b01e0a43216f3
+6dbec1dcb6853c06f7cb10677a2c99678b398b4a658eb4206a146f24b0fa158a  sources/svgpart-19.04.0.tar.xz
+sweeper Applications/19.04
+d4c7c90e74e5f491831fa4599eae0fdb519466c3
+7ed57321ba601725291e1cfa6cdfe2060ad0405d42124dc8d8d44d137b852f72  sources/sweeper-19.04.0.tar.xz
+umbrello Applications/19.04
+a42e99351d43ec7dfa0b69fcda89121f62bc2dd6
+7c37363a92bd91f2a515438068ba6f1c8747269ddaf2eda5a7998539ece4468d  sources/umbrello-19.04.0.tar.xz
+zeroconf-ioslave Applications/19.04
+7457b10207104b60d02a10dc223b7429501b22e8
+e1f7465f200d1c7c53c56a8ebf9a463022a27d6c244d0d1768ff58763e5b53dc  sources/zeroconf-ioslave-19.04.0.tar.xz

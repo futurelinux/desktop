@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=ktouch
-pkgver=18.12.3
+pkgver=19.04.0
 pkgrel=1
 pkgdesc="Touch Typing Tutor"
 url="http://kde.org/applications/education/ktouch/"
@@ -14,7 +14,7 @@ replaces=(kdeedu-ktouch)
 options=(docs debug)
 groups=(kde kde-uninstall kde-applications kdeedu)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('194f308a114c89873ee88eb069ecda88d5d1e1ad97c150e2d61cf248719b4bb6'
+sha256sums=('707fca9ee9d0d217683e2bb562f5f8f984ddbd0ed7274b022a43bdc176898390'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=bomber
-pkgver=18.12.3
+pkgver=19.04.0
 pkgrel=1
 pkgdesc="Arcade Bombing Game"
 arch=('x86_64')
@@ -15,7 +15,7 @@ replaces=('kdegames-bomber')
 conflicts=('kdegames-bomber')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('5b8e24aba4fb14ffc72313f9754315d6a7d98a3e00ee118a2551ac3357ead771'
+sha256sums=('4f82f3f42aff36de837f7c9ddc5986f6c73cb50de122b46320dba0a0b03f9a7d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=minuet
-pkgver=18.12.3
+pkgver=19.04.0
 pkgrel=1
 pkgdesc="A KDE Software for Music Education"
 arch=('x86_64')
@@ -15,7 +15,7 @@ makedepends=('extra-cmake-modules' 'kdoctools')
 groups=(kde kde-applications kdeedu kde-uninstall)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('9244ec364d031c73f9aed9568012a28b847ec4dceca61040324af7afd3d64009'
+sha256sums=('3bdf5470a154b2be4bfcd97db7374ef81ca8eefba3bb12030dd6d39f1466cc78'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
