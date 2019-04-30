@@ -1,6 +1,6 @@
 pkgname='falkon'
 pkgver=3.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Cross-platform QtWebEngine browser"
 url="https://github.com/KDE/falkon"
 arch=('x86_64')
@@ -16,8 +16,12 @@ replaces=('qupzilla')
 categories=('network')
 source=("https://download.kde.org/stable/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz"
         'start-white.png'
-        0001-branded-speeddial.patch)
-
+        0001-branded-speeddial.patch
+        falkon-pyside-5.12.2.patch::"https://cgit.kde.org/falkon.git/patch/?id=479933e0")
+md5sums=('9255fb335d3ba361dea44b7b297ddf7d'
+         'fc705d7aba952361a626a2c79726bbfa'
+         'b1848d49f320719b944d00f28ca153a9'
+         'cc88bcb9965c9bfa2bff7ac72837947f')
 
 prepare() {
   msg 'Applying browserUI patch...'
@@ -38,6 +42,9 @@ prepare() {
   msg 'Applying search engine patch...'
   cd ../opensearch/
   sed 's,\?q=\%s\&t=qupzilla,\?q=\%s\&t=chakra,g' -i searchenginesmanager.cpp
+
+  cd $pkgname-$pkgver
+  patch -p1 -i ../falkon-pyside-5.12.2.patch # Fix build with PySide 5.12.2
 }
 
 build() {
@@ -49,7 +56,8 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_BUILD_TYPE=None # https://bugreports.qt.io/browse/PYSIDE-980
   make
 }
 
@@ -61,8 +69,4 @@ package() {
   # zsh completion
   install -Dm644 linux/completion/_$pkgname \
     $pkgdir/usr/share/zsh/site-functions/_$pkgname
-} 
-
-md5sums=('9255fb335d3ba361dea44b7b297ddf7d'
-         'fc705d7aba952361a626a2c79726bbfa'
-         'b1848d49f320719b944d00f28ca153a9')
+}
