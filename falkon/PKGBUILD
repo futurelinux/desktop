@@ -43,8 +43,8 @@ prepare() {
   cd ../opensearch/
   sed 's,\?q=\%s\&t=qupzilla,\?q=\%s\&t=chakra,g' -i searchenginesmanager.cpp
 
-  cd $pkgname-$pkgver
-  patch -p1 -i ../falkon-pyside-5.12.2.patch # Fix build with PySide 5.12.2
+  cd $srcdir/$pkgname-$pkgver
+  patch -Np1 -i ../falkon-pyside-5.12.2.patch # Fix build with PySide 5.12.2
 }
 
 build() {
