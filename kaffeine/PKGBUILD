@@ -1,5 +1,5 @@
 pkgname=kaffeine
-pkgver=2.0.16
+pkgver=2.0.17
 pkgrel=1
 pkgdesc='KDE media player'
 license=('GPL')
@@ -9,8 +9,8 @@ depends=('kio' 'libxss' 'vlc')
 makedepends=('extra-cmake-modules' 'kidletime' 'kdoctools')
 categories=('multimedia')
 options=('debug')
-source=("https://download.kde.org/stable/${pkgname}/${pkgname}-${pkgver}-2.tar.xz")
-sha256sums=('8659189d907c2512321dd2c0d0c47176229c344970d633e33f29ce82432deee5')
+source=("https://download.kde.org/stable/${pkgname}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('6578b785f754663c105d425605cf9a5dc139881fd479a9290b55cbf49182cce1')
 
 prepare() {
   mkdir -p build
@@ -18,7 +18,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver}-2 \
+  cmake ../${pkgname}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_TESTING=OFF 
    make
