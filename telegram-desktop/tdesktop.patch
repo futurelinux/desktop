@@ -9,19 +9,16 @@ index 0554fa179..3ea027406 100644
    </qresource>
  </RCC>
 diff --git a/Telegram/SourceFiles/core/launcher.cpp b/Telegram/SourceFiles/core/launcher.cpp
-index d4bdadc17..8a420c74b 100644
+index b1246588a..7f522cc86 100644
 --- a/Telegram/SourceFiles/core/launcher.cpp
 +++ b/Telegram/SourceFiles/core/launcher.cpp
-@@ -39,9 +39,10 @@ void Launcher::init() {
- 
- 	QApplication::setApplicationName(qsl("TelegramDesktop"));
- 
+@@ -248,9 +248,6 @@ void Launcher::init() {
+ #elif defined(Q_OS_LINUX) && QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+ 	QApplication::setDesktopFileName(qsl("telegramdesktop.desktop"));
+ #endif
 -#ifndef OS_MAC_OLD
-+#if !defined(Q_OS_MAC) && QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
-+	// Retina display support is working fine, others are not.
- 	QApplication::setAttribute(Qt::AA_DisableHighDpiScaling, true);
+-	QApplication::setAttribute(Qt::AA_DisableHighDpiScaling, true);
 -#endif // OS_MAC_OLD
-+#endif // not defined Q_OS_MAC and QT_VERSION >= 5.6.0
  
  	initHook();
  }
@@ -276,7 +273,7 @@ index 0b783ec21..3f917765a 100644
                  'qt_version%': '5.3.2',
                }, {
 -                'qt_version%': '5.6.2',
-+                'qt_version%': '<!(echo /usr/include/qt5/QtCore/*/ | grep -Po "\d+\.\d+\.\d+")',
++                'qt_version%': '<!(echo /usr/include/qt/QtCore/*/ | grep -Po "\d+\.\d+\.\d+")',
                }]
              ],
            },
@@ -295,7 +292,7 @@ index 0b783ec21..3f917765a 100644
                'linux_path_qt%': '/usr/local/macold/Qt-<(qt_version)',
              }, {
 -              'linux_path_qt%': '/usr/local/tdesktop/Qt-<(qt_version)',
-+              'linux_path_qt%': '/usr/lib/qt5',
++              'linux_path_qt%': '/usr/lib/qt',
              }]
            ]
          },
@@ -359,14 +356,14 @@ index 0b783ec21..3f917765a 100644
 -    '<(qt_loc)/include/QtGui/<(qt_version)',
 -    '<(qt_loc)/include/QtCore/<(qt_version)/QtCore',
 -    '<(qt_loc)/include/QtGui/<(qt_version)/QtGui',
-+    '/usr/include/qt5',
-+    '/usr/include/qt5/QtCore',
-+    '/usr/include/qt5/QtGui',
-+    '/usr/include/qt5/QtDBus',
-+    '/usr/include/qt5/QtCore/<(qt_version)',
-+    '/usr/include/qt5/QtGui/<(qt_version)',
-+    '/usr/include/qt5/QtCore/<(qt_version)/QtCore',
-+    '/usr/include/qt5/QtGui/<(qt_version)/QtGui',
++    '/usr/include/qt',
++    '/usr/include/qt/QtCore',
++    '/usr/include/qt/QtGui',
++    '/usr/include/qt/QtDBus',
++    '/usr/include/qt/QtCore/<(qt_version)',
++    '/usr/include/qt/QtGui/<(qt_version)',
++    '/usr/include/qt/QtCore/<(qt_version)/QtCore',
++    '/usr/include/qt/QtGui/<(qt_version)/QtGui',
    ],
    'library_dirs': [
      '<(qt_loc)/lib',
@@ -406,7 +403,7 @@ index 464d3c818..f350da8f3 100644
      ],
      'action': [
 -      '<(qt_loc)/bin/moc<(exe_ext)',
-+      '/usr/bin/moc-qt5',
++      '/usr/bin/moc',
  
        # Silence "Note: No relevant classes found. No output generated."
        '--no-notes',
@@ -419,7 +416,7 @@ index f5624a82b..1129a95c5 100644
      ],
      'action': [
 -      '<(qt_loc)/bin/rcc<(exe_ext)',
-+      '/usr/bin/rcc-qt5',
++      '/usr/bin/rcc',
        '-name', '<(RULE_INPUT_ROOT)',
        '-no-compress',
        '<(RULE_INPUT_PATH)',
