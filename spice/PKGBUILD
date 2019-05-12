@@ -1,18 +1,27 @@
 pkgname=spice
-pkgver=0.12.8
+pkgver=0.14.2
 pkgrel=1
 pkgdesc="SPICE client and server"
 arch=('x86_64')
 url="https://spice-space.org"
 license=('LGPL2.1')
-depends=(alsa-lib celt0.5.1 libcacard libjpeg-turbo libsasl libxinerama libxfixes libxrandr pixman)
-makedepends=(python2-pyparsing python2-six qemu spice-protocol)
-source=(http://spice-space.org/download/releases/$pkgname-$pkgver.tar.bz2)
-md5sums=('376853d11b9921aa34a06c4dbef81874')
+depends=(alsa-lib celt0.5.1 libcacard libjpeg-turbo libsasl libxinerama libxfixes libxrandr pixman opus gstreamer)
+makedepends=(python2-pyparsing python2-six qemu spice-protocol gst-plugins-base-libs)
+source=(https://spice-space.org/download/releases/$pkgname-$pkgver.tar.bz2{,.sig})
+sha256sums=('b203b3882e06f4c7249a3150d90c84e1a90490d41ead255a3d2cede46f4a29a7'
+            'SKIP')
+validpgpkeys=('206D3B352F566F3B0E6572E997D9123DE37A484F')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
-  PYTHON=python2 ./configure --prefix=/usr --disable-static --enable-smartcard --enable-client
+  ./configure --prefix=/usr \
+              --disable-static \
+              --enable-smartcard \
+              --enable-client \
+              --enable-celt051 \
+              --enable-gstreamer \
+              --enable-recorder \
+              --enable-werror
   make
 }
 
