@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=ktp-common-internals
-pkgver=19.04.0
+pkgver=19.04.1
 pkgrel=1
 pkgdesc="Common libraries for telepathy-kde"
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('hicolor-icon-theme' 'kaccounts-integration' 'knotifyconfig' 'kpeople' 
 makedepends=('extra-cmake-modules' 'kdoctools' 'python3' 'doxygen')
 groups=('kde-telepathy')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('12e3e0733eef78a649fa1e55f2f3d228b581fb1a0ba401e154dd57d4eb286eaa'
+sha256sums=('041e5971071a060cef24abe68f699b5fcc657ba15a1e77feb227312fb1c13fd1'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

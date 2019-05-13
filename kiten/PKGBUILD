@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kiten
-pkgver=19.04.0
+pkgver=19.04.1
 pkgrel=1
 pkgdesc="Japanese reference/study tool"
 url="http://kde.org/applications/education/kiten/"
@@ -16,7 +16,7 @@ replaces=('kdeedu-kiten')
 conflicts=('kdeedu-kiten')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('53f5e4ef48b18989084858ab5c96b7dedf357cecf4dba3b2d2a967b4b4b8a742'
+sha256sums=('be904abd0386a9ac6d622178f37e55d5a05f5eaa31c6a5cd661959ee4b03d2d4'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

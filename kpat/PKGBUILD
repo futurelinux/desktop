@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kpat
-pkgver=19.04.0
+pkgver=19.04.1
 pkgrel=1
 pkgdesc="Collection of various patience games"
 arch=('x86_64')
@@ -15,7 +15,7 @@ replaces=('kdegames-kpat')
 conflicts=('kdegames-kpat')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('bcd295a3df422b5cfa8258bb3cd0be7e4405f44604681d98589f2982c44414a1'
+sha256sums=('2c0b29e5d372d55d77ceced098b8262b11a431518e818eec052d867c21ad6896'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
