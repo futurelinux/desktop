@@ -1,5 +1,5 @@
 pkgname=sqlcipher
-pkgver=4.0.1
+pkgver=4.1.0
 pkgrel=1
 pkgdesc="SQLite extension that provides transparent 256-bit AES encryption of database files"
 arch=('x86_64')
@@ -7,7 +7,7 @@ url="https://www.zetetic.net/sqlcipher/"
 license=('BSD')
 makedepends=('openssl' 'sqlite' 'tcl')
 source=(https://www.zetetic.net/$pkgname/verify/$pkgver/$pkgname-v$pkgver.zip)
-sha256sums=('881bff2540c27c6557ac03b70b1213af3efe46462e94799fd14dac6f1c8f18cf')
+sha256sums=('d65b337b7eb69db1abbbb66341e8bde54cf7b2b7da7b7f369e5f876d6fb7e6a1')
 
 build() {
   cd "${srcdir}"/$pkgname-v$pkgver
