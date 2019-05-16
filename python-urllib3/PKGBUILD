@@ -6,10 +6,10 @@
 
 pkgbase=python-urllib3
 pkgname=(python3-urllib3 python2-urllib3 python-urllib3-doc)
-pkgver=1.22
+pkgver=1.24.3
 pkgrel=1
 pkgdesc="HTTP library with thread-safe connection pooling and file post support"
-arch=("any")
+arch=('x86_64')
 url="https://github.com/shazow/urllib3"
 license=("MIT")
 makedepends=('python3-setuptools' 'python2-setuptools' 'python2-sphinx' 'python3-ndg-httpsclient'
