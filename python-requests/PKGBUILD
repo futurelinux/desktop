@@ -2,8 +2,8 @@
 
 pkgbase=python-requests
 pkgname=(python2-requests python3-requests)
-pkgver=2.18.4
-pkgrel=2
+pkgver=2.21.0
+pkgrel=1
 _libname=requests
 pkgdesc="Requests is an Apache2 Licensed HTTP library, written in Python, for human beings."
 url="http://python-requests.org/"
@@ -14,12 +14,13 @@ license=('Apache')
 arch=('any')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/kennethreitz/requests/archive/v$pkgver.tar.gz"
         certs.patch)
-sha256sums=('b068ccce3b739a29cbf72148b0ff4be3d80198fb7cdbd63066f7384bb56ef917'
-            '3fa0c8ef2018ef0987d2daff79765b99abd99c539f2ec1241bcf9c31b1a4fd75')
+sha512sums=('934c329e6631ec6089577c49651b73265f0c3f0829b9151e1463dea905f35820a03ec3b0ee6a2ab2292d213b715f0b2348110392d60f55ea1cbe4b24fca4f890'
+            '424a3bb01b23409284f6c9cd2bc22d92df31b85cfd96e1d1b16b5d68adeca670dfed4fff7977d8b10980102b0f780eacc465431021fcd661f3a17168a02a39a3')
 
 prepare() {
     cd "$srcdir"/requests-$pkgver
     sed -e '/certifi/d' \
+        -e "s/,<.*'/'/" \
         -i setup.py
     patch -p1 -i "$srcdir"/certs.patch
         
