@@ -1,5 +1,5 @@
 pkgname=kaffeine
-pkgver=2.0.17
+pkgver=2.0.18
 pkgrel=1
 pkgdesc='KDE media player'
 license=('GPL')
@@ -10,7 +10,7 @@ makedepends=('extra-cmake-modules' 'kidletime' 'kdoctools')
 categories=('multimedia')
 options=('debug')
 source=("https://download.kde.org/stable/${pkgname}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('6578b785f754663c105d425605cf9a5dc139881fd479a9290b55cbf49182cce1')
+sha256sums=('d9799a5b7b94a55963f94938b36b8fcb1be3e753b2be110989934ab15386b681')
 
 prepare() {
   mkdir -p build
