@@ -2,8 +2,8 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kio-gdrive
-pkgver=1.2.5
-pkgrel=2
+pkgver=1.2.6
+pkgrel=1
 arch=(x86_64)
 pkgdesc="KIO Slave to access Google Drive"
 url="https://projects.kde.org/kio-gdrive"
@@ -11,7 +11,7 @@ license=(GPL)
 depends=(libkgapi kaccounts-providers)
 makedepends=(extra-cmake-modules kdesignerplugin kdoctools python3 intltool)
 source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-md5sums=('a76361f09fa05a8641fb2fc8f7ce8e26'
+md5sums=('b6b30b3e53e57729fdef4faef8c15623'
          'SKIP')
 validpgpkeys=('F07D85CAA18ACF46A346FD017C7FC6EA8633B4EA') # Elvis Angelaccio <elvis.angelaccio@kde.org>
 
