@@ -1,16 +1,15 @@
 pkgname=kronometer
-pkgver=2.1.1
+pkgver=2.2.2
 pkgrel=1
-pkgdesc="A simple chronometer application built for KDE."
+pkgdesc="A simple chronometer application"
 arch=('x86_64')
-url="http://aelog.org/kronometer"
-screenshot="http://i1.wp.com/www.aelog.org/wp-content/uploads/2014/06/kronometer.png"
+url="https://userbase.kde.org/Kronometer"
 license=('GPL2')
-depends=('qt5-tools' 'kconfig' 'kdoctools' 'ki18n' 'kwidgetsaddons' 'kxmlgui')
+depends=('kxmlgui' 'hicolor-icon-theme')
 conflicts=('kronometer-git')
-makedepends=('cmake>=3.1' 'make' 'extra-cmake-modules')
-source=(http://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz)
-sha256sums=('ecb182e6ef6cf33a7c3a068edb6ac243caa43ff386f1c331bb3a2d197eae4b00')
+makedepends=('extra-cmake-modules' 'kdoctools')
+source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz)
+sha256sums=('52bc998d8d8cde10da331a065d7016b0946123a5ea1ab82f6986c6e7f10c4e90')
  
 prepare() {
   mkdir -p build
