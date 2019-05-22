@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=js60
-pkgver=60.6.1
+pkgver=60.6.3
 pkgrel=1
 _ffver=${pkgver%%.*}
 pkgdesc="JavaScript interpreter and libraries - Version $_ffver"
@@ -10,7 +10,6 @@ url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
 license=(MPL)
 depends=(gcc-libs readline zlib sh)
 makedepends=(python2 zip autoconf2.13 git)
-_repo=https://hg.mozilla.org/mozilla-central
 source=("git+https://github.com/mozilla/gecko-dev.git#branch=esr60"
         bug1415202.patch
         mozjs60-fix-soname.patch
