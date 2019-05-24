@@ -22,7 +22,7 @@ pkgname=('libreoffice-common'
 	'libreoffice-extension-nlpsolver')
 _LOver=6.2.4.2
 pkgver=6.2.4
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('LGPL3')
 url="http://www.libreoffice.org/"
@@ -391,7 +391,7 @@ package_libreoffice-common() {
  install -dm755 ${pkgdir}/etc/libreoffice
  install -m644 ${pkgdir}/usr/lib/libreoffice/program/{bootstraprc,sofficerc} ${pkgdir}/etc/libreoffice/
  install -m644 ${pkgdir}/usr/lib/libreoffice/share/psprint/psprint.conf ${pkgdir}/etc/libreoffice/
- install -dm644 $srcdir/libreoffice.sh $pkgdir/etc/profile.d/libreoffice.sh
+ install -Dm644 $srcdir/libreoffice.sh $pkgdir/etc/profile.d/libreoffice.sh
  # install dummy links to make them found by LibO
  cd ${pkgdir}/usr/lib/libreoffice/program/
  ln -vsf /etc/libreoffice/{bootstraprc,sofficerc} .
