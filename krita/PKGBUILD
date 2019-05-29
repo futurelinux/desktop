@@ -2,13 +2,13 @@
 # Maintainer: Antonio Rojas <arojas@archlinux,org>
 
 pkgname=krita
-pkgver=4.1.8
+pkgver=4.2.0
 pkgrel=1
 pkgdesc="Edit and paint images"
 arch=('x86_64')
 url="https://krita.org"
 license=('GPL3')
-depends=('kitemviews' 'kitemmodels' 'ki18n' 'kcompletion' 'karchive' 'kguiaddons' 'kcrash' 'qt5-svg' 'qt5-multimedia'
+depends=('kitemviews' 'kitemmodels' 'ki18n' 'kcompletion' 'karchive' 'kguiaddons' 'kcrash' 'qt5-svg' 'qt5-multimedia' 'quazip'
          'gsl' 'libraw' 'exiv2' 'openexr' 'fftw' 'curl' 'boost-libs' 'giflib' 'hicolor-icon-theme' 'desktop-file-utils')
 makedepends=('extra-cmake-modules' 'kdoctools' 'boost' 'eigen3' 'vc' 'poppler-qt5' 'opencolorio'
              'python3-pyqt5' 'python3-sip' 'sip' 'libheif')
@@ -21,7 +21,7 @@ conflicts=('calligra-krita')
 provides=('calligra-krita')
 replaces=('calligra-krita')
 source=("https://download.kde.org/stable/krita/$pkgver/$pkgname-$pkgver.tar.gz")
-sha1sums=('b9f9310e502504c1a6f083bdc1a5ab007a9368ea')
+sha1sums=('0f144bb7a96a22c4e54b3e0c632f9a62274c3da3')
 
 build() {
   cd $pkgname-$pkgver
