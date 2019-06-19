@@ -1,5 +1,5 @@
 pkgname=anki
-pkgver=2.1.11
+pkgver=2.1.13
 pkgrel=1
 pkgdesc="Helps you remember facts (like words/phrases in a foreign language) efficiently"
 url="https://ankisrs.net/"
@@ -12,7 +12,7 @@ optdepends=('lame: record sound'
             'mpv: play sound (prefered over mplayer)'
             'mplayer: play sound')
 source=(https://apps.ankiweb.net/downloads/current/anki-$pkgver-source.tgz)
-sha256sums=('787ce3d7333cc3f33f9bd18ec11d4da56b9ac060edaad21d78fe04e04e559265')
+sha256sums=('8166eebc54575aa55eeff0886ffec3228b3c377885abf9cc18561b7a01cb8edb')
 
 package() {
   cd anki-$pkgver
