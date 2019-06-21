@@ -1,5 +1,5 @@
 pkgname=lyx
-pkgver=2.3.2
+pkgver=2.3.3
 pkgrel=1
 pkgdesc="An advanced open-source document processor"
 arch=('x86_64')
@@ -13,7 +13,7 @@ optdepends=('texlive-most: TeX Live goodies'
 license=('GPL')
 source=("ftp://ftp.lip6.fr/pub/lyx/stable/2.3.x/$pkgname-$pkgver.tar.xz"
         'lyxrc.dist')
-md5sums=('7e32b2e4440f2d47053610250840080b'
+md5sums=('b49cc1f92e0cab8988f066650a7b5868'
          'b70fdeab95ba4a6c3ff72410dfa61823')
 
 build() {
