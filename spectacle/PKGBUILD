@@ -2,7 +2,7 @@
 
 pkgname=spectacle
 pkgver=19.04.1
-pkgrel=1
+pkgrel=2
 pkgdesc="KDE screenshot capture utility"
 arch=(x86_64)
 url='https://projects.kde.org/spectacle'
@@ -37,4 +37,7 @@ build() {
 package() {
   cd build
   make DESTDIR="$pkgdir" install
+
+  # /usr/bin/qdbus is still Qt 4, set to use /usr/bin/qdbus-qt5 for now
+  sed -i 's#Exec=qdbus org.kde.Spectacle#Exec=qdbus-qt5 org.kde.Spectacle#' "${pkgdir}/usr/share/applications/org.kde.spectacle.desktop"
 }
