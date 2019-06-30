@@ -1,47 +1,51 @@
 pkgname=redis
-pkgver=3.2.9
+pkgver=5.0.5
 pkgrel=1
 pkgdesc="Advanced key-value store"
 arch=('x86_64')
 url="http://redis.io/"
 license=('BSD')
-depends=('bash')
-makedepends=('gcc' 'make' 'pkgconfig')
-backup=("etc/redis.conf"
-        "etc/logrotate.d/redis")
-install=${pkgname}.install
-source=("http://download.redis.io/releases/${pkgname}-${pkgver}.tar.gz"
-        "redis.service"
-        "redis.logrotate"
-        "redis.tmpfiles.d")
-sha256sums=('6eaacfa983b287e440d0839ead20c2231749d5d6b78bbe0e0ffa3a890c59ff26'
-            'ca4d3cceeb39b4115d85516ab5a8eabd0b646b7a33ed718160ec335fe220261a'
-            '8b4c2caabb4f54157ad91ca472423112b1803685ad18ed11b60463d78494df13'
-            '7600554eb70af3c89e090fc768e7209a381b909bd941fcfc34c5e45a73f51948')
+depends=('jemalloc' 'grep' 'shadow')
+backup=('etc/redis.conf'
+        'etc/logrotate.d/redis')
+source=(http://download.redis.io/releases/$pkgname-$pkgver.tar.gz
+        redis.service
+        redis.sysusers
+        redis.tmpfiles
+        redis.logrotate
+        redis.conf-sane-defaults.patch
+        redis-5.0-use-system-jemalloc.patch)
+sha512sums=('78215ec02b7184e05788c7a368146ea53095a877a0e09174b4c9f175aeb9ba9174023c19e33bf62e4513b848e1841538d398e7c0a651c5c947255c1691cb4586'
+            '86018ddd6625f918295e10f9478da361f73a6dbd6c6b8e4b974201669bcccbd4dba443bb0844be68f6ab8d5a1762b32af04c5e12df53b1f0ea812b790d9f4e37'
+            '4a8f2cd045039ff59371c43d82590dd9844b84effaf617322f753883a9b4680806a2dab0bf7350af34bc60a1abb7215aeddc2bd24bf26537574668278e6e48fa'
+            '68f7bc12e3b95cb199b71255c6aa5bfaa431fbabbc7d2308e54347c0d35e6d8091c4a79a5a6b56494ab3a294f9389e3ec63902931920862f60b1ffe77222eeeb'
+            'df11492df0458b224f75fff31475d39b85116cba6deb06d80d0fd8c467d221db51a2a8f5fc5d2e3e8239c0718e1cf5dc12e99cac9019cb99d3f11835ad00aa5d'
+            'e6be8e5488ca888637410ba662fce1e6865dd60e1431f65157c6a4683a6bfbcdcee81fa7b5bff06be3bf6d7bdae573c875bbf04f27b87bb05f1916f4ca859796'
+            'ac70223f6b64f5efefcaa84eab83b0b6a7d71500cdd0b49c22e1dd0617733403d9d7f37bd2eb328ead5681a81b4adb37683daaa85d9555b63d4ce87508782648')
 
 prepare() {
-  cd ${pkgname}-${pkgver}
-  sed -i 's|# bind 127.0.0.1|bind 127.0.0.1|' redis.conf
-  sed -i 's|daemonize no|daemonize yes|' redis.conf
-  sed -i 's|dir \./|dir /var/lib/redis/|' redis.conf
-  sed -i 's|pidfile .*|pidfile /run/redis/redis.pid|' redis.conf
-  sed -i 's|logfile stdout|logfile /var/log/redis.log|' redis.conf
+  cd $pkgname-$pkgver
+  patch -p1 -i ../redis.conf-sane-defaults.patch
+  patch -p1 -i ../redis-5.0-use-system-jemalloc.patch
 }
 
 build() {
-  cd ${pkgname}-${pkgver}
-  #make MALLOC=libc
-  make
+  make -C $pkgname-$pkgver
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
-  mkdir -p "${pkgdir}/usr/bin"
-  make INSTALL_BIN="${pkgdir}/usr/bin" PREFIX=/usr install
+  cd $pkgname-$pkgver
+  make PREFIX="$pkgdir"/usr install
 
-  install -D -m755 COPYING "${pkgdir}/usr/share/licenses/redis/COPYING"
-  install -Dm644 "${srcdir}/redis.service" "${pkgdir}/usr/lib/systemd/system/redis.service"
-  install -Dm644 "${srcdir}/redis.logrotate" "${pkgdir}/etc/logrotate.d/redis"
-  install -D -m644 redis.conf "${pkgdir}/etc/redis.conf"
-  install -Dm644 "${srcdir}/redis.tmpfiles.d" "${pkgdir}/usr/lib/tmpfiles.d/redis.conf"
+  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/redis/LICENSE
+  install -Dm644 redis.conf "$pkgdir"/etc/redis.conf
+  install -Dm644 ../redis.service "$pkgdir"/usr/lib/systemd/system/redis.service
+
+  # files kept for compatibility with installations made before 2.8.13-2
+  install -Dm644 ../redis.logrotate "$pkgdir"/etc/logrotate.d/redis
+
+  ln -sf redis-server "$pkgdir"/usr/bin/redis-sentinel
+
+  install -Dm644 "$srcdir"/redis.sysusers "$pkgdir"/usr/lib/sysusers.d/redis.conf
+  install -Dm644 "$srcdir"/redis.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/redis.conf
 }
