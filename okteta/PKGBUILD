@@ -1,5 +1,5 @@
 pkgname=okteta
-pkgver=0.26.0
+pkgver=0.26.2
 pkgrel=1
 epoch=1
 arch=('x86_64')
@@ -14,7 +14,7 @@ conflicts=('kdesdk-okteta')
 provides=('kdesdk-okteta')
 license=('GPL' 'LGPL' 'FDL')
 source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('5ec42bcd926529e5b45d482ee12074af2f2ba44cebbe7f90a19f7c1d295dbb67'
+sha256sums=('bb8d819af1d2d7ebb286542918985afcd1937f0ec6172180ff5b1acc5383684c'
             'SKIP')
 validpgpkeys=(E191FD5BE6F46870F09E82B2024E7FB43D015474)  # Friedrich W. H. Kossebau <kossebau@kde.org>
 
