@@ -1,17 +1,17 @@
 pkgname=irssi
-pkgver=1.1.2
+pkgver=1.2.1
 pkgrel=1
 pkgdesc="Modular text mode IRC client with Perl scripting"
 arch=('x86_64')
 url="https://irssi.org/"
 license=('GPL')
-depends=('glib2' 'openssl' 'perl')
+depends=('glib2' 'openssl' 'perl' 'libotr')
 makedepends=('elinks')
 categories=('communication')
 optdepends=('perl-libwww: for the scriptassist script')
 backup=(etc/irssi.conf)
 source=(https://github.com/irssi/irssi/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.xz)
-md5sums=('271d2fd875cddd34526234d8a766d82c')
+md5sums=('37a0a6f1eb7e0169da3c5199cd76f753')
 
 build() {
   cd ${pkgname}-${pkgver}
@@ -21,7 +21,8 @@ build() {
 	       --with-proxy \
 	       --with-bot \
 	       --sysconfdir=/etc \
-	       --with-perl-lib=vendor
+	       --with-perl-lib=vendor \
+               --with-otr
   make
 }
 
