@@ -2,7 +2,7 @@ pkgbase="libreoffice-i18n"
 
 _rcver=6.2.5.2
 pkgver=6.2.5
-pkgrel=1
+pkgrel=2
 depends=("libreoffice-common>=$pkgver")
 
 _oodlver=${pkgver}
