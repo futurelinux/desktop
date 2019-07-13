@@ -1,5 +1,5 @@
 pkgname=qsynth
-pkgver=0.5.6
+pkgver=0.5.7
 pkgrel=1
 pkgdesc="Qt GUI for fluidsynth"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('fluidsynth' 'qt5-base' 'qt5-x11extras' 'hicolor-icon-theme')
 makedepends=('qt5-tools')
 categories=('multimedia')
 source=(http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz)
-sha1sums=('9d463f1e2c9e5ccb115315ac8af7ebeaef0c613c')
+sha1sums=('f741da07c86d8d8dfdec9783384053bdc4251583')
 
 build() {
   cd $pkgname-$pkgver
