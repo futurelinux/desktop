@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=libkipi
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="An interface to use kipi-plugins from a KDE application"
 url="https://projects.kde.org/projects/kde/kdegraphics/libs/libkipi"
@@ -12,7 +12,7 @@ depends=(kxmlgui hicolor-icon-theme)
 makedepends=(extra-cmake-modules python)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('1f1a8b881f61c9fc151a2f0b98c6ba07baa0fe1ca8a0f77d7502e81c08a84020'
+sha256sums=('7da2a62e719b27221a74232375c907087be9a53b90fce0f7d36cbc11d7c13f7c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

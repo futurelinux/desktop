@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=sweeper
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc='System Cleaner'
 url='https://kde.org/applications/utilities/sweeper'
@@ -15,7 +15,7 @@ replaces=(kdeutils-sweeper)
 provides=(kdeutils-sweeper)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('70ccd7a1d8d81ee2a54df724a1ad908157672bb20e80c81aff8db946241b6637'
+sha256sums=('03b0ed0006da9a9ee02b9e3201e4974444fba00a5a59fc14ca179656eeb86aaf'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

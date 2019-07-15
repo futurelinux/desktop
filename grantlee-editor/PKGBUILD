@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=grantlee-editor
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="Editor for Grantlee themes"
 arch=(x86_64)
@@ -13,7 +13,7 @@ conflicts=('kmail<16.11')
 options=(docs debug)
 groups=(kde kde-uninstall kde-applications kdepim)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('b07f3c3179010b1d9a9170bc6e2b85517c3dfbd277336316882f4503823e076a'
+sha256sums=('b244eef352ef776cbb0d3d5e51ffaa629d4ca3b6bd7fc86a8fda8d24e5090bca'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

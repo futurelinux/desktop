@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kshisen
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="A solitaire-like game played using the standard set of Mahjong tiles"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=('kdegames-kshisen')
 conflicts=('kdegames-kshisen')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('a9e0e7324bb1bcad6c9427c0563236e557de85ad9724a52cfc917b43726b1aa6'
+sha256sums=('3109a0bdb8933eebf10b945a75fc8b355aa8c97d5debd28943d8145a80efe2fe'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

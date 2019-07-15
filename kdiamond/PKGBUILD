@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kdiamond
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="A single player puzzle game"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=('kdegames-kdiamond')
 conflicts=('kdegames-kdiamond')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('a7588f21e7151c1053787f75a17c1062a9c0b43611b824632ed1b8689f4996f3'
+sha256sums=('22a567a63dd2bf9006d970e9aa5aeabff94c2ae9c98004bbd6cc35083a995536'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

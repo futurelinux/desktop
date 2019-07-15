@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kdebugsettings
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc='An application to enable/disable qCDebug'
 arch=('x86_64')
@@ -12,7 +12,7 @@ makedepends=(extra-cmake-modules python3)
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('f04334f954d48fbd5a7bf41327563081966fb31950c131a943cf0a1a86281aa2'
+sha256sums=('0f3f2afafad0cfb312b51b15de6615359ba5ccd7bee6b35ce48a40e3a58368c5'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

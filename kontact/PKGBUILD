@@ -1,7 +1,7 @@
  # Include global configuration
 
 pkgname=kontact
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="KDE Personal Information Manager"
 arch=(x86_64)
@@ -12,7 +12,7 @@ makedepends=(extra-cmake-modules kdoctools boost python3)
 options=(docs debug)
 groups=(kde kde-uninstall kde-applications kdepim)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('d60cc3165460a3e395778e4709ff55cbfbb80cc3536edb43d5d2335c70bd4714'
+sha256sums=('05fab6c512635b07b6c99b3ee38d9e53060d44124052734381e9a6ddbef06e73'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=ktp-text-ui
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="Telepathy text chat handler"
 arch=('x86_64')
@@ -12,7 +12,7 @@ depends=('ktp-common-internals' 'kdewebkit' 'kemoticons' 'qt5-webengine' 'lcms2'
 makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
 groups=('kde-telepathy')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('dfc51070d1a25edde7c0f33d4eb83185738a70e6feb40a8b385403e833cca0b5'
+sha256sums=('cf21be1ee61e5b4703feacab093f89aa66f126aba248b71111281513ba65661a'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

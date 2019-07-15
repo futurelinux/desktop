@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=poxml
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc='Translates DocBook XML files using gettext po files'
 url='https://projects.kde.org/projects/kde/kdesdk/poxml'
@@ -14,7 +14,7 @@ groups=(kde-applications kdesdk)
 license=('GPL' 'LGPL' 'FDL')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('d8439996821ded53dea321f84619f3754cc677b5fa08b5fd37aabb09b8dac2f9'
+sha256sums=('844ccecc8db4c6da4b84a4829cdd1961603a09fd5ee18dfda73a9def78addefe'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

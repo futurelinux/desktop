@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kaddressbook
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="KDE contact manager"
 arch=(x86_64)
@@ -12,7 +12,7 @@ makedepends=(extra-cmake-modules kdoctools boost python3 kdesignerplugin)
 options=(docs debug)
 groups=(kde kde-uninstall kde-applications kdepim)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('15e84e6785e20e4f48020c093555e6c28930fcd946aa3421c56956564eba84fd'
+sha256sums=('dc379c4a2d15a94fe5d7416e692301827377b503ba0880f3b508fe2c812d4349'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

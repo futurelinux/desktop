@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kapman
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="Eat pills while escaping ghosts"
 arch=('x86_64')
@@ -15,7 +15,7 @@ conflicts=('kdegames-kapman')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdegames')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('7714a0cbd8e24f3ce46679d1f16d690c8bc62a988f0b3175095e0f0c23ce1400'
+sha256sums=('6b1810bf946ff84b34b9fd6e913811d0e0a249cad5cb49b7990d742ec2832ca1'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

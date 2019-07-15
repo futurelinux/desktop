@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kdepim-apps-libs
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="KDE PIM mail related libraries"
 arch=('x86_64')
@@ -13,7 +13,7 @@ conflicts=('libkdepim<16')
 groups=(kde kde-applications kdepim kde-uninstall)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('c3530a810a1eddfa06a27f24b723f971e7e2e144bbb2dac7ff30e7dec948a15d'
+sha256sums=('a3ad12f4b7c58154aef49fc5d0ac388a6e9441972605aaa02e17dd6a0583eeb2'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

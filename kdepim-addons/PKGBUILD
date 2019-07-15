@@ -1,6 +1,6 @@
 
 pkgname=kdepim-addons
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 arch=('x86_64')
 pkgdesc="Addons for kdepim apps (as kmail addons/ kmail theme/ kaddressbook addons etc.)"
@@ -11,7 +11,7 @@ makedepends=(extra-cmake-modules kdoctools boost)
 groups=('kde' 'kde-applications' 'kdepim' 'kde-uninstall')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('d4e36a6d0043ad0ed5e3c427559bfaa29523578f99b613c82c3aaef16b2a7882'
+sha256sums=('a748027568ed2f82f9178c24f6eba18f1d5af26f51d1cc1ddedea645e04190a6'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

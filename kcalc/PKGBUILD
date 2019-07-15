@@ -3,7 +3,7 @@
 
 pkgname="kcalc"
 arch=('x86_64')
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="Scientific calculator"
 url="https://www.kde.org/applications/utilities/kcalc"
@@ -15,7 +15,7 @@ conflicts=('kdeutils-kcalc')
 replaces=('kdeutils-kcalc')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('46d992a9e746231b57398b9bcdbe3933f6601e3cee7e3932ccc2e312779a4c91'
+sha256sums=('42da5439af4f59402d27f2c48d4ee9c68d4a84bfda8d16a5ab9d7ab6bdcc02d5'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

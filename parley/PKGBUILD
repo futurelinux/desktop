@@ -1,7 +1,7 @@
 #Contributions from Arch: https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/parley
 
 pkgname=parley
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="Vocabulary trainer"
 url="http://kde.org/applications/education/parley/"
@@ -16,7 +16,7 @@ provides=('kdeedu-parley')
 groups=("kde" "kdeedu" "kde-uninstall")
 categories=('education')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('c52746417d32e31f66c1165fd08ab87696d5ef4b5a020a175fe00e60474bc73f'
+sha256sums=('4c4aeaae4f1dd4193c422c5921d9cf02216fc6670f5077fcd92b4d48378fa720'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

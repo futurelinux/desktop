@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kimagemapeditor
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 arch=(x86_64)
 pkgdesc="HTML Image Map Editor"
@@ -14,7 +14,7 @@ replaces=(kdewebdev-kimagemapeditor)
 conflicts=(kdewebdev-kimagemapeditor)
 options=(docs debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('d85d2f3d043a29e56f4234ce24dd75545e06c2812d5fe45cafde4c3dbe280533'
+sha256sums=('a7e5ba3d85c09c446e37baeac1c149395381b542fbbb1ab642645f631b5ab2de'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

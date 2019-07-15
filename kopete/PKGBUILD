@@ -1,6 +1,6 @@
 
 pkgname=kopete
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc='Instant Messenger'
 url='https://kde.org/applications/internet/kopete/'
@@ -14,7 +14,7 @@ conflicts=(kdenetwork-kopete)
 replaces=(kdenetwork-kopete)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig}
         kopete-mediastreamer2.14.patch kopete-srtp2.patch kopete-openssl-1.1.patch kopete-pthread-link.patch)
-sha256sums=('27586d90bd47abe6d8d6eddd7e41dbb6e3b3736984186cd24f84eee216e98b85'
+sha256sums=('038c6385d6b2b6d1f35c5c337ebd8c492eea3e4a27d6f7236fd2fee219a7f28a'
             'SKIP'
             'c34a268aaa058e563174581dbe37c15fed91e82326ec704d2a872463139865e0'
             'ceed663f7007654d186d918cf7a0742972ed5bd319879021e9ba80e395177700'

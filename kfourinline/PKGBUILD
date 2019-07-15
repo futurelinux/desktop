@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kfourinline
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="Four-in-a-row board game"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=('kdegames-kfourinline')
 conflicts=('kdegames-kfourinline')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('9ba39703ccf64b76a0b9a2705d65b7c6c2067db795cfed298f0e3a2eac48b973'
+sha256sums=('62a163f9c2034deba3daa93c4ac07c476895514ec9fefdd9a0792726a61d066f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

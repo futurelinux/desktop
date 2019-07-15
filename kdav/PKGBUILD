@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kdav
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="A DAV protocol implemention with KJobs"
 url='https://pim.kde.org/'
@@ -11,7 +11,7 @@ depends=(kio)
 makedepends=(extra-cmake-modules)
 options=('debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('356e59f904f075521df60499b7f84d7868dbb78968b04fd15be6d359c154e737'
+sha256sums=('f182a3ad6e23ff9e8165d11c3d4964e470e5d4d3f0183207cbe380f5c111af85'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

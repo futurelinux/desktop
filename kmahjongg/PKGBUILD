@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kmahjongg
-pkgver=19.04.1
+pkgver=19.04.3
 pkgrel=1
 pkgdesc="Mahjongg solitaire"
 arch=('x86_64')
@@ -14,7 +14,7 @@ conflicts=(kdegames-kmahjongg)
 replaces=(kdegames-kmahjongg)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('75dbcfb5747530a3b69574fdc87b532067516415f962e7943feef97549237c99'
+sha256sums=('41bd533bf8d8b1e04451cb3c9165b08f9135603c0085d8b402d0e8e026b8ed00'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
