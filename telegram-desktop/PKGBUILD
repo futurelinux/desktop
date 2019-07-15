@@ -1,7 +1,7 @@
 # Contributions from ArchLinux https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/telegram-desktop
 
 pkgname=telegram-desktop
-pkgver=1.7.10
+pkgver=1.7.14
 pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
@@ -21,7 +21,7 @@ source=(
     "GSL::git+https://github.com/Microsoft/GSL.git"
     "crl::git+https://github.com/telegramdesktop/crl.git"
     "xxHash::git+https://github.com/Cyan4973/xxHash.git"
-    "qtlottie::git+https://github.com/telegramdesktop/qtlottie.git"
+    "rlottie::git+https://github.com/john-preston/rlottie.git"
     "tg.protocol"
     "CMakeLists.inj"
     "tdesktop.patch"
@@ -30,7 +30,7 @@ source=(
     "Use-system-wide-font.patch"
     "qt5.patch"
     "tdesktop_lottie_animation_qtdebug.patch"
-    "tdesktop_qtlottie_qtdebug.patch"
+    "issue6219.patch"
 )
 sha512sums=('SKIP'
             'SKIP'
@@ -47,8 +47,8 @@ sha512sums=('SKIP'
             '6d0bac5aa4c4992b5400a9a9318f7a4e92d5eab961917cf0b05cdd251ab66a77c52ec8fbef246e8019606a7624d7b5420b87f8153e071e9724c7d2f5c94e47c0'
             'ce6be003220267bac5483caf8302b492e1581892bc36d35a61236ebf9f9d766b8bd2159557a1c36256aa85f461797a38bfaae57b12da7a72101b21c0b17ed653'
             '11909c65dd54b7b0d7023075c1786c100808eed7177602b105f5b53cddf1b0ed91cb94ccaca55115471dc050ffa9b47d13b3ab0d2dd9e15daab84828a5d09e81'
-            '5703b8228ab26f736928b56b90947602e78774648ff354ae10a53ad4535289ac12c8b7a049cabaed7591909246987be403dc470d48dd72a9ec1ce776a2977a66'
-            'c101761ff0aa6d4be38d0159bee31d02f66cfda84dbfb614e35e8d1c8f73bd78346636764a823bf1ce33b5364e99ea71330de60e37190f78d55f25a183f0d0cc')
+            'a246f9bdfcf00c60e0b8861498fdacedfd312c3c725ed70e4d523786daed2659e5f612548ddfd518bc1f6cfe8d41287e75004e7c0d7625f06ff9bc5431b33662'
+            'e2ddfab32501b61ded02301d01487517e2a4b9fddf1677647d11d3b8efb288a22075124569c72ad1d9a9fea921c641ecfe71593c306c695d0340323dd188aada')
 
 prepare() {
     cd "$srcdir/tdesktop"
@@ -59,7 +59,7 @@ prepare() {
     git config submodule.Telegram/ThirdParty/Catch.url "$srcdir/Catch"
     git config submodule.Telegram/ThirdParty/crl.url "$srcdir/crl"
     git config submodule.Telegram/ThirdParty/xxHash.url "$srcdir/xxHash"
-    git config submodule.Telegram/ThirdParty/qtlottie.url "$srcdir/qtlottie"
+    git config submodule.Telegram/ThirdParty/rlottie.url "$srcdir/rlottie"
     git submodule update
 
     patch -Np1 -i "$srcdir/tdesktop.patch"
@@ -67,9 +67,12 @@ prepare() {
     patch -Np1 -i "$srcdir/Use-system-wide-font.patch"
     patch -Np1 -i "$srcdir/tdesktop_lottie_animation_qtdebug.patch"
 
-    cd "$srcdir/tdesktop"
-    cd "Telegram/ThirdParty/qtlottie"
-    patch -Np1 -i "$srcdir/tdesktop_qtlottie_qtdebug.patch"
+    # backport from https://github.com/telegramdesktop/tdesktop/commit/0710dde4d5526454318b2748331e887c01ecfdce
+    # as discussed in https://github.com/telegramdesktop/tdesktop/issues/6219
+    patch -Np1 -i "$srcdir/issue6219.patch"
+
+    # disable static-qt for rlottie
+    sed "/RLOTTIE_WITH_STATIC_QT/d" -i "$srcdir/tdesktop/Telegram/gyp/lib_rlottie.gyp"
 
     cd "$srcdir/tdesktop"
     cd "Telegram/ThirdParty/libtgvoip"
