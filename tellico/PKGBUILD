@@ -1,5 +1,5 @@
 pkgname=tellico
-pkgver=3.1.4
+pkgver=3.2.1
 pkgrel=1
 pkgdesc="A collection manager for KDE"
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('exempi' 'kio' 'libksane' 'libkcddb' 'libcddb' 'libdiscid' 'hicolor-ico
 makedepends=('cmake' 'extra-cmake-modules' 'kdoctools' 'libkcddb')
 categories=('office')
 source=(http://tellico-project.org/files/${pkgname}-${pkgver}.tar.xz)
-md5sums=('e6c9ed49030ed3e7541f438dae65e498')
+md5sums=('d1e3485aa20111020547a80ca266cf14')
 
 build() {
   cd "${srcdir}"
