@@ -28,7 +28,9 @@ optdepends=('konsole: embedded terminal'
 source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
 sha256sums=('cedd1c7ba8e352a76ec021218cf2e35a6c060875ef3d27964246c48d0f2ae81c'
             'SKIP')
-validpgpkeys=('329FD02C5AA48FCC77A4BBF0AC44AC6DB29779E6')
+validpgpkeys=('329FD02C5AA48FCC77A4BBF0AC44AC6DB29779E6'
+              '364EFA5F639572907D392999C64CF56B13CACE5D'
+              'E191FD5BE6F46870F09E82B2024E7FB43D015474')
 
 prepare() {
   mkdir -p build
