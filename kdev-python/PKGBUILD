@@ -1,5 +1,5 @@
 pkgname=kdev-python
-pkgver=5.3.1
+pkgver=5.3.3
 pkgrel=1
 pkgdesc="Python language and documentation plugin for KDevelop"
 arch=('x86_64')
