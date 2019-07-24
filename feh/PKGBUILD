@@ -1,5 +1,5 @@
 pkgname=feh
-pkgver=3.1.2
+pkgver=3.2.1
 pkgrel=1
 pkgdesc='Fast and light imlib2-based image viewer'
 arch=('x86_64')
@@ -10,7 +10,7 @@ optdepends=('imagemagick: support more file formats')
 makedepends=('libxt')
 categories=('graphics')
 source=("${url}${pkgname}-${pkgver}.tar.bz2")
-sha256sums=('6a36d0503507661b8855b6f7e5b01ca6d7119a8f3771936062cf00935fa65062')
+sha256sums=('8f9741399b4b184ba28698c0fd7722638e79abac8e6c27eb526cc52b11ee0a1c')
 
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
