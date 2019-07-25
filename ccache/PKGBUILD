@@ -1,22 +1,25 @@
 pkgname=ccache
-pkgver=3.5.1a
+pkgver=3.7.2
 pkgrel=1
 pkgdesc="A compiler cache."
 url="https://ccache.samba.org/"
 license=('GPL3')
 arch=('x86_64')
 depends=('zlib')
-source=(https://samba.org/ftp/$pkgname/$pkgname-$pkgver.tar.xz)
-sha256sums=('0baea2c5bc4169ed3dad1f895e6d279323c5b8d3c9f0209998fe6da4601d0701')
+source=(https://github.com/ccache/ccache/releases/download/v${pkgver}/ccache-${pkgver}.tar.xz)
+sha256sums=('a5da0008512ff9e882097acaffb3616fae98ec25827167bb4bd1e4acf0b66793')
 
 build() {
-  cd $srcdir/${pkgname}-${pkgver/a/}
-  ./configure --prefix=/usr --sysconfdir=/etc
+  cd ${pkgname}-${pkgver}
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc
   make
 }
 
 package() {
-  cd $srcdir/${pkgname}-${pkgver/a/}
+  cd ${pkgname}-${pkgver}
+
   install -Dm 755 ccache -t "${pkgdir}/usr/bin"
   install -Dm 644 doc/ccache.1 -t "${pkgdir}/usr/share/man/man1"
   install -Dm 644 doc/{AUTHORS,MANUAL,NEWS}.adoc README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
