@@ -1,5 +1,5 @@
 pkgname=android-file-transfer-linux
-pkgver=3.8
+pkgver=3.9
 pkgrel=1
 pkgdesc="An interactive MTP client implemented in C++ using Qt toolkit"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('qt5-base' 'fuse2' 'hicolor-icon-theme' 'libxkbcommon-x11' 'file')
 makedepends=('cmake')
 source=("https://github.com/whoozle/android-file-transfer-linux/archive/v$pkgver.tar.gz"
         'solid_aftl.desktop')
-sha256sums=('deafa957b8e98d175d07eaa9024ef5523fe98a6ad9478671326e367f89dd97d2'
+sha256sums=('26aa21683ae34aceaf83747fec693a15b996017a857014931ef3c5b50115971a'
             '743a0099e38fd82443b51434b65e65f0a64b2791bd2af89392f4f4d991c3bfc9')
 
 build() {
