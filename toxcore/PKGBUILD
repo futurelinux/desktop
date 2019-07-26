@@ -1,6 +1,6 @@
 pkgname=toxcore
 _pkgname=c-toxcore
-pkgver=0.2.7
+pkgver=0.2.10
 pkgrel=1
 pkgdesc="A FOSS instant messaging application aimed to replace Skype"
 arch=('x86_64')
@@ -12,10 +12,9 @@ makedepends=('check' 'cmake')
 conflicts=('tox-git')
 provides=('tox' 'toxcore')
 install='toxcore.install'
-source=(#"${_pkgname}-v${pkgver}.tar.gz::https://github.com/TokTok/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-${pkgver}.tar.gz"
-        "https://github.com/TokTok/$_pkgname/archive/v$pkgver.tar.gz"
+source=("https://github.com/TokTok/$_pkgname/archive/v$pkgver.tar.gz"
         'toxcore.conf')
-sha512sums=('bb5248f4fb84146c6c7c3dd086211314528ad95b3e71e3c05ea2e4e7c9f3c45552bc0bd8d47af127ac5f26a39b6abf79c32cd76a0e0c70496419fa5b549580cc'
+sha512sums=('8a6a78c52a67be0b727d0d3a8d1cece20ad716a2e694df0aa747eee7764f64c957458584f59db5e727a9803ed7b21adc1ad8d7e80fd6651e7774ca3504b38fc7'
             'aa1dcfbdf9b613f5d89e238ff5d01e0ea150ad3162792acb806f51ce07fd9ade1270b310b1285a828dcdf578549b95a89fd9bd198fb205c83f5a5be2c969ea63')
 
 prepare() {
@@ -30,14 +29,15 @@ build() {
         -DCMAKE_INSTALL_LIBDIR=/usr/lib \
         -DDHT_BOOTSTRAP=on \
         -DBOOTSTRAP_DAEMON=on \
-        -DBUILD_NTOX=off
+        -DBUILD_TOXAV=on \
+        -DBUILD_AV_TEST=on
   make
 }
 
-#check() {
-#  cd $_pkgname-$pkgver
-#  make test
-#}
+check() {
+  cd $_pkgname-$pkgver
+  make test
+}
 
 package() {
   cd $_pkgname-$pkgver
