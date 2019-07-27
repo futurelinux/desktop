@@ -1,19 +1,19 @@
 # Arch contributor: https://projects.archlinux.org/svntogit/community.git/plain/trunk/PKGBUILD?h=packages/gsoap
 
 pkgname=gsoap
-pkgver=2.8.75
+pkgver=2.8.88
 pkgrel=1
 pkgdesc="Offers an XML language binding to ease the development of SOAP/XML Web services in C and C/C++"
-url="https://www.genivia.com/dev.html"
-arch=('i686' 'x86_64')
+url="https://www.cs.fsu.edu/~engelen/soap.html"
+arch=('x86_64')
 license=('GPL' 'custom')
 depends=('openssl' 'zlib' 'gcc-libs')
 makedepends=('autoconf' 'automake')
 options=('staticlibs')
-source=("https://sourceforge.net/projects/gsoap2/files/${pkgname}-${pkgver%.*}/${pkgname}_${pkgver}.zip"
-	LICENSE)
-md5sums=('7f616f6b35404dfd3929a45300292236'
-         '27aaa3f5166db94d44044c11a7b2c37b')
+source=("https://prdownloads.sourceforge.net/gsoap2/${pkgname}_${pkgver}.zip"
+	'LICENSE')
+sha256sums=('effbf8a4533917b9eb3aa0e79db13573ef52e768158f5b4eb93d49b0c5cb2fa8'
+            '0457ad7ae5599c7ee2e30f94d685dfd1a39cc9a9e3937aef1417d1752dfc6eb3')
 
 build() {
   cd $srcdir/gsoap-2.8
@@ -21,8 +21,7 @@ build() {
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=353724
   export CFLAGS+=" -fPIC"
   export CXXFLAGS+=" -fPIC"
-  ./configure --prefix=/usr \
-              --enable-ipv6
+  ./configure --prefix=/usr
   make -j1
 }
 
