@@ -1,5 +1,5 @@
 pkgname=opam
-pkgver=2.0.3
+pkgver=2.0.5
 pkgrel=1
 pkgdesc="OCaml Package Manager"
 arch=('x86_64')
@@ -11,7 +11,7 @@ optdepends=('darcs: For downloading packages with darcs'
             'mercurial: For downloading packages with mercurial'
             'rsync: For downloading packages with rsync')
 source=("https://github.com/ocaml/opam/releases/download/${pkgver}/opam-full-${pkgver}.tar.gz")
-sha256sums=('0589da4da184584a5445d59385009536534f60bc0e27772245b2f49e5fa8f0e2')
+sha256sums=('776c7e64d6e24c2ef1efd1e6a71d36e007645efae94eaf860c05c1929effc76f')
 
 build() {
   cd "opam-full-$pkgver"
