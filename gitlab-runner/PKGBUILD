@@ -1,7 +1,7 @@
 # Arch Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
 
 pkgname=gitlab-runner
-pkgver=11.0.0
+pkgver=12.1.0
 pkgrel=1
 pkgdesc="The official GitLab CI runner written in Go"
 arch=('x86_64')
@@ -15,46 +15,41 @@ noextract=('prebuilt-x86_64.tar.xz')
 
 # Note: This should be built using git because the runner gets its version information from there and I
 # haven't found the place to patch that yet.
-source=("git+https://gitlab.com/gitlab-org/gitlab-runner.git#tag=v${pkgver}"
-        "prebuilt-${pkgver}-x86_64.tar.xz::https://gitlab-runner-downloads.s3.amazonaws.com/v${pkgver}/docker/prebuilt-x86_64.tar.xz"
+source=("$pkgname-$pkgver.tar.gz::https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab-runner/repository/archive?sha=v${pkgver}"
+        "prebuilt-${pkgver}-x86_64.tar.xz::https://gitlab-runner-downloads.s3.amazonaws.com/v${pkgver}/helper-images/prebuilt-x86_64.tar.xz"
         "gitlab-runner.service"
         "gitlab-runner.sysusers"
         "gitlab-runner.tmpfiles"
         "config.toml")
-sha512sums=('SKIP'
-            'd0508862c7d9576fdaabbdcdc494bc916649c21868ab0af661a76d023fa32c21ec0ada7840872ffe689104e6941249a0ed1505a4fbfb9aaca10cf10a93ddc3de'
+sha512sums=('1319173f384805beeae52434710222bc598db6f7099711e066836eabd7c366b831e63473dd089333af2cead971063c65512a862c45a349d0abd853f8ceb18aeb'
+            'bfe97e3732250cc7bffc32e20c9962ceba6e133151c38685aec99194e113c88b721b88567c8c3b588086d621ca62e429150cbc69771e26ec7ed425d27d6015f3'
             '8a5a8b7654d3864722e784b2814c6278c17876f1c0c4fc0676fbcf6817ad2ba4be55501e67ce88c62b5b63ca886b01afc6feac98ba49842acd244abdd1a8296f'
             '8aa7f08702e99053c696fcc2aaba83beb9e9cd6f31973d82862db9350ac46df3a095377625d31fe909677525290d2de922d7a97930ed235774cb8f0da8944d40'
             '6751d9fa0b27172d1b419c4138f5ac15cbc7c9147653a7258cf1470216142c637210bb60608c7ed0974e0e4057e5ddeae32225df1bb36e7dd1f20fec71e33cc3'
             'f39c23fc06636f31c3fadb9a630c54527e8255098f18d275772cb30875d0a7463717101704070d432f2b69ab71f076a9538172a439bc307722dad2c7e260f752')
 
+_srcdir="gitlab-runner-v${pkgver}-"
 
 prepare() {
+    local revision=$(ls -d ${_srcdir}* | rev | cut -c 33-40 | rev)
+
     mkdir -p "${srcdir}/src/gitlab.com/gitlab-org/"
-    ln -sf "${srcdir}/gitlab-runner" "${srcdir}/src/gitlab.com/gitlab-org/gitlab-runner"
+    ln -sf "${srcdir}/${_srcdir}"* "${srcdir}/src/gitlab.com/gitlab-org/gitlab-runner"
     cd "${srcdir}/src/gitlab.com/gitlab-org/gitlab-runner"
 
-    make version
+    local version=$(cat VERSION)
 
-    export GOPATH="${srcdir}"
-    #make deps
+    sed -i "s/export VERSION.*/export VERSION = $version/" Makefile
+    sed -i "s/REVISION := .*/REVISION := $revision/" Makefile
+
+    make version
 
     ln -sf "${srcdir}/prebuilt-${pkgver}-x86_64.tar.xz" prebuilt-x86_64.tar.xz
 }
 
 build() {
     cd "${srcdir}/src/gitlab.com/gitlab-org/gitlab-runner"
-
-    export GOPATH="${srcdir}"
-    go-bindata \
-        -pkg docker \
-        -nocompress \
-        -nomemcopy \
-        -prefix out/docker/ \
-        -o executors/docker/bindata.go \
-        prebuilt-x86_64.tar.xz
-
-    make build_simple
+    make BUILD_PLATFORMS='-osarch linux/amd64' build
 }
 
 package() {
@@ -64,5 +59,5 @@ package() {
     install -Dm644 "${srcdir}/gitlab-runner.service" "${pkgdir}/usr/lib/systemd/system/gitlab-runner.service"
     install -Dm644 "${srcdir}/gitlab-runner.sysusers" "${pkgdir}/usr/lib/sysusers.d/gitlab-runner.conf"
     install -Dm644 "${srcdir}/gitlab-runner.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/gitlab-runner.conf"
-    install -Dm755 out/binaries/gitlab-runner "${pkgdir}/usr/bin/gitlab-runner"
+    install -Dm755 out/binaries/gitlab-runner-linux-amd64 "${pkgdir}/usr/bin/gitlab-runner"
 }
