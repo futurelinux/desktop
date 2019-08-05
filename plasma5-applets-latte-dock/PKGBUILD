@@ -4,7 +4,7 @@
 
 pkgname=plasma5-applets-latte-dock
 _pkgname=latte-dock
-pkgver=0.9.0
+pkgver=0.9.1
 pkgrel=1
 pkgdesc='A dock based on Plasma Frameworks'
 arch=(x86_64)
@@ -15,7 +15,7 @@ makedepends=(extra-cmake-modules python3)
 conflicts=(plasma5-applets-nowdock)
 replaces=(plasma5-applets-nowdock)
 source=("https://download.kde.org/stable/$_pkgname/$_pkgname-$pkgver.tar.xz")
-sha256sums=('d7233401d535474b1834a55a5103e744958abbe0a0aa1a48aa29ee3788ccb424')
+sha256sums=('a76f19fde4461a6c53966aabecb0b3eb386230cb7261981f846e967661485193')
 
 prepare() {
   mkdir -p build
