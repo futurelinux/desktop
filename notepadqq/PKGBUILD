@@ -1,11 +1,11 @@
 pkgname=notepadqq
-pkgver=1.0.1
+pkgver=1.4.8
 pkgrel=1
 pkgdesc='Notepad++-like editor for Linux'
 arch=('x86_64')
-url='http://notepadqq.altervista.org/wp/'
+url='https://notepadqq.com/'
 license=('GPL3')
-depends=('gcc-libs' 'glibc' 'qt5-base' 'qt5-svg' 'qt5-webkit')
+depends=('desktop-file-utils' 'hicolor-icon-theme' 'qt5-svg' 'qt5-webkit')
 makedepends=('git' 'qt5-tools')
 options=('!emptydirs')
 source=("git://github.com/notepadqq/notepadqq.git#tag=v$pkgver"
@@ -18,17 +18,20 @@ prepare() {
 
   git config submodule.src/editor/libs/codemirror.url "$srcdir/CodeMirror"
   git submodule update --init
+
+  # Fixes to the appdata file
+  git cherry-pick -n b8394792a002debd85574aeb79800d6ba46a6b20
+  git cherry-pick -n 6b80d126341243f84eb02a1863320d1bc4b9bd53
+  git cherry-pick -n 3c16a4134855639ff23b3275a0ceac3dcc30a2da
 }
 
 build() {
   cd $pkgname
-  ./configure --prefix /usr --qmake=qmake-qt5 --lrelease=lrelease-qt5
-
+  qmake-qt5 PREFIX=/usr LRELEASE=/usr/bin/lrelease-qt5 notepadqq.pro
   make
 }
 
 package() {
   cd $pkgname
-
   make INSTALL_ROOT="$pkgdir" install
 }
