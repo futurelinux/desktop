@@ -3,7 +3,7 @@
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=libmspack
-pkgver=0.9.1alpha
+pkgver=0.10.1alpha
 pkgrel=1
 pkgdesc="A library for Microsoft compression formats"
 url="https://www.cabextract.org.uk/libmspack/"
@@ -11,7 +11,7 @@ arch=(x86_64)
 license=(GPL)
 depends=(glibc)
 source=(https://www.cabextract.org.uk/${pkgname}/${pkgname}-${pkgver}.tar.gz)
-md5sums=('9602ae4a6b0468d9aaef6359c1e90657')
+sha256sums=('bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
