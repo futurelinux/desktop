@@ -1,6 +1,6 @@
 pkgname=musescore
 _pkgname=MuseScore
-pkgver=3.0
+pkgver=3.2.3
 pkgrel=1
 pkgdesc="A music score editor written in Qt"
 arch=('x86_64')
@@ -12,12 +12,16 @@ makedepends=('cmake' 'doxygen' 'lame' 'qt5-script' 'texlive-core')
 optdepends=('lame: MP3 export')
 categories=('multimedia')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/$pkgname/$_pkgname/archive/v$pkgver.tar.gz")
-md5sums=('43dfb80574ad6984fe1802c8cf2e2a87')
+sha256sums=('d6e58c942efd4e9b6567705c81b77287acfe0baa99033b3fb96605698bb9b5af')
+
+prepare() {
+ cd $_pkgname-$pkgver
+ sed 's,QT_QMAKE_EXECUTABLE qmake,QT_QMAKE_EXECUTABLE qmake-qt5,g' -i build/FindQt5.cmake
+}
 
 build() {
   cd $_pkgname-$pkgver
-  export CI=False
-  make PREFIX='/usr' USE_SYSTEM_FREETYPE="ON" UPDATE_CACHE="OFF" release
+  make PREFIX='/usr' NO_RPATH=TRUE USE_SYSTEM_FREETYPE="ON" UPDATE_CACHE="OFF" release
 }
 
 package() {
