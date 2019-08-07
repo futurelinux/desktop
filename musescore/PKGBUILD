@@ -21,6 +21,7 @@ prepare() {
 
 build() {
   cd $_pkgname-$pkgver
+  export CI=False
   make PREFIX='/usr' NO_RPATH=TRUE USE_SYSTEM_FREETYPE="ON" UPDATE_CACHE="OFF" release
 }
 
