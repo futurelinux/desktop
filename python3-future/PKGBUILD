@@ -1,0 +1,31 @@
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Christopher Arndt <aur -at- chrisarndt -dot- de>
+# Contributor: Gaute Hope <eg@gaute.vetsj.com>
+# Contributor: Melissa Padilla <mpadilla2 at hotmail dot com>
+
+pkgname=python3-future
+pkgver=0.17.1
+pkgrel=1
+pkgdesc="Clean single-source support for Python 3 and 2"
+url="https://python-future.org/"
+arch=('any')
+license=('MIT')
+depends=('python3')
+makedepends=('python3-setuptools')
+optdepends=('python3-setuptools: futurize and pasteurize scripts')
+provides=('futurize' 'pasteurize')
+options=('!emptydirs')
+source=("https://pypi.io/packages/source/f/future/future-$pkgver.tar.gz")
+sha512sums=('50094c44db81afbfd37ee25e1710ed11ecb2c2d64ad076fb62a2688dd36a9696ab26b0d7989bf1ecb10da251961a0ee6bb37c4dbd115f70384cd8c9a675d0b2d')
+
+build() {
+  cd "$srcdir"/future-$pkgver
+  python3 setup.py build
+}
+
+package() {
+  cd future-$pkgver
+  python3 setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE.txt \
+    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+}
