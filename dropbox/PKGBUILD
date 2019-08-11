@@ -1,5 +1,5 @@
 pkgname=dropbox
-pkgver=70.4.93
+pkgver=78.4.119
 pkgrel=1
 pkgdesc="A free service that lets you bring your photos, docs, and videos anywhere and share them easily."
 arch=('x86_64')
@@ -14,7 +14,7 @@ source=("https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x
         "LICENSE"
         "dropbox.service"
         "dropbox@.service")
-sha1sums=('fcb39505a674b3865b6aa47baa8904645d44f4d7'
+sha1sums=('53075fce6f37acdee02f446a6784a70608ed75e4'
           '64073af76a2bbc7dba4a6886b82af0bb3e71a2a0'
           'b30c97c01be656f9d392262c3cdeb2c0560e0475'
           'c2b5e46d5e135bc3c6fe89d7c7e464be47cae152'
