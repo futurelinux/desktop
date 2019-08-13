@@ -1,0 +1,35 @@
+# Contributions from Arch:
+# Contributor: Jonathan Kotta <jpkotta AT gmail DOT com>
+
+pkgname=('python3-sqlparse' 'python2-sqlparse')
+pkgver=0.2.4
+pkgrel=1
+pkgdesc='Non-validating SQL parser for Python'
+arch=('any')
+url=https://github.com/andialbrecht/sqlparse
+license=('BSD')
+makedepends=('python3-setuptools' 'python2-setuptools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/andialbrecht/sqlparse/archive/$pkgver.tar.gz")
+sha256sums=('7087a2bd385c06ac1a5cf343e2e5ea7ce2bb6386849e59ef214e02af68f73fb4')
+
+prepare() {
+  cp -a sqlparse-$pkgver sqlparse2-$pkgver
+}
+
+package_python3-sqlparse() {
+  depends=('python3')
+
+  cd sqlparse-$pkgver/
+  python3 setup.py install --prefix=/usr --root="$pkgdir"
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+package_python2-sqlparse() {
+  depends=('python2')
+
+  cd sqlparse2-$pkgver/
+  python2 setup.py install --prefix=/usr --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+  mv "$pkgdir"/usr/bin/sqlformat{,2}
+}
