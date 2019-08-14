@@ -1,30 +1,28 @@
 pkgname=partclone
-pkgver=0.3.5a
+pkgver=0.3.13
 pkgrel=1
 pkgdesc="Backup and restore a partition for numerous file-systems types."
 arch=('x86_64')
-url="https://github.com/Thomas-Tsai/partclone"
-license=('GPL2')
-depends=('e2fsprogs' 'progsreiserfs' 'ncurses')
-makedepends=('ncurses')
-categories=('utils')
-changelog=ChangeLog
-source=("https://github.com/Thomas-Tsai/partclone/archive/${pkgver}.tar.gz")
-sha1sums=('536b5bc7d1d40e55243afb7c3a29d331d95895eb')
+url="https://partclone.org"
+license=('GPL')
+depends=('progsreiserfs' 'ntfs-3g' 'nilfs-utils')
+source=(https://partclone.nchc.org.tw/download/unstable/$pkgname-$pkgver.tar.gz)
+sha256sums=('442c6b59fe33445cfd951e07eafc6dd441611e0f6225a13ab19774622feac92d')
 
 build() {
-  cd $srcdir/$pkgname-$pkgver
-  ./configure \
-    --prefix=/usr \
-    --enable-extfs \
-    --enable-reiserfs \
-    --enable-hfsp \
-    --enable-fat \
-    --enable-ncursesw
+  cd $pkgname-$pkgver
+
+  ./autogen
+  ./configure --prefix=/usr --enable-extfs --enable-reiserfs --enable-fat \
+    --enable-hfsp --enable-btrfs --enable-ncursesw --enable-ntfs \
+    --enable-exfat --enable-f2fs --enable-minix --enable-nilfs2 --enable-xfs \
+    --sbindir=/usr/bin
+
   make
 }
 
 package() {
-  cd $srcdir/$pkgname-$pkgver
-  make DESTDIR=$pkgdir install
+  cd $pkgname-$pkgver
+
+  make PREFIX=/usr DESTDIR="$pkgdir" install
 }
