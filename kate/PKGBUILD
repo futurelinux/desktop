@@ -2,7 +2,7 @@
 
 pkgbase=kate
 pkgname=('kate' 'kwrite')
-pkgver=19.04.3
+pkgver=19.08.0
 pkgrel=1
 pkgdesc='Advanced editor component which is used in numerous KDE applications requiring a text editing component'
 arch=('x86_64')
@@ -11,7 +11,7 @@ makedepends=(extra-cmake-modules kdoctools plasma-framework knewstuff ktextedito
              threadweaver kitemmodels kactivities python3)
 options=('debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgbase-$pkgver.tar.xz"{,.sig})
-sha256sums=('b1dcd45270c0494e97f32f435a943ca27b0bcb23065a9ad2a1fe37e4a81ad9a6'
+sha256sums=('6acc3172429191ab47722d788f324292ea5ee2f1e419d48c72200579b9b30878'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

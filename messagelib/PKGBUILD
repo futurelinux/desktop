@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=messagelib
-pkgver=19.04.3
+pkgver=19.08.0
 pkgrel=1
 pkgdesc="All libs for messages"
 arch=('x86_64')
@@ -12,7 +12,7 @@ makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools')
 groups=(kde kde-applications kdepim kde-uninstall)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('c97f88152593a031415148daa31384c56964973d4291aa86a892b2776333e223'
+sha256sums=('0797b11452874a1d8264f92e8cc6d6977f3b0416dc66ff558b124bf2a52b118d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
