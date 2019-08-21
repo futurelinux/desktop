@@ -3,7 +3,7 @@
 pkgbase=kate
 pkgname=('kate' 'kwrite')
 pkgver=19.08.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Advanced editor component which is used in numerous KDE applications requiring a text editing component'
 arch=('x86_64')
 license=('GPL' 'LGPL' 'FDL')
@@ -51,7 +51,7 @@ package_kwrite() {
   rm -r "$pkgdir"/usr/lib/qt5/plugins/ktexteditor \
         "$pkgdir"/usr/share/doc/HTML/*/{kate,katepart} \
         "$pkgdir"/usr/share/katexmltools \
-        "$pkgdir"/usr/share/locale/*/LC_MESSAGES/{kterustcompletion,tabswitcherplugin,ktexteditorpreviewplugin}.mo \
+        "$pkgdir"/usr/share/locale/*/LC_MESSAGES/{kterustcompletion,tabswitcherplugin,ktexteditorpreviewplugin,lspclient}.mo \
         "$pkgdir"/usr/share/plasma/plasmoids
 }
 
