@@ -1,30 +1,22 @@
-#
-# maintainer (i686): Fabien Valthier <hcoohb[at]gmail[dog]com>
-# maintainer (x86_64):  <[at][dot]>
-
-# include global config
-source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
-
 pkgname=mp3gain
-pkgver=1.5.2
+pkgver=1.6.2
 pkgrel=1
-pkgdesc="Lossless mp3 normalizer with statistical analysis "
-arch=('i686' 'x86_64')
-url="http://mp3gain.sourceforge.net"
+pkgdesc='Lossless mp3 normalizer with statistical analysis'
+arch=('x86_64')
+url='https://sourceforge.net/projects/mp3gain/'
 license=("GPL")
-depends=('glibc')
+depends=('mpg123')
 categories=('multimedia')
-source=(http://downloads.sourceforge.net/$pkgname/$pkgname-${pkgver//./_}-src.zip
-        build-fix.patch)
-md5sums=('d888563538ec863eeea8afc8207b2739'
-         '20680cbada13ba941b0532ff94e583e1')
+source=(https://downloads.sourceforge.net/$pkgname/$pkgname-${pkgver//./_}-src.zip)
+sha256sums=('5cc04732ef32850d5878b28fbd8b85798d979a025990654aceeaa379bcc9596d')
 
 build() {
-    cd $srcdir
-
-    mkdir -p $pkgdir/usr/bin
-    patch -p0 Makefile <$srcdir/build-fix.patch
-
+    cd "$srcdir"
     make OSTYPE=linux
-    make OSTYPE=linux INSTALL_PATH=$pkgdir/usr/bin install
+}
+
+package() {
+    cd "$srcdir"
+    mkdir -p "$pkgdir"/usr/bin
+    make OSTYPE=linux INSTALL_PATH="$pkgdir"/usr/bin install
 }
