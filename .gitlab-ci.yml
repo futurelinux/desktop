@@ -29,6 +29,7 @@ build_pkgs:
     # expire artifacts per default - the gitlab web frontend can be used to keep
     # artifacts of interest for an unlimited time
     expire_in: 1 week
+    when: always
     paths:
       - ./_repo/gitlab-ci/*.pkg.tar.xz
       - ./_logs/*.log
