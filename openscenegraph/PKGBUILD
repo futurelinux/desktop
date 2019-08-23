@@ -1,7 +1,6 @@
-
 pkgname=openscenegraph
 _pkgname=OpenSceneGraph
-pkgver=3.6.3
+pkgver=3.6.4
 pkgrel=1
 pkgdesc="FOSS high performance real-time graphics toolkit."
 arch=('x86_64')
@@ -12,7 +11,7 @@ makedepends=('cmake' 'libvncserver' 'qt5-base' 'ffmpeg' 'mesa' 'gdal')
 optdepends=('libvncserver' 'gdal' 'openexr' 'poppler-glib' 'qt5-base')
 categories=('games')
 source=("https://github.com/$pkgname/$_pkgname/archive/$_pkgname-$pkgver.tar.gz")
-md5sums=('3bc355c7dcd3f9eef84d4dc82dd0b19d')
+md5sums=('a358350ff19b8e01f35b316b4793889a')
 
 build() {
   cd $_pkgname-$_pkgname-$pkgver
