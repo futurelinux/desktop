@@ -30,9 +30,6 @@ package() {
   cd $_pkgname-$_pkgname-$pkgver/build
   make DESTDIR=$pkgdir install
 
-  # Fix installation directory.
-  mv $pkgdir/usr/lib64 $pkgdir/usr/lib
-
   # License.
   install -D -m644 ../LICENSE.txt $pkgdir/usr/share/licenses/$pkgname/license.txt
 }
