@@ -20,8 +20,8 @@ pkgname=('libreoffice-common'
 	'libreoffice-postgresql-connector'
 	'libreoffice-extension-wiki-publisher'
 	'libreoffice-extension-nlpsolver')
-_LOver=6.2.5.2
-pkgver=6.2.5
+_LOver=6.3.0.4
+pkgver=6.3.0
 pkgrel=1
 arch=('x86_64')
 license=('LGPL3')
@@ -48,7 +48,7 @@ _additional_source_url2="https://dev-www.libreoffice.org/extern"
 _gentoo_patch_url="https://dev.gentoo.org/~asturm/distfiles"
 source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
         # Environment variables
-        ${_additional_source_url}/xmlsec1-1.2.27.tar.gz
+        ${_additional_source_url}/xmlsec1-1.2.28.tar.gz
         ${_additional_source_url}/35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
         ${_additional_source_url}/798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
         ${_additional_source_url}/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
@@ -91,22 +91,23 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
         ${_additional_source_url}/4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2
         ${_additional_source_url}/OpenCOLLADA-master-6509aa13af.tar.bz2
         ${_additional_source_url}/libgltf/libgltf-0.1.0.tar.gz
-        ${_additional_source_url}/pdfium-3550.tar.bz2
+        ${_additional_source_url}/pdfium-3794.tar.bz2
         ${_additional_source_url}/libepubgen-0.1.1.tar.xz
         ${_additional_source_url}/libnumbertext-1.0.5.tar.xz
         ${_additional_source_url}/libqxp-0.0.2.tar.xz
         ${_additional_source_url}/lxml-4.1.1.tgz
-        ${_additional_source_url2}/49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf
+        ${_additional_source_url2}/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf
         make-pyuno-work-with-system-wide-module-install.diff
-        libreoffice.sh)
+        libreoffice.sh
+        build_failure.diff)
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha1sums=('7890dc1cc99571c3e0c1fbc35c589f47fc99ee9d'
+sha1sums=('d694b6fc8055252731f076135b0fe5eab710c6f3'
           'SKIP'
-          '5097b2ea96ac208dd8f642f5711c33f39627ec93'
+          'b54c01a235f36072edb9a626cfff9dd70128619e'
           'SKIP'
-          '774602b810d954ecdbf537214e63ab50b9a3f189'
+          '56f2bcdf2762ff1108832a403266c863e9406ea2'
           'SKIP'
-          '11a3329bd6b0b910c5d60d4562e3a152588942f8'
+          'e75580df2f638ef7e99743eb54d7f8015bc8c812'
           '1acea86fd399ed7817879d36370d3d1f8b109050'
           '8a90669029e107b61953b90ba11545fef586c2ca'
           '2d49e11b0b711970f494294dc3698f05eb294853'
@@ -149,15 +150,16 @@ sha1sums=('7890dc1cc99571c3e0c1fbc35c589f47fc99ee9d'
           '1169780b4a0c515b23b96c913fd9bc52ceb7fb39'
           'c4f5760a1d21213dc52e2cf3ad9c0b9112585f36'
           '719ab0d7b711650c787fe9bfb51109321d21e07b'
-          '04b0116d3fa5eaabea94fed75fc30ae75916c071'
+          '41ff3c2291c99db71ddca1873115b7fc0bfb5065'
           '48e81c60e173552fce77ce3b414e68b7d52a5301'
           '2b599daeeb07ecd14ea0f7633accd67ab3fedea9'
           'f0e1b3d7996f2340a95309b61d9b27b596aca3da'
           '154279bc5939d7099697887ea15c5ca921abeaeb'
-          'ad0f4351a484ac9b5422beae749719299bdfcfb8'
+          'd336802a36ed2c87dd243e7c2f1d0542dace5cca'
           'fed07f208b58c42bb85b0721fb2fae193da6f780'
-          '6cec1a2a0a1f1ec21f8447eb21143767aade34bb')
-noextract=(xmlsec1-1.2.27.tar.gz
+          '6cec1a2a0a1f1ec21f8447eb21143767aade34bb'
+          'a3f97cd63ffd827dbf26f222180053b130fc6ce2')
+noextract=(xmlsec1-1.2.28.tar.gz
           35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
           798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
           a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
@@ -202,10 +204,10 @@ noextract=(xmlsec1-1.2.27.tar.gz
           libstaroffice-0.0.6.tar.xz
           libnumbertext-1.0.5.tar.xz
           lxml-4.1.1.tgz
-          pdfium-3550.tar.bz2
+          pdfium-3794.tar.bz2
           libepubgen-0.1.1.tar.xz
           libqxp-0.0.2.tar.xz
-          49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf)
+          884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf)
 
 prepare() {
     cd libreoffice-$_LOver
@@ -234,6 +236,9 @@ prepare() {
 
     # fix not upstreamable pyuno paths - FS#54250
     patch -Np1 -i ${srcdir}/make-pyuno-work-with-system-wide-module-install.diff
+    
+    # build fix
+    patch -Np1 -i ${srcdir}/build_failure.diff
    
     #use the CFLAGS but remove the LibO overridden ones
     for i in $CFLAGS; do
