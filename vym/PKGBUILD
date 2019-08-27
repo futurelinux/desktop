@@ -1,17 +1,15 @@
 pkgname=vym
-pkgver=2.6.11
-pkgrel=2
+pkgver=2.7.1
+pkgrel=1
 pkgdesc="A mindmapping tool"
 arch=('x86_64')
 url="http://www.insilmaril.de/vym/"
 license=('GPL')
-depends=('qt5-svg' 'desktop-file-utils' 'unzip' 'zip')
+depends=('qt5-script' 'qt5-svg' 'desktop-file-utils' 'unzip' 'zip')
 makedepends=('qt5-tools')
-options=('!emptydirs')
-screenshot="http://a.fsdn.com/con/app/proj/vym/screenshots/328321.jpg"
-source=(http://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.tar.bz2 \
+source=(https://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.tar.bz2
         $pkgname.desktop)
-sha256sums=('d48efee7da43c22fbb862c7d99cb6d855ece58808f2ea184310d2a79c8a2f6fb'
+sha256sums=('8f6c9535d9c509b89c4c68d015e6b05a0e578200e169f20fd1c5cee24905ce53'
             'e299c69c213e7aac3f5b5d0ab088132b4ec7cb63a391f272e75ed64f049d541b')
 
 prepare() {
@@ -23,7 +21,7 @@ prepare() {
 build() {
   cd ${srcdir}/$pkgname-$pkgver
 
-  qmake-qt5 PREFIX=/usr
+  qmake-qt5 PREFIX=/usr/share
   make
 }
 
@@ -32,18 +30,20 @@ package() {
 
   # install files
   make INSTALL_ROOT="${pkgdir}" install
-  
-  install -d ${pkgdir}/usr/share/{doc/$pkgname,man/man1,$pkgname}
 
-  install -D -m644 "${srcdir}"/$pkgname.desktop \
-  "${pkgdir}"/usr/share/applications/$pkgname.desktop
-  
-  install -D -m644 icons/$pkgname-128x128.png \
-  "${pkgdir}"/usr/share/pixmaps/$pkgname.png
-  
-  mv $pkgdir/usr/vym $pkgdir/usr/share
-  
-  # correct doc location
-  mv doc/* "${pkgdir}"/usr/share/doc/$pkgname
-  mv "${pkgdir}"/usr/share/doc/vym/vym.1.gz "${pkgdir}"/usr/share/man/man1/
+  # fix executable path
+  mv "${pkgdir}"/usr/share/bin "${pkgdir}"/usr/bin
+
+  # install documentation
+  install -Dm644 "${srcdir}"/$pkgname-$pkgver/doc/$pkgname.1.gz \
+    "${pkgdir}"/usr/share/man/man1/$pkgname.1.gz
+  install -Dm644 "${srcdir}"/$pkgname-$pkgver/doc/$pkgname.pdf \
+    "${pkgdir}"/usr/share/doc/$pkgname/$pkgname.pdf  
+  rm -rf "${pkgdir}"/usr/share/doc/packages
+
+  # .desktop and icon file
+  install -Dm644 "${srcdir}"/$pkgname.desktop \
+    "${pkgdir}"/usr/share/applications/$pkgname.desktop
+  install -Dm644 "${pkgdir}"/usr/share/vym/icons/$pkgname.png \
+    "${pkgdir}"/usr/share/pixmaps/$pkgname.png
 }
