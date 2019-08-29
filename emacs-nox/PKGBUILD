@@ -1,5 +1,5 @@
 pkgname=emacs-nox
-pkgver=26.2
+pkgver=26.3
 pkgrel=1
 pkgdesc='The Emacs Editor, without X11 support'
 arch=('x86_64')
@@ -10,7 +10,7 @@ provides=('emacs')
 conflicts=('emacs' 'emacs-cvs')
 options=('docs')
 source=(ftp://ftp.gnu.org/gnu/emacs/emacs-${pkgver}.tar.xz)
-md5sums=('02ba7003f14957529bcd05cfc3ebb754')
+md5sums=('0a2e4b965d31a7cb1930eae3b79df793')
 
 build() {
   cd $srcdir/emacs-$pkgver
