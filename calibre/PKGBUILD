@@ -1,5 +1,5 @@
 pkgname=calibre
-pkgver=3.46.0
+pkgver=3.47.1
 pkgrel=1
 pkgdesc="Ebook management application"
 arch=('x86_64')
@@ -16,7 +16,7 @@ optdepends=('ipython2: to use calibre-debug'
             'kdialog: to use native dialog')
 source=("https://download.calibre-ebook.com/${pkgver}/calibre-${pkgver}.tar.xz"
         "https://calibre-ebook.com/signatures/${pkgname}-${pkgver}.tar.xz.sig")
-sha256sums=('e947b9854f9db344ee07e5495feaad759c96936d89a128d3a3587c3503d09ab6'
+sha256sums=('b309933f295cddf05553c60012d8c0376aae732a729688f646466cca55369f9e'
             'SKIP')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
 
