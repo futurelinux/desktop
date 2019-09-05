@@ -22,7 +22,7 @@ pkgname=('libreoffice-common'
 	'libreoffice-extension-nlpsolver')
 _LOver=6.3.0.4
 pkgver=6.3.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('LGPL3')
 url="http://www.libreoffice.org/"
@@ -99,7 +99,8 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
         ${_additional_source_url2}/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf
         make-pyuno-work-with-system-wide-module-install.diff
         libreoffice.sh
-        build_failure.diff)
+        build_failure.diff
+        kde_list.txt)
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
 sha1sums=('d694b6fc8055252731f076135b0fe5eab710c6f3'
           'SKIP'
@@ -158,7 +159,8 @@ sha1sums=('d694b6fc8055252731f076135b0fe5eab710c6f3'
           'd336802a36ed2c87dd243e7c2f1d0542dace5cca'
           'fed07f208b58c42bb85b0721fb2fae193da6f780'
           '6cec1a2a0a1f1ec21f8447eb21143767aade34bb'
-          'a3f97cd63ffd827dbf26f222180053b130fc6ce2')
+          'a3f97cd63ffd827dbf26f222180053b130fc6ce2'
+          '1d97490d708d1b01fa105259174b611b5c6ca532')
 noextract=(xmlsec1-1.2.28.tar.gz
           35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
           798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
@@ -558,11 +560,11 @@ package_libreoffice-kde5() {
  # cat ${srcdir}/libreoffice-$_LOver/file-lists/kde_list.txt >> ${srcdir}/libreoffice-$_LOver/file-lists/kde4_list.txt
  
  # create directories from *list.txt file
- for directory in `grep ^%dir ${srcdir}/libreoffice-$_LOver/file-lists/kde4_list.txt`; do
+ for directory in `grep ^%dir ${srcdir}/kde_list.txt`; do
    install -dm755 ${pkgdir}/${directory/\%dir/}
  done
  # install files into the pkg from fakeinstall dir
- for file in `grep -v ^%dir $srcdir/libreoffice-$_LOver/file-lists/kde4_list.txt`; do
+ for file in `grep -v ^%dir $srcdir/kde_list.txt`; do
    dirname=`dirname $file`
    # check if directory has been already been created - some are missing like manpages
    [ -d ${pkgdir}/$dirname ] || install -dm755 ${pkgdir}/$dirname

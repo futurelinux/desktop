@@ -1,0 +1,6 @@
+%dir /usr/lib/libreoffice/program
+/usr/lib/libreoffice/program/libkde5be1lo.so
+/usr/lib/libreoffice/program/libvclplug_gtk3_kde5lo.so
+/usr/lib/libreoffice/program/libvclplug_kde5lo.so
+/usr/lib/libreoffice/program/libvclplug_qt5lo.so
+/usr/lib/libreoffice/program/lo_kde5filepicker
