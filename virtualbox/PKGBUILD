@@ -10,7 +10,7 @@ pkgname=('virtualbox'
          'virtualbox-guest-iso'
          'virtualbox-ext-vnc'
          'virtualbox-ext-oracle')
-pkgver=6.0.10
+pkgver=6.0.12
 pkgrel=1
 _vboxsf_commit='8dd4b8bd5cfe6ddae8fe7056dff790013b985d22'
 arch=('x86_64')
@@ -81,6 +81,7 @@ source=("http://download.virtualbox.org/virtualbox/$pkgver/VirtualBox-$pkgver.ta
         '011-python-3-7.patch'
         '012-vbglR3GuestCtrlDetectPeekGetCancelSupport.patch'
         '013-Makefile.patch'
+        '014-iasl.patch'
         # The following patch and mount.vboxsf wrapper should be removed
         # once support for mainline-style options string gets upstreamed
         '101-vboxsf-automount.patch'
@@ -88,9 +89,9 @@ source=("http://download.virtualbox.org/virtualbox/$pkgver/VirtualBox-$pkgver.ta
         'PUEL')
 noextract=(VBoxGuestAdditions_$pkgver.iso
           "Oracle_VM_VirtualBox_Extension_Pack-$pkgver.vbox-extpack")
-sha256sums=('5236148a93267478fb6d306f6343aa9587d3f90f437f54c7b3485bd9d538d2f8'
-            'c8a686f8c7ad9ca8375961ab19815cec6b1f0d2496900a356a38ce86fe8a1325'
-            'e5a9eb240379a57c9bf03954a594a03431698e67aef551e27f62170bed9b16ea'
+sha256sums=('c8878d1ad867461e6adfb82c22f15bf5d284e214e75f7b2c6bcd81854edeabc3'
+            '78fa2ba78e91c7d6f16f8c7fa88676cc9772c7689ba47e2b19913670fad2d441'
+            '27a0956940654b0accf4d79692078bd496d9f062e4ed3da69e5421cba8d1e444'
             'SKIP'
             'deb03efa7ad0376aa55a087f2e882afe00935f10b0e7aa853ba9147090d341ec'
             'c328376b05183d269f98319ec660f54c55e298f77d229977606862b064651a7c'
@@ -111,6 +112,7 @@ sha256sums=('5236148a93267478fb6d306f6343aa9587d3f90f437f54c7b3485bd9d538d2f8'
             '55224cb74b54b331d691f171efc0d4c058a14f738551f1d8f559146c2908635d'
             '81900e13d36630488accd8c0bfd2ceb69563fb2c4f0f171caba1cca59d438024'
             'da7e58ed37dc23c6202aab3017864579a99e78417f3421ddcc98a198198fe2c9'
+            '5ad14bd587031ac3dcadaeca2cc4d7b48a59ff09b03884b4fc2be5b1432a8237'
             'a784f3cc24652a16385cc63abac6c5178932ca5f3861be7650631b7dafa753a4'
             'f3ed6741f8977f40900c8aa372fa082df1f8723d497d4fff445153c543bc8947'
             '715c7246dc0f779ceab39446812362b2f9bf64a55ed5d3a905f053cfab36da9e')
