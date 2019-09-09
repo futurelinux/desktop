@@ -1,80 +1,49 @@
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
+# Contributor: Damir Perisa <damir.perisa@bluewin.ch> # Contributor: Christopher Reimer <c.reimer1993@gmail.com>
+
 pkgname=texmacs
-pkgver=1.99.8
+pkgver=1.99.11
 pkgrel=1
-pkgdesc="WYSIWYG Qt4 editor and graphical frontend to various CASes"
+pkgdesc="Free scientific text editor, inspired by TeX and GNU Emacs. WYSIWYG editor TeX-fonts and CAS-interface (Giac, GTybalt, Macaulay 2, Maxima, Octave, Pari, Qcl, R and Yacas) in one."
 arch=('x86_64')
-url='http://texmacs.org/'
-screenshot="http://www.texmacs.org/tmweb/images/texmacs-1.png"
-license=('GPL3')
-depends=('qt' 'texlive-core' 'guile1.8' 'cairo' 'freetype2' 'imlib2'
-         'perl' 'python2' 'libxext' 'sqlite3'
-         'desktop-file-utils' 'shared-mime-info')
-makedepends=('ghostscript')
+url="http://www.texmacs.org/"
+license=('GPL')
+depends=('perl' 'guile1.8' 'texlive-core' 'python2' 'libxext' 'freetype2' 'qt5-base')
+# do not remove texlive-core dependency, as it is needed!
 optdepends=('gawk: conversion of some files'
-            'transfig: convert images using fig2ps')
-provides=('texmacs')
-conflicts=('texmacs-qt')
-install=${pkgname}.install
+	    'ghostscript: rendering ps files'
+            'imagemagick: convert images'
+            'aspell: spell checking')
+makedepends=('ghostscript' 'cmake')
+source=(http://www.texmacs.org/Download/ftp/tmftp/source/TeXmacs-${pkgver}-src.tar.gz)
 options=('!emptydirs')
-source=("http://www.texmacs.org/Download/ftp/tmftp/source/TeXmacs-$pkgver-src.tar.gz")
-sha512sums=('4d2702e22d1a48f07c8a01fb60bd88a0f40fb4bf8cd931e8e8fc2936495fa4e9ed59680313a28ca4d1e2b383829dd428b917ce4ca4d17a0b18e3b1c236796c4e')
+sha256sums=('8f2a73e2948d2bfdcd46b3ae9e7421707c4f897bd7d1447e8df8ff4886037789')
 
 prepare() {
-  cd "${srcdir}/TeXmacs-${pkgver}-src"
-  sed -i 's/env python/env python2/' \
-    plugins/{mathematica/bin/realpath.py,python/bin/tm_python,sage/bin/tm_sage} \
-    TeXmacs/misc/inkscape_extension/texmacs_reedit.py
+  cd TeXmacs-${pkgver}-src
+
+  find -name '*.py' | xargs sed -i 's/env python/env python2/'
   sed -i 's/"python"/"python2"/' plugins/python/progs/init-python.scm
-  sed -i '/^LDPATH/d' src/makefile.in
-  
-  autoreconf -vi
-  sed -i -e 's/guile18-config/guile-config1.8/g' configure
-	sed -i -e 's/guile18/guile1.8/g' configure
-  sed -i -e 's|#include <libguile18.h>|#include <guile/gh.h>|g' src/Scheme/Guile/guile_tm.hpp
-
- # Don't generate icon-cache and mime-database (namcap tells that they should not be in a package)
-  sed -i '/update-mime-database/d' Makefile.in
-  sed -i '/gtk-update-icon-cache/d' Makefile.in
-  sed -i '\/icons\/gnome 2>\/dev\/null/d' Makefile.in
-  
-  find -name '.*.d' -o -name '.*.cpp' -exec rm {} \;
-
 }
 
 build() {
-  cd "${srcdir}/TeXmacs-${pkgver}-src"
+  cd TeXmacs-${pkgver}-src
   
-  export QMAKE=qmake
-  export MOC=moc
-  export UIC=uic
-  export LDFLAGS=-lz
-  ./configure \
-  	--prefix=/usr \
-	--enable-pdf-renderer \
-	--enable-optimize \
-	--with-imlib2 \
-	--enable-guile2=no \
-	--with-qt
+  mkdir -p build
+  cd build
+
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DGUILECONFIG_EXECUTABLE=/usr/bin/guile-config1.8
   make
-  
-#       --with-freetype
-#       --with-sqlite3=yes
 }
 
 package() {
-  cd "${srcdir}/TeXmacs-${pkgver}-src"
+  cd TeXmacs-${pkgver}-src/build
   make DESTDIR=${pkgdir} install
-  
-  cp ${pkgdir}/usr/share/icons/gnome/scalable/apps/TeXmacs.svg \
-  ${pkgdir}/usr/share/pixmaps/texmacs.svg 
-  rm ${pkgdir}/usr/share/pixmaps/TeXmacs.xpm
-  sed -i s!Icon=TeXmacs!Icon=texmacs! \
-  ${pkgdir}/usr/share/applications/texmacs.desktop
- 
 
-  # fix fig2ps script
-  sed -i 's|${prefix}|/usr|' "${pkgdir}/usr/bin/fig2ps"
- 
-  msg "set environment variables"
-  sed -i s!"@CONFIG_LIB_PATH@"!"LD_LIBRARY_PATH"!g $pkgdir/usr/bin/$pkgname
+ # fix fig2ps script
+ sed -i 's|${prefix}|/usr|' "${pkgdir}/usr/bin/fig2ps"
+ # fix launch script
+ sed -e 's|\@CONFIG_LIB_PATH\@|LD_LIBRARY_PATH|g' -i "$pkgdir"/usr/bin/texmacs
 }
