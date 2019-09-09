@@ -20,9 +20,9 @@ pkgname=('libreoffice-common'
 	'libreoffice-postgresql-connector'
 	'libreoffice-extension-wiki-publisher'
 	'libreoffice-extension-nlpsolver')
-_LOver=6.3.0.4
-pkgver=6.3.0
-pkgrel=2
+_LOver=6.3.1.2
+pkgver=6.3.1
+pkgrel=1
 arch=('x86_64')
 license=('LGPL3')
 url="http://www.libreoffice.org/"
@@ -99,14 +99,13 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
         ${_additional_source_url2}/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf
         make-pyuno-work-with-system-wide-module-install.diff
         libreoffice.sh
-        build_failure.diff
         kde_list.txt)
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha1sums=('d694b6fc8055252731f076135b0fe5eab710c6f3'
+sha1sums=('9888504facdd13bbdd5fd78a5a2cc4768f8b885a'
           'SKIP'
-          'b54c01a235f36072edb9a626cfff9dd70128619e'
+          'f343152a4e9971b3062dae000b1e34955360bc5c'
           'SKIP'
-          '56f2bcdf2762ff1108832a403266c863e9406ea2'
+          '68b3059d886b9876d85f4a91494d73a9b0c8805e'
           'SKIP'
           'e75580df2f638ef7e99743eb54d7f8015bc8c812'
           '1acea86fd399ed7817879d36370d3d1f8b109050'
@@ -159,7 +158,6 @@ sha1sums=('d694b6fc8055252731f076135b0fe5eab710c6f3'
           'd336802a36ed2c87dd243e7c2f1d0542dace5cca'
           'fed07f208b58c42bb85b0721fb2fae193da6f780'
           '6cec1a2a0a1f1ec21f8447eb21143767aade34bb'
-          'a3f97cd63ffd827dbf26f222180053b130fc6ce2'
           '1d97490d708d1b01fa105259174b611b5c6ca532')
 noextract=(xmlsec1-1.2.28.tar.gz
           35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
@@ -239,9 +237,6 @@ prepare() {
     # fix not upstreamable pyuno paths - FS#54250
     patch -Np1 -i ${srcdir}/make-pyuno-work-with-system-wide-module-install.diff
     
-    # build fix
-    patch -Np1 -i ${srcdir}/build_failure.diff
-   
     #use the CFLAGS but remove the LibO overridden ones
     for i in $CFLAGS; do
             case "$i" in
@@ -273,9 +268,8 @@ build() {
                 --enable-gio\
                 --disable-epm \
                 --disable-gtk \
-                --enable-qt5 \
                 --enable-gtk3 \
-                --enable-gtk3-kde5 \
+                --enable-qt5 \
                 --enable-kde5 \
                 --disable-dconf \
                 --disable-mergelibs \
