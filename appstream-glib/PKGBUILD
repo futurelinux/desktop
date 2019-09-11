@@ -8,7 +8,7 @@ url="https://people.freedesktop.org/~hughsient/appstream-glib/"
 arch=(x86_64)
 license=(LGPL)
 depends=(libyaml pacman gcab libsoup libstemmer json-glib gdk-pixbuf2)
-makedepends=(gobject-introspection autoconf-archive git gperf meson cmake gtk-doc)
+makedepends=(gobject-introspection autoconf-archive git gperf meson cmake gtk-doc vim)
 optdepends=('gtk-doc: view API documention')
 _commit=0ab28ff96b74eb72ffe3c3a53026aee82cf31782  # tags/appstream_glib_0_7_15^0
 source=("git+https://github.com/hughsie/appstream-glib#commit=$_commit")
