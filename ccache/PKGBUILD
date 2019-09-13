@@ -1,5 +1,5 @@
 pkgname=ccache
-pkgver=3.7.2
+pkgver=3.7.4
 pkgrel=1
 pkgdesc="A compiler cache."
 url="https://ccache.samba.org/"
@@ -7,7 +7,7 @@ license=('GPL3')
 arch=('x86_64')
 depends=('zlib')
 source=(https://github.com/ccache/ccache/releases/download/v${pkgver}/ccache-${pkgver}.tar.xz)
-sha256sums=('a5da0008512ff9e882097acaffb3616fae98ec25827167bb4bd1e4acf0b66793')
+sha256sums=('04c0af414b8cf89e541daed59735547fbfd323b1aaa983da0216f6b6731e6836')
 
 build() {
   cd ${pkgname}-${pkgver}
