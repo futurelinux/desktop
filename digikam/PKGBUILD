@@ -1,5 +1,5 @@
 pkgname=digikam
-_pkgver=6.2.0
+_pkgver=6.3.0
 pkgver=${_pkgver//-/_}
 pkgrel=1
 epoch=1
@@ -15,7 +15,7 @@ optdepends=('qt5-imageformats: support for additional image formats (WEBP, TIFF)
 	    'hugin: panorama tool'
             'libkvkontakte: VKontakte plugin')
 source=("https://download.kde.org/stable/${pkgname}/${_pkgver}/${pkgname}-${_pkgver}.tar.xz"{,.sig})
-sha1sums=('ebdff5735764a326e4b7c25492505266898303c8'
+sha1sums=('a9dab66ab865403bc51c566f3c83968fe0b9f492'
           'SKIP')
 validpgpkeys=(D1CF2444A7858C5F2FB095B74A77747BC2386E50) # digiKam.org (digiKam project) <digikamdeveloper@gmail.com>
 
@@ -29,7 +29,6 @@ build() {
 
   cmake ../${pkgname}-${_pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_SKIP_RPATH=ON \
     -DBUILD_TESTING=OFF \
