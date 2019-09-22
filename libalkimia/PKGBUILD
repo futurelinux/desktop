@@ -1,35 +1,33 @@
-# Arch contribution https://www.archlinux.org/packages/community/x86_64/libalkimia/
+# Contributions from Arch:
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: gumper <gumper1034@gmail.com>
 
-pkgname=libalkimia	
-pkgver=7.0.2
+pkgname=libalkimia
+pkgver=8.0.2
 pkgrel=1
-pkgdesc="A library with common classes and functionality used by finance applications for the KDE SC."
+pkgdesc="A library with common classes and functionality used by finance applications for the KDE SC"
 arch=('x86_64')
-depends=('qt5-base' 'gmp')
-makedepends=('cmake' 'doxygen' 'extra-cmake-modules')
-url='http://kde-apps.org/content/show.php/libalkimia?content=137323'
+url="https://community.kde.org/Alkimia/libalkimia"
 license=('LGPL')
-replaces=('alkimia')
-provides=('alkimia')
-source=("http://download.kde.org/stable/alkimia/$pkgver/alkimia-$pkgver.tar.xz")
-sha256sums=('59e6b10d819479bc8dde53a8b10e6ec05e9d465c5e035528a5c0b036456a2454')
+depends=('qt5-webkit' 'knewstuff' 'kdelibs4support' 'hicolor-icon-theme')
+makedepends=('cmake' 'doxygen' 'extra-cmake-modules' 'kdesignerplugin' 'plasma-framework' 'kpackage' 'kdoctools')
+source=(https://download.kde.org/stable/alkimia/$pkgver/alkimia-$pkgver.tar.xz{,.sig})
+validpgpkeys=('D69A745A55331F44F404D8258D4DE062AA2EB01C'  # Thomas Baumgart <thb@net-bembel.de>
+              '8C13BC14185A65215B592A2F1243132CD9321771') # Ralf Habacker <ralf.habacker@freenet.de>
+sha256sums=('616f7736fde8ce8acec4575f14e856fabfefb0961d932198d42fbd9a639a852a'
+            'SKIP')
 
 build() {
-  cd "${srcdir}"
-
-  mkdir -p build
+  mkdir build
   cd build
 
-  cmake ../alkimia-${pkgver} \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DCMAKE_BUILD_TYPE=Release \
-    -Wno-dev
+  cmake ../alkimia-${pkgver}
   make
 }
 
 package() {
-  cd "${srcdir}"/build
- 
-  make DESTDIR="${pkgdir}" install  
+  cd build
+
+  make DESTDIR="${pkgdir}" install
 }
