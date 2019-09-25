@@ -7,15 +7,15 @@
 
 pkgbase=python-fuse
 pkgname=(python3-fuse python2-fuse)
-pkgver=0.3.1
-pkgrel=3
+pkgver=1.0.0
+pkgrel=1
 arch=('x86_64')
 pkgdesc="Python bindings for FUSE"
 url="https://github.com/libfuse/python-fuse"
 license=('LGPL')
 makedepends=('python3-setuptools' 'python2-setuptools' 'fuse2')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/libfuse/python-fuse/archive/v$pkgver.tar.gz")
-sha256sums=('243cfab15ee357dbcdac98c2ee5929f6e8c65d2ec9d77597e3732f79ce649eec')
+sha256sums=('caa90dd931128407df12b2c090200e49a67b9afb4176211aad03e2a19209a506')
 
 build() {
   cd $pkgbase-$pkgver
