@@ -1,28 +1,32 @@
-# Arch Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributions from Arch:
+# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Lubomir 'Kuci' Kucera <kuci24-at-gmail-dot-com>
 
 pkgname=gitlab-runner
-pkgver=12.1.0
+pkgver=12.3.0
 pkgrel=1
 pkgdesc="The official GitLab CI runner written in Go"
 arch=('x86_64')
 url='https://gitlab.com/gitlab-org/gitlab-runner'
 license=('GPL3')
 depends=('ca-certificates' 'curl' 'git' 'glibc' 'tar')
-makedepends=('git' 'go' 'git' 'go-bindata')
+makedepends=('go' 'mercurial')
 install='gitlab-runner.install'
+replaces=('gitlab-ci-multi-runner')
 backup=('etc/gitlab-runner/config.toml')
-noextract=('prebuilt-x86_64.tar.xz')
+noextract=("prebuilt-${pkgver}-x86_64.tar.xz"
+           "prebuilt-${pkgver}-arm.tar.xz")
 
-# Note: This should be built using git because the runner gets its version information from there and I
-# haven't found the place to patch that yet.
 source=("$pkgname-$pkgver.tar.gz::https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab-runner/repository/archive?sha=v${pkgver}"
         "prebuilt-${pkgver}-x86_64.tar.xz::https://gitlab-runner-downloads.s3.amazonaws.com/v${pkgver}/helper-images/prebuilt-x86_64.tar.xz"
+        "prebuilt-${pkgver}-arm.tar.xz::https://gitlab-runner-downloads.s3.amazonaws.com/v${pkgver}/helper-images/prebuilt-arm.tar.xz"
         "gitlab-runner.service"
         "gitlab-runner.sysusers"
         "gitlab-runner.tmpfiles"
         "config.toml")
-sha512sums=('1319173f384805beeae52434710222bc598db6f7099711e066836eabd7c366b831e63473dd089333af2cead971063c65512a862c45a349d0abd853f8ceb18aeb'
-            'bfe97e3732250cc7bffc32e20c9962ceba6e133151c38685aec99194e113c88b721b88567c8c3b588086d621ca62e429150cbc69771e26ec7ed425d27d6015f3'
+sha512sums=('11b8234509c538ec62c9ce8eeb985590b852f657a4c5dd2d59c808739da16f044d7f3bd8fd1de0cbc26397aa2737904183936f05773bd493d5576fc34cbfb692'
+            '51a476d22af110ca65c6517827e1b19a3f45dc8f92c654dc4ae2f8879f9361928c1d7a78154630a0539bc8e7de3c2190ea83effd2292a53acdeaa270a360c770'
+            'db7a89fa68ea37b60e35b43c979750b8b06fb724c1a85cac399d7343b891e947fadf36793e782c56fdaecd0c521203ab921aa7ab493ea949011c490ea3adb926'
             '8a5a8b7654d3864722e784b2814c6278c17876f1c0c4fc0676fbcf6817ad2ba4be55501e67ce88c62b5b63ca886b01afc6feac98ba49842acd244abdd1a8296f'
             '8aa7f08702e99053c696fcc2aaba83beb9e9cd6f31973d82862db9350ac46df3a095377625d31fe909677525290d2de922d7a97930ed235774cb8f0da8944d40'
             '6751d9fa0b27172d1b419c4138f5ac15cbc7c9147653a7258cf1470216142c637210bb60608c7ed0974e0e4057e5ddeae32225df1bb36e7dd1f20fec71e33cc3'
@@ -45,6 +49,7 @@ prepare() {
     make version
 
     ln -sf "${srcdir}/prebuilt-${pkgver}-x86_64.tar.xz" prebuilt-x86_64.tar.xz
+    ln -sf "${srcdir}/prebuilt-${pkgver}-arm.tar.xz" prebuilt-arm.tar.xz
 }
 
 build() {
