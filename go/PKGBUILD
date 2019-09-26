@@ -83,7 +83,7 @@ package_go() {
 
 package_go-pie() {
   pkgdesc='Core compiler tools for the Go programming language (with PIE enabled by default)'
-  provides=("go=$epoch:$pkgver-$pkgrel")
+  provides=(go)
   conflicts=(go)
 
   _package $pkgname
