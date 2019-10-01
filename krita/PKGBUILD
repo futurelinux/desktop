@@ -2,7 +2,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux,org>
 
 pkgname=krita
-pkgver=4.2.6
+pkgver=4.2.7
 pkgrel=1
 pkgdesc="Edit and paint images"
 arch=('x86_64')
@@ -21,7 +21,7 @@ conflicts=('calligra-krita')
 provides=('calligra-krita')
 replaces=('calligra-krita')
 source=("https://download.kde.org/stable/krita/$pkgver/$pkgname-$pkgver.tar.gz")
-sha1sums=('31317be4bb9db684c7b66f40e9526184e96f70a3')
+sha1sums=('74880311f0819a7c7f49c985ba354897a03bc136')
 
 build() {
   cd $pkgname-$pkgver
