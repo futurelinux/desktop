@@ -1,7 +1,7 @@
 # Contributions from ArchLinux https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/telegram-desktop
 
 pkgname=telegram-desktop
-pkgver=1.8.8
+pkgver=1.8.9
 pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
