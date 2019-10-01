@@ -1,5 +1,5 @@
 pkgname=podofo
-pkgver=0.9.5
+pkgver=0.9.6
 pkgrel=1
 pkgdesc="PoDoFo is a library to work with the PDF file format."
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('gcc-libs' 'fontconfig' 'libpng' 'libtiff' 'zlib')
 makedepends=('cmake' 'lua')
 optdepends=('cppunit' 'lua')
 source=("https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-md5sums=('4751a6cf41250bea550a73ff960b7228')
+md5sums=('46336fc4c4ce4be814bb5fbb4d918334')
 
 build() {
   cd ${pkgname}-${pkgver}
@@ -17,6 +17,7 @@ build() {
   mkdir build
   cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr .. \
+        -DFREETYPE_INCLUDE_DIR=/usr/include/freetype2 \
         -DPODOFO_BUILD_SHARED=1 \
         -DPODOFO_HAVE_JPEG_LIB=1 \
         -DPODOFO_HAVE_PNG_LIB=1 \
