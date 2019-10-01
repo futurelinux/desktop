@@ -2,7 +2,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux,org>
 
 pkgname=krita
-pkgver=4.2.7
+pkgver=4.2.7.1
 pkgrel=1
 pkgdesc="Edit and paint images"
 arch=('x86_64')
@@ -20,8 +20,8 @@ optdepends=('poppler-qt5: PDF filter'
 conflicts=('calligra-krita')
 provides=('calligra-krita')
 replaces=('calligra-krita')
-source=("https://download.kde.org/stable/krita/$pkgver/$pkgname-$pkgver.tar.gz")
-sha1sums=('74880311f0819a7c7f49c985ba354897a03bc136')
+source=("https://download.kde.org/stable/krita/${pkgver%.*}/$pkgname-$pkgver.tar.gz")
+sha1sums=('9ea4ddaddd78b9a88f046f6e0ead3f00474e6303')
 
 build() {
   cd $pkgname-$pkgver
