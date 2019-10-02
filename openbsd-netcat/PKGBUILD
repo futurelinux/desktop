@@ -1,26 +1,20 @@
-#
-# Chakra Packages for Chakra, part of chakra-project.org
-#
-# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Contributor: Andrej Gelenberg <andrej.gelenberg@udo.edu>
-
 pkgname=openbsd-netcat
-_pkgver=1.190
+_pkgver=1.203
 _pkgver_debrel=2
 pkgver="${_pkgver}.${_pkgver_debrel}"
 pkgrel=1
 pkgdesc="TCP/IP swiss army knife. OpenBSD variant."
 arch=('x86_64')
-url="http://packages.debian.org/sid/netcat-openbsd"
+url="https://packages.debian.org/sid/netcat-openbsd"
 license=('BSD')
-depends=('glib2' 'libbsd')
+depends=('libbsd')
 makedepends=('gcc' 'make')
-provides=(netcat)
+provides=('netcat')
 conflicts=('gnu-netcat')
 source=("http://ftp.debian.org/debian/pool/main/n/netcat-openbsd/netcat-openbsd_${_pkgver}.orig.tar.gz"
         "http://ftp.debian.org/debian/pool/main/n/netcat-openbsd/netcat-openbsd_${_pkgver}-${_pkgver_debrel}.debian.tar.xz")
-md5sums=('dd32fd1d7903b541ad8709794539b959'
-         '78058b7af0170654b877b02c37716cdf')
+sha256sums=('b025399f1588da78108290a721157be66871b096bc9c3973ebdc8d773f750a3f'
+            'a90ef4278f773f9de44364c13cf195f5db2447dd5e3bcf137a7d1250b92455db')
 
 build() {
   cd "${srcdir}/netcat-openbsd-${_pkgver}"
@@ -34,8 +28,9 @@ build() {
 
 package() {
   cd "${srcdir}/netcat-openbsd-${_pkgver}"
-  install -d "${pkgdir}/usr/bin"
-  install -d "${pkgdir}/usr/share/man/man1"
-  install nc "${pkgdir}/usr/bin/nc.openbsd"
-  install nc.1 "${pkgdir}/usr/share/man/man1/nc.openbsd.1"
+  install -Dm0755 nc "$pkgdir"/usr/bin/nc
+  ln -s nc "$pkgdir"/usr/bin/netcat
+  install -Dm0644 nc.1 "$pkgdir"/usr/share/man/man1/nc.1
+  install -dm0755 "$pkgdir"/usr/share/licenses/$pkgname/
+  head -n28 netcat.c | tail -n+2 >"$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
