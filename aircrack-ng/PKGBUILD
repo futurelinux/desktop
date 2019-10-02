@@ -1,30 +1,30 @@
 pkgname=aircrack-ng
-_pkgver=1.4
+_pkgver=1.5.2
 pkgver=${_pkgver//-/}
 pkgrel=1
 pkgdesc="A key cracker for the 802.11 WEP and WPA-PSK protocols"
 arch=('x86_64')
-url="http://www.aircrack-ng.org"
+url="https://www.aircrack-ng.org"
 license=('GPL2')
-depends=('openssl' 'sqlite3' 'iw' 'net-tools' 'wireless_tools' 'ethtool')
+depends=('openssl' 'sqlite' 'iw' 'net-tools' 'wireless_tools' 'ethtool'
+         'pcre' 'libpcap' 'python3')
 categories=('network')
-source=("http://download.aircrack-ng.org/${pkgname}-${_pkgver}.tar.gz")
-sha1sums=('22bae2c6f21e463df62b4c06c9c3c45c42a9b4ea')
+source=("https://download.aircrack-ng.org/${pkgname}-${_pkgver}.tar.gz")
+sha1sums=('7b63c7ce01cb65a4775833c6cadf7ddd82bf46d5')
 
 build() {
   cd $pkgname-$_pkgver
 
   ./autogen.sh
 
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --libexecdir=/usr/lib
 
-  make sqlite=true experimental=true
+  make
 }
 
 package() {
   cd $pkgname-$_pkgver
 
-  make DESTDIR="$pkgdir" sqlite=true experimental=true \
-    bindir=/usr/bin sbindir=/usr/bin mandir=/usr/share/man/man1/ \
-    smandir=/usr/share/man/man8/ install
+  make DESTDIR="$pkgdir" pkglibexecdir=/usr/lib/aircrack-ng \
+    sbindir=/usr/bin install
 }
