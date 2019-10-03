@@ -1,5 +1,5 @@
 pkgname=git-cola
-pkgver=3.3
+pkgver=3.5
 pkgrel=1
 pkgdesc="A powerful GUI for Git"
 arch=('any')
@@ -10,7 +10,7 @@ makedepends=('asciidoc' 'docbook-xsl' 'rsync' 'xmlto' 'python3-sphinx' 'sip')
 optdepends=('python3-pyinotify: for inotify support')
 options=('!makeflags')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/git-cola/git-cola/archive/v$pkgver.tar.gz")
-sha256sums=('b3fa0d339509564164d8ab3c8cd0c076ad3fdd500af3cea55a7fa4a089cd3c01')
+sha256sums=('7fdcfc4326b35e384b97bd4bb2189b4cb5cf258948352759c302e632b41bb2e2')
 
 build() {
 	cd "$srcdir/${pkgname}-$pkgver"
