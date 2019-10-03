@@ -1,13 +1,7 @@
-#
-# Chakra Packages for Chakra, part of chakra-project.org
-#
-# Maintainer: Daniele Cocca <jmc@chakra-project.org>
-# Original Arch Linux Maintainer: Tom K <tomk@runbox.com>
-
 _pkgname=netcat
 pkgname=gnu-netcat
 pkgver=0.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc="GNU rewrite of netcat, the network piping application."
 depends=('glibc' 'texinfo')
 arch=('i686' 'x86_64')
@@ -15,10 +9,9 @@ url="http://netcat.sourceforge.net/"
 license=('GPL')
 replaces=('netcat')
 provides=('netcat')
-install="gnu-netcat.install"
 categories=('network')
-source=("http://downloads.sourceforge.net/sourceforge/${_pkgname}/${_pkgname}-${pkgver}.tar.bz2")
-md5sums=('0a29eff1736ddb5effd0b1ec1f6fe0ef')
+source=("https://downloads.sourceforge.net/sourceforge/${_pkgname}/${_pkgname}-${pkgver}.tar.bz2")
+sha256sums=('b55af0bbdf5acc02d1eb6ab18da2acd77a400bafd074489003f3df09676332bb')
 
 build() {
   cd "${srcdir}/${_pkgname}-${pkgver}"
