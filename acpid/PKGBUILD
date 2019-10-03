@@ -1,56 +1,44 @@
+# Contributions from Arch:
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Sébastien Luttringer
+# Contributor: xduugu
+# Contributor: Manolis Tzanidakis
+# Contributor: Jonathan Schmidt <j.schmidt@archlinux.us
+
 pkgname=acpid
-pkgver=2.0.30
+pkgver=2.0.32
 pkgrel=1
-pkgdesc="A daemon for delivering ACPI power management events with netlink support."
+pkgdesc='A daemon for delivering ACPI power management events with netlink support'
 arch=('x86_64')
-url="http://sourceforge.net/projects/acpid2/"
+url='https://sourceforge.net/projects/acpid2/'
 license=('GPL')
 depends=('bash')
-opedepends=('perl: use perl based examples')
-backup=('etc/acpi/events/anything'
-        'etc/acpi/handler.sh'
-        'etc/conf.d/acpid')
+optdepends=('perl: use perl based examples')
+replaces=('acpid2')
+backup=('etc/acpi/handler.sh' 'etc/acpi/events/anything')
 source=("https://downloads.sourceforge.net/sourceforge/acpid2/$pkgname-$pkgver.tar.xz"
-         'acpid'
-         'acpid.conf.d'
-         'anything'
-         'handler.sh'
-         'acpid.socket'
-         'acpid.service')
-categories=('system')
-sha256sums=('28b77b62d3f64ebd1c2a3d16bccc6d4333b4e24a86aeacebec255fad223cf4cb'
-            'f23f57646d78bb22b282b9299c5528c6d906cd0c75b080c2606783839e56df49'
-            '1bd216409d7eaa7665d91bc9ed80a9dca7e2326ebe31bb342f8ae1d364b4e36a'
+        'acpid.service'
+        'anything'
+        'handler.sh')
+sha256sums=('f2d2d30b3edc3234bd82f6f7186699a6aa3c85c8d20bc4e30e9b3c68a1ed157e'
+            'a8236bbf774f5e90a4daa369731d6d335c3374ddc62f1224fba02a3d6d678111'
             'eb5230affb9dba7653890655b94e83f377c689a39131b6b13c8202ba2382c275'
-            '6ae2b153c4ef9cbfd32c4428406fc63d931ea7fdfb2e45529f89b51f4d7ac17a'
-            'ac08f8c59cfcbf70d60a2fe51b50e8551e0212e42e5f392022f2aeae393ae706'
-            '35eda2808e6b0c138be793dd4158b8861f2361a7aa31fa626a700a59beb5285e')
+            '1c1e39b7ecc57092ba9d747f452fb36d8ae0456e2e64849c9c4a2625d1d57413')
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  ./configure --prefix=/usr
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sbindir=/usr/bin
   make
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  make DESTDIR="${pkgdir}" install
-  
-  cd "${srcdir}"
-    
-  msg 'Install supplementary scripts...'
-  install -Dm755 acpid "$pkgdir/etc/rc.d/acpid"
-  install -Dm644 anything "$pkgdir/etc/acpi/events/anything"
-  install -Dm755 handler.sh "$pkgdir/etc/acpi/handler.sh"
-  install -Dm644 acpid.conf.d "$pkgdir/etc/conf.d/acpid"
-  
-  msg 'Install SystemD units...'
-  install -Dm0644 acpid.socket "${pkgdir}/usr/lib/systemd/system/acpid.socket"
-  install -Dm0644 acpid.service "${pkgdir}/usr/lib/systemd/system/acpid.service"
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
 
-  msg 'Set world readable bit on the acpid binary.'
-  chmod 0755 "${pkgdir}"/usr/sbin/acpid
+  # default config
+  install -Dm644 ../anything "$pkgdir/etc/acpi/events/anything"
+  install -Dm755 ../handler.sh "$pkgdir/etc/acpi/handler.sh"
 
-  msg 'Remove deprecated rc.d files'
-  rm -rf ${pkgdir}/etc/rc.d/
+  # systemd
+  install -Dm644 ../acpid.service "$pkgdir/usr/lib/systemd/system/acpid.service"
 }

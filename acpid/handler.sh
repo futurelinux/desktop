@@ -1,65 +1,77 @@
-#!/bin/sh
+#!/bin/bash
 # Default acpi script that takes an entry for all actions
-
-# NOTE: This is a 2.6-centric script.  If you use 2.4.x, you'll have to
-#       modify it to not use /sys
-
-minspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq`
-maxspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq`
-setspeed="/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
-
-set $*
 
 case "$1" in
     button/power)
-        #echo "PowerButton pressed!">/dev/tty5
         case "$2" in
-            PWRF)   logger "PowerButton pressed: $2" ;;
-            *)      logger "ACPI action undefined: $2" ;;
+            PBTN|PWRF)
+                logger 'PowerButton pressed'
+                ;;
+            *)
+                logger "ACPI action undefined: $2"
+                ;;
         esac
         ;;
     button/sleep)
         case "$2" in
-            SLPB)   echo -n mem >/sys/power/state ;;
-            *)      logger "ACPI action undefined: $2" ;;
+            SLPB|SBTN)
+                logger 'SleepButton pressed'
+                ;;
+            *)
+                logger "ACPI action undefined: $2"
+                ;;
         esac
         ;;
     ac_adapter)
         case "$2" in
-            AC)
+            AC|ACAD|ADP0)
                 case "$4" in
                     00000000)
-                        echo -n $minspeed >$setspeed
-                        #/etc/laptop-mode/laptop-mode start
-                    ;;
+                        logger 'AC unpluged'
+                        ;;
                     00000001)
-                        echo -n $maxspeed >$setspeed
-                        #/etc/laptop-mode/laptop-mode stop
-                    ;;
+                        logger 'AC pluged'
+                        ;;
                 esac
                 ;;
-            *)  logger "ACPI action undefined: $2" ;;
+            *)
+                logger "ACPI action undefined: $2"
+                ;;
         esac
         ;;
     battery)
         case "$2" in
             BAT0)
                 case "$4" in
-                    00000000)   #echo "offline" >/dev/tty5
-                    ;;
-                    00000001)   #echo "online"  >/dev/tty5
-                    ;;
+                    00000000)
+                        logger 'Battery online'
+                        ;;
+                    00000001)
+                        logger 'Battery offline'
+                        ;;
                 esac
                 ;;
-            CPU0)	
+            CPU0)
                 ;;
             *)  logger "ACPI action undefined: $2" ;;
         esac
         ;;
     button/lid)
-        #echo "LID switched!">/dev/tty5
-        ;;
+        case "$3" in
+            close)
+                logger 'LID closed'
+                ;;
+            open)
+                logger 'LID opened'
+                ;;
+            *)
+                logger "ACPI action undefined: $3"
+                ;;
+    esac
+    ;;
     *)
         logger "ACPI group/action undefined: $1 / $2"
         ;;
 esac
+
+# vim:set ts=4 sw=4 ft=sh et:
