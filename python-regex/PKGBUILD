@@ -1,43 +1,56 @@
-# contribution from Arch https://aur.archlinux.org/packages/python-regex/
+# COntributions from Arch:
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: Nikola Milinković <nikmil@gmail.com>
+# Submitter: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
 
 _pkgbase=regex
 pkgbase=python-regex
 pkgname=('python3-regex' 'python2-regex')
-pkgver=2017.09.23
+pkgver=2019.08.19
 pkgrel=1
 pkgdesc="Alternative python regular expression module."
-arch=('any')
+arch=('x86_64')
 url="https://bitbucket.org/mrabarnett/mrab-regex"
 license=('Python')
-makedepends=('python3-setuptools' 'python2-setuptools' 'python3' 'python2')
+makedepends=('python3-setuptools' 'python2-setuptools')
 options=(!emptydirs)
-source=("https://pypi.io/packages/source/r/${_pkgbase}/${_pkgbase}-${pkgver}.tar.gz")
-sha256sums=('80166c9e21c0171c7b502035f3ba25f43b5122def387ca6ba9706b6892fed7aa')
+source=("https://files.pythonhosted.org/packages/source/r/${_pkgbase}/${_pkgbase}-${pkgver}.tar.gz")
+sha256sums=('587b62d48ca359d2d4f02d486f1f0aa9a20fbaf23a9d4198c4bed72ab2f6c849')
+
+build() {
+  cd "regex-${pkgver}"
+
+  python3 setup.py build
+  python2 setup.py build
+}
 
 package_python2-regex() {
   depends=('python2')
-  conflicts=('python2-regex-hg')
   pkgdesc="Alternative python regular expression module. (python2 version)"
-  
-  cd "${srcdir}/regex-${pkgver}"
-  python2 setup.py install --root="${pkgdir}/" --optimize=1
+
+  cd "regex-${pkgver}"
+  python2 setup.py install --root="${pkgdir}/" --optimize=1 --skip-build
 
   install -v -m755 -d "${pkgdir}/usr/share/doc/python2-regex"
   install -v -m644 ./docs/Features.html "${pkgdir}/usr/share/doc/python2-regex/"
   install -v -m644 ./docs/Features.rst "${pkgdir}/usr/share/doc/python2-regex/"
   install -v -m644 ./docs/UnicodeProperties.txt "${pkgdir}/usr/share/doc/python2-regex/"
+
+  sed -n '1,/^$/p' regex_2/regex/regex.py | install -Dm644 /dev/stdin "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }
 
 package_python3-regex() {
   depends=('python3')
-  conflicts=('python3-regex-hg')
   pkgdesc="Alternative python regular expression module. (python3 version)"
 
-  cd "${srcdir}/regex-${pkgver}"  
-  python3 setup.py install --root="${pkgdir}/" --optimize=1
+  cd "regex-${pkgver}"
+  python3 setup.py install --root="${pkgdir}/" --optimize=1 --skip-build
 
-  install -v -m755 -d "${pkgdir}/usr/share/doc/python-regex"
-  install -v -m644 ./docs/Features.html "${pkgdir}/usr/share/doc/python-regex/"
-  install -v -m644 ./docs/Features.rst "${pkgdir}/usr/share/doc/python-regex/"
-  install -v -m644 ./docs/UnicodeProperties.txt "${pkgdir}/usr/share/doc/python-regex/"
+  install -v -m755 -d "${pkgdir}/usr/share/doc/python3-regex"
+  install -v -m644 ./docs/Features.html "${pkgdir}/usr/share/doc/python3-regex/"
+  install -v -m644 ./docs/Features.rst "${pkgdir}/usr/share/doc/python3-regex/"
+  install -v -m644 ./docs/UnicodeProperties.txt "${pkgdir}/usr/share/doc/python3-regex/"
+
+  sed -n '1,/^$/p' regex_3/regex/regex.py | install -Dm644 /dev/stdin "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }
