@@ -1,5 +1,5 @@
 pkgname=calibre
-pkgver=3.48.0
+pkgver=4.0.0
 pkgrel=1
 pkgdesc="Ebook management application"
 arch=('x86_64')
@@ -9,14 +9,14 @@ _py_deps=('apsw' 'beautifulsoup4' 'cssselect' 'css-parser' 'dateutil' 'dbus' 'dn
           'html2text' 'html5-parser' 'lxml' 'markdown' 'mechanize' 'msgpack'
           'netifaces' 'unrardll' 'pillow' 'psutil' 'pygments' 'pyqt5' 'regex' 'enum34')
 depends=('chmlib' 'icu' 'jxrlib' 'libmtp' 'libusbx' 'libwmf' 'mathjax' 'mtdev' 'optipng'
-         'podofo' "${_py_deps[@]/#/python2-}" 'qt5-svg' 'qt5-webkit' 'udisks2')
+         'podofo' "${_py_deps[@]/#/python2-}" 'qt5-svg' 'qt5-webengine' 'udisks2')
 makedepends=('qt5-x11extras' 'sip' 'xdg-utils')
 optdepends=('ipython2: to use calibre-debug'
             'poppler: required for converting pdf to html'
             'kdialog: to use native dialog')
 source=("https://download.calibre-ebook.com/${pkgver}/calibre-${pkgver}.tar.xz"
         "https://calibre-ebook.com/signatures/${pkgname}-${pkgver}.tar.xz.sig")
-sha256sums=('024528f0f913c78e121fb34beb3dae8dba3686f2334422c6450808796042950c'
+sha256sums=('9c012ac318aae8efc7a26ba1f5beef2e0e924407c8830e30167b229d8f6e1a9b'
             'SKIP')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
 
