@@ -3,7 +3,7 @@
 # Contributor: Konstantin Shalygin <k0ste@k0ste.ru>
 
 pkgname=nextcloud-client
-pkgver=2.5.1
+pkgver=2.6.0
 pkgrel=1
 pkgdesc='Nextcloud desktop client'
 arch=('x86_64')
@@ -38,4 +38,4 @@ package() {
   cd desktop-$pkgver/build
   make DESTDIR=$pkgdir install
 }
-md5sums=('acc9e8b49f778d2588f911e483496e07')
+md5sums=('1f63e129cb24518822851a8a8ce9d12f')
