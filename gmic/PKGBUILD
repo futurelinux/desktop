@@ -7,14 +7,14 @@
 
 pkgbase=gmic
 pkgname=(gmic zart gimp-plugin-gmic krita-plugin-gmic)
-pkgver=2.5.5
+pkgver=2.7.4
 pkgrel=1
 arch=(x86_64)
 url="https://gmic.eu/"
 license=(custom:CeCILL)
 makedepends=(gimp qt5-base fftw openexr opencv eigen3)
 source=(https://gmic.eu/files/source/gmic_$pkgver.tar.gz)
-sha256sums=('46246a7f37740cfba22b6ee77f509a9e874cc70b7e1169ef195dcf8bb2b98d13')
+sha256sums=('cd9b40fa8df8a0bb47388071096c768a9d4908af574f0e98cc8515410d0b2c40')
 
 prepare() {
   sed -e 's|/etc/bash_completion.d|/usr/share/bash-completion/completions|g' -i gmic-$pkgver/src/Makefile
@@ -25,7 +25,7 @@ prepare() {
 
 build() {
   cd gmic-$pkgver
-  make -C src cli lib libc WGET=/bin/true
+  make -C src cli lib libc WGET=/bin/true LIBS=${LDFLAGS} -j1
 
   cd gmic-qt
   qmake-qt5 GMIC_PATH=../src GMIC_DYNAMIC_LINKING=on HOST=none
