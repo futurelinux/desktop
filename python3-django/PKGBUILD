@@ -4,7 +4,7 @@
 # Contributor: Shahar Weiss <sweiss4@gmx.net>
 
 pkgname=python3-django
-pkgver=2.2.4
+pkgver=2.2.6
 pkgrel=1
 pkgdesc="A high-level Python Web framework that encourages rapid development and clean design"
 arch=('any')
@@ -12,7 +12,7 @@ license=('BSD')
 url="https://www.djangoproject.com/"
 depends=('python3' 'python3-setuptools' 'python3-pytz' 'python3-sqlparse')
 source=("Django-$pkgver.tar.gz::https://www.djangoproject.com/download/$pkgver/tarball/")
-sha256sums=('16a5d54411599780ac9dfe3b9b38f90f785c51259a584e0b24b6f14a7f69aae8')
+sha256sums=('a8ca1033acac9f33995eb2209a6bf18a4681c3e5269a878e9a7e0b7384ed1ca3')
 
 build() {
   cd "$srcdir/Django-$pkgver"
