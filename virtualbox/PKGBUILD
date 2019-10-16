@@ -10,9 +10,9 @@ pkgname=('virtualbox'
          'virtualbox-guest-iso'
          'virtualbox-ext-vnc'
          'virtualbox-ext-oracle')
-pkgver=6.0.12
+pkgver=6.0.14
 pkgrel=1
-_vboxsf_commit='8dd4b8bd5cfe6ddae8fe7056dff790013b985d22'
+_vboxsf_commit='83b9657878a229c83e4ce652af809bdc18a3a327'
 arch=('x86_64')
 url='https://virtualbox.org'
 license=('GPL' 'custom')
@@ -89,9 +89,9 @@ source=("http://download.virtualbox.org/virtualbox/$pkgver/VirtualBox-$pkgver.ta
         'PUEL')
 noextract=(VBoxGuestAdditions_$pkgver.iso
           "Oracle_VM_VirtualBox_Extension_Pack-$pkgver.vbox-extpack")
-sha256sums=('c8878d1ad867461e6adfb82c22f15bf5d284e214e75f7b2c6bcd81854edeabc3'
-            '78fa2ba78e91c7d6f16f8c7fa88676cc9772c7689ba47e2b19913670fad2d441'
-            '27a0956940654b0accf4d79692078bd496d9f062e4ed3da69e5421cba8d1e444'
+sha256sums=('5e12b14f0c38bf195d9592d76a9e0a128df2d38cd77c26ce5b5488397715dd0c'
+            'cb82f43a71f91a50b97aa27063c5c8743772a623eb0073ab8daf77e840d73eb1'
+            'c8a5cc980c9c94cdac3d94e23cf159c2433aae76b416dbfb5b1a918758f21e63'
             'SKIP'
             'deb03efa7ad0376aa55a087f2e882afe00935f10b0e7aa853ba9147090d341ec'
             'c328376b05183d269f98319ec660f54c55e298f77d229977606862b064651a7c'
