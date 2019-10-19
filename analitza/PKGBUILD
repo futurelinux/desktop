@@ -1,7 +1,7 @@
 # Contributions from Arch: https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/analitza
 
 pkgname=analitza
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Shared math libraries from Kalgebra"
 url="https://projects.kde.org/projects/kde/kdeedu/analitza"
@@ -15,7 +15,7 @@ conflicts=('kdeedu-analitza')
 groups=("kde" "kdeedu" "kde-uninstall")
 categories=('education')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('516f29f089be92fecf5e17dcf466a9daf8525ec9e594f52f04338603914c2003'
+sha256sums=('cbd51fd14d5ba74a7a3590ddca18ed688cbf724cd40f21c87b905f12fadf9399'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

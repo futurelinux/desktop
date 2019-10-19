@@ -1,7 +1,7 @@
  # Include global configuration
 
 pkgname=mbox-importer
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Import mbox files to KMail"
 arch=(x86_64)
@@ -13,7 +13,7 @@ conflicts=('kmail<16.11')
 options=(docs debug)
 groups=(kde kde-uninstall kde-applications kdepim)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('e03fd814c70b15fca3b5dd2cde1dcece436b831ceb04323d7ffcca66daf3ce1c'
+sha256sums=('644175d6fcb66b878309de899f4a3e060e29d4f31ce337d44ee6e1af5901044f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

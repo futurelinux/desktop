@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kdepim-runtime
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc='Extends the functionality of kdepim'
 arch=('x86_64')
@@ -13,7 +13,7 @@ makedepends=(extra-cmake-modules kdoctools boost qca qt5-networkauth)
 options=('debug')
 
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('634419978329902a1877810d87d4ddae8cb07adbabbfa4540b521689d8bc85ef'
+sha256sums=('9b98980003d2d107596e9acc9482dfc3ea26a2485c75a700bd82b53b9be72ebf'
             'SKIP')
 
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>

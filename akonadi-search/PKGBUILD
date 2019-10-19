@@ -1,7 +1,7 @@
 
 
 pkgname=akonadi-search
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Libraries and daemons to implement searching in Akonadi"
 url='https://projects.kde.org/akonadi-search'
@@ -14,7 +14,7 @@ replaces=('baloo4-akonadi')
 provides=('baloo4-akonadi')
 conflicts=('baloo4-akonadi')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('fadc158343eb7c124454ca3e22ade14230772f1d1a89e04a0059c924ed3959d0'
+sha256sums=('75c9713b84a03c60a68ff36652decbf57f4f56a0fb39579f53e7ed80a5ee8525'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

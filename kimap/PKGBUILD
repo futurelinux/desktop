@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kimap
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Job-based API for interacting with IMAP servers"
 arch=('x86_64')
@@ -11,7 +11,7 @@ depends=(kmime kdelibs4support)
 makedepends=(extra-cmake-modules python3 boost kdoctools)
 options=('debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('d9e3af3e1bb03d929a08287b1a29540915d25dbb6a38d152560302c93e4c5060'
+sha256sums=('250479c78517610aab810f54184d8826fb981438ec9f0d5c423ad781a796ee00'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

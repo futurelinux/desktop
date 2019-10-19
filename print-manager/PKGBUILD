@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=print-manager
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A KDE tool for managing print jobs and printers"
 url="https://projects.kde.org/projects/playground/base/print-manager"
@@ -16,7 +16,7 @@ replaces=('kdeadmin-print-manager')
 conflicts=('kdeadmin-print-manager')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('56fe89f6bc3be64848adee20a22c712ba8f72602e28fb3288cd5328797e32c7b'
+sha256sums=('c0702208b6f485e2e44337aaf203b9e391adda22d6526bf0dd34b31230e0fb05'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

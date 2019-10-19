@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=picmi
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A nonogram logic game for KDE"
 arch=('x86_64')
@@ -14,7 +14,7 @@ conflicts=('kdegames-picmi')
 replaces=('kdegames-picmi')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('1d7a6152b05ad22f98762a5a6cd96edbc03ae63bdbc0154f387dc5cce31243eb'
+sha256sums=('ecfa211043327991a0927be852c185223adebe5f15cdc39e79e31022802f904b'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

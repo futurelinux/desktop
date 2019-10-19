@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kdenlive
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A non-linear video editor for Linux"
 arch=('x86_64')
@@ -22,7 +22,7 @@ categories=('multimedia')
 options=('debug')
 screenshot=('http://kdenlive.org/sites/default/files/kdenlive-090a_0.png')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('01b60bf58f6818a5ca9aa6e7a79111965700e6948da0bc0edd1184c26fd872e4'
+sha256sums=('5ca3b7a2457d2aa355309bc7471791f691edd8774af9a19cbfc8fac39ad53c78'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

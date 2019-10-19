@@ -2,7 +2,7 @@
 
 pkgname=kmag
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Screen magnifier"
 url="https://kde.org/applications/utilities/$pkgname"
@@ -15,7 +15,7 @@ replaces=(kdeaccessibility-kmag)
 groups=("kdeaccessibility" 'kde' 'kde-applications')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('7d42c254e62750899e429482c2b6ed3b4b1e8c5a66fbc371eec656421817d0a4'
+sha256sums=('6e8ecfab87dca12804a5a8d0a8adf1545e9e17039e0f9667b10a8f2832512e71'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

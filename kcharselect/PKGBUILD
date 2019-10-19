@@ -2,7 +2,7 @@
 
 pkgname="kcharselect"
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Character selector"
 url="http://kde.org/applications/utilities/kcharselect/"
@@ -14,7 +14,7 @@ groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
 conflicts=("kdeutils-kcharselect")
 replaces=("kdeutils-kcharselect")
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('31caf29e82327d7e31badff141dd7d5f179b87e9547c322b074f58bc07063020'
+sha256sums=('ff2a8c78fc4a12dd727e8ad8677216d5a480a8c82aff97269397ee8ae01e36df'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

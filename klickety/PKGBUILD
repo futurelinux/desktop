@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=klickety
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="An adaptation of the Clickomania game"
 url="http://kde.org/applications/games/klickety/"
@@ -15,7 +15,7 @@ replaces=(kdegames-klickety)
 
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('aad8c7b9e4c07ca8bd64beae71330e51d45dcaa9929a9ce56b7c675fc9e583f0'
+sha256sums=('97e165d250d88a5a9f00fc5e111f641c43bed8e1445fd9d7c59f986cf5517271'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

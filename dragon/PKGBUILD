@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=dragon
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A simple multimedia player"
 url='http://kde.org/applications/multimedia/dragonplayer/'
@@ -14,7 +14,7 @@ conflicts=('kdemultimedia-dragonplayer')
 replaces=('kdemultimedia-dragonplayer')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('3d792f6dfd4a5d8ad7726fa942840ebed2b2bb6f25ec6f68883b83859c21cacc'
+sha256sums=('3924dba504f370415c0d68cb5079acfc941aa761e9d9d2df2ea48b302ef9ce61'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

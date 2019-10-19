@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=libksieve
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Lib which manages sieve support"
 arch=('x86_64')
@@ -12,7 +12,7 @@ makedepends=('extra-cmake-modules' 'kdoctools' 'boost' 'qt5-tools')
 groups=(kde kde-applications kdepim kde-uninstall)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('48d0925a8dd0adfa6ccd4945b14e2e562b8855faa6bed43de0442a273fd41966'
+sha256sums=('5c5bb9182e53a2a928d70985f6dd514c8b308891c4899b942784e80d221318f6'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

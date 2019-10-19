@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=libkgapi
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A KDE-based library for accessing various Google services via their public API"
 url='https://projects.kde.org/projects/extragear/libs/libkgapi'
@@ -11,7 +11,7 @@ depends=(kcalcore kcontacts qt5-webengine lcms2)
 makedepends=(extra-cmake-modules kdoctools qt5-tools kdesignerplugin python3)
 options=('debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('bc8a54e0997f4e3e0e840e350c6a9dee26582028415c5e9863d53a3280faa9f6'
+sha256sums=('b220908dd4a21e589a25b964b7786f1154f63ca98bf90c43ced3120adf4fb0a6'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

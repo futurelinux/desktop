@@ -2,7 +2,7 @@
 
 pkgname="kapptemplate"
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="KDE application template generator"
 screenshot="http://www.kde.org/images/screenshots/kapptemplate.png"
@@ -14,7 +14,7 @@ provides=('kdesdk-kapptemplate')
 categories=('programming')
 license=('GPL' 'LGPL' 'FDL')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('a25170f3527e85bea9509fe5cb991544c0a1dab8f7025c71fd5b0d4c82d9e169'
+sha256sums=('2b719cf75bf8e9b495a8d9aa8288ddb528617c2e76bd1312cfdb2a43b27d6208'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

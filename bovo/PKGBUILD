@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=bovo
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Five-in-a-row Board Game"
 arch=('x86_64')
@@ -15,7 +15,7 @@ replaces=('kdegames-bovo')
 conflicts=('kdegames-bovo')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('829ecfe3a46bc1c009fea14c5860aa17ea18f36ed33fdc9296c499992aeed466'
+sha256sums=('63f7a3860de2344be69366f636e841cd3db19743a8a29c42e14402256ed3122b'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

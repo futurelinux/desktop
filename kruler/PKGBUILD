@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kruler
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc='Screen ruler for measuring pixels'
 url='http://kde.org/applications/graphics/kruler/'
@@ -15,7 +15,7 @@ replaces=('kdegraphics-kruler')
 conflicts=('kdegraphics-kruler')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('a78d054359b559b612dd1dac8f0974f554fb7a52bd8de7152de88866719f9226'
+sha256sums=('2a3c51a60f503807694cf49796b3bf82c6992ec4c0c15cf38adae92a8dbc24cc'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

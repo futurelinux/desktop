@@ -2,7 +2,7 @@
 
 pkgname=kdf
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="KDE diskfree tool"
 url="http://www.kde.org"
@@ -15,7 +15,7 @@ options=('debug')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
 
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('e6effd6aaf08c9bfa649b194313e7719b65a9d53f00570e14d2752ce68d13bfe'
+sha256sums=('f0a27bbf25d5791272cc8598561e53afed9840d38bf08ed3146f36701dfb7b04'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

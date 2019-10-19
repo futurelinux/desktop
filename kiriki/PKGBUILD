@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kiriki
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="An addictive and fun dice game"
 url="http://kde.org/applications/games/kiriki/"
@@ -14,7 +14,7 @@ conflicts=('kdegames-kiriki')
 replaces=('kdegames-kiriki')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('42f69734c0268f4c3c4ed0b915318d9570d599c6a0fd8a2a02597f1e31cd50d7'
+sha256sums=('8aa1749e2b14dbb4b508515a0b1f5164243ee793141ec2af7bfc6be1f6eb67da'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

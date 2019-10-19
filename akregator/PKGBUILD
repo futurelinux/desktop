@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=akregator
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A Feed Reader by KDE"
 arch=(x86_64)
@@ -13,7 +13,7 @@ optdepends=('kdepim-addons: additional plugins')
 options=(docs debug)
 groups=(kde kde-uninstall kde-applications kdepim)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('d3cb8b97a3d2c9eeb805e1b7fc26cb637ad21589675d837b545580e6be764820'
+sha256sums=('cefc0785f40508a80fbf4534eef4d1164e349cfd50455483cef044945d1888c4'
             'SKIP')
 
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>

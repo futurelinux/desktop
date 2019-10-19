@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=granatier
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Granatier is a clone of the classic Bomberman game, inspired by the Clanbomber clone"
 arch=('x86_64')
@@ -15,7 +15,7 @@ conflicts=('kdegames-granatier')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdegames')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('b61bf45df63dc3fb324e1a74ec84ae4f2d58371af88ccd28593b0716673dc00a'
+sha256sums=('81a0c288edd0be6d7c994a8ad1469679b7e78174d641f9c4f90d31613bad4b47'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

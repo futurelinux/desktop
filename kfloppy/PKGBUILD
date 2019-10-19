@@ -2,7 +2,7 @@
 
 pkgname="kfloppy"
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Floppy formatter"
 url="http://www.kde.org"
@@ -14,7 +14,7 @@ makedepends=(extra-cmake-modules kdoctools)
 conflicts=(kdeutils-kfloppy)
 replaces=(kdeutils-kfloppy)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('312345286fa1dba2cac782523d95c1e4ed0d7ef272c93c5d7bf2f9d8f635fa82'
+sha256sums=('743f9043bdc24855bb597d3f7cf2bbf4793c58be22eb73cd72ff1e3f8cff2f69'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

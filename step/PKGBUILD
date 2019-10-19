@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=step
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Interactive physical simulator"
 url="http://kde.org/applications/education/step/"
@@ -16,7 +16,7 @@ replaces=('kdeedu-step')
 conflicts=('kdeedu-step')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('7a2dc38617822c8118c721ccaaa9907ec3e109eacf57e46b599c6731b325a993'
+sha256sums=('dede94c073b2903fa4fa6806623cb980ebe93d15cc76376aadac4ca8cd61a96c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

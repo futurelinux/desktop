@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=ktp-call-ui
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Telepathy call handler "
 arch=('x86_64')
@@ -16,7 +16,7 @@ groups=(kde kde-applications kde-telepathy kde-uninstall)
 options=('docs' 'debug')
 
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('1f7922a1920770decfd3e17aaf42e46db60b5c3660efc544a9be743d9a85d08f'
+sha256sums=('0d735c34f937a436e82e994c9d60b851473d31b3dc07f1d2ec7eeeab63b83658'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

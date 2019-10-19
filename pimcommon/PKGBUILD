@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=pimcommon
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Common lib for kdepim."
 arch=('x86_64')
@@ -12,7 +12,7 @@ makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools')
 groups=(kde kde-applications kdepim kde-uninstall)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('23be57010127831c3ad9b9475e467e8078ff92410c80609660498c5dc6fbaf9a'
+sha256sums=('ccdf2624a055a9db31b0b8109c791776d111ae91438f41ed50dcb9faca287e4c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

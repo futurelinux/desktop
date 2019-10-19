@@ -1,7 +1,7 @@
 # Contributions from Arch: https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/gwenview
 
 pkgname=gwenview
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A fast and easy to use image viewer for KDE"
 arch=('x86_64')
@@ -17,7 +17,7 @@ provides=('kdegraphics-gwenview')
 replaces=('kdegraphics-gwenview')
 conflicts=('kdegraphics-gwenview')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('1d1d4713bcebdd8c7c458c075b7101055c81cf94a802ac8b9b3528a3c3c961a3'
+sha256sums=('fa49352a208c9472c911d3579f7601fb915831ad42caf74a053ed749bf5bb1fb'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

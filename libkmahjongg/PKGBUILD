@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=libkmahjongg
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Common code, backgrounds and tile sets for games using Mahjongg tiles"
 arch=('x86_64')
@@ -13,7 +13,7 @@ makedepends=('extra-cmake-modules' 'qt5-svg' 'python3')
 groups=("kde" "kdegames" "kde-uninstall")
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('b51aea6773b609cc1c3a297e72e15b7b504c2877938030e1afac86319e855694'
+sha256sums=('8699949fae90c0e92dd046b904b0624f79c37fecaa46557c808f20f24e215947'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

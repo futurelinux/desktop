@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=konquest
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="The KDE version of Gnu-Lactic"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=(kdegames-konquest)
 provides=(kdegames-konquest)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('94919dce58182859f7e720ece73be81b5bafc359afdc1c29f4f45a3b24155e60'
+sha256sums=('3dda62a480e37d97aabdc4670a8ac1cf209605ed274c872ee3575ff1ecff6936'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

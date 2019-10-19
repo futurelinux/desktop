@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=ksquares
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A modeled after the well known pen and paper based game of Dots and Boxes"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=('kdegames-ksquares')
 conflicts=('kdegames-ksquares')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('649a89da0a928c8977218a76023044205b20f07af9b3abda042e46bc450bd00f'
+sha256sums=('f16fa641f02a6462085d291ed8d3262891cdeeeff8bbbde4e0aabfdac3dc7bc9'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

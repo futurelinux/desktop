@@ -2,7 +2,7 @@
 
 pkgname="kmousetool"
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Automatic mouse clicker"
 url="https://kde.org/applications/utilities/$pkgname"
@@ -15,7 +15,7 @@ provides=(kdeaccessibility-kmousetool)
 replaces=(kdeaccessibility-kmousetool)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('3b2f5a4fcc3231c249923431059285e3f8371f7c8d53fcaea76dec3945a13b09'
+sha256sums=('7cdc327e82548bf70c4ef4feab7a30938f3aefa1e80fccb343ce0d5ca8976ccb'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

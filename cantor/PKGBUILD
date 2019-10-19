@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=cantor
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="KDE frontend to mathematical software"
 url="http://kde.org/applications/education/cantor/"
@@ -24,7 +24,7 @@ conflicts=('kdeedu-cantor')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeedu')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('b1d1a735e83ca03d51b79f1fc59612153e94b274d716d65ff3fa94ffdd2f3adc'
+sha256sums=('039bb1e61b996ab3776502db9367ed1f7fb7e674292647f1b28f5bd9b1c1b9cb'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

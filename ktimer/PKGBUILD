@@ -3,7 +3,7 @@
 
 pkgname="ktimer"
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Timer application"
 url="http://www.kde.org"
@@ -15,7 +15,7 @@ conflicts=('kdeutils-ktimer')
 replaces=('kdeutils-ktimer')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('c7f684b9c7f0c92638153fabdfdb1082c900a8da2f660eeebe4b8b3b669f8c8d'
+sha256sums=('81be41497e14f5fb72150e238805744c9b09463ac261cf5d7d2ca011a41a05a0'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

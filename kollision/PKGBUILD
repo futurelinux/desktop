@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kollision
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A simple ball dodging game"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=('kdegames-kollision')
 conflicts=('kdegames-kollision')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('24a8ae084443359d59c16cbbafc450bbc467bd8b2a2516572e70ef24823750fd'
+sha256sums=('f2e7d851181033ce39d43a038601ca70c608ae9d0cb0e88228512ca1dbd0cf19'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

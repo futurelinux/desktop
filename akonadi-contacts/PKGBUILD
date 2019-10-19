@@ -1,6 +1,6 @@
 # Include global configuration
 pkgname=akonadi-contacts
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Libraries and daemons to implement Contact Management in Akonadi"
 arch=(x86_64)
@@ -13,7 +13,7 @@ replaces=(akonadi-contact)
 provides=(akonadi-contact)
 
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('912a657a11d1bd1e680a71b43d69a5a871136ed83f171b11c52f1974d7381ce4'
+sha256sums=('eafeb550faea91a56109821864eedfbd619dc7850887746d31c1724ea7561920'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

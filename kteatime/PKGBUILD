@@ -2,7 +2,7 @@
 
 pkgname="kteatime"
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 url="http://kde.org/applications/games/kteatime/"
 screenshot='https://www.kde.org/images/screenshots/kteatime.png'
@@ -16,7 +16,7 @@ groups=('kde' 'kde-uninstall' 'kde-applications' 'kdetoys')
 categories=('accessories')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('3be9667867ef41a638c8f97fefb213b078b0ba3171add881438588bc8afba342'
+sha256sums=('075470af370b7913fdb085dd6984da91f863b6c03a4b713854e85437e6f9cdbe'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

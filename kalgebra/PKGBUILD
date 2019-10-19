@@ -1,7 +1,7 @@
 # Contributions from Arch: https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/kalgebra
 
 pkgname=kalgebra
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="Graph calculator"
 url="http://kde.org/applications/education/kalgebra/"
@@ -16,7 +16,7 @@ conflicts=('kdeedu-kalgebra')
 groups=("kde" "kdeedu" "kde-uninstall")
 categories=('education')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('b875b2bfe985e5c595f60fbb146fb4545c34321bb86f7fc04164a23f0bb3e9eb'
+sha256sums=('351a0df1bf637b14683d1a38d8f1eff0153596c5f93723f28f799aead6ee0757'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

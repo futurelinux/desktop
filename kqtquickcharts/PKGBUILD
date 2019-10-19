@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=kqtquickcharts
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A QtQuick plugin to render beautiful and interactive charts"
 url="https://edu.kde.org/"
@@ -12,7 +12,7 @@ makedepends=(extra-cmake-modules)
 options=(docs debug)
 groups=(kde kde-uninstall kde-applications)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('6b25edca7643287acaf436ba58124077b89d067e2881a5dbfbd8833b68f3cb05'
+sha256sums=('3341f99ba3a35e9c4fd70911faebaf4312d7700a342edd242de2118f9a77c9fb'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

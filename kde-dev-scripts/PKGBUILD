@@ -2,7 +2,7 @@
 
 pkgname="kde-dev-scripts"
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc='Scripts and setting files useful during development of KDE software'
 url='https://www.kde.org/applications/development/'
@@ -14,7 +14,7 @@ replaces=(kdesdk-scripts)
 conflicts=(kdesdk-scripts kdesdk-doc)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('8028d1f5390f608974235123a7c14342fb0c247456e6088d4f16797875efdf18'
+sha256sums=('9a47b048cec42eedcec05602eb84d4124a1f67d451c22095e688cb24f7057327'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

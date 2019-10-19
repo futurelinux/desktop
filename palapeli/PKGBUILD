@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=palapeli
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A single-player jigsaw puzzle game"
 url="https://kde.org/applications/games/palapeli/"
@@ -14,7 +14,7 @@ conflicts=(kdegames-palapeli)
 replaces=(kdegames-palapeli)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('fcdefb41685728cd9e01cc3249d2676a589f61a611e32c2e1a2e3d4d30721dde'
+sha256sums=('bae810595c7ba7bdac0fa5c27e6c2a3a9bb1bbdae3521cfc036ec0cdcd9ef1a7'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

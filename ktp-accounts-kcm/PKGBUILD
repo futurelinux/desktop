@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=ktp-accounts-kcm
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="KCM Module for configuring Telepathy Instant Messaging Accounts"
 arch=('x86_64')
@@ -12,7 +12,7 @@ depends=('kaccounts-integration' 'kaccounts-providers' 'telepathy-qt5')
 makedepends=('extra-cmake-modules' 'intltool')
 groups=('kde-telepathy')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('f849b7a9b2cee5b328e726dd254b1e606b740e5b75cdc59a1ea18601e131c0b5'
+sha256sums=('7995813bc983c80b200cddf6b0f55fa8c48be3297ee03e3e0a7601cbc86b8dd8'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

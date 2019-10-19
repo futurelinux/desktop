@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=calendarsupport
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="This lib provides calendar support"
 arch=('x86_64')
@@ -12,7 +12,7 @@ makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools')
 groups=(kde kde-applications kdeedu kde-uninstall)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('af590cf5443c1205a8bd59d00c430bbdf65a185a36ed36e92e6ef78bba8551e4'
+sha256sums=('9ae448463ca60e075f1ea9a22489f0acf6ea672c00f9bd7b49027e548e82c2af'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

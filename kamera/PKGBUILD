@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kamera
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="KDE integration for gphoto2 cameras"
 url="http://kde.org/applications/graphics/kamera/"
@@ -15,7 +15,7 @@ conflicts=(kdegraphics-kamera)
 replaces=(kdegraphics-kamera)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('f287f1db119946d2e62d4ccd52a66671343042563cc87da246f2692fa1b775c6'
+sha256sums=('2db474afa6201f330631640e04e1bd6ebb96838ce4c16d37617a10063b1fa757'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

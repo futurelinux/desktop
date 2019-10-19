@@ -2,7 +2,7 @@
 # Include global configuration
 
 pkgname=kcolorchooser
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc='Colour chooser'
 url='http://kde.org/applications/graphics/kcolorchooser/'
@@ -15,7 +15,7 @@ conflicts=(kdegraphics-kcolorchooser)
 replaces=(kdegraphics-kcolorchooser)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('bd9fa8940218f686b0a2d8c6fbe38b996646508a1908dd53925c2513f6fd39eb'
+sha256sums=('4eb50f314b190f1980e73212a45fe86db39f278f789288cd76cb0763f3176edc'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

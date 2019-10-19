@@ -3,7 +3,7 @@
 
 pkgname=filelight
 arch=('x86_64')
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 url="http://www.kde.org"
 license=('GPL' 'LGPL' 'FDL')
@@ -16,7 +16,7 @@ replaces=('kdeutils-filelight')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
 categories=('utils')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('bdd3d32f6666b3d2fa4c614f5f058571c8849484e1ba17a97996680503f8e8e6'
+sha256sums=('313ff23fceb427509b37efa012535e651618d42bde35c62cdc7732e463c346a6'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

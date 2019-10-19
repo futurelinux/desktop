@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=ksnakeduel
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc="A simple snake duel game"
 arch=('x86_64')
@@ -16,7 +16,7 @@ replaces=(kdegames-ksnakeduel)
 provides=(kdegames-ksnakeduel)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('51799e15ce35237cf410bfd69cca40eeea6ec75ac3b3b98686b44028e8fd2b0b'
+sha256sums=('bb13aa91d0e75c1099a57606e0ea1f567a3ffe8f4efbf6a94420bd372ff10289'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>

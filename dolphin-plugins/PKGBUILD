@@ -1,7 +1,7 @@
 # Include global configuration
 
 pkgname=dolphin-plugins
-pkgver=19.08.0
+pkgver=19.08.2
 pkgrel=1
 pkgdesc='Dolphin plugins'
 url="http://www.kde.org"
@@ -14,7 +14,7 @@ replaces=('kdesdk-dolphin-plugins')
 groups=('kde' 'kde-uninstall' 'kde-applications' 'kdesdk')
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('f074aa7151f4b4d9202d90257952638652a1bf09d02699762f346d85b61c5f54'
+sha256sums=('da2114bd8ed0a70fba3c3cba82a5543cce2f91af7e1dc12bc7457eeffc03099d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
