@@ -3,7 +3,7 @@
 
 pkgname=libkcompactdisc
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A library for interfacing with CDs"
 url='https://www.kde.org/applications/multimedia/'
 arch=(x86_64)

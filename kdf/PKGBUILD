@@ -3,7 +3,7 @@
 pkgname=kdf
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="KDE diskfree tool"
 url="http://www.kde.org"
 license=(GPL LGPL FDL)

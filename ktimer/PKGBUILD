@@ -4,7 +4,7 @@
 pkgname="ktimer"
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Timer application"
 url="http://www.kde.org"
 license=('GPL' 'LGPL' 'FDL')

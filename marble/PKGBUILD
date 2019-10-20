@@ -3,7 +3,7 @@
 pkgbase=marble
 pkgname=(marble libastro marble-data)
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Desktop Globe"
 arch=(x86_64)
 url="https://www.kde.org/applications/system/marble"

@@ -2,7 +2,7 @@
 
 pkgname=konsole
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="KDE's terminal emulator"
 arch=('x86_64')
 url='http://kde.org/applications/system/konsole/'

@@ -2,7 +2,7 @@
 
 pkgname=kolf
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Minigolf game"
 arch=('x86_64')
 pkgdesc="A miniature golf game with 2d top-down view"

@@ -3,7 +3,7 @@
 
 pkgname=ksquares
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A modeled after the well known pen and paper based game of Dots and Boxes"
 arch=('x86_64')
 url='http://kde.org/applications/games/ksquares/'

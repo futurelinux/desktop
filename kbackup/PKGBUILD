@@ -1,7 +1,7 @@
 
 pkgname=kbackup
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A program that lets you back up any directories or files"
 arch=(x86_64)
 url="https://www.kde.org/applications/utilities/kbackup/"

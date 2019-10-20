@@ -2,7 +2,7 @@
 
 pkgname=kalgebra
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Graph calculator"
 url="http://kde.org/applications/education/kalgebra/"
 screenshot="https://www.kde.org/images/screenshots/kalgebra.png"

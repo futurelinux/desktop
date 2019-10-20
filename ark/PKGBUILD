@@ -3,7 +3,7 @@
 pkgname=ark
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Archiver for various compression formats"
 url="http://www.kde.org"
 license=(GPL)

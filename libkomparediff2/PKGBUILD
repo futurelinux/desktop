@@ -3,7 +3,7 @@
 
 pkgname=libkomparediff2
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Library to compare files and strings"
 url='https://projects.kde.org/projects/kde/kdesdk/libkomparediff2'
 arch=('x86_64')

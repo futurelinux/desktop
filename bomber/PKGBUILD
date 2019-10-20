@@ -3,7 +3,7 @@
 
 pkgname=bomber
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Arcade Bombing Game"
 arch=('x86_64')
 url='http://kde.org/applications/games/bomber/'

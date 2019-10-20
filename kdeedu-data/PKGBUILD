@@ -3,7 +3,7 @@
 
 pkgname=kdeedu-data
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Common data for KDE Edu applications"
 url="https://projects.kde.org/projects/kde/kdeedu/libkdeedu"
 arch=('x86_64')

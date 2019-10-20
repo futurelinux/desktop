@@ -3,7 +3,7 @@
 
 pkgname=kolourpaint
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A simple painting program to quickly create raster images'
 url='http://kde.org/applications/graphics/kolourpaint/'
 arch=('x86_64')

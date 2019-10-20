@@ -3,7 +3,7 @@
 
 pkgname=ktp-text-ui
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Telepathy text chat handler"
 arch=('x86_64')
 url="http://community.kde.org/Real-Time_Communication_and_Collaboration"

@@ -2,7 +2,7 @@
 
 pkgname=knavalbattle
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A ship sinking game"
 url="http://kde.org/applications/games/knavalbattle/"
 arch=(x86_64)

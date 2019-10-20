@@ -3,7 +3,7 @@
 
 pkgname=klines
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A simple but highly addictive, one player game"
 arch=('x86_64')
 url='http://kde.org/applications/games/klines/'

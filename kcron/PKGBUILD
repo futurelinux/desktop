@@ -3,7 +3,7 @@
 pkgname="kcron"
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 url="http://userbase.kde.org/KCron"
 screenshot='https://userbase.kde.org/File:Kcron-screenshot-de.png'
 license=('GPL' 'LGPL' 'FDL')

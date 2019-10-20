@@ -3,7 +3,7 @@
 
 pkgname=katomic
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A fun and educational game built around molecular geometry"
 arch=('x86_64')
 url='http://kde.org/applications/games/katomic/'

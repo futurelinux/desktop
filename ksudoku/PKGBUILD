@@ -2,7 +2,7 @@
 
 pkgname=ksudoku
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A logic-based symbol placement puzzle"
 arch=('x86_64')
 url='http://kde.org/applications/games/ksudoku/'

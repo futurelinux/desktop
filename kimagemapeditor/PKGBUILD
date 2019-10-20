@@ -2,7 +2,7 @@
 
 pkgname=kimagemapeditor
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 pkgdesc="HTML Image Map Editor"
 url='http://www.kde.org'

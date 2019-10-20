@@ -2,7 +2,7 @@
 
 pkgname=mailimporter
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Mail importer library"
 arch=('x86_64')
 url='https://github.com/KDE/mailimporter'

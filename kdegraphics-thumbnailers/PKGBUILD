@@ -3,7 +3,7 @@
 
 pkgname=kdegraphics-thumbnailers
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Thumbnailers for various graphics file formats'
 arch=('x86_64')
 url='https://projects.kde.org/projects/kde/kdegraphics/kdegraphics-thumbnailers'

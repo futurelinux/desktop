@@ -3,7 +3,7 @@
 
 pkgname=blinken
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Memory enhancement game"
 url="http://kde.org/applications/education/blinken/"
 screenshot='https://www.kde.org/images/screenshots/blinken.png'

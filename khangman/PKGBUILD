@@ -2,7 +2,7 @@
 
 pkgname=khangman
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Hangman game"
 url="http://kde.org/applications/education/khangman/"
 screenshot="https://www.kde.org/images/screenshots/khangman.png"

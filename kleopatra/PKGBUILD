@@ -2,7 +2,7 @@
 
 pkgname=kleopatra
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Certificate manager and GUI for OpenPGP and CMS cryptography."
 arch=('x86_64')
 url='https://projects.kde.org/projects/kde/pim/kleopatra'

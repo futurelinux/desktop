@@ -3,7 +3,7 @@
 
 pkgname=kblocks
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="The classic falling blocks game"
 arch=('x86_64')
 url='http://kde.org/applications/games/kblocks/'

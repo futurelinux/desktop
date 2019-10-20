@@ -2,7 +2,7 @@
 
 pkgname=audiocd-kio
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Kioslave for accessing audio CDs"
 url='https://www.kde.org/applications/multimedia/'
 arch=(x86_64)

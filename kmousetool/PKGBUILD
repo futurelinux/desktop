@@ -3,7 +3,7 @@
 pkgname="kmousetool"
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Automatic mouse clicker"
 url="https://kde.org/applications/utilities/$pkgname"
 license=('GPL' 'FDL')

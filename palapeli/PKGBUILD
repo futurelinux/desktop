@@ -2,7 +2,7 @@
 
 pkgname=palapeli
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A single-player jigsaw puzzle game"
 url="https://kde.org/applications/games/palapeli/"
 arch=(x86_64)

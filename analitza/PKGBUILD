@@ -2,7 +2,7 @@
 
 pkgname=analitza
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Shared math libraries from Kalgebra"
 url="https://projects.kde.org/projects/kde/kdeedu/analitza"
 arch=('x86_64')

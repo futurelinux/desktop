@@ -2,7 +2,7 @@
 
 pkgname=sweeper
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc='System Cleaner'
 url='https://kde.org/applications/utilities/sweeper'
 arch=(x86_64)

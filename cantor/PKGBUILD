@@ -3,7 +3,7 @@
 
 pkgname=cantor
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="KDE frontend to mathematical software"
 url="http://kde.org/applications/education/cantor/"
 screenshot="https://www.kde.org/images/screenshots/cantor.png"

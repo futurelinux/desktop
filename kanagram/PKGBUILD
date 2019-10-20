@@ -2,7 +2,7 @@
 
 pkgname=kanagram
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Letter order game"
 url="http://kde.org/applications/education/kanagram/"
 screenshot="https://www.kde.org/images/screenshots/kanagram.png"

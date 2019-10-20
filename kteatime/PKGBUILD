@@ -3,7 +3,7 @@
 pkgname="kteatime"
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 url="http://kde.org/applications/games/kteatime/"
 screenshot='https://www.kde.org/images/screenshots/kteatime.png'
 license=('GPL' 'LGPL' 'FDL')

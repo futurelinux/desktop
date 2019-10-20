@@ -1,7 +1,7 @@
 
 pkgname=kitinerary
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Data model and extraction system for travel reservation information"
 arch=(x86_64)
 url="https://community.kde.org/KDE_PIM"

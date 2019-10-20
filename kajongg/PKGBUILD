@@ -2,7 +2,7 @@
 
 pkgname=kajongg
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="The ancient Chinese board game for 4 players"
 arch=('x86_64')
 url='http://kde.org/applications/games/kajongg/'

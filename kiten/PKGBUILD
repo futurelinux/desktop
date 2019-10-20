@@ -3,7 +3,7 @@
 
 pkgname=kiten
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Japanese reference/study tool"
 url="http://kde.org/applications/education/kiten/"
 screenshot='https://www.kde.org/images/screenshots/kiten.png'

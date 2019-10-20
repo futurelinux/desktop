@@ -3,7 +3,7 @@
 
 pkgname=rocs
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Rocs graph theory"
 url="http://kde.org/applications/education/rocs/"
 arch=('x86_64')

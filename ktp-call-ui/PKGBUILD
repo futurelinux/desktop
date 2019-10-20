@@ -2,7 +2,7 @@
 
 pkgname=ktp-call-ui
 pkgver=19.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Telepathy call handler "
 arch=('x86_64')
 url="http://www.kde.org"
