@@ -3,7 +3,7 @@
 
 pkgname=print-manager
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A KDE tool for managing print jobs and printers"
 url="https://projects.kde.org/projects/playground/base/print-manager"
 arch=('x86_64')

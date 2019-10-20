@@ -3,7 +3,7 @@
 
 pkgname=bovo
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Five-in-a-row Board Game"
 arch=('x86_64')
 url='http://kde.org/applications/games/bovo/'

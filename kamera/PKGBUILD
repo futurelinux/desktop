@@ -3,7 +3,7 @@
 
 pkgname=kamera
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="KDE integration for gphoto2 cameras"
 url="http://kde.org/applications/graphics/kamera/"
 arch=(x86_64)

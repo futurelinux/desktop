@@ -1,7 +1,7 @@
 
 pkgname=kamoso
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Kamoso is an application to take pictures and videos out of your webcam."
 url="https://userbase.kde.org/Kamoso"
 arch=('x86_64')

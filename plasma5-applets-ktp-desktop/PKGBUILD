@@ -4,7 +4,7 @@
 pkgname='plasma5-applets-ktp-desktop'
 _pkgname='ktp-desktop-applets'
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="The KDE-Telepathy Plasma desktop applets"
 arch=('x86_64')
 url="http://community.kde.org/Real-Time_Communication_and_Collaboration"

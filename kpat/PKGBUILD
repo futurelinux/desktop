@@ -3,7 +3,7 @@
 
 pkgname=kpat
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Collection of various patience games"
 arch=('x86_64')
 url='http://www.kde.org'

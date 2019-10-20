@@ -2,7 +2,7 @@
 
 pkgname=kalzium
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Periodic Table of Elements"
 url="http://kde.org/applications/education/kalzium/"
 arch=(x86_64)

@@ -3,7 +3,7 @@
 
 pkgname=kblackbox
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Blackbox logic game"
 arch=('x86_64')
 url='http://kde.org/applications/games/kblackbox/'

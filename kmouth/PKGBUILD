@@ -3,7 +3,7 @@
 pkgname=kmouth
 pkgver=19.08.2
 arch=('x86_64')
-pkgrel=1
+pkgrel=2
 pkgdesc='Speech Synthesizer Frontend'
 url='https://kde.org/applications/utilities/kmouth/'
 license=(GPL FDL)

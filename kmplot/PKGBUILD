@@ -3,7 +3,7 @@
 
 pkgname=kmplot
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Mathematical function plotter"
 url="http://kde.org/applications/education/kmplot/"
 arch=('x86_64')

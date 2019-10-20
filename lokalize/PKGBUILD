@@ -4,7 +4,7 @@
 pkgname="lokalize"
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Computer aided translation system"
 screenshot="http://www.kde.org/images/screenshots/lokalize.png"
 depends=('kross')

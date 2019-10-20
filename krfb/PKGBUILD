@@ -3,7 +3,7 @@
 pkgname=krfb
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Desktop Sharing'
 url='http://www.kde.org/applications/system/krfb'
 arch=(x86_64)

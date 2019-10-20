@@ -3,7 +3,7 @@
 pkgname="krdc"
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Desktop Sharing Client"
 url="http://kde.org/applications/internet/krdc/"
 license=('GPL' 'LGPL' 'FDL')

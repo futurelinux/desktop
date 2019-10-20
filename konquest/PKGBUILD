@@ -2,7 +2,7 @@
 
 pkgname=konquest
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="The KDE version of Gnu-Lactic"
 arch=('x86_64')
 url='http://kde.org/applications/games/konquest/'

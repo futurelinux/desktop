@@ -3,7 +3,7 @@
 
 pkgname=kapman
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Eat pills while escaping ghosts"
 arch=('x86_64')
 url='http://kde.org/applications/games/kapman/'

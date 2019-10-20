@@ -2,7 +2,7 @@
 
 pkgname=kreversi
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A simple one player strategy game played against the computer"
 arch=('x86_64')
 url='http://kde.org/applications/games/kreversi/'

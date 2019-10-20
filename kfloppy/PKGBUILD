@@ -3,7 +3,7 @@
 pkgname="kfloppy"
 arch=('x86_64')
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Floppy formatter"
 url="http://www.kde.org"
 license=('GPL' 'LGPL' 'FDL')

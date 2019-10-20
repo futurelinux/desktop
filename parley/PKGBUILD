@@ -2,7 +2,7 @@
 
 pkgname=parley
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Vocabulary trainer"
 url="http://kde.org/applications/education/parley/"
 screenshot="https://www.kde.org/images/screenshots/parley.png"

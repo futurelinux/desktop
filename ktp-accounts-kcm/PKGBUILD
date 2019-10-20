@@ -3,7 +3,7 @@
 
 pkgname=ktp-accounts-kcm
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="KCM Module for configuring Telepathy Instant Messaging Accounts"
 arch=('x86_64')
 url="https://community.kde.org/Real-Time_Communication_and_Collaboration"

@@ -1,7 +1,7 @@
 
 pkgname=kdepim-addons
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 pkgdesc="Addons for kdepim apps (as kmail addons/ kmail theme/ kaddressbook addons etc.)"
 url="https://github.com/KDE/kdepim-addons"

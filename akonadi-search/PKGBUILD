@@ -2,7 +2,7 @@
 
 pkgname=akonadi-search
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Libraries and daemons to implement searching in Akonadi"
 url='https://projects.kde.org/akonadi-search'
 arch=('x86_64')

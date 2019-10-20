@@ -3,7 +3,7 @@
 
 pkgname=kruler
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Screen ruler for measuring pixels'
 url='http://kde.org/applications/graphics/kruler/'
 arch=('x86_64')

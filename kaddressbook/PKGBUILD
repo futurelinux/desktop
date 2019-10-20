@@ -2,7 +2,7 @@
 
 pkgname=kaddressbook
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="KDE contact manager"
 arch=(x86_64)
 url="https://community.kde.org/KDE_PIM"

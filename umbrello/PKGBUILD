@@ -2,7 +2,7 @@
 
 pkgname=umbrello
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="An UML modeling tool for KDE"
 arch=('x86_64')
 url='https://kde.org/applications/development/umbrello'

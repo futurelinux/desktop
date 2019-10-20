@@ -2,7 +2,7 @@
 
 pkgname=kgpg
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A GnuPG frontend'
 url='http://kde.org/applications/utilities/kgpg/'
 arch=(x86_64)

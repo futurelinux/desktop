@@ -2,7 +2,7 @@
 
 pkgname=libksieve
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Lib which manages sieve support"
 arch=('x86_64')
 url='https://github.com/KDE/libksieve.git'

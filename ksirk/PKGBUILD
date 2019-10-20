@@ -2,7 +2,7 @@
 
 pkgname=ksirk
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A computerized version of a well known strategy game"
 url="https://kde.org/applications/games/ksirk/"
 arch=(x86_64)

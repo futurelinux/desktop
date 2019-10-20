@@ -2,7 +2,7 @@
 
 pkgname=zeroconf-ioslave
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Network Monitor for DNS-SD services (Zeroconf)'
 url='https://www.kde.org/applications/internet/'
 arch=(x86_64)

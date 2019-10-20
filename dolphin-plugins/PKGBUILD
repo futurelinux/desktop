@@ -2,7 +2,7 @@
 
 pkgname=dolphin-plugins
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Dolphin plugins'
 url="http://www.kde.org"
 arch=('x86_64')

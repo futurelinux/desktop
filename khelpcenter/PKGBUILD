@@ -2,7 +2,7 @@
 
 pkgname=khelpcenter
 pkgver=19.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Application to show KDE Applications' documentation"
 arch=('x86_64')
 url='https://projects.kde.org/projects/kde/workspace/khelpcenter'
