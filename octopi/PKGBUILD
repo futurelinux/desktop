@@ -1,98 +1,89 @@
 pkgbase=octopi
 pkgname=('octopi' 'octopi-notifier')
 pkgver=0.9.0
-pkgrel=1
+pkgrel=2
 url="https://octopiproject.wordpress.com/"
 arch=('x86_64')
 license=('GPL2')
+depends=(qtermwidget)
 makedepends=('pacman' 'pacman-contrib' 'pacmanlogviewer' 'gist' 'qt5-quickcontrols' 'chaser'
-             'alpm_octopi_utils' 'knotifications' 'kdesu')
+             'alpm_octopi_utils' 'knotifications' 'kdesu' 'qt5-tools')
 categories=('system') 
-source=("https://github.com/aarnt/octopi/archive/v${pkgver}.tar.gz"
-        '0001-remove-qtermwidget.patch')
-md5sums=('180c7f29a04343c486d6767549e6e9be'
-         '5b56cd3d5d6e25a62c94055b2384aff3')
+source=("git+https://github.com/aarnt/octopi.git") # v0.9.0^1192
+md5sums=('SKIP')
 
 prepare(){
-    cd "${srcdir}/${pkgbase}-${pkgver}"
-
-    # disable lxqt qtermwidget
-    patch -Np1 -i ../0001-remove-qtermwidget.patch
-    rm -rfv src/termwidget.{cpp,h}
+    cd "${srcdir}/${pkgbase}"
 
     # patch .desktop files
-    sed -i 's/Categories=GNOME;GTK;System;/Categories=System;Tools;/g' octopi.desktop notifier/octopi-notifier/octopi-notifier.desktop cachecleaner/octopi-cachecleaner.desktop
-    sed -i 's/\/\/#define NO_GTK_STYLE/#define NO_GTK_STYLE/g' src/main.cpp notifier/octopi-notifier/main.cpp
-    sed -i 's/Icon=octopi/Icon=octopi-notifier/g' notifier/octopi-notifier/octopi-notifier.desktop
+    sed -i 's/Categories=GNOME;GTK;System;/Categories=System;Tools;/g' octopi.desktop notifier/octopi-notifier.desktop cachecleaner/octopi-cachecleaner.desktop
+    sed -i 's/\/\/#define NO_GTK_STYLE/#define NO_GTK_STYLE/g' src/main.cpp notifier/main.cpp
+    sed -i 's/Icon=octopi/Icon=octopi-notifier/g' notifier/octopi-notifier.desktop
 
     # enable the kstatus switch
-    sed -e "s|DEFINES += ALPM_BACKEND #KSTATUS|DEFINES += ALPM_BACKEND KSTATUS|" -i notifier/octopi-notifier/octopi-notifier.pro
+    sed -e 's|\#KSTATUS|KSTATUS|' -i notifier/octopi-notifier.pro
+
+    # edit octopi.service
+    sed -e 's,speedup-octopi.sh,speedup-octopi,g' -i speedup/octopi.service
 }
 
 build() {
-   export QTERMWIDGET=off
-   cd "${srcdir}/${pkgbase}-${pkgver}"
+   cd "${srcdir}/${pkgbase}"
    /usr/lib/qt5/bin/qmake
    make
 
-   pushd "notifier/pacmanhelper"
-   msg 'building pacmanhelper'
-   qmake-qt5 pacmanhelper.pro
-   make
-   popd
-
-   pushd "notifier/octopi-notifier"
-   msg 'building octopi-notifier'
-   qmake-qt5 octopi-notifier.pro
-   make
-   popd
-
-   pushd "repoeditor"
-   msg 'building repoeditor'
-   qmake-qt5 octopi-repoeditor.pro
-   make
-   popd
-
-   pushd "cachecleaner"
-   msg 'building cachecleaner'
-   qmake-qt5 octopi-cachecleaner.pro
-   make
-   popd
+   # Modules
+   for mod in helper notifier repoeditor cachecleaner sudo; do
+     msg "building $mod"
+     pushd "$mod"
+       msg 'building pacmanhelper'
+       qmake-qt5
+       make
+     popd
+   done
 }
 
 package_octopi() {
    pkgdesc="Octopi, a powerful Pacman frontend using Qt libs"
-   depends=('qt5-quickcontrols' 'qt5-declarative' 'pacman' 'pacmanlogviewer' 'gist' 'chaser' 'alpm_octopi_utils' 'kdesu')
+   depends+=('qt5-quickcontrols' 'qt5-declarative' 'pacman' 'pacmanlogviewer' 'gist' 'chaser' 'alpm_octopi_utils' 'kdesu')
 
    # start package
-   cd ${srcdir}/${pkgbase}-${pkgver}
+   cd ${srcdir}/${pkgbase}
 
-   install -Dm 755 bin/octopi ${pkgdir}/usr/bin/octopi
-   install -Dm 755 repoeditor/bin/octopi-repoeditor ${pkgdir}/usr/bin/octopi-repoeditor
-   install -Dm 644 octopi.desktop ${pkgdir}/usr/share/applications/octopi.desktop
-   install -Dm 644 resources/images/octopi_green.png ${pkgdir}/usr/share/pixmaps/octopi.png
+   make INSTALL_ROOT=${pkgdir} install
+
+   # Modules
+   for mod in repoeditor cachecleaner sudo; do
+   msg "install $mod"
+      pushd "$mod"
+        make INSTALL_ROOT=${pkgdir} install
+      popd
+   done
+
+   # install -Dm 644 resources/images/octopi_green.png ${pkgdir}/usr/share/pixmaps/octopi.png
+
+   # Speedup
    install -Dm 644 speedup/octopi.service ${pkgdir}/usr/lib/systemd/system/octopi.service
-
-   #Octopi-cachecleaner file
-   install -Dm 755 cachecleaner/bin/octopi-cachecleaner ${pkgdir}/usr/bin/octopi-cachecleaner
-   install -Dm 644 cachecleaner/octopi-cachecleaner.desktop ${pkgdir}/usr/share/applications/octopi-cachecleaner.desktop
+   install -Dm 755 speedup/speedup-octopi.sh ${pkgdir}/usr/lib/octopi/speedup-octopi
+   ln -s /usr/lib/octopi/speedup-octopi $pkgdir/usr/bin/speedup-octopi
 }
 
 package_octopi-notifier() {
    pkgdesc="Octopi system tray notification"
-   depends=('qt5-declarative' 'knotifications')
+   depends+=('qt5-declarative' 'knotifications')
 
-   # main application
-   cd "${srcdir}/${pkgbase}-${pkgver}"
-   install -Dm755 notifier/bin/octopi-notifier ${pkgdir}/usr/bin/${pkgname}
-   install -Dm644 notifier/octopi-notifier/octopi-notifier.desktop ${pkgdir}/usr/share/applications/octopi-notifier.desktop
-   install -Dm644 resources/images/octopi_red.png ${pkgdir}/usr/share/pixmaps/${pkgname}.png
-   
-   #Pacmanhelper service files
-   install -Dm755 notifier/bin/pacmanhelper ${pkgdir}/usr/lib/octopi/pacmanhelper
+   cd "${srcdir}/${pkgbase}"
 
-   install -Dm644 notifier/pacmanhelper/polkit/org.octopi.pacman.policy ${pkgdir}/usr/share/polkit-1/actions/org.octopi.pacman.policy
-   install -Dm644 notifier/pacmanhelper/polkit/org.octopi.pacmanhelper.conf ${pkgdir}/etc/dbus-1/system.d/org.octopi.pacmanhelper.conf
-   install -Dm644 notifier/pacmanhelper/polkit/org.octopi.pacmanhelper.xml ${pkgdir}/usr/share/dbus-1/interfaces/org.octopi.pacmanhelper.xml
-   install -Dm644 notifier/pacmanhelper/polkit/org.octopi.pacmanhelper.service ${pkgdir}/usr/share/dbus-1/system-services/org.octopi.pacmanhelper.service
+   for mod in notifier helper; do
+   msg "install $mod"
+      pushd "$mod"
+        make INSTALL_ROOT=${pkgdir} install
+      popd
+   done
+
+#   install -Dm644 resources/images/octopi_red.png ${pkgdir}/usr/share/pixmaps/${pkgname}.png
+#   install -Dm644 helper/polkit/org.octopi.pacman.policy ${pkgdir}/usr/share/polkit-1/actions/org.octopi.pacman.policy
+#   install -Dm644 helper/polkit/org.octopi.pacmanhelper.conf ${pkgdir}/etc/dbus-1/system.d/org.octopi.pacmanhelper.conf
+#   install -Dm644 helper/polkit/org.octopi.pacmanhelper.xml ${pkgdir}/usr/share/dbus-1/interfaces/org.octopi.pacmanhelper.xml
+#   install -Dm644 helper/polkit/org.octopi.pacmanhelper.service ${pkgdir}/usr/share/dbus-1/system-services/org.octopi.pacmanhelper.service
 }
