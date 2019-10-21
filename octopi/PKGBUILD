@@ -1,7 +1,7 @@
 pkgbase=octopi
 pkgname=('octopi' 'octopi-notifier')
-pkgver=0.9.0
-pkgrel=2
+pkgver=0.10.0
+pkgrel=1
 url="https://octopiproject.wordpress.com/"
 arch=('x86_64')
 license=('GPL2')
@@ -60,7 +60,7 @@ package_octopi() {
       popd
    done
 
-   # install -Dm 644 resources/images/octopi_green.png ${pkgdir}/usr/share/pixmaps/octopi.png
+   install -Dm 644 resources/images/octopi_green.png ${pkgdir}/usr/share/pixmaps/octopi.png
 
    # Speedup
    install -Dm 644 speedup/octopi.service ${pkgdir}/usr/lib/systemd/system/octopi.service
@@ -81,7 +81,7 @@ package_octopi-notifier() {
       popd
    done
 
-#   install -Dm644 resources/images/octopi_red.png ${pkgdir}/usr/share/pixmaps/${pkgname}.png
+   install -Dm644 resources/images/octopi_red.png ${pkgdir}/usr/share/pixmaps/${pkgname}.png
 #   install -Dm644 helper/polkit/org.octopi.pacman.policy ${pkgdir}/usr/share/polkit-1/actions/org.octopi.pacman.policy
 #   install -Dm644 helper/polkit/org.octopi.pacmanhelper.conf ${pkgdir}/etc/dbus-1/system.d/org.octopi.pacmanhelper.conf
 #   install -Dm644 helper/polkit/org.octopi.pacmanhelper.xml ${pkgdir}/usr/share/dbus-1/interfaces/org.octopi.pacmanhelper.xml
