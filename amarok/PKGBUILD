@@ -1,13 +1,13 @@
 pkgname=amarok
 pkgver=2.9.70
-pkgrel=3
+pkgrel=2
 pkgdesc="A media player for KDE"
 arch=('x86_64')
 url="https://amarok.kde.org"
 screenshot="http://amarok.kde.org/files/Amarok-2.6-InDulciJubilo-screenie4.png"
 license=('GPL2' 'LGPL2.1' 'FDL')
 depends=('qt5-base' 'qt5-quickcontrols2' 'qt5-webengine' 'qt5-declarative' 'qt5-script' 'qt5-svg' 'mariadb' 'taglib-extras' 'ffmpeg' 
-         'libofa' 'libbluray' 'libmygpo-qt5' 'karchive' 'attica' 'kcodecs' 'kcoreaddons' 'kcrash' 'kdbusaddons' 'kdeclarative' 'kdnssd'
+         'libofa' 'libbluray' 'libmygpo-qt5' 'karchive' 'attica-qt5' 'kcodecs' 'kcoreaddons' 'kcrash' 'kdbusaddons' 'kdeclarative' 'kdnssd'
          'kglobalaccel' 'kguiaddons' 'ki18n' 'kiconthemes' 'kcmutils' 'kio' 'knewstuff' 'knotifications' 'knotifyconfig' 'kpackage' 'solid' 'ktexteditor'
          'threadweaver' 'kwidgetsaddons' 'kwindowsystem' 'kirigami' 'phonon-qt5' 'phonon-qt5-backend-vlc' 'phonon-qt5-backend-gstreamer')
 makedepends=('pkgconfig' 'extra-cmake-modules' 'cmake' 'libgpod' 'libmtp' 'docbook-xsl' 'mesa' 'clamz' 'loudmouth' 'liblastfm' 'audiocd-kio')
