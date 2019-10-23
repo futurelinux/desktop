@@ -1,7 +1,7 @@
 # Contribution from Arch:
 
 pkgname=semver
-pkgver=5.6.0
+pkgver=5.7.1
 pkgrel=1
 pkgdesc='The semantic version parser used by npm.'
 arch=('x86_64')
@@ -11,7 +11,7 @@ depends=('nodejs')
 makedepends=('npm')
 source=(https://registry.npmjs.org/$pkgname/-/$pkgname-$pkgver.tgz)
 noextract=($pkgname-$pkgver.tgz)
-sha512sums=('452f51e91df93588109fef9f90359a3a6a86a23e0493d806b3e0cfc4d5192aec04d7cdf18c9ae82afca8d48cd515e5ef52bbe600bcba1560f9c6b7494f6e6032')
+sha512sums=('b1ab9a0dffcf65d560acb4cd60746da576b589188a71a79b88a435049769425587da50af7b141d5f9e6c9cf1722bb433a6e76a6c2234a9715f39ab0777234319')
 
 package() {
   npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/$pkgname-$pkgver.tgz
