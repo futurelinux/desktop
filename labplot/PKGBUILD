@@ -1,6 +1,5 @@
 pkgname=labplot
-pkgver=2.6.0
-_pkgver=2.6
+pkgver=2.7.0
 pkgrel=1
 pkgdesc="A free software data analysis and visualization application build on top of KDE SC"
 arch=('x86_64')
@@ -9,25 +8,25 @@ license=('GPL')
 depends=('hdf5' 'netcdf' 'gsl' 'qt5-base' 'qt5-svg' 'karchive' 'kcompletion' 'kconfig' 'kconfigwidgets'
          'kcoreaddons' 'kcrash' 'kdoctools' 'ki18n' 'kiconthemes' 'ktextwidgets' 'kwidgetsaddons' 'kxmlgui'
          'knewstuff' 'kservice' 'kparts' 'syntax-highlighting' 'fftw' 'cantor' 'cfitsio' 'qt5-serialport'
-         'zlib' 'lz4' 'libcerf')
+         'zlib' 'lz4' 'libcerf' 'poppler-qt5')
 makedepends=('cmake' 'extra-cmake-modules')
 conflicts=('labplot2-svn')
 source=("https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz")
-sha256sums=('4556541fb6544cda56c2625a1fc5c9c8b0ba6bc8178af076c68a792b545c5657')
+sha256sums=('5c4d6ed7df6e98557a6b78f018933c92654b7e50e7f051ad89ec4755e0f4e935')
 
 prepare() {
-  cd $pkgname-$_pkgver
+  cd $pkgname-$pkgver
   mkdir -p build
 }
  
 build() { 
-  cd $pkgname-$_pkgver/build  
+  cd $pkgname-$pkgver/build  
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr
   make 
 }
  
 package() {
-  cd $pkgname-$_pkgver/build
+  cd $pkgname-$pkgver/build
   make DESTDIR=$pkgdir install
   
   #fix .desktop exec line
