@@ -1,18 +1,28 @@
+# COntributions from Arch:
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: James Campos <james.r.campos@gmail.com>
+# Contributor: BlackEagle < ike DOT devolder AT gmail DOT com >
+# Contributor: Dongsheng Cai <dongsheng at moodle dot com>
+# Contributor: Masutu Subric <masutu.arch at googlemail dot com>
+# Contributor: TIanyi Cui <tianyicui@gmail.com>
+
 pkgname=nodejs
-pkgver=10.15.3
+pkgver=13.0.1
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript'
 arch=('x86_64')
-url='http://nodejs.org/'
+url='https://nodejs.org/'
 license=('MIT')
+depends=('openssl' 'zlib' 'icu' 'libuv' 'c-ares' 'libnghttp2')
 makedepends=('python2' 'procps-ng')
 optdepends=('npm: nodejs package manager')
-checkdepends=('curl')
-source=("http://nodejs.org/dist/v$pkgver/node-v$pkgver.tar.gz")
-sha256sums=('db460a63d057ac015b75bb6a879fcbe2fefaaf22afa4b6f6445b9db61ce2270d')
+source=("nodejs-$pkgver.tar.gz::https://github.com/nodejs/node/archive/v$pkgver.tar.gz")
+sha256sums=('033afe8199fe1fce30887de3ab6986a3c133920cabea6711b00d1686bce5d1e9872b633009c99f87dbda0450c2096456b62056805ccb771b634fbf8aaceb2206')
 
 prepare() {
-  cd node-v$pkgver
+  cd node-$pkgver
 
   msg 'Fixing for python2 name'
   find -type f -exec sed \
@@ -26,32 +36,27 @@ prepare() {
 }
 
 build() {
-  cd node-v$pkgver
+  cd node-$pkgver
 
   export PYTHON=python2
   ./configure \
     --prefix=/usr \
-    --with-intl=full-icu \
-    --download=all \
-    --without-npm
+    --with-intl=system-icu \
+    --without-npm \
+    --shared-openssl \
+    --shared-zlib \
+    --shared-libuv \
+    --experimental-http-parser \
+    --shared-cares \
+    --shared-nghttp2
 
   make
 }
 
-check() {
-  cd node-v$pkgver
-  make test || warning "Tests failed"
-}
-
 package() {
-  cd node-v$pkgver
+  cd node-$pkgver
 
   make DESTDIR="$pkgdir" install
-
-  # install docs as per user request
-  install -d "$pkgdir"/usr/share/doc/nodejs
-  cp -r doc/api/{*.html,assets} \
-    "$pkgdir"/usr/share/doc/nodejs
 
   install -D -m644 LICENSE \
     "$pkgdir"/usr/share/licenses/nodejs/LICENSE
