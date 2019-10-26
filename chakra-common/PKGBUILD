@@ -1,4 +1,7 @@
-# Include global configuration
+# Maintainer:   totte <totte@chakralinux.org>
+# Contributors: Andrea Scarpino <andrea@archlinux.org>
+#               Antonio Rojas <arojas@archlinux.org>
+#               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=chakra-common
 arch=('x86_64')
@@ -23,10 +26,7 @@ source=('Chakra-Bugs.desktop'
         'Chakra-Forum.desktop'
         'Chakra-Homepage.desktop'
         'Chakra.directory'
-        #'chakra-backup.sh'
-        #'Chakra-backup.desktop'
         'chakra-icons.tar.gz'
-        #'chakra-helper.sh'
         'kde4.sh'
         'inputmethod.profile'
         'chakra-check-links.py::https://raw.githubusercontent.com/Inkane/listMissingLibs/master/list_missing_libs.py')
@@ -47,10 +47,6 @@ package() {
     # Install scripts for kf5 
     install -D -m755 -o root -g root $srcdir/kde4.sh $pkgdir/etc/xdg/plasma-workspace/env/kde4.sh
 
-    # Install backup script
-    #install -D -m755 -o root -g root ${srcdir}/chakra-backup.sh ${pkgdir}/usr/bin/chakra-backup
-    #install -D -m644 -o root -g root ${srcdir}/Chakra-backup.desktop ${pkgdir}/usr/share/applications/Chakra-backup.desktop
-
     # Install Chakra icons
     cd ${srcdir}/chakra-icons/
     mkdir -p ${pkgdir}/usr/share/icons/hicolor/scalable/apps/
@@ -70,12 +66,6 @@ package() {
     install -m644 Chakra*.desktop ${pkgdir}/usr/share/applications
     install -m644 Chakra.directory ${pkgdir}/usr/share/desktop-directories/
   
-    # chakra-paste
-    #install -Dm755 chakra-paste-chakra-paste/chakra-paste "${pkgdir}/usr/bin/chakra-paste"
-  
-    # chakra-helper
-#    install -Dm755 chakra-helper.sh "${pkgdir}/usr/bin/chakra-helper"
-
     # chakra-check-links
     install -Dm755 chakra-check-links.py "${pkgdir}/usr/bin/chakra-check-links"
 

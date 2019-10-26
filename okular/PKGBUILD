@@ -1,5 +1,7 @@
-# Contributions from Arch: https://www.archlinux.org/packages/extra/x86_64/kdegraphics-okular/
-# Include global configuration
+# Maintainer:   totte <totte@chakralinux.org>
+# Contributors: Andrea Scarpino <andrea@archlinux.org>
+#               Antonio Rojas <arojas@archlinux.org>
+#               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=okular
 pkgver=19.08.2

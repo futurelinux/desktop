@@ -1,3 +1,7 @@
+# Maintainer:   totte <totte@chakralinux.org>
+# Contributors: Andrea Scarpino <andrea@archlinux.org>
+#               Antonio Rojas <arojas@archlinux.org>
+#               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kopete
 pkgver=19.08.2
@@ -25,28 +29,31 @@ validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aac
 prepare() {
   mkdir -p build
 
-# fix build with mediastreamer 2.14
+  # fix build with mediastreamer 2.14
   cd kopete-$pkgver
   patch -p1 -i ../kopete-mediastreamer2.14.patch
-# fix build with OpenSSL 1.1 (Fedora patch)
+
+  # fix build with OpenSSL 1.1 (Fedora patch)
   patch -p1 -i ../kopete-openssl-1.1.patch
-# fix link to pthread
+
+  # fix link to pthread
   patch -p1 -i ../kopete-pthread-link.patch
-# support SRTP2
+
+  # support SRTP2
   patch -p1 -i ../kopete-srtp2.patch
 }
 
 build() {
   cd build
   cmake ../${pkgname}-${pkgver} \
-         -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DKDE_INSTALL_LIBDIR=lib \
-        -DKDE_INSTALL_SYSCONFDIR=/etc \
-        -DKDE_INSTALL_LIBEXECDIR=lib \
-        -DUDEV_RULES_INSTALL_DIR=/usr/lib/udev/rules.d \
-        -DBUILD_TESTING=OFF \
-        -DKDE_INSTALL_USE_QT_SYS_PATHS=ON "$@" 
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DKDE_INSTALL_SYSCONFDIR=/etc \
+    -DKDE_INSTALL_LIBEXECDIR=lib \
+    -DUDEV_RULES_INSTALL_DIR=/usr/lib/udev/rules.d \
+    -DBUILD_TESTING=OFF \
+    -DKDE_INSTALL_USE_QT_SYS_PATHS=ON "$@"
   make
 }
 

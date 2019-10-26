@@ -1,4 +1,7 @@
-# Include global configuration
+# Maintainer:   totte <totte@chakralinux.org>
+# Contributors: Andrea Scarpino <andrea@archlinux.org>
+#               Antonio Rojas <arojas@archlinux.org>
+#               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kde-dev-utils
 pkgver=19.08.2
@@ -27,8 +30,8 @@ prepare() {
 build() {
   cd build
   cmake ../${pkgname}-${pkgver} \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DBUILD_TESTING=OFF
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_TESTING=OFF
   make
 }
 
