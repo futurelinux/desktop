@@ -6,7 +6,7 @@ url="https://octopiproject.wordpress.com/"
 arch=('x86_64')
 license=('GPL3')
 makedepends=('vala' 'git')
-source=("git+https://github.com/aarnt/${pkgname}.git#commit=bd9fcd5")
+source=("git+https://github.com/BrLi/${pkgname}.git#commit=2ee212c")
 sha1sums=('SKIP')
          
 build() {
@@ -16,5 +16,5 @@ build() {
 
 package() {
    cd ${pkgname}
-   make install   
+   make DESTDIR=${pkgdir} install
 }
