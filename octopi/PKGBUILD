@@ -8,6 +8,7 @@ license=('GPL2')
 depends=(qtermwidget qt5-quickcontrols qt5-declarative pacman pacmanlogviewer gist chaser
          alpm_octopi_utils kdesu knotifications)
 makedepends=(pacman-contrib qt5-tools)
+provides=(octopi-notifier)
 replaces=(octopi-notifier)
 conflicts=(octopi-notifier)
 categories=('system') 
