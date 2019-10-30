@@ -1,5 +1,5 @@
 pkgname=smplayer
-pkgver=19.1.0
+pkgver=19.10.0
 pkgrel=1
 pkgdesc="A complete front-end for MPlayer"
 arch=('x86_64')
@@ -13,7 +13,7 @@ optdepends=('smplayer-themes: icon themes collection'
             'mpv: for using mpv instead of mplayer')
 categories=('multimedia')
 source=(https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.bz2)
-sha256sums=('7a483d24c928fa51e8d48322cfd7d747fa5bf6cf587505d29a44c256abb64360')
+sha256sums=('54f751c62977899307c838936d05018b0a4884ee95e0e0415ceb92054286076b')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}
