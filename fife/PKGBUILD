@@ -2,7 +2,7 @@
 
 pkgname=fife
 pkgver=0.4.2
-pkgrel=1
+pkgrel=2
 _githubname=fifengine
 pkgdesc="Flexible Isometric Free Engine is a cross platform game creation framework"
 arch=(x86_64)
@@ -13,17 +13,13 @@ makedepends=('cmake' 'mesa' 'swig')
 source=("https://github.com/${_githubname}/${_githubname}/archive/${pkgver}.tar.gz")
 sha256sums=('e882b55befa36ae2f1a89ada16af0f814a1b78f7cbe6021ec5b1605604cf8ff8')
 
-prepare() {
-  # use python3
-  export PYTHON=python3
-}
-
 build() {
   cd "${_githubname}-${pkgver}"
   [[ -d "build" ]] && rm -r "build"
   mkdir -p "build" && cd "build"
   cmake \
     -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+    -DPython_ADDITIONAL_VERSIONS=3 \
     ..
   make
   # If compilation seems to stall at 99% for ages, do not abort!
