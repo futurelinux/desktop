@@ -1,5 +1,5 @@
 pkgname=smtube
-pkgver=19.6.0
+pkgver=18.11.0
 pkgrel=1
 pkgdesc="Search and download videos from YouTube"
 arch=('x86_64')
@@ -14,7 +14,7 @@ optdepends=('mplayer: play videos with MPlayer'
             'mpv: play videos with MPV'
             'youtube-dl: download videos')
 source=("https://downloads.sourceforge.net/smtube/${pkgname}-${pkgver}.tar.bz2")
-sha256sums=('f54233ecc2563fd88217ffa5843b232fc5a8514c09c99e04fea16465dad47034')
+sha256sums=('173f7f0902d336ef423b2074654bef461326ee6fba669f54865c81ac5b3daa65')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"

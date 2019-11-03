@@ -1,17 +1,16 @@
-# Contributions from Arch:
 # Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Patrick Griffis <tingping@tingping.se>
 
 pkgname=xdg-desktop-portal
-pkgver=1.5.2
+pkgver=1.2.0
 pkgrel=1
 pkgdesc="Desktop integration portals for sandboxed apps"
 url="https://github.com/flatpak/xdg-desktop-portal"
 arch=(x86_64)
 license=(LGPL2.1)
-depends=(glib2 pipewire fuse2 geoclue libportal)
-makedepends=(python3 xmlto docbook-xsl git flatpak)
-_commit=5a4e6ed3b4c9322a6e3e79dd10cb881f25e84335  # tags/1.5.2^0
+depends=(glib2 pipewire fuse2 geoclue)
+makedepends=(python xmlto docbook-xsl git flatpak)
+_commit=f8e4054997a077bb7ab6bebe3dfc65145ec6941f  # tags/1.2.0^0
 source=("git+https://github.com/flatpak/xdg-desktop-portal#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -27,8 +26,13 @@ prepare() {
 
 build() {
   cd $pkgname
-  ./configure --prefix=/usr --libexecdir=/usr/lib
+  ./configure --prefix=/usr --libexecdir=/usr/lib --enable-pipewire
   make 
+}
+
+check() {
+  cd $pkgname
+  make check
 }
 
 package() {
