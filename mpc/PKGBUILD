@@ -1,15 +1,15 @@
 pkgname=mpc
-pkgver=0.30
+pkgver=0.33
 pkgrel=1
 pkgdesc="Minimalist command line interface to MPD"
 arch=('x86_64')
-url='http://www.musicpd.org/clients/mpc/'
+url='https://www.musicpd.org/clients/mpc/'
 license=('GPL2')
 depends=('libmpdclient')
 makedepends=('meson' 'python3-sphinx')
 options=('!emptydirs')
 source=("http://www.musicpd.org/download/${pkgname}/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('65fc5b0a8430efe9acbe6e261127960682764b20ab994676371bdc797d867fce')
+sha256sums=('4f40ccbe18f5095437283cfc525a97815e983cbfd3a29e48ff610fa4f1bf1296')
 
 build() {
     cd "$srcdir/$pkgname-$pkgver"
