@@ -1,32 +1,26 @@
 pkgname=gpxsee
 _pkgname=GPXSee
-pkgver=7.2
+pkgver=7.17
 pkgrel=1
 pkgdesc='GPS log file viewer and analyzer'
 arch=(x86_64)
-url='http://www.gpxsee.org/'
+url='https://www.gpxsee.org/'
 license=(GPL3)
-depends=(desktop-file-utils hicolor-icon-theme qt5-imageformats)
+depends=(desktop-file-utils qt5-imageformats)
 makedepends=(qt5-tools)
 source=(https://downloads.sourceforge.net/$pkgname/$_pkgname-$pkgver.tar.gz)
-sha256sums=('b26350f9ab7890c322c04951d3ae528c66d5cfea07cbb3f0688d83ec82ff6098')
+sha256sums=('d639c15ecf90583354bc4178efc5fd64e90f308f875acb64c0c77959e1b4fb89')
 
 build() {
   cd $_pkgname-$pkgver
   lrelease-qt5 gpxsee.pro
-  qmake-qt5 gpxsee.pro
+  qmake-qt5 gpxsee.pro PREFIX=/usr
   make
 }
 
 package() {
   cd $_pkgname-$pkgver
-  install -dm755 "$pkgdir"/usr/share/$pkgname/{csv,maps,translations}
-  install -Dm755 gpxsee "$pkgdir"/usr/bin/$pkgname
-  install -Dm644 pkg/csv/* "$pkgdir"/usr/share/$pkgname/csv
-  install -Dm644 pkg/maps/* "$pkgdir"/usr/share/$pkgname/maps
-  install -Dm644 lang/*.qm "$pkgdir"/usr/share/$pkgname/translations
-  install -Dm644 icons/gpxsee.png "$pkgdir"/usr/share/icons/hicolor/64x64/apps/$pkgname.png
-  install -Dm644 pkg/gpxsee.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
-  install -Dm644 pkg/gpxsee.xml "$pkgdir"/usr/share/mime/packages/$pkgname.xml
+  make INSTALL_ROOT="$pkgdir" install
+  # Install appdata
   install -Dm644 pkg/appdata.xml "$pkgdir"/usr/share/metainfo/$pkgname.appdata.xml
 }
