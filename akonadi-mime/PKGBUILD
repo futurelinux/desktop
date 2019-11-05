@@ -4,17 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=akonadi-mime
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgver=1
 pkgdesc="Libraries and daemons to implement basic email handling"
 arch=(x86_64)
-url="https://community.kde.org/KDE_PIM"
+url="https://kontact.kde.org"
 license=(LGPL)
-depends=(akonadi kmime)
-makedepends=(extra-cmake-modules python kdoctools boost kdelibs4support kdesignerplugin)
+depends=(libakonadi kmime)
+makedepends=(extra-cmake-modules kdoctools boost)
 
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('16f8034d7990828c50a85474fe16641dfa46e22d00f49d8045d3483c61815264'
+sha256sums=('e779a2b73b628702aec52b1d4345533f54f06624915b193766af3ef6a16d030f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -25,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -39,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
