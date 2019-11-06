@@ -2,22 +2,20 @@
 # Contributors: Andrea Scarpino <andrea@archlinux.org>
 #               Antonio Rojas <arojas@archlinux.org>
 #               Felix Yan <felixonmars@archlinux.org>
+#               Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=dolphin
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgver=1
 pkgdesc="File Manager"
-arch=('x86_64')
 url="http://kde.org/applications/system/dolphin/"
+arch=(x86_64)
 license=(LGPL)
-depends=('baloo-widgets' 'knewstuff' 'kio-extras' 'ktexteditor' 'kactivities-frameworks' 'kio>=5.16.0' 'kcmutils')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-conflicts=('kde-baseapps-dolphin<15.04.3-1')
-replaces=(kde-baseapps-dolphin)
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdebase')
-options=('docs' 'debug')
+depends=(baloo-widgets knewstuff kio-extras kcmutils kparts kinit phonon-qt5)
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('0c56515737fc0f96020b3c157a93023095d1a1e23637e7670e068c6c286bbc3b'
+sha256sums=('de71f52324c15d692448ac4c79c1e0fcf35df5c03349a8bcbebfae20d9f69d4e'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +26,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +40,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
