@@ -4,20 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=bomber
-pkgver=19.08.2
-pkgrel=3
-pkgdesc="Arcade Bombing Game"
-arch=('x86_64')
-url='http://kde.org/applications/games/bomber/'
-license=('GPL' 'LGPL' 'FDL')
-depends=("libkdegames")
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdegames')
-replaces=('kdegames-bomber')
-conflicts=('kdegames-bomber')
-options=('docs' 'debug')
+pkgver=19.08.3
+pkgver=1
+pkgdesc="A single player arcade game"
+arch=(x86_64)
+url="https://kde.org/applications/games/bomber/"
+license=(GPL LGPL FDL)
+depends=(libkdegames hi-color-icontheme)
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('26285fe9e510cd334bb933281c615c2971084bfa787618ba0190175c36ada741'
+sha256sums=('3a0ef6ca5a05253b1554218a1dc699c5547a073da5cecdf75445e0f72b687fd3'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
