@@ -4,18 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=calendarsupport
-pkgver=19.08.2
-pkgrel=3
-pkgdesc="This lib provides calendar support"
-arch=('x86_64')
-url='https://github.com/KDE/pimcommon'
-license=('LGPL')
+pkgver=19.08.3
+pkgver=1
+pkgdesc="Calendar support library"
+url="https://kontact.kde.org"
+arch=(x86_64)
+license=(LGPL)
 depends=(kdepim-apps-libs kholidays akonadi-calendar)
-makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools')
-groups=(kde kde-applications kdeedu kde-uninstall)
-options=('docs' 'debug')
+makedepends=(extra-cmake-modules boost qt5-tools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('9ae448463ca60e075f1ea9a22489f0acf6ea672c00f9bd7b49027e548e82c2af'
+sha256sums=('2406dd3387383cc58eb0e6f10bf50cc1b206c75096c6c6af27c1102c6d818ec3'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -26,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -40,5 +39,5 @@ build() {
 
 package() {
     cd build
-    make DESTDIR=${pkgdir} install
+    make DESTDIR="$pkgdir" install
 }
