@@ -1,5 +1,5 @@
 pkgname=android-sdk-platform-tools
-pkgver=r29.0.4
+pkgver=r29.0.5
 pkgrel=1
 pkgdesc='Platform-Tools for Google Android SDK (adb, aapt, aidl, dexdump, dx and fastboot) - works with Ubuntu Touch too'
 arch=('x86_64')
@@ -15,7 +15,7 @@ source=("https://dl.google.com/android/repository/platform-tools_${pkgver}-linux
 	"https://github.com/MikereDD/android-completion/archive/master.zip"
         "adb.service"
         "license.html")
-sha1sums=('a266af09893d9005d887e5f788ddb68f006ccd3e'
+sha1sums=('2016a7e8f3f696583c0069881f4270365e247cd7'
           '53c079f9344d60d280c33b3bb4a05cdca20f2d39'
           '49a40c129199844603afe71fce69c0908e062393'
           'e91e23015f25aec78c03012b2f78f42a1c8392d6')
