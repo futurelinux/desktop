@@ -1,5 +1,5 @@
 pkgname=veusz
-pkgver=3.0.1
+pkgver=3.1
 pkgrel=1
 pkgdesc="A scientific plotting package, designed to create publication-ready Postscript output"
 arch=('x86_64')
@@ -11,7 +11,7 @@ source=(https://github.com/veusz/veusz/archive/$pkgname-$pkgver.tar.gz
         veusz.desktop)
 categories=('education' 'science')
 screenshot=('http://home.gna.org/veusz/screenshots/linux_mainwin.png')
-sha256sums=('76f4feb400be4ada538e832cce352211383dbdb530f41f379c9dbf28e3591db3'
+sha256sums=('b76d2f48db941f338b9b7aab9bb3784e2720651e1131517fb1be8f56a0840923'
             '33e17492c79986d0e7c545648fc50ab17d62f0207a73329689d0c4192a0d0b1d')
 
 build() {
