@@ -4,21 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=filelight
-arch=('x86_64')
-pkgver=19.08.2
-pkgrel=3
-url="http://www.kde.org"
-license=('GPL' 'LGPL' 'FDL')
-options=('docs' 'debug')
+pkgver=19.08.3
+pkgver=1
 pkgdesc="Creates a complex, but data-rich graphical representation of the files and directories on your computer"
-depends=('kparts')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-conflicts=('kdeutils-filelight')
-replaces=('kdeutils-filelight')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
-categories=('utils')
+url="https://kde.org/applications/utilities/filelight"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+depends=(kio hicolor-icon-theme)
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('313ff23fceb427509b37efa012535e651618d42bde35c62cdc7732e463c346a6'
+sha256sums=('95fa38574292a2aa8d3d90749fbbb61c5005889ef1df1aaa04d2d789bbf4fb00'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
