@@ -4,20 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kcolorchooser
-pkgver=19.08.2
-pkgrel=3
-pkgdesc='Colour chooser'
-url='http://kde.org/applications/graphics/kcolorchooser/'
-arch=('x86_64')
-license=('GPL' 'LGPL' 'FDL')
-depends=(kio libgphoto2)
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="Colour chooser"
+url="https://kde.org/applications/graphics/kcolorchooser/"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+depends=(kxmlgui hicolor-icon-theme)
 makedepends=(extra-cmake-modules)
-groups=(kde kde-applications kdegraphics kde-uninstall)
-conflicts=(kdegraphics-kcolorchooser)
-replaces=(kdegraphics-kcolorchooser)
-options=('docs' 'debug')
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('4eb50f314b190f1980e73212a45fe86db39f278f789288cd76cb0763f3176edc'
+sha256sums=('0c3d45ceb9029f0d316e61b3f403838b4c7de82a3211a231b539e6755386c657'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
