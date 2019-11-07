@@ -1,13 +1,13 @@
 pkgname=octopi
 pkgver=0.10.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Octopi, a powerful Pacman frontend using Qt libs"
 url="https://octopiproject.wordpress.com/"
 arch=('x86_64')
 license=('GPL2')
 depends=(qtermwidget qt5-quickcontrols qt5-declarative pacman pacmanlogviewer gist chaser
-         alpm_octopi_utils kdesu knotifications)
-makedepends=(pacman-contrib qt5-tools)
+         pacman-contrib alpm_octopi_utils kdesu knotifications)
+makedepends=(qt5-tools)
 provides=(octopi-notifier)
 replaces=(octopi-notifier)
 conflicts=(octopi-notifier)
