@@ -8,7 +8,7 @@
 
 pkgname=kamoso
 pkgver=19.08.3
-pkgver=1
+pkgrel=1
 pkgdesc="A webcam recorder"
 url="https://userbase.kde.org/Kamoso"
 arch=(x86_64)

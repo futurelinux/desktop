@@ -5,7 +5,7 @@
 
 pkgname=bomber
 pkgver=19.08.3
-pkgver=1
+pkgrel=1
 pkgdesc="A single player arcade game"
 url="https://kde.org/applications/games/bomber/"
 arch=(x86_64)

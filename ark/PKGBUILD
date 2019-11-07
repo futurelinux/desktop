@@ -6,7 +6,7 @@
 pkgname=ark
 arch=(x86_64)
 pkgver=19.08.3
-pkgver=1
+pkgrel=1
 pkgdesc="Archiving tool for various compression formats"
 url="https://kde.org/applications/utilities/ark/"
 license=(GPL)

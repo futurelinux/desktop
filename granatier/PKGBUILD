@@ -5,7 +5,7 @@
 
 pkgname=granatier
 pkgver=19.08.3
-pkgver=1
+pkgrel=1
 pkgdesc="Granatier is a clone of the classic Bomberman game, inspired by the Clanbomber clone"
 url="https://kde.org/applications/games/granatier/"
 arch=(x86_64)

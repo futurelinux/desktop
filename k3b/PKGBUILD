@@ -6,7 +6,7 @@
 
 pkgname=k3b
 pkgver=19.08.3
-pkgver=1
+pkgrel=1
 pkgdesc="Feature-rich and easy to handle CD burning application"
 url="https://userbase.kde.org/K3b"
 arch=(x86_64)
