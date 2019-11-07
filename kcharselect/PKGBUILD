@@ -3,21 +3,18 @@
 #               Antonio Rojas <arojas@archlinux.org>
 #               Felix Yan <felixonmars@archlinux.org>
 
-pkgname="kcharselect"
-arch=('x86_64')
-pkgver=19.08.2
-pkgrel=3
+pkgname=kcharselect
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="Character selector"
-url="http://kde.org/applications/utilities/kcharselect/"
-license=('GPL' 'LGPL' 'FDL')
-options=('docs' 'debug')
-depends=('kbookmarks')
-makedepends=('extra-cmake-modules' 'python3' 'kdoctools')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
-conflicts=("kdeutils-kcharselect")
-replaces=("kdeutils-kcharselect")
+url="https://kde.org/applications/utilities/kcharselect/"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+options=(debug)
+depends=(kbookmarks)
+makedepends=(extra-cmake-modules kdoctools)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('ff2a8c78fc4a12dd727e8ad8677216d5a480a8c82aff97269397ee8ae01e36df'
+sha256sums=('f294965fc7cf8b1063b611233a98fab13a00263f1d4fd254fb8b53b3f125bc52'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
