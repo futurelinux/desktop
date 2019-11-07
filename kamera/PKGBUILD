@@ -4,20 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kamera
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgver=1
 pkgdesc="KDE integration for gphoto2 cameras"
-url="http://kde.org/applications/graphics/kamera/"
+url="https://kde.org/applications/graphics/kamera/"
 arch=(x86_64)
 license=(GPL LGPL FDL)
-groups=(kde kde-applications kdegraphics kde-uninstall)
 depends=(kio libgphoto2)
 makedepends=(extra-cmake-modules kdoctools)
-conflicts=(kdegraphics-kamera)
-replaces=(kdegraphics-kamera)
-options=('docs' 'debug')
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('2db474afa6201f330631640e04e1bd6ebb96838ce4c16d37617a10063b1fa757'
+sha256sums=('93a8a3dc6c4927b28a6ee0f09f1709e67f5bc38281b3775390513f2e69086942'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
