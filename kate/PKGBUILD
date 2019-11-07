@@ -4,28 +4,26 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgbase=kate
-pkgname=('kate' 'kwrite')
-pkgver=19.08.2
-pkgrel=3
-pkgdesc='Advanced editor component which is used in numerous KDE applications requiring a text editing component'
-arch=('x86_64')
-license=('GPL' 'LGPL' 'FDL')
-makedepends=(extra-cmake-modules kdoctools plasma-framework knewstuff ktexteditor
-             threadweaver kitemmodels kactivities python3)
-options=('debug')
+pkgname=(kate kwrite)
+pkgver=19.08.3
+pkgrel=1
+arch=(x86_64)
+license=(GPL LGPL FDL)
+makedepends=(extra-cmake-modules kdoctools plasma-framework knewstuff kitemmodels ktexteditor threadweaver kactivities)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgbase-$pkgver.tar.xz"{,.sig})
-sha256sums=('9897f652996e3ebca8a749562cc2d609d704c80b08ec4716622def38f5980b47'
+sha256sums=('ab9f076e7e825fca64252b366e637e34157f1f875aa573bdae333fc240e0ec71'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
 
 prepare() {
-  mkdir build
+  mkdir -p build
 }
 
 build() {
   cd build
-  cmake ../${pkgbase}-${pkgver} \
+  cmake ../$pkgbase-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -38,14 +36,9 @@ build() {
 }
 
 package_kwrite() {
-  pkgdesc="Text Editor"
-  groups=('kde')
-  url="http://www.kde.org/applications/utilities/kwrite/"
+  pkgdesc="Text editor"
+  url="https://www.kde.org/applications/utilities/kwrite/"
   depends=(ktexteditor kactivities hicolor-icon-theme)
-  screenshot="https://www.kde.org/images/screenshots/kwrite.png"
-  replaces=('kde-baseapps-kwrite')
-  conflicts=('kde-baseapps-kwrite')
-  provides=('kde-baseapps-kwrite')
 
   cd build
   make DESTDIR="$pkgdir" install
@@ -59,14 +52,9 @@ package_kwrite() {
 }
 
 package_kate() {
-  pkgdesc="Advanced Text Editor"
-  groups=('kde')
-  url="http://www.kde.org/applications/utilities/kate/"
-  depends=(knewstuff ktexteditor threadweaver kitemmodels kactivities hicolor-icon-theme)
-  screenshot="https://www.kde.org/images/screenshots/kate.png"
-  replaces=('kdesdk-kate')
-  conflicts=('kdesdk-kate')
-  provides=('kdesdk-kate')
+  pkgdesc="Advanced text editor"
+  url="https://www.kde.org/applications/utilities/kate/"
+  depends=(knewstuff ktexteditor threadweaver kactivities hicolor-icon-theme)
   optdepends=('konsole: open a terminal in Kate')
 
   cd build
