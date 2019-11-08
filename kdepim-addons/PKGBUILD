@@ -4,18 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kdepim-addons
-pkgver=19.08.2
-pkgrel=3
-arch=('x86_64')
-pkgdesc="Addons for kdepim apps (as kmail addons/ kmail theme/ kaddressbook addons etc.)"
-url="https://github.com/KDE/kdepim-addons"
-license=('GPL' 'LGPL' 'FDL')
-depends=(incidenceeditor ktnef libksieve akonadi-notes akonadi-import-wizard kparts poppler-qt5 kitinerary kontactinterface)
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="Addons for KDE PIM applications"
+url="https://kontact.kde.org"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+depends=(incidenceeditor ktnef libksieve akonadi-notes akonadi-import-wizard poppler-qt5 kitinerary kontactinterface)
 makedepends=(extra-cmake-modules kdoctools boost)
-groups=('kde' 'kde-applications' 'kdepim' 'kde-uninstall')
-options=('docs' 'debug')
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('1e7d647689d2bfa243a2f4583df7030238409fb05bbcda5b168ef024e6accc89'
+sha256sums=('8c85cec6b827da6025364ec6bbccdf2ab22c73380933aed69cf3c86be52cff24'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -26,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -40,6 +39,6 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
 
