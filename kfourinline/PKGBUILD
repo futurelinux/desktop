@@ -4,21 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kfourinline
-pkgver=19.08.2
-pkgrel=3
-pkgdesc="Four-in-a-row board game"
-arch=('x86_64')
-url='http://kde.org/applications/games/kfourinline/'
-screenshot='https://www.kde.org/images/screenshots/kfourinline.png'
-license=('GPL' 'LGPL' 'FDL')
-depends=('knotifyconfig' 'libkdegames' 'kdelibs4support')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdegames')
-replaces=('kdegames-kfourinline')
-conflicts=('kdegames-kfourinline')
-options=('docs' 'debug')
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="Four-in-a-row game"
+url="https://www.kde.org/applications/games/kfourinline/"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+depends=(libkdegames hicolor-icon-theme)
+makedepends=(extra-cmake-modules kdoctools)
+options=(docs debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('14d1cd1be7f1524758697f79d55c0c40e8e6359f2039929349e017a97acdc4dc'
+sha256sums=('c35b52b41398616798d75e62fa77488bf84e924e91a432cd1b96b1c09ad1f9ee'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
