@@ -4,8 +4,8 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ktp-auth-handler
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="Telepathy contact list application "
 arch=('x86_64')
 url="https://community.kde.org/Real-Time_Communication_and_Collaboration"
@@ -14,7 +14,7 @@ depends=('ktp-common-internals' 'kdewebkit' 'qca-qt5')
 makedepends=('extra-cmake-modules')
 groups=('kde-telepathy')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('b13304909d8e66adc2a0658081fd41e72b0ef7513e041b9a8f3261a8ffd7bb22'
+sha256sums=('6275ea746a28857cc77cc031a75a5f2278cf85dd1ef3c04e47006c4316975659'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -25,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -39,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
