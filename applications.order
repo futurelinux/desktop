@@ -213,3 +213,5 @@ kipi-plugins
 kirigami-gallery
 knights
 yakuake
+
+# Dummy line for the GitLab CI to build all these packages
