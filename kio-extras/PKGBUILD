@@ -4,32 +4,40 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kio-extras
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="Additional components to increase the functionality of KIO"
-arch=('x86_64')
-url='https://projects.kde.org/projects/kde/workspace/kio-extras'
-license=('LGPL')
-depends=('kdelibs4support' 'khtml' 'kdnssd' 'libssh' 'smbclient'
-         'exiv2' 'openexr' 'libmtp' 'kpty' 'kactivities' 'syntax-highlighting')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-groups=('kde' 'kde-applications' 'kdenetwork')
-options=("debug")
-conflicts=('kio-mtp-git')
-replaces=('kio-mtp-git')
-source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('a0b8f08ab8f9d36cfdc950470f75726e90e9fba159bc2035931cfa6efbfe4394'
-            'SKIP')
+url="https://www.kde.org/applications/internet/"
+arch=(x86_64)
+license=(LGPL)
+depends=(kio kdnssd libssh smbclient exiv2 openexr libmtp kpty kactivities syntax-highlighting)
+optdepends=('qt5-imageformats: thumbnails for additional image formats'
+            'kimageformats: thumbnails for additional image formats' 'taglib: audio file thumbnails'
+            'khtml: man kioslave' 'phonon-qt5: audio file previews' 'libappimage: AppImage thumbnails')
+makedepends=(extra-cmake-modules kdoctools gperf taglib khtml)
+options=(debug)
+source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig}
+        kio-extras-rpc.patch
+        kio-extras-libssh-0.9.patch)
+sha256sums=('e38e872f78ff24fe512ec7ff9ed4f6b6a8e1fef6111fdb0222c133bed0a8861f'
+            'SKIP'
+            '94d9fd44daddb07fcd18d4c49c379838bdc5e4f0bdd9e03519814295eb6b7895'
+            'fae0f9a3a3faa7727a972486ec900ce53d03c9961f018a8821ec0d1cea95b538')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
 
 prepare() {
   mkdir -p build
+
+  cd $pkgname-$pkgver
+  patch -p1 -i ../kio-extras-rpc.patch # fix build of kio-nfs with glibc 2.27
+  patch -p1 -i ../kio-extras-libssh-0.9.patch  # fix build with libssh 0.9
 }
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
+    #-DLIBAPPIMAGE_LIBRARIES=libappimage.so \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -44,5 +52,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
