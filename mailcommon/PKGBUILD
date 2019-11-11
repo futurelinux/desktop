@@ -13,7 +13,7 @@ license=('LGPL')
 depends=('akonadi' 'ki18n' 'kmime' 'kcodecs' 'kiconthemes' 'karchive' 'kitemviews'
          'kwindowsystem' 'kxmlgui' 'messagelib' 'libkdepim' 'pimcommon' 'mailimporter' 'kmailtransport'
          'kldap' 'phonon-qt5')
-makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools')
+makedepends=(extra-cmake-modules kdoctools qt5-tools boost)
 groups=(kde kde-applications kdepim kde-uninstall)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})

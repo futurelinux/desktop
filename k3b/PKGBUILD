@@ -12,7 +12,7 @@ url="https://userbase.kde.org/K3b"
 arch=(x86_64)
 license=(GPL)
 depends=(libkcddb kcmutils knotifyconfig libmad kfilemetadata knewstuff
-         libmpcdec libdvdread libburn qt5-webkit)
+         libmpcdec libdvdread libburn qt5-webkit libsamplerate)
 makedepends=(extra-cmake-modules kdoctools)
 optdepends=('cdrtools: for CD burning with cdrecord'
             'dvd+rw-tools: for DVD burning support'
