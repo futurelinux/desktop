@@ -1,19 +1,18 @@
 # contributions from ArchLinux: https://www.archlinux.org/packages/community/x86_64/handbrake-cli/
 
 pkgname=handbrake-cli
-pkgver=1.2.2
+pkgver=1.3.0
 pkgrel=1
 pkgdesc="Multithreaded video transcoder (CLI)"
 arch=('x86_64')
 url="https://handbrake.fr/"
 license=('GPL')
-depends=('bzip2' 'gcc-libs' 'zlib' 'xz' 'fribidi' 'libass' 'lame' 'libxml2'
-         'libtheora' 'libsamplerate' 'ffmpeg' 'libx264' 'x264' 'x265' 'libvpx'
-         'libdvdnav' 'jansson' 'speex')
-makedepends=('intltool' 'python2' 'nasm' 'wget' 'libnotify' 'gst-plugins-base' 'dbus-glib' 'cmake')
+depends=('libxml2' 'libass' 'libvorbis' 'opus' 'speex' 'libtheora' 'lame' 'x264' 'jansson' 'libvpx' 'libva' 'numactl'
+         'bzip2' 'gcc-libs' 'zlib' 'xz' 'libdvdnav' 'libdvdread')
+makedepends=('intltool' 'python3' 'nasm' 'wget' 'cmake' 'meson')
+optdepends=('libdvdcss: for decoding encrypted DVDs')
 source=("https://download2.handbrake.fr/$pkgver/HandBrake-$pkgver-source.tar.bz2")
-categories=('multimedia')
-sha256sums=('df6816f517d60ae8a6626aa731821af2d1966c155fa53b2b9a06c47f3c565e4c')
+sha256sums=('a9a82eb5ca04a793705b3d7d11cefa29946694eeb13b40161446aaca35b31d96')
 
 prepare() {
   cd HandBrake-$pkgver
@@ -32,7 +31,8 @@ build() {
   ./configure --prefix=/usr \
               --force \
               --disable-gtk \
-              --disable-gtk-update-checks
+              --disable-gtk-update-checks \
+              --enable-qsv
   cd build
   make
 }
