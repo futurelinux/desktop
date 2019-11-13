@@ -4,22 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=cervisia
-arch=('x86_64')
-pkgver=19.08.2
-pkgrel=3
-pkgdesc="A CVS GUI frontend for KDE"
-url="http://www.kde.org"
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="CVS frontend"
+url="https://kde.org/applications/development/cervisia/"
+arch=(x86_64)
 license=(GPL LGPL FDL)
-groups=(kde-applications kdesdk)
 depends=(kdesu kparts hicolor-icon-theme kinit)
-makedepends=(extra-cmake-modules python3 kdoctools)
-conflicts=(kdesdk-cervisia)
-replaces=(kdesdk-cervisia)
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdesdk')
-options=('docs' 'debug')
-
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('7cbff9d32e2721f6f594a84b42feef6dd76f830e2cc27c6d442d9b6ccbe7fceb'
+sha256sums=('bf156c080f000b342f81e7a8450d6ca942627e5a08cc5ac9c02fc5b44d1f37a7'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -30,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -44,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

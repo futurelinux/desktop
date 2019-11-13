@@ -4,20 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kgpg
-pkgver=19.08.2
-pkgrel=3
-pkgdesc='A GnuPG frontend'
-url='http://kde.org/applications/utilities/kgpg/'
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="A GnuPG frontend"
+url="https://kde.org/applications/utilities/kgpg/"
 arch=(x86_64)
 license=(GPL LGPL FDL)
-depends=(akonadi-contacts hicolor-icon-theme)
-makedepends=(extra-cmake-modules kdoctools python3 boost)
-conflicts=(kdeutils-kgpg)
-replaces=(kdeutils-kgpg)
-options=(docs debug)
-groups=(kde kde-uninstall kde-applications kdeutils)
+depends=(akonadi-contacts)
+makedepends=(extra-cmake-modules kdoctools boost)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('90795c649cd32b65b6030ed965e0db5b0570719afa36abb5d4893268461aa841'
+sha256sums=('85bb9adbd7a7213bdd4913c2153582e938543db49cf2414b8794a850f63f3ab6'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

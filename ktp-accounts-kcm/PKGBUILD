@@ -4,8 +4,8 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ktp-accounts-kcm
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="KCM Module for configuring Telepathy Instant Messaging Accounts"
 arch=('x86_64')
 url="https://community.kde.org/Real-Time_Communication_and_Collaboration"
@@ -14,7 +14,7 @@ depends=('kaccounts-integration' 'kaccounts-providers' 'telepathy-qt5')
 makedepends=('extra-cmake-modules' 'intltool')
 groups=('kde-telepathy')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('7995813bc983c80b200cddf6b0f55fa8c48be3297ee03e3e0a7601cbc86b8dd8'
+sha256sums=('79d2af8b3863d2f4fda51c0bc04b696648d297f2af33e09237b0eed9dd24509f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -25,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -39,5 +39,5 @@ build() {
 
 package() {
     cd build
-    make DESTDIR=${pkgdir} install
+    make DESTDIR="$pkgdir" install
 }

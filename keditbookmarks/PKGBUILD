@@ -4,21 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=keditbookmarks
-pkgver=19.08.2
-pkgrel=3
-pkgdesc="Bookmark Organizer and Editor"
-arch=(x86_64)
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="Bookmark organizer and editor"
 url="https://www.kde.org/"
+arch=(x86_64)
 license=(LGPL)
 depends=(kparts)
-makedepends=(extra-cmake-modules python3 kdoctools)
-conflicts=(kde-baseapps-keditbookmarks)
-replaces=(kde-baseapps-keditbookmarks)
-provides=(kde-baseapps-keditbookmarks)
-options=(docs debug)
-groups=(kde kde-uninstall kde-applications kde-baseapps)
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('6a22c3ccdd89d07ad13b34b89704afcc9bf3b5a177d4dc137dcb5eaf1580f6dd'
+sha256sums=('ce2e90f24cac8dabe3e3804232715b47e247d51c86699162e2f7f63d1f290b05'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

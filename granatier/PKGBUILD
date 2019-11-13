@@ -4,20 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=granatier
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="Granatier is a clone of the classic Bomberman game, inspired by the Clanbomber clone"
-arch=('x86_64')
-url='http://kde.org/applications/games/granatier/'
-license=('GPL' 'LGPL' 'FDL')
-depends=('knotifyconfig' 'libkdegames')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-replaces=('kdegames-granatier')
-conflicts=('kdegames-granatier')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdegames')
-options=('docs' 'debug')
+url="https://kde.org/applications/games/granatier/"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+depends=(libkdegames hicolor-icon-theme)
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('81a0c288edd0be6d7c994a8ad1469679b7e78174d641f9c4f90d31613bad4b47'
+sha256sums=('eac24bb0b0bcf7e12e4059187e0fd542503bae620637a4f35a339e6f63ab3890'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

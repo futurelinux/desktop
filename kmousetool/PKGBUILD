@@ -5,8 +5,8 @@
 
 pkgname="kmousetool"
 arch=('x86_64')
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="Automatic mouse clicker"
 url="https://kde.org/applications/utilities/$pkgname"
 license=('GPL' 'FDL')
@@ -18,7 +18,7 @@ provides=(kdeaccessibility-kmousetool)
 replaces=(kdeaccessibility-kmousetool)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('7cdc327e82548bf70c4ef4feab7a30938f3aefa1e80fccb343ce0d5ca8976ccb'
+sha256sums=('0434d4883d5478168c696ec1a43164ff09a15999416ff198b749d45981983399'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +29,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +43,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

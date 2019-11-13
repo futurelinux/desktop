@@ -1,33 +1,38 @@
-source ../kdeapps.conf
+# Maintainer:   totte <totte@chakralinux.org>
+# Contributors: Andrea Scarpino <andrea@archlinux.org>
+#               Felix Yan <felixonmars@archlinux.org>
+#               Antonio Rojas <arojas@archlinux.org>
+#               James Rayner <iphitus@gmail.com>
+#               leeghoofd <abcdefg@solcon.nl>
 
 pkgname=yakuake
-pkgver=3.0.5
+pkgver=19.08.3
 pkgrel=1
-pkgdesc="A KDE konsole application with the look and feel of that in the Quake engine, kf5 version"
-arch=('x86_64')
-url="http://yakuake.kde.org"
-license=('GPL')
-depends=('karchive' 'kconfig' 'kcoreaddons' 'kdbusaddons' 'kglobalaccel' 'ki18n' 'kiconthemes' 'kio'
-         'knewstuff' 'knotifications' 'knotifyconfig' 'kparts' 'kwayland' 'kwidgetsaddons' 'kwindowsystem')
-makedepends=('extra-cmake-modules')
-conflicts=('yakuake-kf5')
-replaces=('yakuake-kf5')
-source=("http://download.kde.org/stable/yakuake/${pkgver}/src/${pkgname}-${pkgver}.tar.xz")
-md5sums=('07acb03db00bcbd70945542179191409')
+pkgdesc="A drop-down terminal emulator based on KDE konsole technology"
+arch=(x86_64)
+url='https://yakuake.kde.org/'
+license=(GPL)
+depends=(konsole kwayland hicolor-icon-theme)
+makedepends=(extra-cmake-modules)
+groups=(kdeutils kde-applications)
+source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
+sha256sums=('1ad2cc026eea9449690aa037ac94b09cd18696d71025204e648501fa7f2cfbaf'
+            'SKIP')
+validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
+              F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
 
-build() {
-  mkdir -p build && cd build
-  cmake_kf5 ../${pkgname}-${pkgver}
-  make
+prepare() {
+  mkdir -p build
 }
 
-check() {
+build() {
   cd build
-  make test || return 0
+  cmake ../$pkgname-$pkgver \
+    -DBUILD_TESTING=OFF
+  make
 }
 
 package() {
   cd build
-  make DESTDIR="${pkgdir}" install
+  make DESTDIR="$pkgdir" install
 }
- 

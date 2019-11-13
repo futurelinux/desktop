@@ -4,17 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kidentitymanagement
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="KDE PIM libraries"
-arch=('x86_64')
-url="https://projects.kde.org/$pkgname"
+url="https://kontact.kde.org"
+arch=(x86_64)
 license=(LGPL)
 depends=(kpimtextedit)
-makedepends=(extra-cmake-modules python3 kdoctools)
-options=('debug')
+makedepends=(extra-cmake-modules)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('8f93f9546d570c8f7b2602a3a171641d488595ec8da3c47b0a08ef4f5083e884'
+sha256sums=('6ed512d3b42378a767299660c2b9fe142b840cdaaae70c522104c37275221f37'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -25,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -39,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

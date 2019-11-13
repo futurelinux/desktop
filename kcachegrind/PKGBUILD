@@ -4,21 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kcachegrind
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="Visualization of performance profiling data"
+url="https://kde.org/applications/development/kcachegrind/"
+license=(GPL LGPL FDL)
 arch=(x86_64)
-pkgdesc="KDE profiler visualization"
-screenshot="http://www.kde.org/images/screenshots/kcachegrind.png"
-groups=(kde-applications kdesdk)
 depends=(kio hicolor-icon-theme)
-makedepends=(extra-cmake-modules kdoctools python3 qt5-tools)
-license=('GPL' 'LGPL' 'FDL')
-options=('docs' 'debug')
-conflicts=(kdesdk-kcachegrind)
-replaces=(kdesdk-kcachegrind)
-provides=(kdesdk-kcachegrind)
+makedepends=(extra-cmake-modules kdoctools qt5-tools kio)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('baf17a5c11f21deb7b019a7e3a9819348ec8d20af5c8c4a6108b96266e425b46'
+sha256sums=('8fc5e0643bb826b07cb5d283b8bd6fd5da4979f6125b43b1db3a9db60b02a36a'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

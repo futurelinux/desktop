@@ -4,21 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=killbots
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="A simple game of evading killer robots"
-arch=('x86_64')
-url='http://kde.org/applications/games/killbots/'
-screenshot="https://www.kde.org/images/screenshots/killbots.png"
-license=('GPL' 'LGPL' 'FDL')
-depends=('knotifyconfig' 'libkdegames')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdegames')
-replaces=('kdegames-killbots')
-conflicts=('kdegames-killbots')
-options=('docs' 'debug')
+url="http://kde.org/applications/games/killbots/"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+depends=(libkdegames hicolor-icon-theme)
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('c4407bf534dc9de604d6c169cf278b8cb9ca03055d96b71cbfe3916dbafea479'
+sha256sums=('75f5d53eda4dbe96250caa2faa16514d7c68538d7e8c9deea4eff0d80e3628e2'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

@@ -4,8 +4,8 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=libkdegames
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="Shared libraries for KDE games"
 arch=('x86_64')
 url='https://projects.kde.org/projects/kde/kdegames/libkdegames'
@@ -20,7 +20,7 @@ makedepends=('cmake' 'extra-cmake-modules')
 groups=("kde" "kdegames" "kde-uninstall")
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('83456cec44502a1f79c0be00c983090e32fd8aea5fec1461fbfbd37b5f8866ac'
+sha256sums=('019cdc0c702b8c9cacabc36ec2c81951e43ff80dbdfe527cba0dc5f5649dbb89'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -31,7 +31,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -45,5 +45,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

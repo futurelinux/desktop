@@ -4,20 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kblackbox
-pkgver=19.08.2
-pkgrel=3
-pkgdesc="Blackbox logic game"
-arch=('x86_64')
-url='http://kde.org/applications/games/kblackbox/'
-license=('GPL' 'LGPL' 'FDL')
-depends=('libkdegames')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python3')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdegames')
-conflicts=('kdegames-kblackbox')
-provides=('kdegames-kblackbox')
-options=('docs' 'debug')
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="A game of hide and seek played on a grid of boxes"
+url="https://kde.org/applications/games/kblackbox/"
+arch=(x86_64)
+license=(GPL LGPL FDL)
+depends=(libkdegames hicolor-icon-theme)
+makedepends=(extra-cmake-modules kdoctools)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('4ed8e2fe00e4d2ce0b194f85491f46ceaeec28114ff2dc667c0b112f8237a9ca'
+sha256sums=('16f885a5baa0ee593c85f745246f2b3af9106a3befb0c9b7aa8695e3aed382f4'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -28,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -42,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

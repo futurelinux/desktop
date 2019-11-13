@@ -4,8 +4,8 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ksirk
-pkgver=19.08.2
-pkgrel=3
+pkgver=19.08.3
+pkgrel=1
 pkgdesc="A computerized version of a well known strategy game"
 url="https://kde.org/applications/games/ksirk/"
 arch=(x86_64)
@@ -18,7 +18,7 @@ replaces=(kdegames-ksirk)
 provides=(kdegames-ksirk)
 options=('docs' 'debug')
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('6016d929de52d6e03ae1c1ba483e5e505542f16edfbd37c8dfbb9d0913e7f7f8'
+sha256sums=('8ab94b45767e648341ead545a2b427c94ee0f71c8abbe7dbb6b85c28748f3cac'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +29,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +43,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }

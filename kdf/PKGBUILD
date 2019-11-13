@@ -4,21 +4,17 @@
 #               Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kdf
-arch=('x86_64')
-pkgver=19.08.2
-pkgrel=3
-pkgdesc="KDE diskfree tool"
-url="http://www.kde.org"
+pkgver=19.08.3
+pkgrel=1
+pkgdesc="Displays available file devices along with information on their capacity, free space, type, and mount point"
+url="https://utils.kde.org/projects/kdf/"
+arch=(x86_64)
 license=(GPL LGPL FDL)
 depends=(kio hicolor-icon-theme)
-makedepends=(extra-cmake-modules kdoctools python kcmutils)
-conflicts=(kdeutils-kdf)
-replaces=(kdeutils-kdf)
-options=('debug')
-groups=('kde' 'kde-uninstall' 'kde-applications' 'kdeutils')
-
+makedepends=(extra-cmake-modules kdoctools kcmutils)
+options=(debug)
 source=("https://download.kde.org/stable/applications/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('f0a27bbf25d5791272cc8598561e53afed9840d38bf08ed3146f36701dfb7b04'
+sha256sums=('eef733c2089ce8fc40405653fa5e3aaafe67a1cc5d074f744e49b185291c0617'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87) # Christoph Feck <cfeck@kde.org>
@@ -29,7 +25,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${pkgname}-${pkgver} \
+  cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
@@ -43,5 +39,5 @@ build() {
 
 package() {
   cd build
-  make DESTDIR=${pkgdir} install
+  make DESTDIR="$pkgdir" install
 }
