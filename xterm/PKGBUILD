@@ -1,5 +1,5 @@
 pkgname=xterm
-pkgver=349
+pkgver=351
 pkgrel=1
 pkgdesc="X Terminal Emulator"
 arch=('x86_64')
@@ -10,7 +10,7 @@ groups=('xorg')
 categories=('system')
 source=("https://invisible-mirror.net/archives/${pkgname}/${pkgname}-${pkgver}.tgz"
         LICENSE)
-md5sums=('194012229738f74bc44e7c0f5f6bf0c8'
+md5sums=('a07edfbee2e2f4c6a9ddbf834fa4bbec'
          '10ecc3f8ee91e3189863a172f68282d2')
 
 build() {
