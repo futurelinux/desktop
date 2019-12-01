@@ -1,5 +1,5 @@
 pkgname=kodi
-pkgver=18.4
+pkgver=18.5
 _codename=Leia
 pkgrel=1
 arch=('x86_64')
@@ -38,7 +38,7 @@ provides=('xbmc')
 conflicts=('xbmc')
 replaces=('xbmc')
 source=("$pkgname-$pkgver-$_codename.tar.gz::https://github.com/xbmc/xbmc/archive/$pkgver-$_codename.tar.gz")
-sha256sums=('bf2be186d8ae5b5377e43c06a538012bb9f51a0e98f8244b70a401006861d110')
+sha256sums=('108979df8b41ab4168f5cdc0233f46e38767eda5921f4ccae16584e98d0d6b29')
 
 prepare() {
   mkdir kodi-build
