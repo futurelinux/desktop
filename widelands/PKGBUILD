@@ -1,46 +1,58 @@
+# Contributor: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Arkham <arkham at archlinux dot us>
+# Contributor: Christoph Zeiler <rabyte*gmail>
+
 pkgname=widelands
-pkgver=19
+pkgver=20
 _realver=build${pkgver}
-pkgrel=3
-pkgdesc="A realtime strategy game with emphasis on economy and transport."
+pkgrel=1
+pkgdesc="A realtime strategy game with emphasis on economy and transport"
 arch=('x86_64')
-url="http://widelands.org/"
+url="https://widelands.org/"
 license=('GPL')
-depends=('boost-libs' 'glew' 'lua51' 'python2' 'sdl2_gfx' 'sdl2_image' 'sdl2_mixer' 'sdl2_net' 'sdl2_ttf')
-makedepends=('boost' 'cmake' 'mesa' 'doxygen')
-categories=('games')
-source=("https://launchpad.net/widelands/${_realver}/${_realver}/+download/$pkgname-$_realver-src.tar.bz2"
+depends=('sdl2_mixer' 'sdl2_image' 'sdl2_net' 'sdl2_ttf' 'sdl2_gfx' 'lua' 'glew' 'python' 'boost-libs')
+makedepends=('cmake' 'boost' 'mesa' 'ninja' 'git')
+replaces=('widelands-data')
+source=("git+https://github.com/widelands/widelands.git#commit=ce578db"
         $pkgname.desktop
-        $pkgname.png)
-sha256sums=('e511f9d26828a2b71b64cdfc6674e6e847543b2da73961ab882acca36c7c01a6'
-            '5001a9bb563c92ab700360a4c770db0f604806f800d0d6853dd7d9f66ec980ca'
-            '6e9d5ee59793cea46242b89d1e37b21a2ed42eb18a115bdf29ca02f66cbb874d')
+        $pkgname.png
+        45249a2c7172fdc2d5cd856a1ee05670f21f0db7.patch)
+sha512sums=('SKIP'
+            'ef7e54ffba11a2fe54d2cafc0a12fcbe5028e861b9b980f549317b159c8532ee62423af8724b05cfd344017097e022215fa750f4ca9afffa57703d434017d727'
+            'f7db9d7584ec8431f2f1857baddeb32cd3ae182343e7f0369e61fb444514bd9c2e6a3931ae34f24cc994840dffbbe4451f33845798f3d582f41b31f451b261ac'
+            '51b1fb6bed262cc62023403c5d1bd2663c7e37ed9e89afbe11eec54a39bde8c48e1413f80b4044df5b7e972287843e1fa8bf5a8c0af7c5afa146c9f087181b7c')
+
+prepare() {
+  cd $pkgname
+
+  patch -Np1 -i "$srcdir"/45249a2c7172fdc2d5cd856a1ee05670f21f0db7.patch
+
+  mkdir -p build && cd build
+}
 
 build() {
-    cd $srcdir/$pkgname-$_realver-src
+  cd $pkgname/build
 
-    mkdir -p build/compile && cd build/compile
-
-    cmake ../.. \
-	-DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DWL_INSTALL_BASEDIR=/usr \
-        -DWL_INSTALL_DATADIR=share/$pkgname
-    make
+  cmake -G Ninja .. \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DWL_INSTALL_BASEDIR=/usr \
+      -DWL_INSTALL_DATADIR=/usr/share/widelands
+  ninja
 }
 
 package() {
-    cd $srcdir/$pkgname-$_realver-src/build/compile
+  cd $pkgname/build
 
-    make DESTDIR="$pkgdir" install
+  DESTDIR="$pkgdir" ninja install
 
-    # Install bin, icon and desktop file
-    #install -Dm 755 src/$pkgname $pkgdir/usr/share/$pkgname/$pkgname
-    #install -Dm 755 $srcdir/$pkgname.sh $pkgdir/usr/bin/$pkgname
-    install -Dm644 $srcdir/$pkgname.png $pkgdir/usr/share/pixmaps/$pkgname.png
-    install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
+  mkdir -p $pkgdir/usr/bin
+  mv $pkgdir/usr/{widelands,wl_map_object_info,wl_map_info} $pkgdir/usr/bin
+  mv $pkgdir/usr/{VERSION,ChangeLog,CREDITS} $pkgdir/usr/share/widelands
 
-# #!/bin/sh
-# cd /usr/share/widelands
-# ./widelands $*
+  mkdir -p $pkgdir/usr/share/licenses/$pkgname
+  mv $pkgdir/usr/COPYING $pkgdir/usr/share/licenses/$pkgname
+
+  install -Dm644 $srcdir/$pkgname.png $pkgdir/usr/share/pixmaps/$pkgname.png
+  install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
 }

@@ -2,7 +2,6 @@
 Name=Widelands
 GenericName=Widelands
 Comment=Realtime strategy game
-Comment[gl]=Xogo de estratexia en tempo real.
 Icon=widelands
 Exec=widelands
 Type=Application
