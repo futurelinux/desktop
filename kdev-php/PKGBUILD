@@ -1,5 +1,5 @@
 pkgname=kdev-php
-pkgver=5.3.3
+pkgver=5.4.5
 pkgrel=1
 pkgdesc="PHP language and documentation plugin for KDevelop"
 arch=(x86_64)
@@ -8,11 +8,9 @@ license=(GPL)
 depends=(kdevelop threadweaver kcmutils knewstuff)
 makedepends=(extra-cmake-modules kdoctools kdevelop-pg-qt python3)
 source=("https://download.kde.org/stable/kdevelop/$pkgver/src/${pkgname}-$pkgver.tar.xz"{,.sig})
-sha256sums=('8499c46f676a9cd37e56b5635f63dfcab1f2875875b2c65a9f66d84ed4f72972'
+sha256sums=('f8126131f521b2497fa62ad79ba276a68a45e40b48406c6686658708780ade32'
             'SKIP')
-validpgpkeys=('329FD02C5AA48FCC77A4BBF0AC44AC6DB29779E6'
-              '364EFA5F639572907D392999C64CF56B13CACE5D'
-              'E191FD5BE6F46870F09E82B2024E7FB43D015474')
+validpgpkeys=('0A48BC961075B4BA8523E3790A345FB086E797D9')
 
 prepare() {
   mkdir -p build

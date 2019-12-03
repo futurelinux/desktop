@@ -1,5 +1,5 @@
 pkgname=kdev-python
-pkgver=5.3.3
+pkgver=5.4.5
 pkgrel=1
 pkgdesc="Python language and documentation plugin for KDevelop"
 arch=('x86_64')
@@ -8,11 +8,9 @@ license=(GPL)
 depends=(kdevelop python3 knewstuff threadweaver)
 makedepends=(extra-cmake-modules)
 source=("https://download.kde.org/stable/kdevelop/${pkgver}/src/${pkgname}-${pkgver}.tar.xz"{,.sig})
-sha256sums=('80c4bab96aede589ebdb6d4b33d0339766ac645cc0e4fe10674df12008f37f04'
+sha256sums=('a8469886df9a81f3f16db31474a9ed440b1a60224eb28505b5ac63479ad45812'
             'SKIP')
-validpgpkeys=('329FD02C5AA48FCC77A4BBF0AC44AC6DB29779E6'
-              '364EFA5F639572907D392999C64CF56B13CACE5D'
-              'E191FD5BE6F46870F09E82B2024E7FB43D015474')
+validpgpkeys=('0A48BC961075B4BA8523E3790A345FB086E797D9')
 
 prepare() {
   mkdir -p build
