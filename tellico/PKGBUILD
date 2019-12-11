@@ -1,16 +1,16 @@
 pkgname=tellico
-pkgver=3.2.1
+pkgver=3.2.3
 pkgrel=1
 pkgdesc="A collection manager for KDE"
 arch=('x86_64')
-url="http://tellico-project.org/"
+url="https://tellico-project.org/"
 license=('GPL')
 depends=('exempi' 'kio' 'libksane' 'libkcddb' 'libcddb' 'libdiscid' 'hicolor-icon-theme' 'kfilemetadata'
          'knewstuff' 'kxmlgui' 'kitemmodels' 'python2' 'solid' 'khtml' 'yaz' 'taglib' 'poppler-qt5' 'qt5-base')
 makedepends=('cmake' 'extra-cmake-modules' 'kdoctools' 'libkcddb')
 categories=('office')
-source=(http://tellico-project.org/files/${pkgname}-${pkgver}.tar.xz)
-md5sums=('d1e3485aa20111020547a80ca266cf14')
+source=(https://tellico-project.org/files/${pkgname}-${pkgver}.tar.xz)
+sha256sums=('f4456eb31f71151b9786fa171531265b421b2de8140e9adbf6bb584862c42952')
 
 build() {
   cd "${srcdir}"
