@@ -1,16 +1,16 @@
 pkgname=libtorrent-rasterbar
-pkgver=1.1.13
+pkgver=1.2.2
 _pkgver=${pkgver//./_}
-pkgrel=1
+pkgrel=2
 pkgdesc="A C++ library that aims to be a good alternative to all the other bittorrent implementations around"
-url="https://libtorrent.org/"
+url="https://www.rasterbar.com/products/libtorrent/"
 arch=('x86_64')
 license=('BSD')
 depends=('boost-libs' 'python2' 'python3' 'geoip' 'websocketpp')
 makedepends=('boost' 'cmake')
 options=('!emptydirs')
 source=(https://github.com/arvidn/libtorrent/archive/libtorrent-${_pkgver}/$pkgname-$pkgver.tar.gz)
-sha256sums=('b88d043a4f56eb5b48ae219783029d7f6cff24401161d2f054aef96286ce912b')
+sha256sums=('353793a234858e8dae9ee4a37d59c8c5297b718cc7ae3efe5798f004c0da6856')
 
 prepare() {
   mkdir py2 py3
@@ -29,8 +29,6 @@ _build() (
   _boost="boost_python"
   if [ $1 -eq 3 ]; then _boost="boost_python3"; fi
 
-  # https://github.com/qbittorrent/qBittorrent/issues/5265#issuecomment-220007436
-  CXXFLAGS="$CXXFLAGS -std=c++11" \
   PYTHON=/usr/bin/python$1 \
   ../libtorrent-libtorrent-${_pkgver}/configure \
     --prefix=/usr \
