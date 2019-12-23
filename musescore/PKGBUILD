@@ -1,6 +1,6 @@
 pkgname=musescore
 _pkgname=MuseScore
-pkgver=3.3.1
+pkgver=3.3.4
 pkgrel=1
 pkgdesc="A music score editor written in Qt"
 arch=('x86_64')
@@ -11,7 +11,7 @@ depends=('alsa-lib' 'freetype2' 'libpulse' 'libsndfile' 'libvorbis' 'portaudio' 
 makedepends=('cmake' 'doxygen' 'lame' 'qt5-script' 'texlive-core')
 optdepends=('lame: MP3 export')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/$pkgname/$_pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('fb010f4e0657a1bc647587007dafe2d372ae0da1119f7208bf47b3b6f6d498e4')
+sha256sums=('ab8bade6c7eec6a9ae03f435cad65e79c4ca031d19020aa6e2a4da2868f49a2a')
 
 prepare() {
  cd $_pkgname-$pkgver
