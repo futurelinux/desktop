@@ -1,5 +1,5 @@
 pkgname=youtube-dl
-pkgver=2019.11.28
+pkgver=2019.12.25
 pkgrel=1
 pkgdesc='A small command-line program to download videos from YouTube.com'
 arch=('x86_64')
@@ -10,7 +10,7 @@ optdepends=('ffmpeg: for video post-processing'
             'rtmpdump: for rtmp streams support')
 categories=('network')
 source=("https://youtube-dl.org/downloads/${pkgver}/${pkgname}-${pkgver}.tar.gz"{,.sig})
-sha1sums=('c8537c966bda1e68d3b7b8f7e392ae488dbed063'
+sha1sums=('1658783c89b9e1a941e6fa187f9640c8eab94704'
           'SKIP')
 validpgpkeys=('7D33D762FD6C35130481347FDB4B54CBA4826A18' # Philipp Hagemeister
               'ED7F5BF46B3BBED81C87368E2C393E0F18A9236D') # Sergey M.
