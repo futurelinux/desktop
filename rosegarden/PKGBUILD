@@ -1,33 +1,35 @@
 pkgname=rosegarden
-pkgver=18.06
+pkgver=19.12
 pkgrel=1
 pkgdesc="MIDI/audio sequencer and notation editor"
 arch=('x86_64')
-url="http://www.rosegardenmusic.com/"
+url="https://www.rosegardenmusic.com/"
 license=('GPL')
-depends=('liblrdf' 'dssi' 'fftw' 'lirc-utils' 'liblo' 'libsamplerate'
-         'perl' 'qt5-tools' 'shared-mime-info' 'ladspa' 'libsndfile' 'lilypond')
-makedepends=('imake' 'cmake')
+depends=('desktop-file-utils' 'liblrdf' 'fftw' 'lirc' 'liblo' 'libsamplerate'
+         'perl' 'shared-mime-info' 'libsndfile' 'alsa-lib' 'hicolor-icon-theme'
+         'gcc-libs' 'glibc' 'qt5-base')
+makedepends=('cmake' 'dssi' 'imake' 'ladspa' 'qt5-tools')
 optdepends=('cups: printing support'
+            'lilypond: Notation display support'
             'okular: print preview, or any other PDF viewer'
             'timidity++: MIDI playback, or any other softsynth'
-            'flac'
-            'wavpack')
-categories=('multimedia')
-install=$pkgname.install
-source=($pkgname-$pkgver::http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.bz2)
-sha256sums=('a777c852c8905df7efbadcebea7fa7300d8bf1865ed581af20518a8535400c13')
+            'flac: FLAC support'
+            'wavpack: Lossless audio codec support')
+provides=('dssi-host' 'ladspa-host')
+source=("https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.bz2")
+sha256sums=('81df8bc0c4c99f7c9f86b192fdfb924fb9334849f4c1def93c6aff060deb8ae1')
 
 build() {
-  cd $pkgname-$pkgver
-
-  cmake ./ -DBUILD_TESTING=OFF \
-  -DCMAKE_INSTALL_PREFIX=/usr
-  make
+  cd "${pkgname}-${pkgver}"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -B build \
+        -S .
+  make VERBOSE=1 -C build
 }
 
 package() {
-  cd $pkgname-$pkgver
-
-  make DESTDIR="$pkgdir/" install
+  cd "${pkgname}-${pkgver}"
+  make DESTDIR="$pkgdir" install -C build
+  install -vDm 644 {AUTHORS,README} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
