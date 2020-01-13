@@ -1,14 +1,13 @@
 pkgname=dianara
-pkgver=1.4.2
-pkgrel=3
+pkgver=1.4.3
+pkgrel=1
 pkgdesc="A Qt pump.io client"
 arch=('x86_64')
 url="http://dianara.nongnu.org/"
 license=('GPL')
-depends=('qoauth' 'qca' 'qca-ossl')
-screenshot=('http://dianara.nongnu.org/images/dianara-v0.9-release-main.png')
-source=("http://download-mirror.savannah.gnu.org/releases/$pkgname/$pkgname-v$pkgver.tar.gz")
-sha256sums=('e61b43d86759c5a941698f6f4e2dd769df08a32688acd9eaa09a67232acb93ba')
+depends=('qoauth' 'qca' 'qca-ossl' 'sonnet' 'kwidgetsaddons')
+source=("https://download-mirror.savannah.gnu.org/releases/$pkgname/$pkgname-v$pkgver.tar.gz")
+sha256sums=('6229fd940c6cbc62e310c41bc010ce763c604bd2aa24a82d0055be8ac5d91f8f')
 
 build() {
   cd $pkgname-v$pkgver
@@ -26,8 +25,8 @@ package() {
     "$pkgdir/usr/bin/$pkgname"
 
   # desktop file
-  install -Dm644 $pkgname.desktop \
-    "$pkgdir/usr/share/applications/$pkgname.desktop"
+  install -Dm644 org.nongnu.dianara.desktop \
+    "$pkgdir/usr/share/applications/org.nongnu.dianara.desktop"
 
   # icons
   install -Dm644 icon/32x32/$pkgname.png \
