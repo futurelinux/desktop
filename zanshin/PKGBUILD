@@ -1,21 +1,17 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Source global configuration
-source ../kdeapps.conf 
-
 pkgname=zanshin
-pkgver=0.5.0
-pkgrel=3
+pkgver=0.5.71
+pkgrel=1
 pkgdesc="To-do management application for KDE based on Akonadi"
 arch=(x86_64)
 url="https://zanshin.kde.org"
 license=(GPL)
-install=$pkgname.install
 depends=(kdepim-runtime kontactinterface)
 makedepends=(extra-cmake-modules kdoctools boost python3 krunner kdesignerplugin)
 source=("https://download.kde.org/stable/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('0781c088741186f3d9ff3027dc961103d33a59b0e3aeb6bc4c66ff24eb3adb4f'
+sha256sums=('b0933d2d9a63bba372966da0ba9e313b85ab2d6aa513a43657da90c65a33612c'
             'SKIP')
-validpgpkeys=(17166A5275C5FA6F1A48FD78074BBBCB8DECC9E2) # Kevin Ottens <ervin+bluesystems@kde.org>
+validpgpkeys=(17166A5275C5FA6F1A48FD78074BBBCB8DECC9E2  # Kevin Ottens <ervin+bluesystems@kde.org>
+              2D1D5B0588357787DE9EE225EC94D18F7F05997E) # Jonathan Riddell <jr@jriddell.org>
 
 prepare() {
   mkdir -p build
