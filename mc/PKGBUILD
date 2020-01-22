@@ -1,5 +1,5 @@
 pkgname=mc
-pkgver=4.8.23
+pkgver=4.8.24
 pkgrel=1
 pkgdesc="Midnight Commander is a text based filemanager/shell that emulates Norton Commander"
 arch=('x86_64')
@@ -30,7 +30,7 @@ backup=('etc/mc/edit.indent.rc'
         'etc/mc/mc.menu'
         'etc/mc/sfs.ini')
 source=("http://www.midnight-commander.org/downloads/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('dd7f7ce74183307b0df25b5c3e60ad3293fd3d3d27d2f37dd7a10efce13dff1c')
+sha256sums=('859f1cc070450bf6eb4d319ffcb6a5ac29deb0ac0d81559fb2e71242b1176d46')
 
 build() {
 	cd ${srcdir}/${pkgname}-${pkgver}
