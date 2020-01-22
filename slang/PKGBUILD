@@ -1,28 +1,30 @@
-#
-# Chakra Packages for Chakra, part of chakra-project.org
-#
-# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
-# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
-
-# include global config
-source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
+# Contributions from Arch:
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
+# Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=slang
-pkgver=2.2.3
+pkgver=2.3.2
 pkgrel=1
 pkgdesc="S-Lang is a powerful interpreted language"
-arch=('i686' 'x86_64')
-url="http://www.s-lang.org/"
+arch=('x86_64')
+url="https://www.jedsoft.org/slang/"
 license=('GPL')
-depends=('glibc' 'pcre' 'zlib')
+depends=('pcre')
 backup=('etc/slsh.rc')
 options=('!makeflags')
-source=(ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${pkgver%.*}/${pkgname}-${pkgver}.tar.gz)
-md5sums=('ffd7718a9808894413a0e0ee82a79335')
+source=(https://www.jedsoft.org/releases/slang/${pkgname}-${pkgver}.tar.bz2{,.asc})
+sha1sums=('bbf7f2dcc14e7c7fca40868fd4b411a2bd9e2655'
+          'SKIP')
+validpgpkeys=('AE962A02D29BFE4A4BB2805FDE401E0D5873000A')  # John E. Davis
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  ./configure --prefix=/usr --sysconfdir=/etc || return 1
-  make || return 1
-  make DESTDIR="${pkgdir}" install-all || return 1
+  cd ${pkgname}-${pkgver}
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install-all
 }
