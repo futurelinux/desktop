@@ -1,5 +1,5 @@
 pkgname=kmymoney
-pkgver=5.0.7
+pkgver=5.0.8
 pkgrel=1
 pkgdesc="Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('aqbanking' 'boost-libs' 'libalkimia' 'sqlcipher' 'qt5-base' 'qgpgme' '
 makedepends=('boost' 'extra-cmake-modules' 'doxygen')
 categories=('office')
 source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz)
-sha256sums=('d5dcac31db410861fe74955109715012bcddfd095cdbb18c91827a77dffeb5c0')
+sha256sums=('ac6bcef37def09ca2530276254eab5e9ae57f3a1cd5ed7c87c3d38045400d4c0')
 
 prepare() {
   cd $pkgname-$pkgver
