@@ -1,32 +1,38 @@
-# Arch contribution https://www.archlinux.org/packages/community/x86_64/gwenhywfar/
+# Contributions from Arch:
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: William Rea <sillywilly@gmail.com>
 
 pkgname=gwenhywfar
-pkgver=4.20.0
-_releasenumber=208
+pkgver=5.1.2
+_verid=234
 pkgrel=1
 pkgdesc="OS abstraction functions for various projects"
-arch=('x86_64')
-url="http://www.aquamaniac.de"
-license=("LGPL")
-depends=('openssl' 'qt5-base' 'gnutls' 'libgcrypt' 'libgpg-error')
-source=(gwenhywfar-$pkgver.tar.gz::"https://www.aquamaniac.de/sites/download/download.php?package=01&release=${_releasenumber}&file=02&dummy=gwenhywfar-$pkgver.tar.gz")
-sha256sums=('5a88daabba1388f9528590aab5de527a12dd44a7da4572ce48469a29911b0fb0')
+arch=(x86_64)
+url="https://www.aquamaniac.de/"
+license=(LGPL)
+depends=(gnutls libgcrypt openssl)
+makedepends=(git qt5-base)
+optdepends=('qt5-base: for the Qt5 UI')
+source=("https://www.aquamaniac.de/rdm/attachments/download/$_verid/$pkgname-$pkgver.tar.gz")
+sha256sums=('e2eae2a50e83512664216230caebafbc170c5806a6f0130b00e44f2b6a5a5441')
 
 build() {
-  cd $srcdir/${pkgname}-${pkgver}
+  cd $pkgname-$pkgver
   ./configure --prefix=/usr \
-	      --sysconfdir=/etc \
-	      --enable-ssl \
-	      --with-guis="qt5" \
-	      --with-qt5-qmake=/usr/lib/qt5/bin/qmake \
-	      --with-qt5-moc=/usr/lib/qt5/bin/moc \
-	      --with-qt5-uic=/usr/lib/qt5/bin/uic
+              --sysconfdir=/etc \
+              --enable-ssl \
+              --with-guis="qt5" \
+              --with-qt5-qmake=/usr/lib/qt5/bin/qmake \
+              --with-qt5-moc=/usr/lib/qt5/bin/moc \
+              --with-qt5-uic=/usr/lib/qt5/bin/uic
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   sed -i 's|gnutls_transport_set_lowat||g' src/sio/syncio_tls.c
   make
 }
 
 package() {
-  cd $srcdir/${pkgname}-${pkgver}
-  
-  make DESTDIR=$pkgdir install
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
 }
