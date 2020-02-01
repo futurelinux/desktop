@@ -1,5 +1,5 @@
 pkgname=kid3
-pkgver=3.8.1
+pkgver=3.8.2
 pkgrel=1
 pkgdesc="An MP3, Ogg/Vorbis and FLAC tag editor for KDE"
 arch=('x86_64')
@@ -11,7 +11,7 @@ makedepends=('cmake' 'docbook-xsl' 'docbook-xml' 'qt5-tools' 'extra-cmake-module
 conflicts=('kid3-kf5')
 replaces=('kid3-kf5')
 source=("https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz")
-sha1sums=('f419eb51c32441ae95e130bb5c0d319b1da51bc4')
+sha1sums=('4935288a453967ab534a531ff7b2baf6f8bde25d')
 
 build() {
   cd $pkgname-$pkgver
