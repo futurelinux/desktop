@@ -1,5 +1,5 @@
 pkgname=screen
-pkgver=4.7.0
+pkgver=4.8.0
 pkgrel=1
 _ptygroup=5 #the UID of our PTY/TTY group
 pkgdesc="Full-screen window manager that multiplexes a physical terminal"
@@ -12,7 +12,7 @@ options=('!makeflags')
 groups=('system')
 source=("https://ftp.gnu.org/gnu/screen/screen-${pkgver}.tar.gz"
 	screen.pam)
-md5sums=('b8971ebd68d046f2814d1040cb8e6641'
+md5sums=('d276213d3acd10339cd37848b8c4ab1e'
          '74f7919d7b65436cc2ea5341fa8ca374')
 
 build() {
