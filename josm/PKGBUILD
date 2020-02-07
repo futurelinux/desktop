@@ -1,5 +1,5 @@
 pkgname=josm
-pkgver=15628
+pkgver=15806
 pkgrel=1
 pkgdesc="An editor for OpenStreetMap written in Java"
 arch=('x86_64')
