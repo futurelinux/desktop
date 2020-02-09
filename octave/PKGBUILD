@@ -1,5 +1,5 @@
 pkgname=octave
-pkgver=5.1.0
+pkgver=5.2.0
 pkgrel=1
 pkgdesc="A high-level language, primarily intended for numerical computations."
 arch=('x86_64')
@@ -16,7 +16,7 @@ optdepends=('texinfo: for help-support in octave'
 source=(ftp://ftp.gnu.org/gnu/octave/octave-$pkgver.tar.gz
         octave-sundials4.patch)
 options=('!emptydirs')
-sha1sums=('75a5ec450473e4c39290fdab9feade4a5739e465'
+sha1sums=('bc9e4ceed93c7f7dcc692daeb9dccb182b2d5e9e'
           '221ceb1a7b449ee4a3579b49af705e05c2e66b3d')
 
 prepare() {
