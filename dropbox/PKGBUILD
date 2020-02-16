@@ -1,12 +1,14 @@
 pkgname=dropbox
-pkgver=81.4.195
+pkgver=89.4.278
 pkgrel=1
 pkgdesc="A free service that lets you bring your photos, docs, and videos anywhere and share them easily."
 arch=('x86_64')
-url="http://www.dropbox.com"
+url="https://www.dropbox.com"
 license=('custom')
 depends=("libsm" "libxslt" "libxmu" "libxdamage" "libxrender" "libxxf86vm" "libxcomposite" "fontconfig" "dbus")
-optdepends=('dolphin-plugins: for integration of dolphin under plasma 5')
+optdepends=('dolphin-plugins: for integration of dolphin under plasma 5'
+            'ufw-extras: ufw rules for dropbox'
+            'xdg-utils: for "Launch Dropbox Website" and file manager integration')
 options=('!strip')
 source=("https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-$pkgver.tar.gz"        
 	"dropbox.png"
@@ -14,7 +16,7 @@ source=("https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x
         "LICENSE"
         "dropbox.service"
         "dropbox@.service")
-sha1sums=('87fbd2a1b98143d73cb3c5ed738b92dbb3aa32ce'
+sha1sums=('a8b1e58780163c4a63e54090978fcbbc9f41c66b'
           '64073af76a2bbc7dba4a6886b82af0bb3e71a2a0'
           'b30c97c01be656f9d392262c3cdeb2c0560e0475'
           'c2b5e46d5e135bc3c6fe89d7c7e464be47cae152'
