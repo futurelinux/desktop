@@ -1,9 +1,9 @@
 pkgname=lyx
-pkgver=2.3.3
+pkgver=2.3.4.2
 pkgrel=1
 pkgdesc="An advanced open-source document processor"
 arch=('x86_64')
-url="http://www.lyx.org"
+url="https://www.lyx.org"
 screenshot=('http://www.lyx.org/images/about/main_window.png')
 depends=('qt5-base' 'qt5-svg' 'texlive-core' 'python2' 'perl' 'imagemagick' 'enchant' 'libmythes' 'boost-libs' 'icu' 'hunspell')
 makedepends=('boost' 'bc')
@@ -13,7 +13,7 @@ optdepends=('texlive-most: TeX Live goodies'
 license=('GPL')
 source=("ftp://ftp.lip6.fr/pub/lyx/stable/2.3.x/$pkgname-$pkgver.tar.xz"
         'lyxrc.dist')
-md5sums=('b49cc1f92e0cab8988f066650a7b5868'
+md5sums=('d3c2d1e57a00981634fadce9a734ae0e'
          'b70fdeab95ba4a6c3ff72410dfa61823')
 
 build() {
