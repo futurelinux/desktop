@@ -20,8 +20,8 @@ pkgname=('libreoffice-common'
 	'libreoffice-postgresql-connector'
 	'libreoffice-extension-wiki-publisher'
 	'libreoffice-extension-nlpsolver')
-_LOver=6.3.3.2
-pkgver=6.3.3
+_LOver=6.4.0.3
+pkgver=6.4.0
 pkgrel=1
 arch=('x86_64')
 license=('LGPL3')
@@ -31,7 +31,7 @@ makedepends=( # makedepends
              'sane' 'perl-archive-zip' 'zip' 'unzip' 'unixodbc' 'gtk3' 'gtk2' 'gobject-introspection'
              'apache-ant' 'gperf' 'cppunit>=1.14.0' 'glu' 'libodfgen'
              'beanshell' 'kcoreaddons' 'ki18n' 'kwindowsystem' 'kconfig' 'kio'
-             'libldap' 'libmythes' 'junit' 'libwpg' 'imagemagick' 'mdds' 'poppler>=0.12.0'
+             'libldap' 'libmythes' 'junit' 'libwpg' 'imagemagick' 'mdds>=1.5.0' 'poppler>=0.12.0'
              'mesa' 'gst-plugins-base' 'java-runtime' 'postgresql-libs' 'clucene' 'doxygen' 'libvisio' 'bluez-libs' 'junit' 'hsqldb-java' 'libzmf'
              # libreoffice main pkg
              "curl>=7.20.0" "hunspell>=1.2.8" 'python3' 'libwpd>=0.9.2' 'libwps' 'libxaw' "neon>=0.28.6"
@@ -68,7 +68,7 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
         ${_additional_source_url}/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip
         ${_additional_source_url}/libexttextcat-3.4.5.tar.xz
         ${_additional_source_url}/libcmis-0.5.2.tar.xz
-        ${_additional_source_url}/liborcus-0.14.1.tar.gz
+        ${_additional_source_url}/liborcus-0.15.3.tar.gz
         ${_additional_source_url}/liblangtag-0.6.2.tar.bz2
         ${_additional_source_url}/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
         ${_additional_source_url}/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip
@@ -85,26 +85,27 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
         ${_additional_source_url}/libe-book-0.1.3.tar.xz
         ${_additional_source_url}/libabw-0.1.3.tar.xz
         ${_additional_source_url}/libpagemaker-0.0.4.tar.xz  
-        ${_additional_source_url}/language-subtag-registry-2019-04-03.tar.bz2
+        ${_additional_source_url}/language-subtag-registry-2019-09-16.tar.bz2
         ${_additional_source_url}/CoinMP-1.7.6.tgz
         ${_additional_source_url}/libstaroffice-0.0.6.tar.xz
         ${_additional_source_url}/4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2
         ${_additional_source_url}/OpenCOLLADA-master-6509aa13af.tar.bz2
         ${_additional_source_url}/libgltf/libgltf-0.1.0.tar.gz
-        ${_additional_source_url}/pdfium-3794.tar.bz2
+        ${_additional_source_url}/pdfium-3963.tar.bz2
         ${_additional_source_url}/libepubgen-0.1.1.tar.xz
         ${_additional_source_url}/libnumbertext-1.0.5.tar.xz
         ${_additional_source_url}/libqxp-0.0.2.tar.xz
         ${_additional_source_url}/lxml-4.1.1.tgz
         ${_additional_source_url2}/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf
+        ${_additional_source_url}/QR-Code-generator-1.4.0.tar.gz
         make-pyuno-work-with-system-wide-module-install.diff
         libreoffice.sh)
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha1sums=('6531192b9c0ef8f3c69a53498fdcd96160e26c2c'
+sha1sums=('ae20d33176e9cfed41d80816d88afdcdf50b26a8'
           'SKIP'
-          '7792df5a472881ee2fdd25edf5b8c545c795e5de'
+          '8fc833b93dd197e6418a613590f5afa7d882b9f0'
           'SKIP'
-          'a2c557ae48ea560e2a57f3ac48f6f15ca24cf65c'
+          '9ebc08bd48a6b09d12eeccbe8181d75d1a8c0f61'
           'SKIP'
           'e75580df2f638ef7e99743eb54d7f8015bc8c812'
           '1acea86fd399ed7817879d36370d3d1f8b109050'
@@ -126,7 +127,7 @@ sha1sums=('6531192b9c0ef8f3c69a53498fdcd96160e26c2c'
           '1acd76cd63f7b19f6a0252eb029c3cb13a25aa9b'
           'dd6b4163c752a44384f309f8dabb830161f5f85f'
           'feca71d94d2c6e6d5565ff2a3210ba61fb2451d9'
-          '97e14d618652e6b57447b73a8cfc89b54f2845ec'
+          '0f0bce8909509b30350a2318d31e74f8d9b8d349'
           '8f2c0d7f0c2ae9510a58f570aa4bc894c31e22c1'
           '452eba922e4f41603539c9dc39947d2271e47093'
           '7168b0f40aa5c72267899601c116d2348d2f56ec'
@@ -143,18 +144,19 @@ sha1sums=('6531192b9c0ef8f3c69a53498fdcd96160e26c2c'
           '18fde9588c236d51eea9437ed882d8b751daf01f'
           'd90dceea7c1a04ad4324f5ee286f3eaa9129bdbd'
           '4e8e9a6711c6dcbb937a295135f955dee6efc52f'
-          '64620c7e4e2b1c09a8ef9806e5e30fe0d52c4bba'
+          '5885c50dfd04aec1cb9d85abcc4eb21071a83d4f'
           'f52c74abcbf55c72cd89f709db658ea33ed45154'
           'd4f0ab61702fe24f3d89ec625616583e77a33697'
           '1169780b4a0c515b23b96c913fd9bc52ceb7fb39'
           'c4f5760a1d21213dc52e2cf3ad9c0b9112585f36'
           '719ab0d7b711650c787fe9bfb51109321d21e07b'
-          '41ff3c2291c99db71ddca1873115b7fc0bfb5065'
+          'c283858b7cf63a0cd7c691aef4d45866b9c7051d'
           '48e81c60e173552fce77ce3b414e68b7d52a5301'
           '2b599daeeb07ecd14ea0f7633accd67ab3fedea9'
           'f0e1b3d7996f2340a95309b61d9b27b596aca3da'
           '154279bc5939d7099697887ea15c5ca921abeaeb'
           'd336802a36ed2c87dd243e7c2f1d0542dace5cca'
+          'df391cea80b616eec37a51eb8b2dddb0024c8e6a'
           'fed07f208b58c42bb85b0721fb2fae193da6f780'
           '6cec1a2a0a1f1ec21f8447eb21143767aade34bb')
 noextract=(xmlsec1-1.2.28.tar.gz
@@ -177,7 +179,7 @@ noextract=(xmlsec1-1.2.28.tar.gz
           ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip
           libexttextcat-3.4.5.tar.xz
           libcmis-0.5.2.tar.xz
-          liborcus-0.14.1.tar.gz
+          liborcus-0.15.3.tar.gz
           liblangtag-0.6.2.tar.bz2
           0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
           17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip
@@ -195,17 +197,18 @@ noextract=(xmlsec1-1.2.28.tar.gz
           libabw-0.1.3.tar.xz
           libpagemaker-0.0.4.tar.xz
           CoinMP-1.7.6.tgz
-          language-subtag-registry-2019-04-03.tar.bz2
+          language-subtag-registry-2019-09-16.tar.bz2
           4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2
           OpenCOLLADA-master-6509aa13af.tar.bz2
           libgltf-0.1.0.tar.gz
           libstaroffice-0.0.6.tar.xz
           libnumbertext-1.0.5.tar.xz
           lxml-4.1.1.tgz
-          pdfium-3794.tar.bz2
+          pdfium-3963.tar.bz2
           libepubgen-0.1.1.tar.xz
           libqxp-0.0.2.tar.xz
-          884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf)
+          884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf
+          QR-Code-generator-1.4.0.tar.gz)
 
 prepare() {
     cd libreoffice-$_LOver
@@ -265,14 +268,12 @@ build() {
                 --with-system-graphite\
                 --enable-gio\
                 --disable-epm \
-                --disable-gtk \
                 --enable-gtk3 \
                 --enable-qt5 \
                 --enable-kde5 \
                 --disable-dconf \
                 --disable-mergelibs \
                 --enable-introspection \
-                --disable-gstreamer-0-10 \
                 --enable-openssl \
                 --enable-odk \
                 --enable-python=system \
@@ -326,6 +327,7 @@ build() {
                 --without-system-xmlsec \
                 --without-system-libepubgen \
                 --without-system-libqxp \
+                --without-system-qrcodegen \
 		--with-gdrive-client-id=${_google_default_client_id} \
 		--with-gdrive-client-secret=${_google_default_client_secret} \
 		--disable-dependency-tracking
