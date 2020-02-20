@@ -1,10 +1,10 @@
 pkgname=partitionmanager
-pkgver=4.0.0
+pkgver=4.1.0
 pkgrel=1
 epoch=1
 pkgdesc="A KDE utility that allows you to manage disks, partitions, and file systems"
 arch=('x86_64')
-url="https://sourceforge.net/projects/partitionman"
+url="https://kde.org/applications/system/org.kde.partitionmanager"
 license=('GPL2')
 depends=('kpmcore' 'hicolor-icon-theme' 'kio')
 makedepends=('extra-cmake-modules' 'python3' 'kdoctools')
@@ -12,7 +12,7 @@ conflicts=('tribe-partitionmanager')
 provides=('tribe-partitionmanager')
 replaces=('tribe-partitionmanager<=1358163-8')
 source=("https://download.kde.org/stable/${pkgname}/${pkgver}/src/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('7967edaf9dad3641ff31ff5da1f23578c7348e3d70214baf16236d5c40c413e1')
+sha256sums=('d61e20237c854cd3622b19cec5939c51bf4f350741106fdb44fc5a82155735b4')
 
 build() {
   cd ${pkgname}-${pkgver}
