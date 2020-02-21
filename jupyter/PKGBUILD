@@ -1,7 +1,7 @@
 pkgbase=jupyter
 pkgname=('jupyter' 'ipython2-notebook')
-pkgver=4.3.0
-pkgrel=2
+pkgver=4.6.3
+pkgrel=1
 pkgdesc="A language-agnostic web-based interactive shell/notebook server."
 arch=('x86_64')
 url="http://jupyter.org/"
@@ -38,7 +38,7 @@ source=("jupyter_core-$pkgver.tgz::https://github.com/jupyter/jupyter_core/archi
         "org.jupyter.qtconsole-py2.desktop"
         "requirements_py3.txt"
         "requirements_py2.txt")
-sha1sums=('59787e22c60365f0fba7b887fb63b1e2a5f175fa'
+sha1sums=('68d1e7fb27dd388c97c6d8f4df0f4d20c3d123e7'
           '2d4825ffba7d34119374cd5f606751b4ff043362'
           'a4e18ed6a91bca345ee074af8d77b2bebc4a1e96'
           '378c57a9e89fcd3e76e7a3446d41343168d77f59'
@@ -50,8 +50,8 @@ sha1sums=('59787e22c60365f0fba7b887fb63b1e2a5f175fa'
           'a3bace37c3915f545bab045154d4f891ff396bd1'
           '82972c423cba5481c39c45937246a0f84e279763'
           '1dc547fdd164d8e5023164b8408992aeee689317'
-          'SKIP'
-          'SKIP')
+          '01b635a7d588eb4f9f291891e017fe0d0c6439d6'
+          'f2def43381f2499d5cf2e034ee3edce8f48b6f16')
 
 prepare() {
   cd "$srcdir"
