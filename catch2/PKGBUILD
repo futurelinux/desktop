@@ -1,0 +1,46 @@
+pkgname=catch2
+_gitcommit=d10b9bd02e098476670f5eb0527d2c7281476e8a
+pkgver=2.11.1
+pkgrel=1
+pkgdesc="Modern, C++-native, header-only, test framework for unit-tests, TDD and BDD"
+arch=('x86_64')
+url="https://github.com/catchorg/catch2"
+license=('Boost')
+makedepends=('git' 'cmake' 'python') # python seems to be necessary for building tests (FS#60273)
+source=(${pkgname}::"git+https://github.com/catchorg/Catch2#commit=${_gitcommit}?signed")
+sha256sums=('SKIP')
+validpgpkeys=(
+  E29C46F3B8A7502860793B7DECC9C20E314B2360 # Martin Hořeňovský
+  81E70B717FFB27AFDB45F52090BBFF120F9C087B # Jozef Grajciar
+)
+
+pkgver() {
+  cd ${pkgname}
+  git describe --tags --match 'v*' | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  cd ${pkgname}
+
+  mkdir -p build
+  cd build
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCATCH_USE_VALGRIND=OFF \
+    -DCATCH_BUILD_EXAMPLES=OFF \
+    -DCATCH_ENABLE_COVERAGE=OFF \
+    -DCATCH_ENABLE_WERROR=OFF \
+    -DBUILD_TESTING=ON
+  make
+}
+
+check() {
+  cd ${pkgname}/build
+  make test
+}
+
+package() {
+  cd ${pkgname}/build
+  make DESTDIR="$pkgdir" install
+}

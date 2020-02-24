@@ -1,124 +1,53 @@
 # Contributions from ArchLinux https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/telegram-desktop
 
 pkgname=telegram-desktop
-pkgver=1.8.15
+pkgver=1.9.14
 pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
 license=('GPL3')
-depends=('ffmpeg' 'hicolor-icon-theme' 'minizip' 'openal' 'qt5-base' 'qt5-imageformats' 'openssl')
-makedepends=('cmake' 'git' 'gyp' 'range-v3' 'python3' 'libnotify' 'dos2unix')
+depends=('ffmpeg' 'hicolor-icon-theme' 'minizip' 'openal' 'qt5-base' 'qt5-imageformats' 'openssl' 'enchant' 'lz4' 'xxhash' 'libdbusmenu-qt5')
+makedepends=('cmake>=3.16' 'git' 'ninja' 'range-v3' 'python3' 'tl-expected' 'microsoft-gsl')
 optdepends=('ttf-opensans: default Open Sans font family')
 provides=('telegram' 'tdesktop')
 conflicts=('tdesktop')
 replaces=('tdesktop')
 source=(
-    "tdesktop::git+https://github.com/telegramdesktop/tdesktop.git#tag=v$pkgver"
-    "libtgvoip::git+https://github.com/telegramdesktop/libtgvoip"
-    "variant::git+https://github.com/mapbox/variant"
-    "Catch::git+https://github.com/philsquared/Catch"
-    "GSL::git+https://github.com/Microsoft/GSL.git"
-    "crl::git+https://github.com/telegramdesktop/crl.git"
-    "xxHash::git+https://github.com/Cyan4973/xxHash.git"
-    "rlottie::git+https://github.com/john-preston/rlottie.git"
-    "tg.protocol"
-    "CMakeLists.inj"
-    "tdesktop.patch"
-    "libtgvoip.patch"
-    "demibold.patch"
-    "Use-system-wide-font.patch"
-    "tdesktop_lottie_animation_qtdebug.patch"
-    "Revert-Disable-DemiBold-fallback-for-Semibold.patch"
-    "Revert-Change-some-private-header-includes.patch"
+    "https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz"
+    "telegram-desktop.sh"
 )
-sha512sums=('SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'b87414ceaae19185a8a5749cea1f6d9f3fc3c69b8dd729e3db8790cde00b987c3c827cd30baf0eac579d1884e34aa2f37bb90778c3c0bc9ca211d75a82891b9d'
-            'b759e45282c7bd04e1fdcbfd0c009773782bebde36d96363db9869a9d78e7fad41314ad311b7afbfa57db4e66c0265da17e9f81f6d62a972466cb71d19d4b47c'
-            'ccdebc0378db494c9f2bebad1442cb0fcefb290c74b8b38dc49ae42874bd87f9b0097836ea05040cee8a6c507163c67db639c5da4aa05163d2a9573a727d77de'
-            'd60694dc701aa985b0e82a12c9732b945082470441c687b33167a94f94efcf253baf43bb7280ec160ba338485ee5c62de138e4804cae05f27cc5cf4298166d39'
-            '6d0bac5aa4c4992b5400a9a9318f7a4e92d5eab961917cf0b05cdd251ab66a77c52ec8fbef246e8019606a7624d7b5420b87f8153e071e9724c7d2f5c94e47c0'
-            '5979dff7361d9ebcb0d1b74ba4796c6b30b0c05e1d135cc6fd85f9da075a22242928bc15a97199065a013f0fcc594fca5994e27df1fd480cce85472b946d49a0'
-            '59489fbc1ee993e77d198ded091d334dfe390408b381da5ded5d5a574d15c5a833bd143dc194bf3abbd0abb60058fe35029fcfca93f894e71120736f1f26da56'
-            'd5cd7ecb5583258462c21a9ae3d4e8ae8c709d47d7ce2c45f8ae23100d24993398b8372021957b9a4607b3988f366e1c0cf64d724d901cb70212665c481217e9'
-            '087dd821690dfedf1c275f264a0223b123e31ab9ee95050023930470bc9c866958cae00e2fd9132e6f7efbc4f1dfc3fdc20f8fba1fc9472d92bd702eaa60adb0')
-
-prepare() {
-    cd "$srcdir/tdesktop"
-    git submodule init
-    git config submodule.Telegram/ThirdParty/libtgvoip.url "$srcdir/libtgvoip"
-    git config submodule.Telegram/ThirdParty/variant.url "$srcdir/variant"
-    git config submodule.Telegram/ThirdParty/GSL.url "$srcdir/GSL"
-    git config submodule.Telegram/ThirdParty/Catch.url "$srcdir/Catch"
-    git config submodule.Telegram/ThirdParty/crl.url "$srcdir/crl"
-    git config submodule.Telegram/ThirdParty/xxHash.url "$srcdir/xxHash"
-    git config submodule.Telegram/ThirdParty/rlottie.url "$srcdir/rlottie"
-    git submodule update
-
-    patch -Np1 -i "$srcdir/tdesktop.patch"
-    patch -Np1 -i "$srcdir/Revert-Disable-DemiBold-fallback-for-Semibold.patch"
-    patch -Np1 -i "$srcdir/tdesktop_lottie_animation_qtdebug.patch"
-    patch -Np1 -i "$srcdir/Revert-Change-some-private-header-includes.patch"
-    patch -Np1 -i "$srcdir/Use-system-wide-font.patch"
-
-    unix2dos "$srcdir/tdesktop/.appveyor/install.bat"
-    # disable static-qt for rlottie
-    sed "/RLOTTIE_WITH_STATIC_QT/d" -i "$srcdir/tdesktop/Telegram/gyp/lib_rlottie.gyp"
-
-    cd "$srcdir/tdesktop"
-    cd "Telegram/ThirdParty/libtgvoip"
-    patch -Np1 -i "$srcdir/libtgvoip.patch"
-}
+sha512sums=('56efa64048d23b280782b51319c0071c6cef833cb7e2584e52c6e45488577755beb85185ec9187029c425cc8d4c9c1887142687c744697e7731a15abe2846056'
+            '742303238a26c0a5252c416ca6697baf4a19d9ad729232d031c3b22ace10ff7290c1e626647c9e592d2e92a22977324f7873bedf1565514f077dc00aa4a333a0')
 
 build() {
-    cd "$srcdir/tdesktop"
-    export LANG=en_US.UTF-8
-    export GYP_DEFINES="TDESKTOP_DISABLE_CRASH_REPORTS,TDESKTOP_DISABLE_AUTOUPDATE,TDESKTOP_DISABLE_REGISTER_CUSTOM_SCHEME,TDESKTOP_DISABLE_DESKTOP_FILE_GENERATION,TDESKTOP_DISABLE_UNITY_INTEGRATION,TDESKTOP_DISABLE_GTK_INTEGRATION"
-    export EXTRA_FLAGS="-Winvalid-pch"
-    export CPPFLAGS="$CPPFLAGS $EXTRA_FLAGS"
-    export CXXFLAGS="$CXXFLAGS $EXTRA_FLAGS"
+    cd tdesktop-$pkgver-full
 
-    # Telegram requires us to set API_ID and API_HASH for some reason but they do not provide a way to receive a pair
-    # See https://github.com/telegramdesktop/tdesktop/commit/65b2db216033aa08b7bc846df27843e566f08981 and
-    # https://github.com/telegramdesktop/tdesktop/issues/4717
-    # The official API_ID seems to be 2040 while the API_HASH is "b18441a1ff607e10a989891a5462e627".
-    # We're going to use the defaults for now but might at some point use the official ones from the official binaries as noted above.
-
-    gyp \
-        -Dapi_id=17349 \
-        -Dapi_hash=344583e45741c457fe1862106095a5eb \
-        -Dbuild_defines=${GYP_DEFINES} \
-        -Gconfig=Release \
-        --depth=Telegram/gyp --generator-output=../.. -Goutput_dir=out Telegram/gyp/Telegram.gyp --format=cmake
-    NUM=$((`wc -l < out/Release/CMakeLists.txt` - 2))
-    sed -i "$NUM r ../CMakeLists.inj" out/Release/CMakeLists.txt
-    cd "$srcdir/tdesktop/out/Release"
-    cmake . -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
-    make
+    export CXXFLAGS="$CXXFLAGS -ffile-prefix-map=$srcdir/tdesktop-$pkgver-full="
+    cmake -B build -G Ninja . \
+        -Ddisable_autoupdate=1 \
+        -DCMAKE_INSTALL_PREFIX="$pkgdir/usr" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DTDESKTOP_API_TEST=ON \
+        -DDESKTOP_APP_USE_GLIBC_WRAPS=OFF \
+        -DDESKTOP_APP_USE_PACKAGED=ON \
+        -DDESKTOP_APP_USE_PACKAGED_RLOTTIE=OFF \
+        -DDESKTOP_APP_USE_PACKAGED_VARIANT=OFF \
+        -DDESKTOP_APP_DISABLE_CRASH_REPORTS=ON \
+        -DTDESKTOP_DISABLE_REGISTER_CUSTOM_SCHEME=ON \
+        -DTDESKTOP_DISABLE_DESKTOP_FILE_GENERATION=ON \
+        -DTDESKTOP_USE_PACKAGED_TGVOIP=OFF \
+        -DDESKTOP_APP_SPECIAL_TARGET="" \
+        -DTDESKTOP_LAUNCHER_BASENAME="telegramdesktop"
+    ninja -C build
 }
 
 package() {
+    cd tdesktop-$pkgver-full
+    ninja -C build install
+
+    mv "$pkgdir/usr/bin/telegram-desktop"{,-bin}
     install -dm755 "$pkgdir/usr/bin"
-    install -m755 "$srcdir/tdesktop/out/Release/Telegram" "$pkgdir/usr/bin/telegram-desktop"
-
-    install -d "$pkgdir/usr/share/applications"
-    install -m644 "$srcdir/tdesktop/lib/xdg/telegramdesktop.desktop" "$pkgdir/usr/share/applications/telegramdesktop.desktop"
-
-    install -d "$pkgdir/usr/share/kservices5"
-    install -m644 "$srcdir/tg.protocol" "$pkgdir/usr/share/kservices5/tg.protocol"
-
-    local icon_size icon_dir
-    for icon_size in 16 32 48 64 128 256 512; do
-        icon_dir="$pkgdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps"
-
-        install -d "$icon_dir"
-        install -m644 "$srcdir/tdesktop/Telegram/Resources/art/icon${icon_size}.png" "$icon_dir/telegram.png"
-    done
+    install -m755 "$srcdir/telegram-desktop.sh" "$pkgdir/usr/bin/telegram-desktop"
 }
+

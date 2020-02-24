@@ -1,7 +1,7 @@
 # Contributions from ArchLinux https://git.archlinux.org/svntogit/community.git/plain/trunk/PKGBUILD?h=packages/range-v3
 
 pkgname=range-v3
-pkgver=0.4.0
+pkgver=0.10.0
 pkgrel=1
 pkgdesc="Experimental range library for C++11/14/17"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url='https://github.com/ericniebler/range-v3'
 license=('custom')
 makedepends=('cmake')
 source=("https://github.com/ericniebler/range-v3/archive/${pkgver}.tar.gz")
-sha512sums=('8ada76e44daebe05ab59c353f8858ecacea7a4bd7618d4e75a443c02cefcc7dfa20542546eb58b5d89f043a4e86142fba963c1ce4d12ca12ef8a4cb852225aee')
+sha512sums=('4db089dcbf638eb30fa20dcf6785dd460c5a074a8912984a484592753cfee9f5b9a0e2c56b5bc5921d1b6120877aa2c83ac0a6fe428088ef2854033a635e9723')
 
 prepare() {
     cd "${srcdir}/range-v3-${pkgver}"

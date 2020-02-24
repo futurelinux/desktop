@@ -1,0 +1,25 @@
+pkgname=xxhash
+_pkgname=xxHash
+pkgver=0.7.2
+pkgrel=1
+pkgdesc='Extremely fast non-cryptographic hash algorithm'
+arch=(x86_64)
+url="https://cyan4973.github.io/$_pkgname/"
+license=(
+  GPL2
+  BSD
+)
+provides=(libxxhash.so)
+source=("https://github.com/Cyan4973/$_pkgname/archive/v$pkgver.tar.gz")
+sha256sums=('7e93d28e81c3e95ff07674a400001d0cdf23b7842d49b211e5582d00d8e3ac3e')
+
+build() {
+  cd $_pkgname-$pkgver
+  make PREFIX=/usr
+}
+
+package() {
+  cd $_pkgname-$pkgver
+  make PREFIX=/usr DESTDIR="${pkgdir}" install
+  install -Dm 644 LICENSE -t "${pkgdir}"/usr/share/licenses/xxhash
+}
