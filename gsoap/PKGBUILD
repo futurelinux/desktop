@@ -1,7 +1,7 @@
 # Arch contributor: https://projects.archlinux.org/svntogit/community.git/plain/trunk/PKGBUILD?h=packages/gsoap
 
 pkgname=gsoap
-pkgver=2.8.88
+pkgver=2.8.98
 pkgrel=1
 pkgdesc="Offers an XML language binding to ease the development of SOAP/XML Web services in C and C/C++"
 url="https://www.cs.fsu.edu/~engelen/soap.html"
@@ -12,7 +12,7 @@ makedepends=('autoconf' 'automake')
 options=('staticlibs')
 source=("https://prdownloads.sourceforge.net/gsoap2/${pkgname}_${pkgver}.zip"
 	'LICENSE')
-sha256sums=('effbf8a4533917b9eb3aa0e79db13573ef52e768158f5b4eb93d49b0c5cb2fa8'
+sha256sums=('56460362ca8f9decdf880d82601e50ae13fb2185582a704b037060acacb7fc3a'
             '0457ad7ae5599c7ee2e30f94d685dfd1a39cc9a9e3937aef1417d1752dfc6eb3')
 
 build() {
