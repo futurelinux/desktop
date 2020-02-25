@@ -1,5 +1,5 @@
 pkgname=ed
-pkgver=1.15
+pkgver=1.16
 pkgrel=1
 pkgdesc="A POSIX-compliant line-oriented text editor"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('glibc' 'sh')
 groups=('base-devel')
 options=('!emptydirs')
 source=("ftp://ftp.gnu.org/gnu/ed/$pkgname-$pkgver.tar.lz")
-sha256sums=('ad4489c0ad7a108c514262da28e6c2a426946fb408a3977ef1ed34308bdfd174')
+sha256sums=('cfc07a14ab048a758473ce222e784fbf031485bcd54a76f74acfee1f390d8b2c')
 
 build() {
   cd "$pkgname-$pkgver"
