@@ -1,5 +1,5 @@
 pkgname=wireshark
-pkgver=3.2.1
+pkgver=3.2.2
 pkgrel=1
 pkgdesc='A free network protocol analyzer for Unix/Linux and Windows'
 arch=('x86_64')
@@ -13,7 +13,7 @@ url='https://www.wireshark.org/'
 install=${pkgname}.install
 source=(https://www.wireshark.org/download/src/${pkgname}-${pkgver}.tar.xz
         wireshark.sysusers)
-sha256sums=('589f640058d6408ebbd695a80ebbd6e7bd99d8db64ecda253d27100dfd27e85b'
+sha256sums=('5f5923ef4c3fee370ed0ca1bb324f37c246015eba4a7e74ab95d9208feeded79'
             'df07748152443c7d727bd51cd57af950c345b7141986b4f0e476cd6aa3623ac4')
 
 prepare() {
