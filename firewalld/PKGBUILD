@@ -1,5 +1,5 @@
 pkgname=firewalld
-pkgver=0.7.2
+pkgver=0.8.1
 pkgrel=1
 pkgdesc='Firewall daemon with D-Bus interface'
 arch=('x86_64')
@@ -21,7 +21,7 @@ backup=('etc/conf.d/firewalld'
         'etc/firewalld/firewalld.conf')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/firewalld/firewalld/archive/v$pkgver.tar.gz"
         'firewalld-sysconfigdir.patch')
-sha256sums=('ddb6f9c722a96eea5f518798e09d4e20e67c5353f89e66b959a700ac29f0a6b9'
+sha256sums=('cfdf40890bca18892d1695bd902ede695cb2a61e1fcf809a2f8c394ca788a31e'
             'cf7d655230c43acf10a0f97dffdbcba136729967c8b9a25a930871d54a589834')
 
 prepare() {
@@ -48,4 +48,7 @@ package() {
   cd $pkgname-$pkgver
 
   make DESTDIR=$pkgdir install
+
+  python3 -m compileall -d /usr/lib "$pkgdir/usr/lib"
+  python3 -O -m compileall -d /usr/lib "$pkgdir/usr/lib"
 }
