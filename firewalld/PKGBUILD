@@ -1,6 +1,6 @@
 pkgname=firewalld
 pkgver=0.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Firewall daemon with D-Bus interface'
 arch=('x86_64')
 url='https://firewalld.org/'
@@ -48,7 +48,4 @@ package() {
   cd $pkgname-$pkgver
 
   make DESTDIR=$pkgdir install
-
-  python3 -m compileall -d /usr/lib "$pkgdir/usr/lib"
-  python3 -O -m compileall -d /usr/lib "$pkgdir/usr/lib"
 }
