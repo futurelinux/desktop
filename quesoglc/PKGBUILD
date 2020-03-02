@@ -2,7 +2,7 @@
 
 pkgname=quesoglc
 pkgver=0.7.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A free implementation of the OpenGL Character Renderer (GLC)"
 arch=('x86_64')
 url='http://quesoglc.sourceforge.net/'
