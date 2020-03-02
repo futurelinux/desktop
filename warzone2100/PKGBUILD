@@ -1,35 +1,35 @@
 pkgname=warzone2100
-pkgver=3.2.3
+pkgver=3.3.0
 pkgrel=1
 pkgdesc="3D real-time strategy game where you fight to rebuilt the world destroyed by nuclear war."
 arch=('x86_64')
 url="https://wz2100.net/"
 license=('GPL')
 categories=('games')
-depends=('libgl' 'openal' 'libjpeg' 'libpng' 'libvorbis' 'libtheora' 'libmad'
-	 'physfs' 'mesa' 'quesoglc' 'popt' 'ttf-dejavu' 'qt5-base' 'qt5-script'
-	 'qt5-x11extras' 'glew' 'sdl2')
-makedepends=('gawk' 'bison' 'flex' 'zip' 'unzip' 'libxrandr' 'asciidoc')
+depends=('sdl2' 'glew' 'fribidi' 'openal' 'libvorbis' 'libtheora' 'physfs' 'ttf-dejavu' 'qt5-script' 'xorg-xrandr')
+makedepends=('gawk' 'flex' 'zip' 'unzip' 'asciidoc' 'mesa' 'cmake')
 conflicts=('warzone2100-dev')
-source=("https://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.xz"
+source=("https://github.com/Warzone2100/warzone2100/releases/download/${pkgver}/warzone2100-${pkgver}_src.tar.xz"
 	fix-qt-build.patch)
-sha256sums=('fcab9e860203e7dacda6ee60384da490a9d44aeafc07aa31ff25f9c548be7582'
+sha256sums=('cc48c8128d17a499e833996470d843855389d9fc985c71f05be08901f33116e8'
             '59529cb62e5985ed9934fdf3621a98ecf2b3b54d4bd7d0793b5317156934712f')
 
+prepare() {
+  mkdir -p build
+}
+
 build() {
-  cd ${pkgname}-${pkgver}
+  cd build
 
-  # Fix build
-  patch -Np1 -i ${srcdir}/fix-qt-build.patch
-
-  ./configure \
-    --prefix=/usr \
-    --with-backend=qt \
-    --with-distributor="Chakra GNU/Linux"
+  cmake ../$pkgname \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DWZ_DISTRIBUTOR="ArchLinux"
   make
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
-  make DESTDIR=${pkgdir} install
+  cd build
+
+  make DESTDIR=$pkgdir install
 }
