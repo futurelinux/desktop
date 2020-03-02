@@ -5,9 +5,9 @@
 
 pkgname=unvanquished
 pkgver=0.51.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A team-based, fast-paced, fps/rts hybrid game which pits aliens against humans. Monthly alpha release.'
-arch=('x86_64' 'i686')
+arch=('x86_64')
 url='http://www.unvanquished.net'
 license=('GPL3')
 makedepends=('cmake')
@@ -22,7 +22,7 @@ install='unvanquished.install'
 
 # Unvanquished refers to the game's branding and gamelogic.
 # Note that the gamelogic is not compiled here but shipped in unvanquished-data.
-_unvver="archlinux/${pkgver}-${pkgrel}"
+_unvver="archlinux/${pkgver}-1"
 _unvdir="Unvanquished-${_unvver/\//-}"
 
 # Dæmon is the game's engine.
