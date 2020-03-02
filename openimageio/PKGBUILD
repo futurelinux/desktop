@@ -1,5 +1,5 @@
 pkgname=openimageio
-pkgver=1.8.17
+pkgver=2.1.11.2
 pkgrel=1
 pkgdesc="A library for reading and writing images, including classes, utilities, and applications."
 arch=('x86_64')
@@ -41,5 +41,5 @@ package() {
 
   # license
   cd ..
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE.md"
 }
