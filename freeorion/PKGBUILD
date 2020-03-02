@@ -1,5 +1,5 @@
 pkgname=freeorion
-pkgver=0.4.8
+pkgver=0.4.9
 pkgrel=1
 pkgdesc="turn-based space empire and galactic conquest (4X) computer game"
 arch=('x86_64')
@@ -10,7 +10,7 @@ makedepends=('boost' 'cmake' 'doxygen')
 conflicts=('gigi')
 replaces=('gigi')
 source=("$pkgname-$pkgver::https://github.com/freeorion/freeorion/archive/v$pkgver.tar.gz")
-sha256sums=('1dac72c40bb9b881699423c98b14a9cd71b3f88cd2ec3433d5456cdd8dfa9621')
+sha256sums=('bf16ecfe73e5f14f2fba0e4d30f10111051ec88806f97361ab3f4e1fdac1f512')
 
 prepare() {
   cd $srcdir/$pkgname-$pkgver
