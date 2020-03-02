@@ -1,52 +1,37 @@
 pkgname=avogadro
-pkgver=1.2.0
-pkgrel=5
+_pkgname=avogadroapp
+pkgver=1.91.0
+pkgrel=1
 pkgdesc="An advanced molecular editor based on Qt"
 arch=('x86_64')
-url="http://avogadro.cc/wiki/Main_Page"
-license=('GPL2')
-depends=('eigen2' 'openbabel' 'python2-pyqt4' 'boost-libs' 'glew' 'python2-numpy')
-makedepends=('cmake' 'boost' 'doxygen' 'libgl')
+url="http://openchemistry.org/projects/avogadro2"
+license=('custom:Kitware')
+depends=('avogadrolibs' 'desktop-file-utils')
+makedepends=('git' 'cmake' 'eigen3')
 categories=('education')
-source=("avogadro-1.2.0.tar.gz::https://freefr.dl.sourceforge.net/project/avogadro/avogadro/1.2.0/avogadro-1.2.0.tar.gz"
-        'boost153.patch'
-        'avogadro-glibc2.23.patch'
-        'avogadro-fix-linking.patch'
-        'avogadro-force-eigen2.patch')
-md5sums=('3206068fc27bd3b717c568ee72f1e5ec'
-         'aa2573f78d5dbd85b3cb79e08acde8ab'
-         '83990ecbb4c076fddda3eaca2c2975ed'
-         'e333f624d5649c6d3a7cfd14a778bc73'
-         'b05434bbf62570f72e0b0c7335cd44c3')
+install=$pkgname.install
+source=(https://github.com/OpenChemistry/avogadroapp/archive/$pkgver.tar.gz)
+md5sums=('0f0b9d0f7220f3ffee00f837ea49c308')
 
 prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"  
-
-  patch -p1 -i "${srcdir}"/boost153.patch
-  # Fix build with glibc 2.23
-  patch -p1 -i "${srcdir}"/avogadro-glibc2.23.patch
-  # Fix linking (Fedora)
-  patch -p1 -i "${srcdir}"/avogadro-fix-linking.patch
-  # Force Eigen 2, newer versions of Eigen 3 remove backward
-  # compatibility
-  patch -p1 -i "${srcdir}"/avogadro-force-eigen2.patch
-
-  mkdir -p build 
+  mkdir -p $_pkgname-$pkgver/build
 }
 
-
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}/build"
+  cd $_pkgname-$pkgver/build
 
-  cmake "${srcdir}/${pkgname}-${pkgver}" \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DPYTHON_EXECUTABLE=/usr/bin/python2 \
-    -DQT_MKSPECS_RELATIVE=share/qt/mkspecs
+  cmake .. \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DBUILD_SHARED_LIBS=ON \
+      -DENABLE_TESTING=OFF \
+      -DUSE_VTK=OFF
   make
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}/build"
-  make DESTDIR=${pkgdir} install
+  cd $_pkgname-$pkgver/build
+  make DESTDIR=$pkgdir install
+  install -D -m 644 ../LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
 }
