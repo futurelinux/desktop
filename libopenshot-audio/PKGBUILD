@@ -1,6 +1,6 @@
 pkgname=libopenshot-audio
 pkgver=0.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A high-quality audio editing and playback library used by libopenshot."
 arch=('x86_64')
 url="https://www.openshot.org/"
@@ -14,7 +14,7 @@ build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib ..
 	make
 }
 
