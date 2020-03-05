@@ -1,18 +1,18 @@
-
 pkgname=nftables
-pkgver=0.9.0
-pkgrel=2
+pkgver=0.9.3
+pkgrel=1
 pkgdesc='Netfilter tables userspace tools'
 arch=('x86_64')
 url='https://netfilter.org/projects/nftables/'
 license=('GPL2')
-depends=('libmnl' 'libnftnl' 'gmp' 'readline' 'ncurses')
-makedepends=('docbook2x')
+depends=('libmnl' 'libnftnl' 'gmp' 'readline' 'ncurses' 'jansson')
+makedepends=('asciidoc' 'python3')
+optdepends=('python3: Python bindings')
 backup=('etc/nftables.conf')
 source=("https://netfilter.org/projects/nftables/files/nftables-$pkgver.tar.bz2"
         'nftables.conf'
         'nftables.service')
-sha1sums=('a3463fc6589c08631ec3f306f6db7f0905249542'
+sha1sums=('20156858169fde135a0b4c22c4cd9437afcbb733'
           '7869aa31ac802922073310ffd4cbbc16450171e5'
           '59185e947ebfd599954800ad2c774171b3f4cd58')
 
@@ -48,4 +48,3 @@ package() {
   # systemd
   install -Dm644 nftables.service "$pkgdir/usr/lib/systemd/system/nftables.service"
 }
-
