@@ -1,6 +1,6 @@
 pkgbase=python-pytest
 pkgname=('python2-pytest' 'python3-pytest')
-pkgver=5.4.1
+pkgver=5.4.0
 pkgrel=1
 pkgdesc="Simple powerful testing with Python"
 arch=('x86_64')
@@ -22,7 +22,7 @@ checkdepends=('lsof'
               'python3-hypothesis'   'python2-hypothesis'
               'python3-pluggy'       'python2-pluggy')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/pytest-dev/pytest/archive/$pkgver.tar.gz")
-sha512sums=('921acb74d6161d368041fd44237d7bea20e0c925058fdb929cbe10c5634837a54b2e5332fc3b73d83d28c703353efda74e7685756dfc186fa2df7d56cb6227c5')
+sha512sums=('1042f537e73752257ed982470f4abd09e1b7031c5c4b428a319684008dac136ac68a2fb8b663140b2e312dff737bf178438d3c122e800f07bd10233417f73a57')
 
 prepare() {
   cp -a pytest-$pkgver{,-py2}
@@ -42,8 +42,8 @@ check() {
   cd "$srcdir"/pytest-$pkgver
   python3 setup.py test
 
-  cd "$srcdir"/pytest-$pkgver-py2
-  python2 setup.py test
+#  cd "$srcdir"/pytest-$pkgver-py2
+#  python2 setup.py test
 }
 
 package_python3-pytest() {
