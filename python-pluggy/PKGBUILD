@@ -1,15 +1,15 @@
 pkgbase=python-pluggy
 pkgname=(python3-pluggy python2-pluggy)
-pkgver=0.5.2
+pkgver=0.13.1
 pkgrel=1
 pkgdesc="Plugin and hook calling mechanisms for python"
-arch=('any')
+arch=('x86_64')
 url="https://www.pluggypayments.com/docs/python"
 license=('MIT')
 makedepends=('python3-setuptools' 'python2-setuptools')
 checkdepends=('python3-pytest-runner' 'python2-pytest-runner')
 source=("https://pypi.io/packages/source/p/pluggy/pluggy-$pkgver.tar.gz")
-sha512sums=('850b1a7b9e55d46d5deb16b8bc71e3f9d6c26b78fe34379b295a9780f3da8abb3c44f524f175d0392b61fc2d36d66d156db3f499a3c1666e2ff3e3c6344153cb')
+sha512sums=('eb747ff341cedacbd90eb20e22ad3d1ddf5588056f14d069f56331f4141a15b7eccaee23ea196d2f4906964ddb77a79b156bbf3ef8c8083e9952c55d13d55f3e')
 
 prepare() {
   cp -a pluggy-$pkgver{,-py2}
@@ -25,10 +25,10 @@ build() {
 
 check() {
   cd "$srcdir"/pluggy-$pkgver
-  python3 setup.py pytest
+  python3 setup.py test
 
   cd "$srcdir"/pluggy-$pkgver-py2
-  python2 setup.py pytest
+  python2 setup.py test
 }
 
 package_python3-pluggy() {
