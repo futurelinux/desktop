@@ -1,4 +1,4 @@
-pkgname=python2-pycountry
+pkgname=python3-pycountry
 pkgver=19.8.18
 pkgrel=1
 pkgdesc="ISO country, subdivision, language, currency and script definitions and their translations"
@@ -8,11 +8,11 @@ license=('LGPL2')
 provides=('python-pycountry')
 replaces=('python-pycountry')
 conflicts=('python-pycountry')
-depends=('python2-lxml' 'python2-setuptools')
+depends=('python3-lxml' 'python3-setuptools')
 source=(https://pypi.python.org/packages/source/p/pycountry/pycountry-$pkgver.tar.gz)
 sha512sums=('39ba06629eeea55460424d06992ca5f1e5bf6168b219dc4880ec326f6aa0c92a4fdc54d4143a8b8bb1490149af793e760e291c6d704104a57ba91e88228ab669')
 
 package() {
   cd pycountry-${pkgver}
-  python2 setup.py install --root=$pkgdir/ --optimize=1
+  python3 setup.py install --root=$pkgdir/ --optimize=1
 }

@@ -1,0 +1,27 @@
+pkgname='python3-pycryptodome'
+pkgdesc="Collection of cryptographic algorithms and protocols, implemented for use from Python 3."
+pkgver=3.9.7
+pkgrel=1
+license=('BSD')
+arch=('x86_64')
+url='https://www.pycryptodome.org/'
+depends=('python3' 'gmp')
+conflicts=('python3-crypto')
+provides=('python3-crypto')
+replaces=('python3-crypto')
+makedepends=('gmp' 'python3-setuptools')
+source=("pycryptodome-${pkgver}.tar.gz::https://github.com/Legrandin/pycryptodome/archive/v${pkgver}.tar.gz")
+sha512sums=('3b0361d7afc772d9dec068b42d6a36732faeec55b7317cbe31fa86d65069b314c735fcfce03e68381d86f64dcb7abd751b0225c05f760631266063c1664fca4c')
+
+build() {
+  cd pycryptodome-$pkgver
+  python3 setup.py build
+}
+
+package() {
+  cd pycryptodome-$pkgver
+  python3 setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE.rst "$pkgdir/usr/share/licenses/$pkgname/LICENSE.rst"
+
+  rm -r "$pkgdir"/usr/lib/python3.*/site-packages/Crypto/SelfTest/
+}

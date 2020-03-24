@@ -1,0 +1,9 @@
+2017-11-05 Lionel Félicité <deogracia@free.fr>
+    * python3-websocket-client 0.44.0-1
+      New upstream release
+
+2016-11-06 Lionel Félicité <deogracia@free.fr>
+    * python3-websocket-client 0.37.0-1
+      Initial release
+      Taken from arch repo
+       thanks to Felix Yan <felixonmars@archlinux.org>
