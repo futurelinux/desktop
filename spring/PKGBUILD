@@ -1,7 +1,7 @@
 pkgname=spring
 _pkgname=springrts
 pkgver=104.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A 3D real-time-strategy game engine.'
 arch=('x86_64')
 url="http://springrts.com/"
@@ -12,9 +12,11 @@ makedepends=('boost' 'cmake' 'zip' 'xz' 'p7zip' 'python2' 'java-environment' 'me
 optdepends=('python2: python-based bots'
             'java-runtime: java-based bots')
 source=("https://downloads.sourceforge.net/sourceforge/$_pkgname/${pkgname}_${pkgver}_src.tar.lzma"
+        fix-compile-error-because-of-new-openal-version.patch
         fix-reinterpret_cast-in-constexpr.patch)
 sha256sums=('ceb0bf59f8aac14f2d844f920e898724913326cdf1adf3f10d88ecc317a3ec16'
-            '982b8a4da8e6ccb8f4f977d7f75de0206ad4ccf488d0843ad37bab34f7e35bca')
+            '06fb6052175b2f59ac7712c652010717301bcb678d97b065c7b816392f297bd0'
+            '9c77440b895c616da207fe4e4bc4e6f4ff4226531fac7f2d5d318a56bad7ad9c')
 
 prepare() {
   cd spring_$pkgver
@@ -22,6 +24,8 @@ prepare() {
   # https://springrts.com/mantis/view.php?id=5781
   # https://github.com/spring/spring/commit/6104061fe3
   patch -Np1 -i ../fix-reinterpret_cast-in-constexpr.patch
+  
+  patch -Np1 -i ../fix-compile-error-because-of-new-openal-version.patch
 }
 
 build() {
