@@ -1,0 +1,48 @@
+--- a/source/blender/blenkernel/intern/writeffmpeg.c	2020-03-24 11:08:49.250000000 +0100
++++ b/source/blender/blenkernel/intern/writeffmpeg.c	2020-03-24 11:53:11.500000000 +0100
+@@ -707,7 +707,7 @@
+ 
+   if ((of->oformat->flags & AVFMT_GLOBALHEADER)) {
+     PRINT("Using global header\n");
+-    c->flags |= CODEC_FLAG_GLOBAL_HEADER;
++    c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+   }
+ 
+   /* xasp & yasp got float lately... */
+@@ -849,7 +849,7 @@
+   }
+ 
+   if (of->oformat->flags & AVFMT_GLOBALHEADER) {
+-    c->flags |= CODEC_FLAG_GLOBAL_HEADER;
++    c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+   }
+ 
+   set_ffmpeg_properties(rd, c, "audio", &opts);
+@@ -868,14 +868,14 @@
+   st->codec->time_base.den = st->codec->sample_rate;
+ 
+ #  ifndef FFMPEG_HAVE_ENCODE_AUDIO2
+-  context->audio_outbuf_size = FF_MIN_BUFFER_SIZE;
++  context->audio_outbuf_size = AV_INPUT_BUFFER_MIN_SIZE;
+ #  endif
+ 
+   if (c->frame_size == 0) {
+     // used to be if ((c->codec_id >= CODEC_ID_PCM_S16LE) && (c->codec_id <= CODEC_ID_PCM_DVD))
+     // not sure if that is needed anymore, so let's try out if there are any
+     // complaints regarding some ffmpeg versions users might have
+-    context->audio_input_samples = FF_MIN_BUFFER_SIZE * 8 / c->bits_per_coded_sample / c->channels;
++    context->audio_input_samples = AV_INPUT_BUFFER_MIN_SIZE * 8 / c->bits_per_coded_sample / c->channels;
+   }
+   else {
+     context->audio_input_samples = c->frame_size;
+--- a/source/blender/imbuf/intern/indexer.c	2020-03-24 11:08:49.250000000 +0100
++++ b/source/blender/imbuf/intern/indexer.c	2020-03-24 11:54:46.350000000 +0100
+@@ -527,7 +527,7 @@
+   av_opt_set_int(rv->c, "qmax", ffmpeg_quality, 0);
+ 
+   if (rv->of->flags & AVFMT_GLOBALHEADER) {
+-    rv->c->flags |= CODEC_FLAG_GLOBAL_HEADER;
++    rv->c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+   }
+ 
+   if (avio_open(&rv->of->pb, fname, AVIO_FLAG_WRITE) < 0) {

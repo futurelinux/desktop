@@ -1,0 +1,22 @@
+--- a/intern/itasc/kdl/tree.hpp	2020-03-24 12:26:27.000000000 +0100
++++ b/intern/itasc/kdl/tree.hpp	2020-03-24 14:38:56.730000000 +0100
+@@ -34,7 +34,7 @@
+     //Forward declaration
+     class TreeElement;
+     // Eigen allocator is needed for alignment of Eigen data types
+-    typedef std::map<std::string,TreeElement, std::less<std::string>, Eigen::aligned_allocator<std::pair<std::string, TreeElement> > > SegmentMap;
++    typedef std::map<std::string,TreeElement, std::less<std::string>, Eigen::aligned_allocator<std::pair<const std::string, TreeElement> > > SegmentMap;
+ 
+     class TreeElement
+     {
+--- a/intern/cycles/util/util_sseb.h	2020-03-24 15:04:58.000000000 +0100
++++ b/intern/cycles/util/util_sseb.h	2020-03-24 15:18:09.780000000 +0100
+@@ -116,7 +116,7 @@
+ __forceinline const sseb unpackhi( const sseb& a, const sseb& b ) { return _mm_unpackhi_ps(a, b); }
+ 
+ template<size_t i0, size_t i1, size_t i2, size_t i3> __forceinline const sseb shuffle( const sseb& a ) {
+-	return _mm_shuffle_epi32(a, _MM_SHUFFLE(i3, i2, i1, i0));
++	return _mm_castsi128_ps(_mm_shuffle_epi32(a, _MM_SHUFFLE(i3, i2, i1, i0)));
+ }
+ 
+ template<> __forceinline const sseb shuffle<0, 1, 0, 1>( const sseb& a ) {
