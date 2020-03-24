@@ -1,0 +1,50 @@
+--- a/game/audio.cc	2016-01-23 12:40:01.000000000 +0200
++++ b/game/audio.cc	2018-06-03 03:29:35.251425495 +0300
+@@ -77,7 +77,7 @@ class AudioClock {
+ 	static ptime getTime() { return microsec_clock::universal_time(); }
+ 	// Conversion helpers
+ 	static double getSeconds(time_duration t) { return 1e-6 * t.total_microseconds(); }
+-	static time_duration getDuration(double seconds) { return microseconds(1e6 * seconds); }
++	static time_duration getDuration(double seconds) { return microseconds(static_cast<long long>(1e6 * seconds)); }
+ 
+ 	mutable boost::mutex m_mutex;
+ 	ptime m_baseTime; ///< A reference time (corresponds to m_basePos)
+@@ -149,7 +149,7 @@ class Music {
+ 	int64_t m_pos; ///< Current sample position
+ 	bool m_preview;
+ 	AudioClock m_clock;
+-	time_duration durationOf(int64_t samples) const { return microseconds(1e6 * samples / srate / 2.0); }
++	time_duration durationOf(int64_t samples) const { return microseconds(static_cast<long long>(1e6 * samples / srate / 2.0)); }
+ public:
+ 	bool suppressCenterChannel;
+ 	double fadeLevel;
+--- a/game/backgrounds.hh	2019-01-15 10:39:54.147584168 +0000
++++ b/game/backgrounds.hh	2019-01-15 10:40:41.284376151 +0000
+@@ -7,6 +7,7 @@
+ #include <boost/scoped_ptr.hpp>
+ #include <boost/thread/mutex.hpp>
+ #include <boost/thread/thread.hpp>
++#include <boost/noncopyable.hpp>
+ #include <vector>
+ 
+ /// songs class for songs screen
+diff -ru performous-1.1.orig/game/songs.hh performous-1.1/game/songs.hh
+--- performous-1.1.orig/game/songs.hh	2019-01-15 10:39:54.147584168 +0000
++++ performous-1.1/game/songs.hh	2019-01-15 10:41:03.901102679 +0000
+@@ -6,6 +6,7 @@
+ #include <boost/scoped_ptr.hpp>
+ #include <boost/thread/mutex.hpp>
+ #include <boost/thread/thread.hpp>
++#include <boost/noncopyable.hpp>
+ #include <set>
+ #include <sstream>
+ #include <vector>
+--- a/game/svg.cc
++++ b/game/svg.cc
+@@ -4,6 +4,7 @@
+ #include "configuration.hh"
+ #include "../common/image.hh"
+ 
++#include <boost/smart_ptr/shared_ptr.hpp>
+ #include <librsvg/rsvg.h>
+ #include <iostream>
