@@ -5,7 +5,7 @@ pkgver=2.79.b
 _gittag=v2.79b
 #_gitcommit=c6b042be
 [[ -n ${_gitcommit} ]] && pkgver=${pkgver}.git1.${_gitcommit}
-pkgrel=3
+pkgrel=4
 epoch=2
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -15,7 +15,7 @@ depends=('libpng' 'libtiff' 'openexr' 'python3' 'python3-requests' 'desktop-file
          'shared-mime-info' 'hicolor-icon-theme' 'xdg-utils' 'glew' 'libspnav'
          'freetype2' 'openal' 'ffmpeg' 'fftw' 'boost-libs' 'x264' 'opencollada'
          'openimageio' 'libsndfile' 'jack' 'opencolorio' 'openjpeg' 'jemalloc' 'ptex' 'opensubdiv' 'openjpeg2')
-makedepends=('cmake' 'boost' 'mesa' 'git' 'llvm' 'python2') # man pages require python
+makedepends=('cmake' 'boost' 'mesa' 'git' 'llvm' 'python2' 'cuda' 'ninja') # man pages require python
 optdepends=('cuda: cycles renderer cuda support')
 screenshot=('http://www.blender.org/index.php?eID=tx_cms_showpic&file=uploads%2Fpics%2Fblender_screenshot3_03.png&width=800m&height=600m&bodyTag=%3Cbody%20style%3D%22margin%3A0%3B%20background%3A%23fff%3B%22%3E&wrap=%3Ca%20href%3D%22javascript%3Aclose%28%29%3B%22%3E%20%7C%20%3C%2Fa%3E&md5=cddc8ef0fbe1e90d0d22e78b4911860b')
 options=(!strip)
@@ -25,7 +25,9 @@ source=("git://git.blender.org/blender-addons.git"
         "git://git.blender.org/blender-translations.git"
         "git://git.blender.org/blender-dev-tools.git"
         "git://git.blender.org/scons.git"
-        ffmpeg4.0.patch)
+        ffmpeg4.0.patch
+        gcc8.patch
+        openimageio2.patch)
 if [[ -n $_gittag ]]; then
     source+=("${pkgname}-${pkgver}::git://git.blender.org/blender.git#tag=${_gittag}")
 else
@@ -37,10 +39,12 @@ sha256sums=('SKIP'
             'SKIP'
             'SKIP'
             '7e72c2f9a743d6efd69ee989f426fe439094f414df6a8af260599b5f3905d438'
+            '4de0b99adce9cc9a0ee24044c67c1a8f85bc0f299b6d147f82b72cb9c0bf3030'
+            'fc5ff872beb7fe4fb2fc55d7d40c95cabd63ba9df474e0d03accc081d821ad16'
             'SKIP')
 
 prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd $pkgname-$pkgver
 
   git submodule init
   git config submodule."release/scripts/addons".url "${srcdir}/blender-addons"
@@ -50,9 +54,11 @@ prepare() {
   git config submodule."scons".url "${srcdir}/scons"
   git submodule update
 
-
+  #GCC 8 fix
+  patch -Np1 -i ../gcc8.patch
+  patch -Np1 -i ../openimageio2.patch
   # ffmpeg 4.0 fixes
-  patch -Np1 -i "${srcdir}"/ffmpeg4.0.patch
+  patch -Np1 -i ../ffmpeg4.0.patch
 }
 
 build() {
@@ -77,7 +83,8 @@ build() {
     -DPYTHON_VERSION=3.6 \
     -DPYTHON_LIBPATH=/usr/lib \
     -DPYTHON_LIBRARY=python3.6m \
-    -DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m 
+    -DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m \
+    -DOPENGL_GL_PREFERENCE=GLVND
   make
 }
 
