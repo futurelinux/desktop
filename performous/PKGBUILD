@@ -1,18 +1,23 @@
 pkgname=performous
 pkgver=1.1
-pkgrel=4
+pkgrel=5
 pkgdesc='A free game like Singstar™, Rockband™ or Stepmania™'
 arch=('x86_64')
 url="http://$pkgname.org/"
 license=('GPL2' 'custom: Menu song: CC:BY-SA.')
 screenshot="http://performous.org/screenshots/Performous-0.4.0-Windows.jpg"
-depends=('boost-libs' 'cairo' 'ffmpeg' 'glew' 'jack' 'libjpeg' 'libepoxy' 'libpng' 'librsvg' 'libxml++' 'opencv>=3.1.0' 'portaudio' 'portmidi' 'sdl2')
+depends=('boost-libs' 'cairo' 'ffmpeg' 'glew' 'jack' 'libjpeg' 'libepoxy' 'libpng' 'librsvg' 'libxml++2.6' 'opencv>=3.1.0' 'portaudio' 'portmidi' 'sdl2')
 makedepends=('boost' 'cmake' 'help2man' 'tar')
 optdepends=('performous-songs: some songs for Performous')
 source=($pkgname-$pkgver.tar.gz::https://github.com/performous/${pkgname}/archive/${pkgver}.tar.gz
-        'cast-basic_istream-to-bool.patch')
+        'boost-1.72.patch')
 sha256sums=('17d47da4092ffa0dc2087f69b8b9d4f920aa7d16ee80020bb5445f95d22b6a71'
-            '87ead053ac4e58253af0d9a9b2278071211560e67f9ec74976f12443239c249c')
+            'e90796522c7951a47dc6f73ea961deb285d1186413867a5438bab3a2aaace4ba')
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -i ../boost-1.72.patch
+}
 
 build() {
   cd $pkgname-$pkgver
