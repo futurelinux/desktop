@@ -1,5 +1,5 @@
 pkgname=qbittorrent
-pkgver=4.2.1
+pkgver=4.2.2
 pkgrel=1
 pkgdesc="A bittorrent client written in C++ / Qt using the good libtorrent library"
 arch=('x86_64')
@@ -8,7 +8,7 @@ license=('GPL')
 depends=('qt5-base' 'qt5-svg' 'hicolor-icon-theme' 'libtorrent-rasterbar' 'xdg-utils' 'boost-libs' 'python3' 'geoip-database')
 makedepends=('boost' 'geoip' 'qt5-tools')
 source=("https://downloads.sourceforge.net/sourceforge/qbittorrent/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('a43466b4415a7a220584e0faabdaba60545f11a0be34040c64c2747c04bb3209')
+sha256sums=('fa457cc6fef02fe15958f94863181e64b8dcd9762184f8a53ad4c75f89d42223')
 
 build() {
     cd ${srcdir}/${pkgname}-${pkgver}
