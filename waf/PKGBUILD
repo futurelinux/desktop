@@ -1,5 +1,5 @@
 pkgname=waf
-pkgver=2.0.11
+pkgver=2.0.19
 pkgrel=1
 pkgdesc='General-purpose build system modelled after Scons'
 url='https://waf.io/'
@@ -10,7 +10,7 @@ makedepends=('unzip')
 provides=('python3-waf')
 options=('!emptydirs')
 source=("https://waf.io/${pkgname}-${pkgver}.tar.bz2")
-sha256sums=('e41359d1bab5210f8db7e29b9fbf4ff75e77cc08b5ec14ffd30fbb3a79b4f98f')
+sha256sums=('d8402689b72fe75f759a83b5f6bdf9b4f34ca7fd6007d80680ecfcbef5c2bba5')
 
 prepare() {
   cd "$pkgname-$pkgver"

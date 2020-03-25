@@ -1,7 +1,7 @@
 pkgname=libtorrent-rasterbar
-pkgver=1.2.2
+pkgver=1.2.5
 _pkgver=${pkgver//./_}
-pkgrel=2
+pkgrel=1
 pkgdesc="A C++ library that aims to be a good alternative to all the other bittorrent implementations around"
 url="https://www.rasterbar.com/products/libtorrent/"
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('boost-libs' 'python2' 'python3' 'geoip' 'websocketpp')
 makedepends=('boost' 'cmake')
 options=('!emptydirs')
 source=(https://github.com/arvidn/libtorrent/archive/libtorrent-${_pkgver}/$pkgname-$pkgver.tar.gz)
-sha256sums=('353793a234858e8dae9ee4a37d59c8c5297b718cc7ae3efe5798f004c0da6856')
+sha256sums=('e926602fa0bde3b93744b19323634ab047f74f967db8fd014d0a4fe91b0784e0')
 
 prepare() {
   mkdir py2 py3

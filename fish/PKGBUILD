@@ -7,33 +7,31 @@
 # Contributor: Jan Fader <jan.fader@web.de>
 
 pkgname=fish
-pkgver=3.0.0
+pkgver=3.1.0
 pkgrel=1
 pkgdesc='Smart and user friendly shell intended mostly for interactive use'
 url='https://fishshell.com/'
 arch=('x86_64')
 license=('GPL2')
-depends=('bc' 'gcc-libs' 'inetutils' 'ncurses' 'which' 'pcre2')
-optdepends=('python3: for manual page completion parser and web configuration tool')
-makedepends=('doxygen')
+depends=('glibc' 'gcc-libs' 'ncurses' 'pcre2')
+optdepends=('python3: for manual page completion parser and web configuration tool'
+            'pkgfile: command-not-found hook')
+makedepends=('cmake')
 install=fish.install
-source=(${pkgname}-${pkgver}.tar.gz::https://github.com/fish-shell/fish-shell/archive/${pkgver}.tar.gz)
-sha512sums=('97efb67c34860794787b44c04fbb8ebc1b7a8c37da00e7f6d93daab6707f198a2e0455e956a3b1c6a0c1711fa2d0f024ba42a3f82fbb17e857c518a858bb2ffb')
-
-prepare() {
-  cd fish-shell-${pkgver}
-  echo ${pkgver} > version
-  autoreconf -fiv
-}
+source=(https://github.com/fish-shell/fish-shell/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('e5db1e6839685c56f172e1000c138e290add4aa521f187df4cd79d4eab294368')
 
 build() {
-  cd fish-shell-${pkgver}
-  ./configure --prefix=/usr \
-    --sysconfdir=/etc
+  mkdir ${pkgname}-${pkgver}/build
+  cd ${pkgname}-${pkgver}/build
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+    -DCMAKE_BUILD_TYPE=Release
   make
 }
 
 package() {
-  cd fish-shell-${pkgver}
+  cd ${pkgname}-${pkgver}/build
   make DESTDIR="${pkgdir}" install
 }
