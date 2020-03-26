@@ -1,13 +1,13 @@
 pkgname=qgis
-pkgver=3.4.0
-pkgrel=2
+pkgver=3.12.0
+pkgrel=1
 pkgdesc='Geographic Information System (GIS) that supports vector, raster & database formats'
 url='https://qgis.org/'
 license=(GPL)
 arch=(x86_64)
 depends=(gdal hicolor-icon-theme libzip python3-qscintilla-qt5 qca
          qt5-3d qt5-webkit qtkeychain qt5-serialport
-         spatialindex python3-sip qt5-svg qwt proj)
+         spatialindex python3-sip qt5-svg qwt proj exiv2)
 makedepends=(cmake fcgi gsl python3-six qt5-tools sip grass opencl-headers)
 optdepends=('fcgi: Map server'
             'gpsbabel: GPS Tools plugin'
@@ -20,7 +20,7 @@ optdepends=('fcgi: Map server'
             'python3-numpy: Processing plugin'
             'python3-yaml: Processing plugin')
 source=("https://qgis.org/downloads/$pkgname-$pkgver.tar.bz2")
-sha256sums=('b63a6ebbd4e4afb2820887b18b0aa41e3c7862f7fbdc8a121d6fcd75f0321e98')
+sha256sums=('19e9c185dfe88cad7ee6e0dcf5ab7b0bbfe1672307868a53bf771e0c8f9d5e9c')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -62,8 +62,8 @@ build() {
   make
 
   # Rebuild srs database, QGIS distributes an old, buggy one
-  LD_LIBRARY_PATH="$PWD/output/lib/" make synccrsdb
-  mv /tmp/srs.db ../resources/
+#  LD_LIBRARY_PATH="$PWD/output/lib/" make synccrsdb
+#  mv /tmp/srs.db ../resources/
 }
 
 package() {
