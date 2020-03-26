@@ -1,14 +1,14 @@
 pkgname=suil
-pkgver=0.10.0
+pkgver=0.10.6
 pkgrel=1
 pkgdesc="A lightweight C library for loading and wrapping LV2 plugin UIs"
 arch=('x86_64')
 url="https://drobilla.net/software/suil/"
 license=('custom:ISC')
 depends=('lv2' 'qt5-base')
-makedepends=('python2')
+makedepends=('python3')
 source=("https://download.drobilla.net/$pkgname-$pkgver.tar.bz2")
-sha256sums=('9895c531f80c7e89a2b4b47de589d73b70bf48db0b0cfe56e5d54237ea4b8848')
+sha256sums=('06fc70abaa33bd7089dd1051af46f89d378e8465d170347a3190132e6f009b7c')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
@@ -18,17 +18,17 @@ prepare() {
 
 build() {
   cd "${pkgname}-${pkgver}"
-  python2 waf configure --prefix=/usr
-  python2 waf build
+  python3 waf configure --prefix=/usr
+  python3 waf build
 }
 
 package() {
   cd "${pkgname}-${pkgver}"
-  python2 waf install --destdir="${pkgdir}"
+  python3 waf install --destdir="${pkgdir}"
   # license
   install -vDm 644 COPYING \
     "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
   # docs
   install -t "$pkgdir/usr/share/doc/${pkgname}" \
-    -vDm 644 {AUTHORS,NEWS,PACKAGING,README}
+    -vDm 644 {AUTHORS,NEWS,PACKAGING,README.md}
 }
