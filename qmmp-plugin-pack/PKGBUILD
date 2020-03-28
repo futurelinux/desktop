@@ -1,16 +1,16 @@
 pkgname=qmmp-plugin-pack
-pkgver=1.3.1
+pkgver=1.3.2
 pkgrel=1
 pkgdesc="Qmmp Plugin Pack"
 arch=('x86_64')
-url="http://qmmp.ylsoftware.com"
+url="https://qmmp.ylsoftware.com/plugins.php"
 license=('GPL')
 depends=("qmmp>=1.0.0")
 makedepends=('cmake' 'yasm' 'mpg123' 'libsamplerate')
 optdepends=('mpg123: for mpg123 plugin'
 	    'libsamplerate: libsamplerate-based sample rate converter')
 source=(http://qmmp.ylsoftware.com/files/plugins/$pkgname-$pkgver.tar.bz2)
-sha512sums=('9d0c77a2d4c69b8a4210b74d2e3bf6818a4c180496258f5d3aa1fb9703837aad842e3a5647c9beb35febf420abbf69387ecbe218fbfce98627320789aacde39e')
+sha512sums=('71b1f8e618507c48424e0b5b1144e99444cc0ebb984ed39512a7e11a050f5893cbffda53b1293e3186f46efd0b509c49febc874d48534081e7b9124d909aa651')
 
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
