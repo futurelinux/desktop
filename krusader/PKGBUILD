@@ -1,6 +1,6 @@
 pkgname=krusader
 pkgver=2.7.2
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="An alternative file manager for KDE resembling Midnight Commander"
 url="https://krusader.org/"
@@ -30,7 +30,8 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=Release \
     -DKDE_INSTALL_LIBDIR=lib \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DKDESU_PATH="/usr/lib/kf5/kdesu"
   make 
 }
 
