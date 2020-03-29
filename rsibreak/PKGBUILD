@@ -1,18 +1,14 @@
 pkgname=rsibreak
-pkgver=0.12.7
-_pkgver=${pkgver%.*}
+pkgver=0.12.12
 pkgrel=1
-pkgdesc="A small utility to help prevent Repetive Strain Injury."
+pkgdesc="Takes care of your health and regularly breaks your work to avoid repetitive strain injury (RSI)"
 arch=('x86_64')
-url="http://www.rsibreak.org/"
+url="https://userbase.kde.org/RSIBreak"
 license=('GPL2')
-depends=('libxss' 'qt5-tools' 'qt5-x11extras' 'ki18n' 'kconfigwidgets' 'kdbusaddons' 'kdoctools' 'kiconthemes' 'kidletime' 'knotifyconfig' 'kxmlgui' 'kwindowsystem')
-makedepends=('extra-cmake-modules' 'cmake' 'docbook-xsl')
-categories=('utils')
-# options=('libtool')
-changelog=ChangeLog
-source=("http://download.kde.org/stable/rsibreak/${_pkgver}/rsibreak-$pkgver.tar.xz")
-sha256sums=('c9f33f56214ff572c76049cc7b2acc8c58585444017762596190d89826103942')
+depends=('knotifyconfig' 'kidletime' 'hicolor-icon-theme')
+makedepends=('extra-cmake-modules' 'kdoctools')
+source=("https://download.kde.org/stable/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz")
+sha256sums=('a3391ffa91d646e032923a8066e46b36e0ab7798bd5a17dcd08a53d6fcce0385')
 
 prepare() {
   cd $srcdir/$pkgname-$pkgver
@@ -23,12 +19,12 @@ build() {
   cd $srcdir/$pkgname-$pkgver/build
   
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DBUILD_TESTING=OFF \
         ..
   make
 }
  
 package() {
   cd $srcdir/$pkgname-$pkgver/build
-  make DESTDIR=$pkgdir install
+  make DESTDIR="$pkgdir" install
 }
