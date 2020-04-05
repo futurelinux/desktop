@@ -1,7 +1,7 @@
 pkgname=digikam
-_pkgver=6.3.0
+_pkgver=6.4.0
 pkgver=${_pkgver//-/_}
-pkgrel=2
+pkgrel=1
 epoch=1
 pkgdesc="Digital photo management application for KDE"
 url="https://www.digikam.org/"
@@ -9,13 +9,13 @@ arch=('x86_64')
 license=('GPL')
 options=("debug")
 depends=('lensfun' 'opencv' 'akonadi-contacts' 'knotifyconfig' 'libksane' 'kfilemetadata'
-         'qtav' 'marble' 'threadweaver' 'kcalcore' 'qt5-xmlpatterns' 'imagemagick' 'exiv2')
+         'qtav' 'marble' 'threadweaver' 'kcalcore' 'qt5-xmlpatterns' 'imagemagick' 'exiv2' 'qt5-webengine')
 makedepends=('extra-cmake-modules' 'doxygen' 'eigen3' 'boost' 'kdoctools' 'libkvkontakte' 'jasper')
 optdepends=('qt5-imageformats: support for additional image formats (WEBP, TIFF)'
 	    'hugin: panorama tool'
             'libkvkontakte: VKontakte plugin')
 source=("https://download.kde.org/stable/${pkgname}/${_pkgver}/${pkgname}-${_pkgver}.tar.xz"{,.sig})
-sha1sums=('a9dab66ab865403bc51c566f3c83968fe0b9f492'
+sha1sums=('6f067b31a2109f82b2e78c89fc84bd03eab30674'
           'SKIP')
 validpgpkeys=(D1CF2444A7858C5F2FB095B74A77747BC2386E50) # digiKam.org (digiKam project) <digikamdeveloper@gmail.com>
 
