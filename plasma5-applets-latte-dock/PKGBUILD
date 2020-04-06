@@ -5,12 +5,12 @@
 pkgname=plasma5-applets-latte-dock
 _pkgname=latte-dock
 pkgver=0.9.10
-pkgrel=2
+pkgrel=3
 pkgdesc='A dock based on Plasma Frameworks'
 arch=(x86_64)
 url='https://store.kde.org/p/1169519/'
 license=(GPL)
-depends=(kcrash kglobalaccel knewstuff kwayland plasma-framework libksysguard)
+depends=(kcrash kglobalaccel knewstuff kwayland plasma-framework libksysguard kquickcharts)
 makedepends=(extra-cmake-modules python3)
 conflicts=(plasma5-applets-nowdock)
 replaces=(plasma5-applets-nowdock)
