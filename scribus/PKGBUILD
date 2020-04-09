@@ -1,27 +1,36 @@
 pkgname=scribus
-pkgver=1.4.8
-pkgrel=3
+pkgver=1.5.5
+pkgrel=1
 pkgdesc="A desktop publishing program"
 arch=('x86_64')
 url="https://www.scribus.net"
 license=('GPL')
-depends=('libcups' 'lcms2' 'qt' 'ghostscript' 'hyphen' 'podofo'
-         'libart-lgpl' 'python2' 'libxml2' 'cairo' 'boost-libs'
-         'desktop-file-utils' 'shared-mime-info' 'ruby' 'hunspell')
-makedepends=('cmake' 'boost')
-screenshot=('http://upload.wikimedia.org/wikipedia/commons/f/f4/Scribus-1.3-Linux.png')
-source=("https://sourceforge.net/projects/$pkgname/files/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz")
-sha256sums=('22253bb5994023f39608b37c57c7cd0280059fd97d2a4d71d4011aeeeb18042f')
+depends=(qt5-base harfbuzz-icu poppler python2 hunspell podofo openscenegraph
+         libcdr libfreehand libmspub libpagemaker libqxp libvisio libzmf)
+makedepends=('cmake' 'boost' 'mesa' 'qt5-tools')
+source=("https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('7908b21a6ce843269f58cedf5f8f791893257e6201cce5fbddc70daca2fe3f71')
+
+prepare() {
+    cd ${pkgname}-${pkgver}
+
+    # Fix python name
+    sed \
+        -e 's|#!/usr/bin/python|#!/usr/bin/python2|' \
+        -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' \
+        -i scribus/plugins/scriptplugin/{samples,scripts}/*
+}
 
 build() {
 	mkdir -p build
-	cd build
+        cd build
 	
 	cmake ../$pkgname-$pkgver \
 	   -DCMAKE_INSTALL_PREFIX=/usr \
 	   -DCMAKE_BUILD_TYPE=Release \
 	   -DCMAKE_SKIP_RPATH=ON \
-	   -DWITH_ASPELL=0 -DWANT_HUNSPELL=1 \
+	   -DWITH_ASPELL=0 \
+           -DWANT_HUNSPELL=1 \
 	   -DWANT_CAIRO=1 \
 	   -DLIB_SUFFIX=""
 	make 
@@ -32,6 +41,13 @@ package() {
 	
 	make DESTDIR=$pkgdir install
 	
-	install -Dm644 ${srcdir}/${pkgname}-${pkgver}/scribus.desktop "${pkgdir}/usr/share/applications/scribus.desktop"
-	install -Dm644 ${srcdir}/${pkgname}-${pkgver}/resources/icons/AppIcon.png "${pkgdir}/usr/share/icons/hicolor/32x32/apps/scribus.png"
+	install -Dm644 $srcdir/$pkgname-$pkgver/scribus.desktop $pkgdir/usr/share/applications/scribus.desktop
+        for i in 16x16 32x32 128x128 256x256 512x512 1024x1024
+    	do
+        	install -Dm644 $srcdir/$pkgname-$pkgver/resources/iconsets/artwork/icon_${i}.png $pkgdir/usr/share/icons/hicolor/${i}/apps/scribus.png
+    	done
+
+    	# Use system hyphen
+    	rm -rf $pkgdir/usr/share/scribus/dicts/hyph
+    	ln -sf /usr/share/hyphen $pkgdir/usr/share/scribus/dicts/hyph
 }
