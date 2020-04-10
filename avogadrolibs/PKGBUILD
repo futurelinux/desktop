@@ -1,8 +1,8 @@
 # Contributions from Arch: https://www.archlinux.org/packages/extra/x86_64/avogadrolibs/
 
 pkgname=avogadrolibs
-pkgver=1.92.0
-pkgrel=2
+pkgver=1.93.0
+pkgrel=1
 pkgdesc="An advanced molecular editor"
 arch=(x86_64)
 url="https://www.openchemistry.org/"
@@ -10,7 +10,7 @@ license=(custom)
 depends=(molequeue glew spglib libmsym libarchive hdf5)
 makedepends=(cmake eigen3 python2 boost)
 source=($pkgname-$pkgver.tar.gz::"https://github.com/OpenChemistry/avogadrolibs/archive/$pkgver.tar.gz")
-md5sums=('2044d06420baff2fb393e136b505b415')
+md5sums=('d27c6f1a4653577a063260969d3e72ce')
 
 
 prepare() {
