@@ -7,7 +7,7 @@
 
 pkgname=mpd
 pkgver=0.21.22
-pkgrel=1
+pkgrel=2
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='https://www.musicpd.org/'
 license=('GPL')
@@ -15,7 +15,7 @@ arch=('x86_64')
 depends=('audiofile' 'avahi' 'curl' 'faad2' 'ffmpeg' 'fluidsynth' 'icu' 'jack'
          'libao' 'libcdio-paranoia' 'libgme' 'libid3tag' 'libmad' 'libmikmod'
          'libmms' 'libmodplug' 'libmpcdec' 'libmpdclient' 'libnfs'
-         'libsamplerate' 'libshout' 'libsoxr' 'libsystemd' 'libupnp' 'mpg123'
+         'libsamplerate' 'libshout' 'libsoxr' 'libsystemd' 'libupnp' 'libvorbis' 'mpg123'
          'openal' 'smbclient' 'sqlite' 'twolame' 'wavpack' 'wildmidi' 'yajl'
          'zziplib')
 makedepends=('boost' 'meson' 'python3-sphinx' 'mpc')
@@ -47,6 +47,7 @@ build() {
 	       '-Dadplug=disabled' # not in an official repo
 	       '-Dsndio=disabled' # interferes with detection of alsa devices
 	       '-Dshine=disabled' # not in an official repo
+               '-Dtremor=disabled' # not in an official repo
 	)
 	chakra-meson .. ${_opts[@]}
 	ninja
