@@ -34,5 +34,5 @@ package() {
   cd $pkgname-$pkgver/build
   make DESTDIR=$pkgdir install
   install -t "${pkgdir}/usr/share/doc/${pkgname}/" \
-    -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
+    -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
 }
