@@ -1,5 +1,5 @@
 pkgname=stk
-pkgver=4.5.1
+pkgver=4.6.1
 pkgrel=1
 pkgdesc='The Synthesis ToolKit in C++'
 arch=('x86_64')
@@ -11,7 +11,7 @@ optdepends=('tk: run provided demos/samples')
 source=("http://ccrma.stanford.edu/software/stk/release/$pkgname-$pkgver.tar.gz"
         "$pkgname.license"
         runtime.patch)
-sha1sums=('138c2504dbc12b60b676feb58a03d49a8412a036'
+sha1sums=('1a808dc06ab0a79a0ea1f3177c54c7692d5b7385'
           '175eff9fade08cf871799335acfebd4b8d023979'
           '962bf8c9ed71d79cddaf1d391d59fd8c44a58fbb')
 
