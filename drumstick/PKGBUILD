@@ -34,9 +34,5 @@ package() {
   cd $pkgname-$pkgver/build
   make DESTDIR=$pkgdir install
   install -t "${pkgdir}/usr/share/doc/${pkgname}/" \
-<<<<<<< HEAD
     -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
-=======
-    -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
->>>>>>> 8c3315ddb... [testing] drumstick: update to 1.1.3
 }
