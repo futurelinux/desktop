@@ -37,6 +37,7 @@ package() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
 =======
     -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
@@ -47,4 +48,7 @@ package() {
 =======
     -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
 >>>>>>> cf5955e51... [skip-ci] drumstick: manually build
+=======
+    -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
+>>>>>>> 8c3315ddb... [testing] drumstick: update to 1.1.3
 }
