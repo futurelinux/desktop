@@ -11,7 +11,7 @@ makedepends=(git go)
 source=(https://storage.googleapis.com/golang/go$pkgver.src.tar.gz
         default-buildmode-pie.patch)
 sha256sums=('98de84e69726a66da7b4e58eac41b99cbe274d7e8906eeb8a5b7eb0aadee7f7c'
-            '9d2f0d201d4e002d74f548cc82bd131139bab5dd62191004c71dd430fdc1666d')
+            'be1269689de3cf5c926cf7de07f88d2a6d1ecbfc86694baaf5baee3bdcfdd79a')
 
 prepare() {
   cp -r $pkgbase $pkgbase-pie
