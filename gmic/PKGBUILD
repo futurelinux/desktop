@@ -1,20 +1,15 @@
-# Contributions from Arch:
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
-# Contributor: farid <farid at archlinuc-br.org>
-# Contributor: Archie <Mymaud@gmail.com>
+# Contributions from Arch: https://www.archlinux.org/packages/community/x86_64/gmic/
 
 pkgbase=gmic
 pkgname=(gmic zart gimp-plugin-gmic krita-plugin-gmic)
-pkgver=2.7.4
+pkgver=2.9.0
 pkgrel=1
 arch=(x86_64)
 url="https://gmic.eu/"
 license=(custom:CeCILL)
 makedepends=(gimp qt5-base fftw openexr opencv eigen3)
 source=(https://gmic.eu/files/source/gmic_$pkgver.tar.gz)
-sha256sums=('cd9b40fa8df8a0bb47388071096c768a9d4908af574f0e98cc8515410d0b2c40')
+sha256sums=('6233695f9b27999dcc7cc3aa7480b0f192bd44de85209091a3b4b8a65ae8c4b5')
 
 prepare() {
   sed -e 's|/etc/bash_completion.d|/usr/share/bash-completion/completions|g' -i gmic-$pkgver/src/Makefile
