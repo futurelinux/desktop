@@ -1,0 +1,37 @@
+# Contributions from Arch https://www.archlinux.org/packages/community/x86_64/carla/
+
+_name=Carla
+pkgname=carla
+pkgver=2.1
+pkgrel=1
+pkgdesc="Audio Plugin Host"
+arch=('x86_64')
+url="https://kxstudio.linuxaudio.org/Applications:Carla"
+license=('GPL2')
+depends=('gcc-libs' 'glibc' 'libglvnd' 'libx11' 'python3-pyqt5' 'python-pyliblo'
+'python3-rdflib' 'qt5-base' 'qt5-svg')
+# libpulse is linked against in carla/libcarla_standalone2.so
+# liblo is linked against in carla/libcarla_standalone2.so,
+# carla/libcarla_native-plugin.so and the lv2 and vst plugins
+makedepends=('alsa-lib' 'file' 'fluidsynth' 'glib2' 'libsndfile' 'liblo' 'libpulse' 'qt5-tools')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/falkTX/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('b265e3150e12b42095e28ac30f72e211e96a769619a5ec56d574be8a17fb6ca282a504bb9759de312066202106b6e5234e006689b90edb1cc54f3e6919384509')
+
+prepare() {
+  mv -v "${_name}-${pkgver}" "${pkgname}-${pkgver}"
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  make features
+  make DEFAULT_QT=5
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make DEFAULT_QT=5 \
+       DESTDIR="${pkgdir}/" \
+       PREFIX=/usr \
+       install
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}/"
+}
