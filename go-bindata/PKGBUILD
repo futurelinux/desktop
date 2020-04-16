@@ -2,7 +2,7 @@
 
 pkgname=go-bindata
 pkgver=3.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A small utility which generates Go code from any file"
 arch=('x86_64')
 url='https://github.com/jteeuwen/go-bindata'
@@ -18,12 +18,12 @@ prepare() {
 }
 
 build() {
-    cd "${srcdir}/src/github.com/shuLhan/go-bindata/go-bindata"
+    cd "${srcdir}/src/github.com/shuLhan/go-bindata/cmd/go-bindata"
     GOPATH="${srcdir}" go build
 }
 
 package() {
-    cd "${srcdir}/src/github.com/shuLhan/go-bindata"
-    install -Dm755 "go-bindata/go-bindata" "${pkgdir}/usr/bin/go-bindata"
-    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    cd "${srcdir}/src/github.com/shuLhan/go-bindata/cmd/go-bindata"
+    install -Dm755 "go-bindata" "${pkgdir}/usr/bin/go-bindata"
+    install -Dm644 ../../LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
