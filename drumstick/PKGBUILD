@@ -38,5 +38,9 @@ package() {
     -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
 =======
     -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
+<<<<<<< HEAD
 >>>>>>> 8c3315ddb... [testing] drumstick: update to 1.1.3
+=======
+>>>>>>> 8c3315ddb2a69b839efc5d654b43af3789673ba3
+>>>>>>> 8c02de7e24180ed4e0544ef6f6698c3813e37b90
 }
