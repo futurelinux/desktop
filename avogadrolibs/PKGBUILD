@@ -39,7 +39,7 @@ package() {
   install -Dm644 "$srcdir"/$pkgname-$pkgver/LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
 
   # Move python module to the correct place
-  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  local site_packages=$(python3 -c "import site; print(site.getsitepackages()[0])")
   mkdir -p "$pkgdir${site_packages}"
   mv "$pkgdir"/usr/lib/avogadro "$pkgdir${site_packages}"
 }
