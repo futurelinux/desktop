@@ -1,15 +1,14 @@
- 
 pkgname=kdiagram
-pkgver=2.6.1
+pkgver=2.7.0
 pkgrel=1
 pkgdesc="Powerful libraries for creating business diagrams"
 arch=(x86_64)
-url="http://www.kde.org/"
+url="https://kde.org/"
 license=(GPL2)
 depends=(qt5-svg)
-makedepends=(extra-cmake-modules qt5-tools)
-source=("http://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz")
-sha1sums=('0e5372f8a14f127a867907e590f2d137f187398c')
+makedepends=(extra-cmake-modules qt5-tools qt5-doc doxygen)
+source=("https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz")
+sha256sums=('63a2eabfa1554ceb1d686d5f17ed6308139b6d9155aaf224e0309585b070fbdd')
 
 
 prepare() {
@@ -21,8 +20,9 @@ build() {
   cmake ../$pkgname-$pkgver \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
-    -DKDE_INSTALL_LIBDIR=lib
+    -DBUILD_QCH=ON
   make
 }
 
