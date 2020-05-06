@@ -1,5 +1,5 @@
 pkgname=semantik
-pkgver=1.2.3
+pkgver=1.2.5
 pkgrel=1
 pkgdesc="A mind-mapping tool that helps creating documents such as reports or presentions."
 arch=('x86_64')
@@ -8,9 +8,8 @@ license=('GPL')
 depends=('qt5-base' 'qt5-declarative' 'qt5-multimedia' 'qt5-svg' 'qt5-webengine' 'kdelibs4support' 'kio'
          'python3' 'python3-pygments' 'shared-mime-info' 'desktop-file-utils')
 makedepends=('qt5-tools')
-screenshot=('https://waf.io/semantik_pics/s1.png')
 source=("https://waf.io/$pkgname-$pkgver.tar.bz2")
-sha256sums=('bfce23dacfd815af8726feddb1f887a22fbaae2429c355115e8639c2bdc59c50')
+sha256sums=('ef2100c7ec784b493355b85a86a293be05db8d0db5f19946d8490a4f5f43c0ce')
 
 build() {
   cd $pkgname-$pkgver
