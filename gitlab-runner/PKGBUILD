@@ -3,14 +3,14 @@
 # Contributor: Lubomir 'Kuci' Kucera <kuci24-at-gmail-dot-com>
 
 pkgname=gitlab-runner
-pkgver=12.5.0
+pkgver=12.10.1
 pkgrel=1
 pkgdesc="The official GitLab CI runner written in Go"
 arch=('x86_64')
 url='https://gitlab.com/gitlab-org/gitlab-runner'
 license=('GPL3')
 depends=('ca-certificates' 'curl' 'git' 'glibc' 'tar')
-makedepends=('go' 'mercurial')
+makedepends=('go-pie' 'mercurial' 'gox')
 install='gitlab-runner.install'
 replaces=('gitlab-ci-multi-runner')
 backup=('etc/gitlab-runner/config.toml')
@@ -24,13 +24,13 @@ source=("$pkgname-$pkgver.tar.gz::https://gitlab.com/api/v4/projects/gitlab-org%
         "gitlab-runner.sysusers"
         "gitlab-runner.tmpfiles"
         "config.toml")
-sha512sums=('37cdb8a4393532d52131b29a8ac0144f11e0f24b3d68bb988df6bbb2c35899d6cfb5977b84dc302bd2972020753db12b33cfd5a3c44015f6fcdc45bc1e9b37a1'
-            'fdc25c8633364cc43822e297e5c433e9f9cd60f8995c77c29fb330b8e8a5bf7f1a129dd0705815379a14df4bbcd54e50f5da25414613ad816e3f50b3dabf9ff2'
-            'e788aea55c2dc5a9808b26ec8b65e0aeab17ca3b6b28e34b3d125ce49c2c3a38a1c14f851a9b6ef4eef70c092e42c8e0b35e67f4096da2ec62ebb87939efc88f'
+sha512sums=('a3ebeffab6e80d590d1a8e9e3470bed717250b029c5f56a308084d5d0b57cb3a2d4f3639d2096e2c6b4b54e33659729baf5487a99001b16426c0675386c91539'
+            'd6bc75834f8a51cbebd40ca294bba783f67069cd6a7e60a9bc54cb214530d71e5d0bb089598e87a56da23bb490d450a9071649255d4669cdce9068d80a5f3924'
+            'e69d8fa584b4a6ecfbaa07d090b036b16c2d9843bdcdccbd030048ac37598811ceb08e21dbc9f071d14523b563902140551692c75d381514367ec09743b67afb'
             '8a5a8b7654d3864722e784b2814c6278c17876f1c0c4fc0676fbcf6817ad2ba4be55501e67ce88c62b5b63ca886b01afc6feac98ba49842acd244abdd1a8296f'
             '8aa7f08702e99053c696fcc2aaba83beb9e9cd6f31973d82862db9350ac46df3a095377625d31fe909677525290d2de922d7a97930ed235774cb8f0da8944d40'
             '6751d9fa0b27172d1b419c4138f5ac15cbc7c9147653a7258cf1470216142c637210bb60608c7ed0974e0e4057e5ddeae32225df1bb36e7dd1f20fec71e33cc3'
-            'f39c23fc06636f31c3fadb9a630c54527e8255098f18d275772cb30875d0a7463717101704070d432f2b69ab71f076a9538172a439bc307722dad2c7e260f752')
+            '9718b94bd0ddb09095ffb8c1e60ca1e9649dabb1747e7fc95e58e404b2f9effdeb4cfd759f5b904443dc53a4e18c02003c38f85584713deb49f6a6d1007503de')
 
 _srcdir="gitlab-runner-v${pkgver}-"
 
@@ -54,7 +54,7 @@ prepare() {
 
 build() {
     cd "${srcdir}/src/gitlab.com/gitlab-org/gitlab-runner"
-    make BUILD_PLATFORMS='-osarch linux/amd64' build
+    make BUILD_PLATFORMS='-osarch linux/amd64' build_all
 }
 
 package() {
