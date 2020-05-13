@@ -1,5 +1,5 @@
 pkgname=clamav
-pkgver=0.102.2
+pkgver=0.102.3
 pkgrel=1
 pkgdesc='Anti-virus toolkit for Unix'
 arch=('x86_64')
@@ -12,7 +12,7 @@ makedepends=('libmilter' 'systemd')
 provides=(libclamav.so libclamunrar.so libclamunrar_iface.so)
 source=("https://www.clamav.net/downloads/production/${pkgname}-${pkgver}.tar.gz"{,.sig}
         "$pkgname."{logrotate,tmpfiles,sysusers})
-sha256sums=('89fcdcc0eba329ca84d270df09d2bb89ae55f5024b0c3bddb817512fb2c907d3'
+sha256sums=('ed3050c4569989ee7ab54c7b87246b41ed808259632849be0706467442dc0693'
             'SKIP'
             'c36e3ddf790fa6ea90169038ae08521a31652a372017e6e38858e28fc63b3f74'
             '8e216c7e4763a273a120930787dcc444ea221bb719eed180a9d15b4c1d603a84'
