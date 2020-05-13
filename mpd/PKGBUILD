@@ -7,22 +7,7 @@
 
 pkgname=mpd
 pkgver=0.21.22
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 pkgrel=2
-=======
-=======
->>>>>>> 0b6e3bfb0... [testing] mpd: update to 0.21.22
-pkgrel=1
->>>>>>> 0b6e3bfb0... [testing] mpd: update to 0.21.22
-=======
-pkgrel=2
->>>>>>> 8592d8da8... [skip-ci] mpd: fix build
-=======
-pkgrel=2
->>>>>>> 8592d8da8... [skip-ci] mpd: fix build
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='https://www.musicpd.org/'
 license=('GPL')
