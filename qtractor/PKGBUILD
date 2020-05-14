@@ -1,5 +1,5 @@
 pkgname=qtractor
-pkgver=0.9.13
+pkgver=0.9.14
 pkgrel=1
 pkgdesc="Audio/MIDI multitrack sequencer"
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('alsa-lib' 'aubio' 'desktop-file-utils' 'glibc' 'gcc-libs'
          'qt5-x11extras' 'rubberband' 'suil' 'zlib')
 makedepends=('qt5-tools' 'ladspa' 'dssi')
 source=("https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz")
-sha256sums=('fe055e7d4caf4efdd70f667497e9d4d12da1ba6b8b688168373f38fda96c9dc3')
+sha256sums=('d305f9a3d0cfdacc351ea3571a74f6c4aaa50615f340d753e0f6c8db1e3202be')
 
 build() {
   cd $pkgname-$pkgver
