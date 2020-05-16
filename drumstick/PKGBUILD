@@ -34,21 +34,5 @@ package() {
   cd $pkgname-$pkgver/build
   make DESTDIR=$pkgdir install
   install -t "${pkgdir}/usr/share/doc/${pkgname}/" \
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
-=======
-    -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
->>>>>>> 8c3315ddb... [testing] drumstick: update to 1.1.3
-=======
-    -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
->>>>>>> 65fc3b89d... [testing] drumstick: update to 1.1.3
-=======
-    -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
->>>>>>> cf5955e51... [skip-ci] drumstick: manually build
-=======
-    -vDm 644 {AUTHORS,ChangeLog,NEWS,README,TODO}
->>>>>>> 8c3315ddb... [testing] drumstick: update to 1.1.3
 }
