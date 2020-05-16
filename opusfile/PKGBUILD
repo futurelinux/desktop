@@ -1,15 +1,15 @@
 # Contributions from: https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/opusfile
 
 pkgname=opusfile
-pkgver=0.7
-pkgrel=1
+pkgver=0.11
+pkgrel=2
 pkgdesc='Library for opening, seeking, and decoding .opus files'
 arch=('x86_64')
 url='http://www.opus-codec.org/'
 license=('BSD')
 depends=('libogg' 'openssl' 'opus')
 source=(http://downloads.xiph.org/releases/opus/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('9e2bed13bc729058591a0f1cab2505e8cfd8e7ac460bf10a78bcc3b125e7c301')
+sha256sums=('74ce9b6cf4da103133e7b5c95df810ceb7195471e1162ed57af415fabf5603bf')
 
 build() {
   cd $pkgname-$pkgver
