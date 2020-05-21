@@ -2,12 +2,12 @@
 # Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 
 pkgname=gn
-pkgver=0.1568.c599fdbb
-_commit=c599fdbbcdb7eb6c7e345e36e1ae5de16a91509f
+pkgver=0.1731.5ed3c9cc
+_commit=5ed3c9cc67b090d5e311e4bd2aba072173e82db9
 pkgrel=1
 pkgdesc="Meta-build system that generates build files for Ninja"
 arch=('x86_64')
-url="https://gn.googlesource.com/gn/+/master/README.md"
+url="https://gn.googlesource.com/gn/"
 license=('BSD')
 depends=('gcc-libs')
 makedepends=('clang' 'ninja' 'python3' 'git')
@@ -22,11 +22,16 @@ pkgver() {
 build() {
   cd $pkgname
   python3 ./build/gen.py
-  ninja -C out gn
+  ninja -C out
 }
 
 package() {
   cd $pkgname
   install -D out/gn "$pkgdir/usr/bin/gn"
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname" docs/*
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+
+  mkdir -p "$pkgdir/usr/share/vim/vimfiles"
+  cp -r misc/vim/{autoload,ftdetect,ftplugin,syntax} \
+    "$pkgdir/usr/share/vim/vimfiles/"
 }
