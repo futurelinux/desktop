@@ -1,8 +1,8 @@
 # Contributions from ArchLinux https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/telegram-desktop
 
 pkgname=telegram-desktop
-pkgver=2.1.4
-pkgrel=3
+pkgver=2.1.6
+pkgrel=2
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
@@ -17,7 +17,7 @@ source=(
     "https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz"
     "telegram-desktop.sh"
 )
-sha512sums=('5b27633cdcb4edb61af983c1e4867bac3d7d0864e100855ea3f00c1eb1037e6a9f43414c09211282b5b677603ddfaedbcf4cbf482502ca4e33152e417068c959'
+sha512sums=('a6a105676d8d24ec3414895cadc664829c5abc041d8614409e22d7964d7280e44df35ece5fca18a0cd127f65bd363abc1e5c36807b0031eabd6eb77c7effdfb8'
             '742303238a26c0a5252c416ca6697baf4a19d9ad729232d031c3b22ace10ff7290c1e626647c9e592d2e92a22977324f7873bedf1565514f077dc00aa4a333a0')
 
 build() {
