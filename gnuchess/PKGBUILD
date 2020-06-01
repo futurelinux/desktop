@@ -1,5 +1,5 @@
 pkgname=gnuchess
-pkgver=6.2.6
+pkgver=6.2.7
 pkgrel=1
 pkgdesc="Application able to play chess (against another software or a human)"
 url="http://www.gnu.org/software/chess/chess.html"
@@ -7,7 +7,7 @@ arch=('x86_64')
 license=('GPL3')
 depends=('bash')
 source=(https://ftp.gnu.org/pub/gnu/chess/$pkgname-$pkgver.tar.gz)
-sha256sums=('d617f875d6411378c6ce521663ebda42db9006a5eb5706bcd821a918c06eb04f')
+sha256sums=('e536675a61abe82e61b919f6b786755441d9fcd4c21e1c82fb9e5340dd229846')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
