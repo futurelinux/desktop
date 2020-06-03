@@ -1,31 +1,26 @@
 pkgname=kup
-_pkgname=Kup
-pkgver=0.7.3
+pkgver=0.8.0
 pkgrel=1
 pkgdesc="A KDE-based frontend for the bup backup software"
 arch=('x86_64')
-url="https://github.com/spersson/Kup"
-license=('GPL')
-depends=('qt5-base' 'plasma-framework' 'kcoreaddons' 'kdbusaddons' 'ki18n' 'kio' 'solid' 'kidletime' 
-         'knotifications' 'kiconthemes' 'kconfig' 'kinit' 'bup' 'rsync' 'python2-pyxattr' 'git')
-makedepends=('cmake' 'extra-cmake-modules')
-source=("https://github.com/spersson/${_pkgname}/archive/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('47b97314dd11579a6ecc723de687c9ebe7cafb300d2ce39f2510d36c17de2f3b')
+url="https://invent.kde.org/system/kup"
+license=('GPL2')
+depends=('kidletime' 'kinit' 'libgit2' 'hicolor-icon-theme')
+makedepends=('extra-cmake-modules' 'plasma-framework')
+optdepends=('bup: support for incremental backups'
+            'rsync: support for synced backups')
+source=("https://download.kde.org/stable/${pkgname}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('79154cd12bcbef87b3b22851adcd505f5da7723483361c7a16ae4c3eea61f0bd')
  
 build() {
-	cd ${_pkgname}-${pkgname}-${pkgver}
-	[ -d "build" ] && rm -rf build
-	mkdir build
-	cd build
- 
-	cmake ../ \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_INSTALL_PREFIX=/usr
-	make
+  cmake -B build -S $pkgname-$pkgver \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  cmake --build build
 }
  
 package() {
-	cd ${_pkgname}-${pkgname}-${pkgver}
-	cd build
-	make DESTDIR=${pkgdir} install
+  DESTDIR="$pkgdir" cmake --install build
 }
