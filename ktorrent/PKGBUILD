@@ -1,6 +1,6 @@
 pkgname=ktorrent
 pkgver=5.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A powerful BitTorrent client for KDE"
 arch=('x86_64')
 url='https://kde.org/applications/en/internet/org.kde.ktorrent'
@@ -26,12 +26,16 @@ prepare() {
 }
 
 build() {
-	cd build
-	cmake ../${pkgname}-${pkgver}
-	make
+  cd build
+  cmake ../${pkgname}-${pkgver} \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF \
+    -DWITH_SYSTEM_GEOIP=ON
+  make
 }
 
 package() {
-	cd build
-	make DESTDIR="${pkgdir}" install
+  cd build
+  make DESTDIR="${pkgdir}" install
 }
