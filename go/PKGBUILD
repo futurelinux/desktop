@@ -2,7 +2,7 @@
 
 pkgbase=go
 pkgname=(go go-pie)
-pkgver=1.14.2
+pkgver=1.14.4
 pkgrel=1
 arch=(x86_64)
 url='https://golang.org/'
@@ -10,7 +10,7 @@ license=(BSD)
 makedepends=(git go)
 source=(https://storage.googleapis.com/golang/go$pkgver.src.tar.gz
         default-buildmode-pie.patch)
-sha256sums=('98de84e69726a66da7b4e58eac41b99cbe274d7e8906eeb8a5b7eb0aadee7f7c'
+sha256sums=('7011af3bbc2ac108d1b82ea8abb87b2e63f78844f0259be20cde4d42c5c40584'
             'be1269689de3cf5c926cf7de07f88d2a6d1ecbfc86694baaf5baee3bdcfdd79a')
 
 prepare() {
