@@ -1,9 +1,9 @@
 pkgbase=flightgear
 pkgname=('flightgear' 'flightgear-data')
-pkgver=2019.1.1
+pkgver=2020.1.2
 pkgrel=1
 _pkgver=${pkgver%.*}
-pkgdesc="An open-source, multi-platform flight simulator."
+pkgdesc="An open-source, multi-platform flight simulator. Preview release"
 url="https://home.flightgear.org/"
 arch=('x86_64')
 depends=('libxmu' 'libxi' 'zlib' 'openscenegraph' 'subversion' 'libxrandr' 'glu' 'openal')
@@ -18,9 +18,9 @@ source=( # flightgear
         "https://downloads.sourceforge.net/project/flightgear/release-$_pkgver/FlightGear-$pkgver-data.tar.bz2"
          # simgear
         "https://downloads.sourceforge.net/project/flightgear/release-$_pkgver/simgear-$pkgver.tar.bz2")
-sha1sums=('3ea81afd23701ea3c08515acd0ef84efdace0ba3'
-          '8c1d8f9455e56198e70f0fb82e96b978eaf0516c'
-          '1564d9952ae7b539f59294efbbe826c16dd1582e')
+sha1sums=('03a6b47d2b5b99108419e7a73dec40a78e35cf66'
+          '06040a4dc271a97c41d9ee098711ae300e6a1bf4'
+          '9e81b7f50465791c093e939f7b50914540cd85e6')
 
 prepare() {
   mkdir -p fake_install
