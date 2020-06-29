@@ -2,9 +2,9 @@
 
 pkgname=usb-modeswitch
 _pkgname=usb_modeswitch
-pkgver=2.5.0
+pkgver=2.6.0
 pkgrel=1
-_pkgdata=20170205
+_pkgdata=20191128
 pkgdesc="Activating switchable USB devices on Linux."
 arch=('x86_64')
 url="http://www.draisberghof.de/usb_modeswitch/"
@@ -18,13 +18,13 @@ backup=("etc/$_pkgname.conf")
 source=("http://www.draisberghof.de/$_pkgname/$pkgname-$pkgver.tar.bz2"
 	"http://www.draisberghof.de/$_pkgname/$pkgname-data-$_pkgdata.tar.bz2"
 	"usb-modeswitch-${pkgver}-device_reference.txt::http://www.draisberghof.de/$_pkgname/device_reference.txt")
-sha256sums=('31c0be280d49a99ec3dc0be3325bef320d9c04b50714ef0ce1e36a614d687633'
-            'e2dcfd9d28928d8d8f03381571a23442b3c50d48d343bc40a1a07d01662738d1'
+sha256sums=('c215236e6bada6e659fc195a31d611ea298a4bdb4d57a0d68c553b56585f8ba3'
+            '3f039b60791c21c7cb15c7986cac89650f076dc274798fa242231b910785eaf9'
             '846b45a82a31c9755ab86d9c051e706aff445e1e793575b7ae195a4edeb4d594')
           
 prepare() {
   cd "$srcdir"/usb-modeswitch-$pkgver/
-  sed -i 's|/usr/sbin/usb_mode|/usr/bin/usb_mode|g' usb_modeswitch.{conf,tcl,sh}
+  sed -i 's|/usr/sbin/usb_mode|/usr/bin/usb_mode|g' usb_modeswitch{.conf,_dispatcher.tcl,.sh,@.service}
 }
 build() {
   cd "$srcdir"/usb-modeswitch-$pkgver/
