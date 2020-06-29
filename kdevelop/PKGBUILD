@@ -1,7 +1,7 @@
 # Contributions from Arch: https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/kdevelop
 
 pkgname=kdevelop
-pkgver=5.4.5
+pkgver=5.5.2
 pkgrel=1
 pkgdesc='A C/C++ development environment for KDE'
 arch=(x86_64)
@@ -26,7 +26,7 @@ optdepends=('konsole: embedded terminal'
 	'heaptrack: memory profiler'
 	'kdev-clang-tidy: clang-tidy analyzer plugin')
 source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('92c0504ff8c3ef730881e021adc7d6e945d8db0cbc0f3ff81280008ad35b7023'
+sha256sums=('228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da'
             'SKIP')
 validpgpkeys=('0A48BC961075B4BA8523E3790A345FB086E797D9')
 
