@@ -2,7 +2,7 @@
 
 pkgname=kdevelop
 pkgver=5.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A C/C++ development environment for KDE'
 arch=(x86_64)
 url='http://www.kdevelop.org/'
@@ -11,7 +11,7 @@ options=('debug')
 depends=(clang libksysguard kitemmodels knotifyconfig ktexteditor grantlee libkomparediff2 qt5-webengine
          kcmutils threadweaver knewstuff)
 makedepends=(extra-cmake-modules kdoctools kdevelop-pg-qt llvm qt5-tools plasma-framework krunner okteta python3 mesa
-             boost purpose subversion)
+             boost purpose subversion astyle)
 optdepends=('konsole: embedded terminal'
 	'git: Git support'
 	'subversion: SVN support'
@@ -24,7 +24,7 @@ optdepends=('konsole: embedded terminal'
 	'plasma-framework: for the plasma addons'
 	'cppcheck: code analyzer'
 	'heaptrack: memory profiler'
-	'kdev-clang-tidy: clang-tidy analyzer plugin')
+	'astyle: astyle plugin')
 source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
 sha256sums=('228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da'
             'SKIP')
