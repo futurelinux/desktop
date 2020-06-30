@@ -1,5 +1,5 @@
 pkgname=kcm-fcitx
-pkgver=0.5.5
+pkgver=0.5.6
 pkgrel=1
 pkgdesc="KDE Config Module for Fcitx"
 arch=('x86_64')
@@ -8,7 +8,7 @@ license=('GPL')
 depends=('fcitx-qt5' 'kcoreaddons' 'kwidgetsaddons' 'kcmutils' 'kitemviews' 'ki18n' 'kio' 'knewstuff')
 makedepends=('extra-cmake-modules' 'make' 'cmake')
 source=(http://download.fcitx-im.org/$pkgname/$pkgname-${pkgver}.tar.xz{,.sig})
-sha512sums=('e6a7bcad10003a956389ee266cf6d2f3730dafafcdd0bb43de328397749775e5cd305f16fdca2365e246c903677dba042da81a6dfd873aa1be74174e2b0b372e'
+sha512sums=('a3d378ecd9ea9fa5bcc42c75e5b0b0ac2ba6c94fda93b7213d821546bb83b5904c75c2fc9482cd7b47fbf5ad81a0641b7ec345aa2e630c8795bf8d5b89f9cd3b'
             'SKIP')
 validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9')
 
