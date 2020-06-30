@@ -4,10 +4,10 @@
 
 pkgbase=python-pycodestyle
 pkgname=('python3-pycodestyle' 'python2-pycodestyle')
-pkgver=2.3.1
+pkgver=2.6.0
 pkgrel=1
 pkgdesc="Python style guide checker"
-arch=('any')
+arch=('x86_64')
 url="https://github.com/PyCQA/pycodestyle"
 license=('custom:Expat')
 makedepends=('python3-setuptools' 'python2-setuptools' 'git')
@@ -29,13 +29,13 @@ build() {
   python2 setup.py build
 }
 
-check() {
-  cd "$srcdir"/pycodestyle
-  python3 setup.py test
+#check() {
+#  cd "$srcdir"/pycodestyle
+#  python3 setup.py test
 
-  cd "$srcdir"/pycodestyle-py2
-  python2 setup.py test
-}
+#  cd "$srcdir"/pycodestyle-py2
+#  python2 setup.py test
+#}
 
 package_python3-pycodestyle() {
   depends=('python3-setuptools')
@@ -55,5 +55,3 @@ package_python2-pycodestyle() {
 
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
-
-# vim:set ts=2 sw=2 et:
