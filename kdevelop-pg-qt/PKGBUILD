@@ -1,15 +1,15 @@
 pkgname=kdevelop-pg-qt
-pkgver=2.2.0
+pkgver=2.2.1
 pkgrel=1
 pkgdesc="KDevelop Parser Generator, a LL(1) parser generator used by KDevelop language plugins"
-arch=('i686' 'x86_64')
+arch=('x86_64')
 url="http://www.kdevelop.org/"
 license=(GPL)
 option=('debug')
 depends=(qt5-base)
 makedepends=(extra-cmake-modules)
 source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha1sums=('1889d91b54a47603790cea41fa765b132dcac5f7'
+sha1sums=('30f4d836d3c30983c5e9e6b8f9df53fa89d243ef'
           'SKIP')
 validpgpkeys=('329FD02C5AA48FCC77A4BBF0AC44AC6DB29779E6'  # Sven Brauch <mail@svenbrauch.de>
               '364EFA5F639572907D392999C64CF56B13CACE5D') # Kevin Funk <kfunk@kde.org>
