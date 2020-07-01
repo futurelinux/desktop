@@ -1,20 +1,26 @@
 # Arch contribution https://www.archlinux.org/packages/community/x86_64/drumstick/
 
 pkgname=drumstick
-pkgver=1.1.0
-pkgrel=2
+pkgver=1.1.3
+pkgrel=1
 pkgdesc="MIDI libraries for Qt5/C++"
 arch=('x86_64')
 url="http://drumstick.sourceforge.net/"
 license=('GPL')
-depends=('desktop-file-utils' 'fluidsynth' 'hicolor-icon-theme' 'shared-mime-info' 'qt5-svg')
-makedepends=('cmake' 'doxygen' 'docbook-xsl')
-source=("http://downloads.sourceforge.net/$pkgname/$pkgver/$pkgname-$pkgver.tar.bz2")
-sha256sums=('ae1d2c0d21b45d144e181b873ffbc2979a294fab31b8d71a5b0b8cad3276f38e')
+depends=('desktop-file-utils' 'fluidsynth' 'hicolor-icon-theme' 'shared-mime-info' 'qt5-svg' 'qt5-base')
+makedepends=('cmake' 'doxygen' 'docbook-xsl' 'libpulse')
+source=("https://downloads.sourceforge.net/$pkgname/$pkgver/$pkgname-$pkgver.tar.bz2")
+sha256sums=('75aca4281da25fe0186b44c07772c5f0b4d1f2bba875c4667e7e6e9fcedb3cd9')
 
 prepare() {
   cd $pkgname-$pkgver
   [ -d build ] || mkdir build
+  
+  # removing specific check for fluidsynth == 1.1.11, as fluidsynth > 2.0.0
+  # compiles just fine
+  sed -E 's|(pkg_check_modules\(FLUIDSYNTH ).+|\1fluidsynth\)|g' \
+      -i library/rt-backends/CMakeLists.txt
+
 }
 
 build() {
@@ -28,4 +34,8 @@ build() {
 package() {
   cd $pkgname-$pkgver/build
   make DESTDIR=$pkgdir install
+
+  install -t "${pkgdir}/usr/share/doc/${pkgname}/" \
+    -vDm 644 ../{AUTHORS,ChangeLog,NEWS,README,TODO}
+
 }
