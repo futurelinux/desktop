@@ -1,43 +1,41 @@
 pkgname=scummvm
-pkgver=1.9.0
+pkgver=2.1.1
 pkgrel=1
 pkgdesc="A virtual machine for several classic graphical point-and-click adventure games."
 arch=('x86_64')
 license=('GPL3')
 url="http://www.scummvm.org/"
-depends=('alsa-lib' 'flac' 'fluidsynth' 'glu' 'libmad' 'libvorbis' 'sdl' 'zlib')
-categories=('games')
-source=("https://github.com/scummvm/scummvm/archive/v${pkgver}.tar.gz"
-	      "${pkgname}.desktop")
-sha256sums=('2b107719d6d8e242ea5c3103eb483c0193669e973158a0f6ff93d24ad3a08a27'
-            '1165dfe59a4ba25d9605ca0e1be650706bbd784b0c7f66d7a9700538d0031090')
-sha256sums=('02051c4cef5d14b95ebeb40d0c88f73644cbf606a5777e5c14d0f74c5037a4f5'
-            '1165dfe59a4ba25d9605ca0e1be650706bbd784b0c7f66d7a9700538d0031090')
+depends=('libpng' 'libtheora' 'sdl2' 'sdl2_net' 'fluidsynth' 'flac' 'faad2' 'libvorbis' 'libmad' 'freetype2'
+         'libgl' 'glu' 'libjpeg-turbo' 'libmpeg2' 'curl' 'a52dec')
+makedepends=('mesa')
+source=("https://scummvm.org/frs/scummvm/${pkgver}/scummvm-${pkgver}.tar.xz"
+	fluidsynth2_a.patch
+        fluidsynth2_b.patch)
+sha256sums=('5753769356f3396fde1e614b40496c61392a2903c53ca436b721dde58353dca8'
+            '369e1b7de468b7758d2ab4c568a82977aabf2db45e9ef8fd7c97fec053fada23'
+            'dd19a18e0ba605cba32d39e1832d73243ccf2b00fe649befa79e98611a8076bc')
+
+prepare() {
+  cd "${srcdir}"/${pkgname}-${pkgver}
+
+  patch -Np1 -i "${srcdir}"/fluidsynth2_a.patch
+  patch -Np1 -i "${srcdir}"/fluidsynth2_b.patch
+}
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-
-  ./configure --prefix=/usr \
-              --with-flac-prefix=/usr \
-              --backend=sdl \
-              --disable-debug
-
+  cd "${srcdir}"/${pkgname}-${pkgver}
+  ./configure \
+    --enable-c++11 \
+    --enable-release \
+    --prefix=/usr \
+    --disable-debug
   make
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  
-  # Manual installation.
-  install -Dm755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
-  install -Dm644 "dists/${pkgname}.6" "${pkgdir}/usr/share/man/man6/${pkgname}.6"
-
-  # Desktop integration.
-  install -Dm644 "dists/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
-  install -Dm644 "icons/${pkgname}.xpm" "${pkgdir}/usr/share/pixmaps/${pkgname}.xpm"
-
-  # Themes.
-  install -Dm644 gui/themes/scummmodern.zip "${pkgdir}/usr/share/scummvm/scummmodern.zip"
+  cd "${srcdir}"/${pkgname}-${pkgver}
+  make DESTDIR=${pkgdir} install
+  install -Dm644 dists/${pkgname}.desktop "${pkgdir}"/usr/share/applications/${pkgname}.desktop
 }
 
 
