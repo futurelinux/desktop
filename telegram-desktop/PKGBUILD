@@ -1,8 +1,8 @@
 # Contributions from ArchLinux https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/telegram-desktop
 
 pkgname=telegram-desktop
-pkgver=2.1.6
-pkgrel=2
+pkgver=2.1.13
+pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
@@ -17,7 +17,7 @@ source=(
     "https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz"
     "telegram-desktop.sh"
 )
-sha512sums=('a6a105676d8d24ec3414895cadc664829c5abc041d8614409e22d7964d7280e44df35ece5fca18a0cd127f65bd363abc1e5c36807b0031eabd6eb77c7effdfb8'
+sha512sums=('f28ae7c8c9a9eb8094fc52784742b470235234a3df7487902152858bc7c297b2dcfe5c8b939cdb9653a356b3835609e7289f53cdf7d5fb3f009823d3dbeb1bd8'
             '742303238a26c0a5252c416ca6697baf4a19d9ad729232d031c3b22ace10ff7290c1e626647c9e592d2e92a22977324f7873bedf1565514f077dc00aa4a333a0')
 
 build() {
@@ -36,10 +36,10 @@ build() {
         -DDESKTOP_APP_USE_PACKAGED_VARIANT=OFF \
         -DDESKTOP_APP_DISABLE_CRASH_REPORTS=ON \
         -DTDESKTOP_DISABLE_REGISTER_CUSTOM_SCHEME=ON \
-        -DTDESKTOP_DISABLE_DESKTOP_FILE_GENERATION=ON \
         -DTDESKTOP_USE_PACKAGED_TGVOIP=OFF \
         -DDESKTOP_APP_SPECIAL_TARGET="" \
-        -DTDESKTOP_LAUNCHER_BASENAME="telegramdesktop"
+        -DTDESKTOP_LAUNCHER_BASENAME="telegramdesktop" \
+        -DTDESKTOP_DISABLE_GTK_INTEGRATION=ON
     ninja -C build
 }
 
