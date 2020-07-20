@@ -1,5 +1,5 @@
 pkgname=skrooge
-pkgver=2.22.1
+pkgver=2.23.0
 pkgrel=1
 pkgdesc="Allows you to manage your personal finances in KDE"
 arch=('x86_64')
@@ -15,7 +15,7 @@ makedepends=('cmake' 'extra-cmake-modules' 'qt5-tools' 'kdoctools')
 options=('!emptydirs')
 categories=('office')
 source=("https://download.kde.org/stable/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('1098e18cf65d750ada207b37059bc251632cfb0bf976ad607bec442798e59ba4'
+sha256sums=('aae4a86ead02b644f0b1cab5bdd692c4ce05ce4d93a0b535e4a5f6d28f916382'
             'SKIP')
 validpgpkeys=('103DC6D087B3A4A2ED975D7EF0C8CED3382A5C4D') #Stephane MANKOWSKI (Perso) <stephane@mankowski.fr>
 
