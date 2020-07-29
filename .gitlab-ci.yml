@@ -49,6 +49,8 @@ deploy_pkgs:
   environment:
     name: staging
     url: https://rsync.chakralinux.org/packages/testing/x86_64/
+  variables:
+    DEST_REPO: "testing"
   script:
      - _gitlab-ci-scripts/deploy.sh
   tags:
@@ -62,6 +64,8 @@ production:
   environment:
     name: production
     url: https://rsync.chakralinux.org/packages/desktop/x86_64/
+  variables:
+    DEST_REPO: "desktop"
   script:
      - _gitlab-ci-scripts/deploy.sh
   tags:
