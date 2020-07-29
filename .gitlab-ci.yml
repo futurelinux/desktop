@@ -43,20 +43,26 @@ makepkg:
 
 deploy_pkgs:
   stage: deploy
-  except:
-    - master
+  only:
+    - merge_requests
+  when: manual
+  environment:
+    name: staging
+    url: https://rsync.chakralinux.org/packages/testing/x86_64/
   script:
      - _gitlab-ci-scripts/deploy.sh
-  when: manual
   tags:
     - rsync
 
-move_pkgs_to_stable:
-  stage: stable
-  except:
-    - master
-  script:
-     - _gitlab-ci-scripts/move.sh
+production:
+  stage: deploy
+  only:
+    - master@chakra/packages/desktop
   when: manual
+  environment:
+    name: production
+    url: https://rsync.chakralinux.org/packages/desktop/x86_64/
+  script:
+     - _gitlab-ci-scripts/deploy.sh
   tags:
     - rsync
