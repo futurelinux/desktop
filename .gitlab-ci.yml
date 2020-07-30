@@ -12,6 +12,8 @@ before_script:
   - git clone --depth 1 https://code.chakralinux.org/tools/chakra-gitlab-ci-scripts _gitlab-ci-scripts
   # setup basic environment settings, as root
   - _gitlab-ci-scripts/prepare.sh
+  # setup makepkg settings (enable and sync the correct repository), as root
+  - _gitlab-ci-scripts/prepare_makepkg.sh
   # configure encryption environments
   - sudo -u builder -E -H _gitlab-ci-scripts/prepare_keys.sh
 
@@ -20,8 +22,6 @@ makepkg:
   only:
     - merge_requests
   script:
-    # setup makepkg settings (enable and sync the correct repository), as root
-    - _gitlab-ci-scripts/prepare_makepkg.sh
     # the build script can't be run as root, as makepkg would complain...
     - sudo -u builder -E -H _gitlab-ci-scripts/build.sh
 
