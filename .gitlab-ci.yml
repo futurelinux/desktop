@@ -52,7 +52,7 @@ deploy_pkgs:
   variables:
     DEST_REPO: "testing"
   script:
-     - _gitlab-ci-scripts/deploy.sh
+     - sudo -u builder -E -H _gitlab-ci-scripts/deploy.sh
   tags:
     - rsync
 
@@ -67,6 +67,6 @@ production:
   variables:
     DEST_REPO: "desktop"
   script:
-     - _gitlab-ci-scripts/deploy.sh
+     - sudo -u builder -E -H _gitlab-ci-scripts/deploy.sh
   tags:
     - rsync
