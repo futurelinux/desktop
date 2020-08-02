@@ -1,5 +1,5 @@
 pkgname=qmidictl
-pkgver=0.6.2
+pkgver=0.6.3
 pkgrel=1
 pkgdesc="A MIDI remote controller application that sends MIDI data over the network, using UDP/IP multicast."
 arch=('x86_64')
@@ -8,7 +8,7 @@ license=('GPL')
 depends=('qt5-base' 'qt5-tools' 'hicolor-icon-theme')
 categories=('multimedia' 'network')
 source=("https://downloads.sourceforge.net/project/$pkgname/$pkgname/$pkgver/$pkgname-$pkgver.tar.gz")
-sha1sums=('35b8cd1829ececf0dbae03c3bc69d74008dfd864')
+sha1sums=('b60e65d81a0dafa0f1642fe89eb16bf0a8bd1aa8')
 
 build() {
   cd $pkgname-$pkgver
