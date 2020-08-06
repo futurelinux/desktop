@@ -1,5 +1,5 @@
 pkgname=links
-pkgver=2.20.2
+pkgver=2.21
 pkgrel=1
 pkgdesc="A text WWW browser, similar to Lynx"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('bzip2' 'libjpeg' 'libpng' 'libtiff' 'libx11' 'librsvg' 'libevent' 'xz'
 screenshot='http://links.twibright.com/shots/shot5.jpg'
 source=(http://links.twibright.com/download/$pkgname-$pkgver.tar.gz 
         links.desktop)
-sha1sums=('8af392f323785ed5e4d778e876875a17e45570bb'
+sha1sums=('fff8abe2108cbf228f8cea5440cbb0f1cb04112f'
           'f600e27c2a71184444f7dd07a10230aa44463a02')
 
 prepare() {
