@@ -1,5 +1,5 @@
 pkgname=lftp
-pkgver=4.9.1
+pkgver=4.9.2
 pkgrel=1
 pkgdesc="Sophisticated command line based FTP client"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('gcc-libs' 'readline' 'gnutls' 'expat' 'sh' 'hicolor-icon-theme')
 optdepends=('perl: needed for convert-netscape-cookies and verify-file')
 backup=('etc/lftp.conf')
 source=(https://lftp.yar.ru/ftp/${pkgname}-${pkgver}.tar.xz{,.asc})
-md5sums=('3da57b1960b1416e89a532c54a67a936'
+md5sums=('b3a272ecb7a2b60e3827776f90ffb2f3'
          'SKIP')
 validpgpkeys=('C027FA3148652A5513036413A824BB69F2A99A18') # "Alexander V. Lukyanov <lav@yars.free.net>"
 
