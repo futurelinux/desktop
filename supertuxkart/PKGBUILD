@@ -1,18 +1,18 @@
 pkgname=supertuxkart
-pkgver=1.1
-pkgrel=2
+pkgver=1.2
+pkgrel=1
 pkgdesc="Kart racing game featuring Tux and friends."
 url="http://supertuxkart.sourceforge.net/"
 arch=('x86_64')
 license=('GPL3' 'GPL2' 'CCPL-by' 'CCPL-by-sa' 'custom:Public Domain')
-depends=('openal' 'libvorbis' 'fribidi' 'curl' 'bluez-libs' 'libxrandr' 'glu' 'wayland')
+depends=('openal' 'libvorbis' 'fribidi' 'curl' 'bluez-libs' 'libxrandr' 'glu' 'wayland' 'sdl2')
 makedepends=('cmake' 'subversion' 'mesa' 'imagemagick' 'setconf' 'mesa-libgl' 'libxkbcommon')
 conflicts=('supertuxkart-svn')
-source=("https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}-src.tar.xz")
-sha1sums=('68be26f4b15d30dede26563cbcc6de999036c5e0')
+source=("https://github.com/supertuxkart/stk-code/releases/download/${pkgver}/SuperTuxKart-${pkgver}-src.tar.xz")
+sha1sums=('549ce3b23a4c014e5adde7dfffb8e0389f9ae473')
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}-src"
+  cd "${srcdir}/SuperTuxKart-${pkgver}-src"
 
   _fn="data/${pkgname}.desktop"
   setconf "$_fn" Exec "$pkgname"
@@ -32,7 +32,7 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}-src/build"
+  cd "${srcdir}/SuperTuxKart-${pkgver}-src/build"
   
   make DESTDIR="${pkgdir}" install
   
