@@ -10,7 +10,8 @@ pkgname=('virtualbox'
          'virtualbox-guest-iso'
          'virtualbox-ext-vnc'
          'virtualbox-ext-oracle')
-pkgver=6.1.12
+pkgver=6.1.14
+_tarver=${pkgver}a
 pkgrel=1
 _vboxsf_commit='5aba938bcabd978e4615186ad7d8617d633e6f30'
 arch=('x86_64')
@@ -53,9 +54,9 @@ makedepends=('alsa-lib'
              'xalan-c'
              'xf86driproto'
              'xorg-server-devel')
-source=("http://download.virtualbox.org/virtualbox/$pkgver/VirtualBox-$pkgver.tar.bz2"
-        "http://download.virtualbox.org/virtualbox/$pkgver/VBoxGuestAdditions_$pkgver.iso"
-        "http://download.virtualbox.org/virtualbox/$pkgver/Oracle_VM_VirtualBox_Extension_Pack-$pkgver.vbox-extpack"
+source=("https://download.virtualbox.org/virtualbox/$pkgver/VirtualBox-${_tarver}.tar.bz2"
+        "https://download.virtualbox.org/virtualbox/$pkgver/VBoxGuestAdditions_$pkgver.iso"
+        "https://download.virtualbox.org/virtualbox/$pkgver/Oracle_VM_VirtualBox_Extension_Pack-$pkgver.vbox-extpack"
         # We need to build a modified version of vboxsf for Linux 4.16
         # https://bugzilla.redhat.com/show_bug.cgi?id=1481630#c65
         "git+https://github.com/jwrdegoede/vboxsf#commit=$_vboxsf_commit"
@@ -85,9 +86,9 @@ source=("http://download.virtualbox.org/virtualbox/$pkgver/VirtualBox-$pkgver.ta
         'PUEL')
 noextract=(VBoxGuestAdditions_$pkgver.iso
           "Oracle_VM_VirtualBox_Extension_Pack-$pkgver.vbox-extpack")
-sha256sums=('05eff0321daa72f6d00fb121a6b4211f39964778823806fa0b7b751667dec362'
-            '226eef0bb337a8375f6b659168c6eaf98b74a68782b9885b40ce9443fdb2ac16'
-            '8c43fc6ab19fc83ed3c73c6e62f7f02886503cc800d27198e8bee89586b18eda'
+sha256sums=('16f3cb83ab3c4dacf2a9d3cc638cbd18db23767828bba6b8ba1c1b57abeb6aef'
+            'dd9f176abb89043c01cea7ec7e20130e76db71bd83beafeb2dc5858d4c9c86cd'
+            'b224e796e886b19bce69f0aaedf6ca82bad0ca29c61fb0ed86166efb84356942'
             'SKIP'
             '76d98ea062fcad9e5e3fa981d046a6eb12a3e718a296544a68b66f4b65cb56db'
             'c328376b05183d269f98319ec660f54c55e298f77d229977606862b064651a7c'
