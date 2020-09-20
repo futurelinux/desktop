@@ -1,7 +1,7 @@
  ### Remember to check if qmmp-plugin-pack needs to update ### 
  
 pkgname=qmmp
-pkgver=1.4.1
+pkgver=1.4.2
 pkgrel=1
 pkgdesc="Qt based audio-player"
 arch=('x86_64')
@@ -30,7 +30,7 @@ optdepends=('flac: native FLAC support'
 categories=('multimedia')
 screenshot=('http://qmmp.ylsoftware.com/images/qmmp-0.3.0_full_1.png')
 source=("$pkgname-$pkgver::http://qmmp.ylsoftware.com/files/$pkgname-$pkgver.tar.bz2")
-sha256sums=('2ad5e5ce790166a162b942fe64b734559c515ba06c1de5bef46b9713b3c8285c')
+sha256sums=('cac9518c1fa7abd4558efb78cb8a8a637db065c66420e45f1b2f33902ce07fcf')
 
 build() {
   cd $pkgname-$pkgver
