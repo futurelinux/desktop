@@ -1,5 +1,5 @@
 pkgname=openttd
-pkgver=1.9.1
+pkgver=1.10.3
 pkgrel=1
 pkgdesc="An engine for running Transport Tycoon Deluxe or alternative data files"
 arch=('x86_64')
@@ -12,7 +12,7 @@ optdepends=('openttd-opengfx: graphic set.'
 conflicts=('openttd-dev' 'openttd-svn')
 categories=('games')
 source=("https://proxy.binaries.openttd.org/openttd-releases/$pkgver/$pkgname-$pkgver-source.tar.xz")
-md5sums=('4899bbb8080aa9d5cbb8afde36e17276')
+md5sums=('9435e367e8130372ba338dd2a465cd93')
 
 build() {
   cd $pkgname-$pkgver 
