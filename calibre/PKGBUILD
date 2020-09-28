@@ -1,5 +1,5 @@
 pkgname=calibre
-pkgver=4.0.0
+pkgver=5.0.1
 pkgrel=1
 pkgdesc="Ebook management application"
 arch=('x86_64')
@@ -7,16 +7,15 @@ url="https://calibre-ebook.com/"
 license=('GPL3')
 _py_deps=('apsw' 'beautifulsoup4' 'cssselect' 'css-parser' 'dateutil' 'dbus' 'dnspython' 'dukpy'
           'html2text' 'html5-parser' 'lxml' 'markdown' 'mechanize' 'msgpack'
-          'netifaces' 'unrardll' 'pillow' 'psutil' 'pygments' 'pyqt5' 'regex' 'enum34')
+          'netifaces' 'unrardll' 'pillow' 'psutil' 'pygments' 'pyqt5' 'regex')
 depends=('chmlib' 'icu' 'jxrlib' 'libmtp' 'libusbx' 'libwmf' 'mathjax' 'mtdev' 'optipng'
-         'podofo' "${_py_deps[@]/#/python2-}" 'qt5-svg' 'qt5-webengine' 'udisks2')
+         'podofo' "${_py_deps[@]/#/python3-}" 'qt5-svg' 'qt5-webengine' 'udisks2')
 makedepends=('qt5-x11extras' 'sip' 'xdg-utils')
-optdepends=('ipython2: to use calibre-debug'
-            'poppler: required for converting pdf to html'
+optdepends=('poppler: required for converting pdf to html'
             'kdialog: to use native dialog')
 source=("https://download.calibre-ebook.com/${pkgver}/calibre-${pkgver}.tar.xz"
         "https://calibre-ebook.com/signatures/${pkgname}-${pkgver}.tar.xz.sig")
-sha256sums=('9c012ac318aae8efc7a26ba1f5beef2e0e924407c8830e30167b229d8f6e1a9b'
+sha256sums=('949fffb683708345daa84df24f73b01479043f08c67d0b13209d5977789f4802'
             'SKIP')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
 
@@ -29,18 +28,10 @@ prepare(){
       -e "s/^Name=calibre/Name=Calibre/g" \
       -i  src/calibre/linux.py
 
-  # cherry-picked bits of python2-backports.functools_lru_cache
-  # needed for frozen builds + beautifulsoup4
-  # see https://github.com/kovidgoyal/calibre/commit/b177f0a1096b4fdabd8772dd9edc66662a69e683#commitcomment-33169700
-  rm -r src/backports
-
   cd resources
 
   # Remove unneeded files
   rm ${pkgname}-portable.* mozilla-ca-certs.pem
-
-  # tarball cache from calibre 4.x
-  rm editor.js viewer.{js,html}
 
   # use system mathjax
   rm -r mathjax
@@ -49,10 +40,10 @@ prepare(){
 build() {
   cd "${pkgname}-${pkgver}"
 
-  LANG='en_US.UTF-8' python2 setup.py build
-  LANG='en_US.UTF-8' python2 setup.py gui
-  LANG='en_US.UTF-8' python2 setup.py mathjax --path-to-mathjax /usr/share/mathjax --system-mathjax
-  LANG='en_US.UTF-8' python2 setup.py rapydscript
+  LANG='en_US.UTF-8' python3 setup.py build
+  LANG='en_US.UTF-8' python3 setup.py gui
+  LANG='en_US.UTF-8' python3 setup.py mathjax --path-to-mathjax /usr/share/mathjax --system-mathjax
+  LANG='en_US.UTF-8' python3 setup.py rapydscript
 }
 
 package() {
@@ -61,7 +52,7 @@ package() {
   # If this directory doesn't exist, zsh completion won't install.
   install -d "${pkgdir}/usr/share/zsh/site-functions"
 
-  LANG='en_US.UTF-8' python2 setup.py install \
+  LANG='en_US.UTF-8' python3 setup.py install \
     --staging-root="${pkgdir}/usr" \
     --prefix=/usr
 
@@ -74,7 +65,7 @@ package() {
   # This is kind of ugly but removes traces of the build root.
   while read -rd '' _file; do
     _destdir="$(dirname "${_file#${pkgdir}}")"
-    python2 -m compileall -d "${_destdir}" "${_file}"
-    python2 -O -m compileall -d "${_destdir}" "${_file}"
+    python3 -m compileall -d "${_destdir}" "${_file}"
+    python3 -O -m compileall -d "${_destdir}" "${_file}"
   done < <(find "${pkgdir}"/usr/lib/ -name '*.py' -print0)
 }
