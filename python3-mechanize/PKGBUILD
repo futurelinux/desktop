@@ -1,0 +1,36 @@
+# Contributions from Arch:
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
+# Contributor: Alexander F Rødseth <xyproto@archlinux.org>
+# Contributor: Chris Brannon <cmbrannon79@gmail.com>
+# Contributor: Douglas Soares de Andrade
+# Contributor: Roberto Alsina <ralsina@kde.org>
+
+_pkgname=mechanize
+pkgname=python3-mechanize
+pkgver=0.4.5
+pkgrel=1
+pkgdesc='Stateful programmatic web browsing in Python'
+arch=('any')
+url="https://github.com/python-mechanize/mechanize"
+license=('BSD')
+depends=('python3-html5lib')
+makedepends=('python3-setuptools')
+optdepends=('python3-html5-parser: faster parsing of HTML')
+source=("https://files.pythonhosted.org/packages/source/${_pkgname:0:1}/${_pkgname}/${_pkgname}-${pkgver}.tar.gz"{,.asc})
+sha256sums=('6355c11141f6d4b54a17fc2106944806b5db2711e60b120d15d83db438c333fd'
+            'SKIP')
+validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
+
+build() {
+  cd "mechanize-$pkgver"
+
+  python3 setup.py build
+}
+
+package() {
+  cd "mechanize-$pkgver"
+
+  python3 setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
