@@ -1,17 +1,17 @@
 pkgname=nmap
-pkgver=7.80
+pkgver=7.90
 pkgrel=1
 pkgdesc="A network exploration tool and security/port scanner"
 arch=('x86_64')
-url="http://nmap.org"
+url="https://nmap.org"
 license=('custom:GPL')
 depends=('pcre' 'openssl' 'libpcap>=1.0.0' 'lua')
 # pygtk is needed for zenmap
 makedepends=('python2')
 optdepends=('pygtk: gui for nmap - zenmap')
 options=('!makeflags')
-source=(http://nmap.org/dist/${pkgname}-${pkgver}.tar.bz2)
-sha256sums=('fcfa5a0e42099e12e4bf7a68ebe6fde05553383a682e816a7ec9256ab4773faa')
+source=(https://nmap.org/dist/${pkgname}-${pkgver}.tar.bz2)
+sha256sums=('5557c3458275e8c43e1d0cfa5dad4e71dd39e091e2029a293891ad54098a40e8')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
@@ -34,5 +34,5 @@ package() {
   rm "${pkgdir}/usr/bin/uninstall_zenmap"
 
   # install custom GPL2 license
-  install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
