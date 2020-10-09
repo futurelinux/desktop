@@ -1,5 +1,5 @@
 pkgname=minitube
-pkgver=3.2
+pkgver=3.6.2
 pkgrel=1
 pkgdesc="A native YouTube client in QT. Watch YouTube videos without Flash Player"
 arch=('x86_64')
@@ -10,7 +10,7 @@ makedepends=('qt5-tools')
 categories=('multimedia')
 screenshot="http://flavio.tordini.org/files/minitube/minitube-01.jpg"
 source=("https://github.com/flaviotordini/${pkgname}/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.bz2")
-sha256sums=('e1144304097e5f457ff3e43123a7594eefb70ce0feaa8a247fb7abbfb9ffd6d5')
+sha256sums=('ae01c17df1ae7b7d430377d28f92a70f6d126b514b69f0ce5ff359dabeaf391c')
 
 build() {
         cd $pkgname-$pkgver      
