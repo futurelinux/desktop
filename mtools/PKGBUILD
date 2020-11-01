@@ -1,5 +1,5 @@
 pkgname=mtools
-pkgver=4.0.24
+pkgver=4.0.25
 pkgrel=1
 pkgdesc="A collection of utilities to access MS-DOS disks"
 arch=('x86_64')
@@ -11,7 +11,7 @@ optdepends=('libx11: required by floppyd'
 	    'libsm:  required by floppyd')
 backup=('etc/mtools.conf')
 source=("https://ftp.gnu.org/gnu/mtools/${pkgname}-${pkgver}.tar.bz2")
-sha256sums=('24f4a2da9219f98498eb1b340cd96db7ef9b684c067d1bdeb6e85efdd13b2fb9')
+sha256sums=('fd161eec3bb7a93d13936db67725ad3e17f2d5f4e6fa8f7667fbc7ac728e2c15')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
