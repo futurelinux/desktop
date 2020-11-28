@@ -3,7 +3,7 @@
 
 pkgname=stellarsolver
 pkgver=1.5
-pkgrel=1
+pkgrel=2
 pkgdesc="The cross platform Sextractor and Astrometry.net-Based internal astrometric solver"
 arch=(x86_64)
 url="https://github.com/rlancaste/stellarsolver"
@@ -15,7 +15,8 @@ sha256sums=('62ce99c066a205c9f7c5cbace1678504750ceeb99cb12bacd4e4a329c4f512bc')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
-    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib
   cmake --build build
 }
 
